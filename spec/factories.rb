@@ -7,7 +7,7 @@ FactoryGirl.define do
     website "MyString"
     bio "MyString"
     image "MyString"
-
+end
   factory :venue do
     name "MyString"
     location "MyString"
