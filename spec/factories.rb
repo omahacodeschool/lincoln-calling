@@ -1,4 +1,5 @@
 FactoryGirl.define do
+
   factory :artist do
     name "MyString"
     genre "MyString"
@@ -6,5 +7,12 @@ FactoryGirl.define do
     website "MyString"
     bio "MyString"
     image "MyString"
+
+  factory :venue do
+    name "MyString"
+    location "MyString"
+    info "MyString"
+    img "MyString"
+
   end
 end
