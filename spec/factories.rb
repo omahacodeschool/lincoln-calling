@@ -6,4 +6,10 @@ FactoryGirl.define do
     start_date_time "2016-03-21 17:43:14"
     end_date_time "2016-03-21 17:43:14"
   end
+  factory :venue do
+    name "MyString"
+    location "MyString"
+    info "MyString"
+    img "MyString"
+  end
 end
