@@ -7,6 +7,13 @@ FactoryGirl.define do
     end_date_time "2016-03-21 17:43:14"
   end
 
+  factory :article do
+    title "MyString"
+    byline "MyString"
+    article "MyString"
+    image "MyString"
+  end
+
   factory :artist do
     name "MyString"
     genre "MyString"
