@@ -60,10 +60,42 @@ a{
   border-bottom: 5px solid white;
 }
 .divider{
-  padding: 10px 10px 10px 10px;
+  padding: 20px 0px 10px 0px;
   background-color: red;
 }
-
+.home_headliners{
+  font-family: Yanone Kaffeesatz;
+  background-color: #565351;
+  color: white;
+  font-size: 40px;
+  text-align: center; 
+}
+.home_tickets_left{
+  background-color: #565351;
+  
+}
+.home_tickets_right{
+  background-color: #565351;
+}
+.home_ticket_text_top{
+  background-color: #ff8110;
+  color: white;
+  padding: 20px 0px 0px 0px;
+  font-size: 30px;
+  text-align: center;
+  margin: 0px 10px 0px 10px;
+}
+.home_ticket_text_bottom{
+  background-color: #ff8110;
+  color: white;
+  padding: 0px 0px 20px 0px;
+  font-size: 60px;
+  text-align: center;
+  margin: 0px 10px 0px 10px;
+}
+.col-6{
+  padding: 0px
+}
 
 
 
