@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160322201906) do
+ActiveRecord::Schema.define(version: 20160322220321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,10 +21,11 @@ ActiveRecord::Schema.define(version: 20160322201906) do
     t.integer  "user_id"
     t.string   "article"
     t.string   "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "type"
     t.datetime "date_time"
+    t.string   "news_or_visitor"
   end
 
   create_table "artists", force: :cascade do |t|
@@ -34,8 +35,9 @@ ActiveRecord::Schema.define(version: 20160322201906) do
     t.string   "website"
     t.string   "bio"
     t.string   "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "headline_order"
   end
 
   create_table "delayed_jobs", force: :cascade do |t|
@@ -71,6 +73,16 @@ ActiveRecord::Schema.define(version: 20160322201906) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "sponsors", force: :cascade do |t|
+    t.string   "name"
+    t.string   "website"
+    t.boolean  "premier"
+    t.text     "description"
+    t.integer  "sponsor_order"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "tickets", force: :cascade do |t|
     t.string   "name"
     t.string   "link"
@@ -100,11 +112,13 @@ ActiveRecord::Schema.define(version: 20160322201906) do
 
   create_table "venues", force: :cascade do |t|
     t.string   "name"
-    t.string   "location"
+    t.string   "address"
     t.string   "info"
     t.string   "img"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.integer  "coordinates_lattitude"
+    t.integer  "coordinates_longitude"
   end
 
 end
