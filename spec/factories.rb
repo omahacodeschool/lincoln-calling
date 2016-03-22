@@ -1,4 +1,8 @@
 FactoryGirl.define do
+  factory :plan do
+    phone_number 1
+    event_id 1
+  end
   factory :user do
     name "MyString"
     email "MyString"
