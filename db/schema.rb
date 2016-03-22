@@ -11,18 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160321230557) do
+ActiveRecord::Schema.define(version: 20160322201906) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
-    t.string   "byline"
+    t.integer  "user_id"
     t.string   "article"
     t.string   "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "type"
+    t.datetime "date_time"
   end
 
   create_table "artists", force: :cascade do |t|
@@ -55,12 +57,46 @@ ActiveRecord::Schema.define(version: 20160321230557) do
   create_table "events", force: :cascade do |t|
     t.integer  "artist_id"
     t.integer  "venue_id"
-    t.string   "age_range"
+    t.string   "minimum_age"
     t.datetime "start_date_time"
     t.datetime "end_date_time"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
+
+  create_table "plans", force: :cascade do |t|
+    t.integer  "phone_number"
+    t.integer  "event_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "tickets", force: :cascade do |t|
+    t.string   "name"
+    t.string   "link"
+    t.integer  "price_in_cents"
+    t.integer  "eventbrite_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.text     "blurb"
+    t.string   "profile_pic"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "venues", force: :cascade do |t|
     t.string   "name"
