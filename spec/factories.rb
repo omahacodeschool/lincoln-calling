@@ -1,4 +1,10 @@
 FactoryGirl.define do
+  factory :ticket do
+    name "MyString"
+    link "MyString"
+    price_in_cents 1
+    eventbrite_id 1
+  end
   factory :plan do
     phone_number 1
     event_id 1
