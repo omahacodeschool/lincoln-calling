@@ -1,0 +1,77 @@
+@import "_variables";
+@import "_resets";
+@import "_grid";
+@import "_fonts";
+@import "_icons";
+
+.border{
+  border: 2px solid red;
+}
+.orange_box{
+  font-family: Montserrat;
+  padding: 10px 0px 10px 0px;
+  background-color: #ff8110;
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  text-shadow: 3px 6px #8f8f8f;
+}
+.menu{
+  font-family: Oswald;
+  padding: 10px 0px 10px 0px;
+  background-color: #565351;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+}
+.left_menu{
+  padding: 10px 0px 0px 0px;
+  background-color: #565351;
+  color: white;
+  font-size: 20px;
+}
+.right_menu{
+  padding: 10px 0px 0px 0px;
+  background-color: #565351;
+  color: white;
+  font-size: 20px;
+}
+a{
+  font-family: Oswald;
+  padding-left: 30px;
+  padding-bottom: 14px;
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+#visitor{
+  background-color: #565351;
+  color: white;
+  font-size: 20px;
+  padding-bottom: 15px;
+}
+.arrow-up {
+  margin-top: 10px;
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  
+  border-bottom: 5px solid white;
+}
+.divider{
+  padding: 10px 10px 10px 10px;
+  background-color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
