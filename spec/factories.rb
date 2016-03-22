@@ -1,4 +1,11 @@
 FactoryGirl.define do
+  factory :user do
+    name "MyString"
+    email "MyString"
+    password "MyString"
+    blurb "MyString"
+    profile_pic "MyString"
+  end
   factory :event do
     artist_id 1
     venue_id 1
