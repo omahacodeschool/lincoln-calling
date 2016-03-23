@@ -1,0 +1,18 @@
+<h1>Venues</h1>
+
+<p>Big map picture here</p>
+<% @venues.each do |venue| %>
+  <%= venue.name %><br>
+  <%= venue.coordinates_lattitude %><br>
+  <%= venue.coordinates_longitude %><br>
+<br>
+<% end %>
+
+<h2>Venue List</h2>
+<% @venues.each do |venue| %>
+  <%= venue.img %><br>
+  <%= venue.name %><br>
+  <%= venue.address %><br>
+  <%= venue.info %><br>
+  <br>
+<% end %>
