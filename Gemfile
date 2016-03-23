@@ -24,8 +24,8 @@ gem "uglifier"
 
 group :development do
   gem "quiet_assets"
-  # gem "spring"
-  # gem "spring-commands-rspec"
+  gem "spring"
+  gem "spring-commands-rspec"
   gem "web-console"
 end
 
