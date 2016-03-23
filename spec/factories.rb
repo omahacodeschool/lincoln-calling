@@ -1,4 +1,11 @@
 FactoryGirl.define do
+  factory :sponsor do
+    name "MyString"
+    website "MyString"
+    premier false
+    description "MyText"
+    sponsor_order 1
+  end
   factory :ticket do
     name "MyString"
     link "MyString"

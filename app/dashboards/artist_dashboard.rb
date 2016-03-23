@@ -17,6 +17,7 @@ class ArtistDashboard < Administrate::BaseDashboard
     image: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    headline_order: Field::Number,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -43,6 +44,7 @@ class ArtistDashboard < Administrate::BaseDashboard
     :image,
     :created_at,
     :updated_at,
+    :headline_order,
   ]
 
   # FORM_ATTRIBUTES
@@ -55,6 +57,7 @@ class ArtistDashboard < Administrate::BaseDashboard
     :website,
     :bio,
     :image,
+    :headline_order,
   ]
 
   # Overwrite this method to customize how artists are displayed
