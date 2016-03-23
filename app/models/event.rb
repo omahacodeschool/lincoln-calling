@@ -32,7 +32,6 @@ class Event < ActiveRecord::Base
     Event.all.each do |event|
       if event.weekday == weekday
         events << event
-      else
       end
     end
     return events

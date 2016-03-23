@@ -1,5 +1,6 @@
 class SidebarsController  < ActionController::Base
   def events
-    @thursdayevents = Event.byday("Thursday")
+    @events = Event.all
+    @days = ["Thursday","Friday","Saturday"]
   end
 end
