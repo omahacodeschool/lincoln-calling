@@ -1,0 +1,10 @@
+<h1>News</h1>
+
+<h2>Most Recent Articles</h2>
+
+<% @articles.each do |article| %>
+  <h3><%= article.title %></h3>
+  <p><%= article.article %></p>
+<% end %>
+
+<a href="/all_articles">More</a>
