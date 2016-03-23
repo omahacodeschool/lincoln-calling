@@ -10,11 +10,13 @@ class VenueDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     name: Field::String,
-    location: Field::String,
+    address: Field::String,
     info: Field::String,
     img: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    coordinates_lattitude: Field::Number,
+    coordinates_longitude: Field::Number,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -25,7 +27,7 @@ class VenueDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :name,
-    :location,
+    :address,
     :info,
   ]
 
@@ -34,11 +36,13 @@ class VenueDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :id,
     :name,
-    :location,
+    :address,
     :info,
     :img,
     :created_at,
     :updated_at,
+    :coordinates_lattitude,
+    :coordinates_longitude,
   ]
 
   # FORM_ATTRIBUTES
@@ -46,9 +50,11 @@ class VenueDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :name,
-    :location,
+    :address,
     :info,
     :img,
+    :coordinates_lattitude,
+    :coordinates_longitude,
   ]
 
   # Overwrite this method to customize how venues are displayed
