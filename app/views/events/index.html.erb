@@ -2,9 +2,10 @@
 <% @events.each do |event| %>
   <p><%= event.venue.name %></p>
   <p><%= event.artist.name%>
-  <p><%= event.start_date_time %></p>
-  <!-- i want this to be the date-->
-  <p><%= event.end_date_time%></p>
-  <!-- i want these to be the start/end TIMES -->
-  <p><%= event.minimum_age %></p>
+<!-- %b=abbr month name/ %e=digit day of month / -->
+  <p><%= event.weekday%>, <%= event.monthday%> 
+  <p><%= event.starttime %> 
+  to <%=event.endtime%></p>
+  <p> minimum age: <%= event.minimum_age %></p>
 <%end%>
+
