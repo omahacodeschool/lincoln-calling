@@ -14,5 +14,5 @@ resources :venues
   devise_for :users
   root to: "misc#home"
 
-  get "artists" => "artists#index"
+  get "artists/list" => "artists#index"
 end
