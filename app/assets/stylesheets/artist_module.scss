@@ -1,0 +1,22 @@
+.artist_module__image{
+  width: 100%;
+  display: block;
+}
+
+.artist_module__name{
+  background-color: #8f8f8f;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+.artist_module__name.artist_module__name--highlighted{
+  background-color: #EDFFA9;
+  color: #0056FF;
+}
+
+.artist_module__origin {
+  background-color: #c9c9c9;
+  color: #8f8f8f;
+  text-align: center;
+  padding: 10px 0;
+}
