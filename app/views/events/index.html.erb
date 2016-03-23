@@ -1,11 +1,14 @@
-<h1>VIEW ALL EVENTS</h1>
-<% @events.each do |event| %>
-  <p><%= event.venue.name %></p>
-  <p><%= event.artist.name%>
-<!-- %b=abbr month name/ %e=digit day of month / -->
-  <p><%= event.weekday%>, <%= event.monthday%> 
-  <p><%= event.starttime %> 
-  to <%=event.endtime%></p>
-  <p> minimum age: <%= event.minimum_age %></p>
+<h1>Lineup</h1>
+<h2>Schedule</h2>
+<% @venues.each do |venue| %>
+  <h3><%= venue.name %></h3>
+  <% venue.allevents.each do |event| %>
+    <p><%= event.weekday%>, <%= event.monthday%>
+    <p><%= event.starttime %> to <%=event.endtime%></p>
+    <p><%= event.artist.name%> 
+    <p> minimum age: <%= event.minimum_age %></p>
+  <%end%>
 <%end%>
+
+
 
