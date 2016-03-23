@@ -1,0 +1,9 @@
+<h1>Artists</h1>
+
+<% @artists.order(:headline_order).each do |artist| %>
+  <%= artist.headline_order %><br>
+  <%= artist.name %><br>
+  <%= artist.origin %><br>
+  <%= artist.image %><br>
+  <br>
+<% end %>
