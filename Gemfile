@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 ruby "2.3.0"
 
+gem "administrate", "~> 0.1.4"
 gem 'devise'
 gem "autoprefixer-rails"
 gem "delayed_job_active_record"
@@ -23,8 +24,8 @@ gem "uglifier"
 
 group :development do
   gem "quiet_assets"
-  # gem "spring"
-  # gem "spring-commands-rspec"
+  gem "spring"
+  gem "spring-commands-rspec"
   gem "web-console"
 end
 
