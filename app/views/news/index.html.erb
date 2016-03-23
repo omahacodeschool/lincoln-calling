@@ -1,10 +1,14 @@
 <h1>News</h1>
 
-<h2>Most Recent Articles</h2>
+<body>
 
-<% @articles.each do |article| %>
-  <h3><%= article.title %></h3>
-  <p><%= article.article %></p>
-<% end %>
+  <% @articles.each do |article| %>
+    <a href="/news/<%= article.id %>">
+      <img src="<%= article.image %>" alt="Article Pic">
+      <h3><%= article.title %> </h3>
+    </a>
+  <% end %>
 
-<a href="/all_articles">More</a>
+  <a href="/news/#more">More Stories</a>
+
+</body> 
