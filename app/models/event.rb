@@ -1,6 +1,8 @@
 class Event < ActiveRecord::Base
-  def venue_name
-    ven = Venue.find_by_id(self.venue_id)
-    ven.name
+  def venue
+    Venue.find_by_id(self.venue_id)
+  end
+  def artist
+    Artist.find_by_id(self.artist_id)
   end
 end

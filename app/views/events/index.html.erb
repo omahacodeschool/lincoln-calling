@@ -1,9 +1,7 @@
 <h1>VIEW ALL EVENTS</h1>
 <% @events.each do |event| %>
-  <p><%= event.venue_name %></p>
-  <!-- i want this to be .venue_name -->
-  <p><%= event.artist_id %></p>
-  <!-- i want this to be artist name -->
+  <p><%= event.venue.name %></p>
+  <p><%= event.artist.name%>
   <p><%= event.start_date_time %></p>
   <!-- i want this to be the date-->
   <p><%= event.end_date_time%></p>
