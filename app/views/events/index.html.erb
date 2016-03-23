@@ -1,4 +1,7 @@
 <h1>VIEW ALL EVENTS</h1>
-<% @events.all do |event| %>
-  <%= event.band_id %>
+<% @events.each do |event| %>
+  <p><%= event.venue_id %></p>
+  <p><%= event.artist_id %></p>
+  <p><%= event.start_date_time %></p>
+  <p><%= event.end_date_time%></p>
 <%end%>

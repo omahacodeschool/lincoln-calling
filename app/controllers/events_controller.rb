@@ -1,6 +1,5 @@
 class EventsController  < ActionController::Base
-  def list
+  def index
     @events = Event.all
-    render "index"
   end
 end

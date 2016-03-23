@@ -13,5 +13,5 @@ resources :venues
 
   devise_for :users
   root to: "misc#home"
-  get "events/list" => 'events#list'
+  get "events/list" => 'events#index'
 end
