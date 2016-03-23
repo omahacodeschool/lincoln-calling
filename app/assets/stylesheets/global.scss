@@ -77,21 +77,31 @@ a{
 .home_tickets_right{
   background-color: #565351;
 }
-.home_ticket_text_top{
+.home_ticket_text_base{
   background-color: #ff8110;
   color: white;
-  padding: 20px 0px 0px 0px;
-  font-size: 30px;
   text-align: center;
-  margin: 0px 10px 0px 10px;
 }
-.home_ticket_text_bottom{
-  background-color: #ff8110;
-  color: white;
-  padding: 0px 0px 20px 0px;
+.home_ticket_text_top_left{
+  padding: 20px 0px 0px 0px;
+  margin: 0px 7.5px 0px 15px;
+  font-size: 30px;
+}
+.home_ticket_text_bottom_left{
+  margin: 0px 7.5px 0px 15px;
   font-size: 60px;
-  text-align: center;
-  margin: 0px 10px 0px 10px;
+  padding: 0px 0px 0px 0px;
+}
+.home_ticket_text_top_right{
+  padding: 20px 0px 0px 0px;
+  padding-left: 0px;
+  margin: 0px 15px 0px 7.5px;
+  font-size: 30px;
+}
+.home_ticket_text_bottom_right{
+  margin: 0px 15px 0px 7.5px;
+  font-size: 60px;
+  padding: 0px 0px 0px 0px;
 }
 .col-6{
   padding: 0px
