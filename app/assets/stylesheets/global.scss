@@ -59,9 +59,8 @@ a{
   
   border-bottom: 5px solid white;
 }
-.divider{
-  padding: 20px 0px 10px 0px;
-  background-color: red;
+body{
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAATUlEQVQYV2NkQAN37979DxJSVlZmRJZC4YAUwRQgs0Ea4ArRJUCSyGJghdgUwayFyTHiU4SsmHiFRFuN7hbkIMHwDDbFOIMHWTG2AAcADK5HN3l5s5EAAAAASUVORK5CYII=) repeat;
 }
 .home_headliners{
   font-family: Yanone Kaffeesatz;
@@ -70,6 +69,7 @@ a{
   font-size: 65px;
   text-align: center;
   padding: 20px 0px 20px 0px; 
+  margin-top: 25px;
 }
 
 .home_ticket_text_base{
@@ -116,12 +116,22 @@ a{
 }
 .home_news{
   background-color: white;
+  margin-top: 25px;
 }
 .home_news_headlines{
   color: #ff8110;
   font-family: Oswald;
   font-size: 20px;
-  margin: 10px 10px 10px 10px;
+  padding: 35px 15px 0px 15px;
+}
+.home_more_news{
+  color: #c9c9c9;
+  font-family: Oswald;
+  font-size: 20px;
+  text-decoration: underline;
+  text-align: right;
+  padding-right: 15px;
+  padding-top: 15px;
 }
 
 
