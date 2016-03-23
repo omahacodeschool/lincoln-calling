@@ -67,8 +67,9 @@ a{
   font-family: Yanone Kaffeesatz;
   background-color: #565351;
   color: white;
-  font-size: 40px;
-  text-align: center; 
+  font-size: 65px;
+  text-align: center;
+  padding: 20px 0px 20px 0px; 
 }
 
 .home_ticket_text_base{
@@ -113,8 +114,15 @@ a{
   padding-bottom: 25px;
   background-color: #565351; 
 }
-
-
+.home_news{
+  background-color: white;
+}
+.home_news_headlines{
+  color: #ff8110;
+  font-family: Oswald;
+  font-size: 20px;
+  margin: 10px 10px 10px 10px;
+}
 
 
 
