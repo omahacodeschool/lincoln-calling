@@ -1,0 +1,14 @@
+<h1>News</h1>
+
+<body>
+
+  <% @articles.each do |article| %>
+    <a href="/news/<%= article.id %>">
+      <img src="<%= article.image %>" alt="Article Pic">
+      <h3><%= article.title %> </h3>
+    </a>
+  <% end %>
+
+  <a href="/news/#more">More Stories</a>
+
+</body> 
