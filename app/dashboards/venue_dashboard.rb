@@ -15,8 +15,8 @@ class VenueDashboard < Administrate::BaseDashboard
     img: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    coordinates_latitude: Field::Number,
-    coordinates_longitude: Field::Number,
+    coordinates_latitude: Field::Number.with_options(decimals: 2),
+    coordinates_longitude: Field::Number.with_options(decimals: 2),
   }
 
   # COLLECTION_ATTRIBUTES

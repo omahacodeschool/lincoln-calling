@@ -21,6 +21,9 @@ class UserDashboard < Administrate::BaseDashboard
     last_sign_in_ip: Field::String.with_options(searchable: false),
     blurb: Field::Text,
     profile_pic: Field::String,
+    password: Field::String,
+    first_name: Field::String,
+    last_name: Field::String,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -51,6 +54,9 @@ class UserDashboard < Administrate::BaseDashboard
     :last_sign_in_ip,
     :blurb,
     :profile_pic,
+    :password,
+    :first_name,
+    :last_name,
   ]
 
   # FORM_ATTRIBUTES
@@ -69,6 +75,9 @@ class UserDashboard < Administrate::BaseDashboard
     :last_sign_in_ip,
     :blurb,
     :profile_pic,
+    :password,
+    :first_name,
+    :last_name,
   ]
 
   # Overwrite this method to customize how users are displayed

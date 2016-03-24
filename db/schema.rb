@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160322220321) do
+ActiveRecord::Schema.define(version: 20160324161818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20160322220321) do
     t.string   "image"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "type"
     t.datetime "date_time"
     t.string   "news_or_visitor"
   end
@@ -90,6 +89,7 @@ ActiveRecord::Schema.define(version: 20160322220321) do
     t.integer  "eventbrite_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.boolean  "sold_out"
   end
 
   create_table "users", force: :cascade do |t|
@@ -105,6 +105,9 @@ ActiveRecord::Schema.define(version: 20160322220321) do
     t.inet     "last_sign_in_ip"
     t.text     "blurb"
     t.string   "profile_pic"
+    t.string   "password"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -117,8 +120,8 @@ ActiveRecord::Schema.define(version: 20160322220321) do
     t.string   "img"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
-    t.integer  "coordinates_lattitude"
-    t.integer  "coordinates_longitude"
+    t.float    "coordinates_latitude"
+    t.float    "coordinates_longitude"
   end
 
 end
