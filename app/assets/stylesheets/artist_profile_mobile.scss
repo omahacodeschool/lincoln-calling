@@ -1,0 +1,54 @@
+.artist_profile {
+  border-top: solid 7px;
+  border-color: #565351;
+  background-color: #8f8f8f;
+}
+
+.artist_profile__image {
+  width: 85%;
+  margin: 25px 25px 10px 25px;
+}
+
+.artist_info {
+  background-color: #8f8f8f;
+  color: white;
+  text-align: left;
+  margin-left: 25px;
+  margin-right: 25px;
+  border-bottom: solid 3px;
+  border-color: #565351;
+  padding: 10px 0 10px 5px; 
+}
+
+.artist_info__name {
+  font-family: Oswald;
+  font-size: 30px;
+}
+
+.artist_info__link {
+  font-family: Yanone Kaffeesatz;
+  font-weight: 100;
+}
+
+.artist_info__origin {
+  font-family: Yanone Kaffeesatz;
+  font-weight: 100;
+}
+
+.artist_performance_info {
+  background-color: #8f8f8f;
+  color: white;
+  text-align: left;
+  padding: 10px 10px 10px 30px;
+  border-bottom: solid 3px;
+  border-color: #565351;
+  font-family: Yanone Kaffeesatz; 
+  margin: 0 25px 0 25px;  
+}
+
+.artist_bio {
+  background-color: #8f8f8f;
+  color: white;
+  text-align: left;
+  padding: 25px;
+}
