@@ -11,7 +11,7 @@ class VenueDashboard < Administrate::BaseDashboard
     id: Field::Number,
     name: Field::String,
     address: Field::String,
-    info: Field::String,
+    info: Field::Text,
     img: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
