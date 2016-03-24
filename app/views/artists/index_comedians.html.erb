@@ -1,5 +1,8 @@
 <h1>Comedians</h1>
 
-<% @comedians.each do |comedian| %>
-  <%= comedian.name %>
+<% @comedians.order(:headline_order).each do |comedian| %>
+  <%= comedian.image %><br>
+  <%= comedian.name %><br>
+  <%= comedian.origin %><br>
+
 <% end %>
