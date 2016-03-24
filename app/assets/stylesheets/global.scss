@@ -248,7 +248,11 @@ a{
   text-decoration: underline;
   text-align: right;
 }
-.page_header_left{
+.page_header{
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.page_header__left{
   font-family: Oswald;
   color: #565351;
   font-size: 20px;
@@ -257,7 +261,7 @@ a{
   background-color: #c9c9c9;
 }
 
-.page_header_right{
+.page_header__right{
   font-family: Yanone Kaffeesatz;
   color: #565351;
   font-size: 22px;
@@ -369,10 +373,6 @@ body{
   padding: 0px;
 }
 
-.venue_map{
-  width: 100%;
-  height: 100%;
-}
 
 
 

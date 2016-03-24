@@ -1,0 +1,29 @@
+
+.map__image{
+  width: 100%;
+  display: block;
+}
+.teardrop__color{
+  color: white;
+  background-color: #C9C9C9;
+  text-align: center;
+  padding: 5px 0px 5px 20px;
+  margin-bottom: 10px;
+}
+.venues__actual{
+  color: #565351;
+  background-color: #dddddd;
+  padding: 5px 0px 5px 20px;
+  margin-bottom: 10px;
+}
+.venues{
+  font-family: Oswald;
+  font-weight: bold;
+  font-size: 45px;
+  margin-top: 25px;
+  background-color: white;
+}
+.venues__actual.venues__actual--selected{
+  color: white;
+  background-color: #565351;  
+}
