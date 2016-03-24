@@ -250,7 +250,11 @@ a{
   text-decoration: underline;
   text-align: right;
 }
-.page_header_left{
+.page_header{
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.page_header__left{
   font-family: Oswald;
   color: #565351;
   font-size: 20px;
@@ -259,7 +263,7 @@ a{
   background-color: #c9c9c9;
 }
 
-.page_header_right{
+.page_header__right{
   font-family: Yanone Kaffeesatz;
   color: #565351;
   font-size: 22px;
@@ -293,6 +297,7 @@ a{
 body{
  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAATUlEQVQYV2NkQAN37979DxJSVlZmRJZC4YAUwRQgs0Ea4ArRJUCSyGJghdgUwayFyTHiU4SsmHiFRFuN7hbkIMHwDDbFOIMHWTG2AAcADK5HN3l5s5EAAAAASUVORK5CYII=) repeat;
 }
+
 
 
 
