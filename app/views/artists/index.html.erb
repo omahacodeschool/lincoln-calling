@@ -1,9 +1,38 @@
-<h1>Artists</h1>
+<div class="header_divider_top"></div>
 
-<% @artists.order(:headline_order).each do |artist| %>
-  <%= artist.headline_order %><br>
-  <%= artist.name %><br>
-  <%= artist.origin %><br>
-  <%= artist.image %><br>
-  <br>
-<% end %>
+<div class="clear">
+  <div class="page_header_left col-3">LINEUP</div>
+  <div class="page_header_right col-9">Artists</div>
+</div>
+<div class="header_divider_bottom"></div>
+
+<div class="artist_white_background">
+
+  <div class="clear">
+    
+    <div class="clear artist_search_box">
+      <div class="artist_search_box__text">Search for a band</div>
+      <div class="artist_search_box__icon"></div>
+    </div>
+  </div>
+
+  <div class="clear">
+    <% @artists.order(:headline_order).each do |artist| %>
+      <div class="artist_module col-6">
+        <img class="artist_module__image" src="<%= artist.image %>">
+        <div class="artist_module__name"><%= artist.name %></div>
+        <div class="artist_module__origin"><%= artist.origin %></div>
+      </div>
+    <% end %>  
+  </div>
+</div>
+
+
+
+
+
+  
+ 
+    
+ 
+
