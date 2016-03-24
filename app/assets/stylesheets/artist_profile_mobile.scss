@@ -5,19 +5,17 @@
 }
 
 .artist_profile__image {
-  width: 85%;
-  margin: 25px 25px 10px 25px;
+  width: 100%;
+  margin-top: 15px;
 }
 
 .artist_info {
   background-color: #8f8f8f;
   color: white;
   text-align: left;
-  margin-left: 25px;
-  margin-right: 25px;
   border-bottom: solid 3px;
   border-color: #565351;
-  padding: 10px 0 10px 5px; 
+  padding: 10px 0; 
 }
 
 .artist_info__name {
@@ -39,16 +37,15 @@
   background-color: #8f8f8f;
   color: white;
   text-align: left;
-  padding: 10px 10px 10px 30px;
+  padding: 10px 0;
   border-bottom: solid 3px;
   border-color: #565351;
   font-family: Yanone Kaffeesatz; 
-  margin: 0 25px 0 25px;  
 }
 
 .artist_bio {
   background-color: #8f8f8f;
   color: white;
   text-align: left;
-  padding: 25px;
+  padding: 25px 0;
 }
