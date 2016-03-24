@@ -49,17 +49,17 @@
   display: block;
 }
 
-.concerts{
+.concert{
   background-color: white;
 }
-.conert_name{
+.conert__name{
   color: #565351;
   font-family: Oswald;
   font-size: 25px;
   padding-left: 20px;
   padding-top: 15px;
 }
-.conert_time{
+.conert__time{
   color: #c9c9c9;
   font-family: Oswald;
   font-family: Yanone Kaffeesatz;
@@ -67,11 +67,12 @@
   padding-left: 20px;
 }
 .full_schedule{
+  display: block;
   font-family: Yanone Kaffeesatz;
   font-size: 25px;
   color: #8f8f8f;
   background-color:#c9c9c9;
-  padding: 10px 20px 10px 0px;
+  padding: 5px 20px 5px 0px;
   text-decoration: underline;
   text-align: right;
 }
