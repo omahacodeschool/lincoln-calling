@@ -11,12 +11,12 @@ class VenueDashboard < Administrate::BaseDashboard
     id: Field::Number,
     name: Field::String,
     address: Field::String,
-    info: Field::String,
+    info: Field::Text,
     img: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    coordinates_lattitude: Field::Number,
-    coordinates_longitude: Field::Number,
+    coordinates_latitude: Field::Number.with_options(decimals: 2),
+    coordinates_longitude: Field::Number.with_options(decimals: 2),
   }
 
   # COLLECTION_ATTRIBUTES
@@ -41,7 +41,7 @@ class VenueDashboard < Administrate::BaseDashboard
     :img,
     :created_at,
     :updated_at,
-    :coordinates_lattitude,
+    :coordinates_latitude,
     :coordinates_longitude,
   ]
 
@@ -53,7 +53,7 @@ class VenueDashboard < Administrate::BaseDashboard
     :address,
     :info,
     :img,
-    :coordinates_lattitude,
+    :coordinates_latitude,
     :coordinates_longitude,
   ]
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160322220321) do
+ActiveRecord::Schema.define(version: 20160324202923) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,12 +19,11 @@ ActiveRecord::Schema.define(version: 20160322220321) do
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.integer  "user_id"
-    t.string   "article"
+    t.text     "article_content"
     t.string   "image"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "type"
-    t.datetime "date_time"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.datetime "publish_date_time"
     t.string   "news_or_visitor"
   end
 
@@ -33,11 +32,12 @@ ActiveRecord::Schema.define(version: 20160322220321) do
     t.string   "genre"
     t.string   "origin"
     t.string   "website"
-    t.string   "bio"
+    t.text     "bio"
     t.string   "image"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "headline_order"
+    t.boolean  "is_band"
   end
 
   create_table "delayed_jobs", force: :cascade do |t|
@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(version: 20160322220321) do
     t.integer  "eventbrite_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.boolean  "sold_out"
   end
 
   create_table "users", force: :cascade do |t|
@@ -105,6 +106,9 @@ ActiveRecord::Schema.define(version: 20160322220321) do
     t.inet     "last_sign_in_ip"
     t.text     "blurb"
     t.string   "profile_pic"
+    t.string   "password"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -113,12 +117,12 @@ ActiveRecord::Schema.define(version: 20160322220321) do
   create_table "venues", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
-    t.string   "info"
+    t.text     "info"
     t.string   "img"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
-    t.integer  "coordinates_lattitude"
-    t.integer  "coordinates_longitude"
+    t.float    "coordinates_latitude"
+    t.float    "coordinates_longitude"
   end
 
 end
