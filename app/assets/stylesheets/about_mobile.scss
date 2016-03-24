@@ -1,0 +1,27 @@
+
+.about {
+  margin: 25px 25px 25px 25px; 
+}
+
+.about__image {
+  display: block;
+  width: 100%;
+  border-right: solid 30px;
+  border-color: #ff8110;
+}
+
+.about__content {
+  background-color: white;
+  color: #565351;
+  padding: 10px 10px 10px;
+  line-height: 15px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.white_background {
+  background-color: white;
+  padding-top: 1px;
+  padding-bottom: 15px;
+  margin-top: 20px;
+}
