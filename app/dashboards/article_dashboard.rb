@@ -15,7 +15,6 @@ class ArticleDashboard < Administrate::BaseDashboard
     image: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    type: Field::String,
     date_time: Field::DateTime,
     news_or_visitor: Field::String,
   }
@@ -42,7 +41,6 @@ class ArticleDashboard < Administrate::BaseDashboard
     :image,
     :created_at,
     :updated_at,
-    :type,
     :date_time,
     :news_or_visitor,
   ]
@@ -55,7 +53,6 @@ class ArticleDashboard < Administrate::BaseDashboard
     :user_id,
     :article,
     :image,
-    :type,
     :date_time,
     :news_or_visitor,
   ]

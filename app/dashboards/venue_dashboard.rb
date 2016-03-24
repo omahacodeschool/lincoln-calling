@@ -15,7 +15,7 @@ class VenueDashboard < Administrate::BaseDashboard
     img: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    coordinates_lattitude: Field::Number,
+    coordinates_latitude: Field::Number,
     coordinates_longitude: Field::Number,
   }
 
@@ -41,7 +41,7 @@ class VenueDashboard < Administrate::BaseDashboard
     :img,
     :created_at,
     :updated_at,
-    :coordinates_lattitude,
+    :coordinates_latitude,
     :coordinates_longitude,
   ]
 
@@ -53,7 +53,7 @@ class VenueDashboard < Administrate::BaseDashboard
     :address,
     :info,
     :img,
-    :coordinates_lattitude,
+    :coordinates_latitude,
     :coordinates_longitude,
   ]
 
