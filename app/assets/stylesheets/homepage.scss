@@ -6,13 +6,11 @@
   font-size: 65px;
   text-align: center;
   padding: 20px 0px 20px 0px; 
-  margin-top: 25px;
 }
 .tickets{
   padding-bottom: 25px;
   background-color: #565351;
 }
-
 .ticket{
   display: block;
   background-color: #ff8110;
@@ -75,7 +73,6 @@
   font-family: Montserrat;
 }
 
-
 .home_news{
   background-color: white;
   margin-top: 25px;
@@ -115,3 +112,106 @@
 #home_email_text{
   float: left;
 }
+
+
+ // Side bar begins
+
+.side_bar{
+  background-color: #dddddd;
+}
+.side_bar_title{
+  background-color: #565351;
+  color: #dddddd;
+  font-family: Yanone Kaffeesatz;
+  font-size: 30px;
+  font-weight: 100;
+  padding: 3px 0px 3px 15px;
+}
+.thursday{
+  color: white;
+  padding: 5px 0px 5px 0px;
+  text-align: center;
+}
+.friday{
+  color: white;
+  padding: 5px 0px 5px 0px;
+  text-align: center;
+}
+.saturday{
+  color: white;
+  padding: 5px 0px 5px 0px;
+  text-align: center;
+}
+.dates{
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+.thursday .top_text{
+  margin: 0px 10px 0px 20px;
+  background-color: #ff8110;
+  font-size: 20px;
+  font-family: Oswald;
+  padding: 0px;
+}
+.thursday .bottom_text{
+  margin: 0px 10px 0px 20px;
+  background-color: #ff8110;
+  font-size: 35px;
+  font-family: Yanone Kaffeesatz;
+  padding: 0px;
+}
+.friday .top_text{
+  margin: 0px 10px 0px 10px;
+  background-color: #8f8f8f;
+  font-size: 20px;
+  font-family: Oswald;
+  padding: 0px;
+}
+.friday .bottom_text{
+  margin: 0px 10px 0px 10px;
+  background-color: #8f8f8f;
+  font-size: 35px;
+  font-family: Yanone Kaffeesatz;
+  padding: 0px;
+}
+.saturday .top_text{
+  margin: 0px 20px 0px 10px;
+  background-color: #8f8f8f;
+  font-size: 20px;
+  font-family: Oswald;
+  padding: 0px;
+}
+.saturday .bottom_text{
+  margin: 0px 20px 0px 10px;
+  background-color: #8f8f8f;
+  font-size: 35px;
+  font-family: Yanone Kaffeesatz;
+  padding: 0px;
+}
+.concerts{
+  background-color: white;
+}
+.conert_name{
+  color: #565351;
+  font-family: Oswald;
+  font-size: 30px;
+  padding-left: 20px;
+}
+.conert_time{
+  color: #c9c9c9;
+  font-family: Oswald;
+  font-family: Yanone Kaffeesatz;
+  font-size: 20px;
+  padding-left: 20px;
+}
+.full_schedule{
+  font-family: Yanone Kaffeesatz;
+  font-size: 25px;
+  color: #8f8f8f;
+  background-color:#c9c9c9;
+  padding: 10px 20px 10px 0px;
+  text-decoration: underline;
+  text-align: right;
+}
+
+// Side bar ends

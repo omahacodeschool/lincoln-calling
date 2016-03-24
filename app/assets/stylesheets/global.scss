@@ -37,7 +37,7 @@
   color: white;
   font-size: 20px;
 }
-a{
+.nav_bar__link{
   font-family: Oswald;
   padding-left: 30px;
   padding-bottom: 14px;
@@ -46,6 +46,11 @@ a{
   text-decoration: none;
 }
 #visitor{
+  display: block;
+  text-decoration: none;
+  font-family: Oswald;
+  padding-left: 30px;
+  padding-bottom: 14px;
   background-color: #565351;
   color: white;
   font-size: 20px;
