@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160322220321) do
+ActiveRecord::Schema.define(version: 20160324150112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20160322220321) do
     t.string   "image"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "type"
     t.datetime "date_time"
     t.string   "news_or_visitor"
   end
@@ -90,6 +89,7 @@ ActiveRecord::Schema.define(version: 20160322220321) do
     t.integer  "eventbrite_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.boolean  "sold_out"
   end
 
   create_table "users", force: :cascade do |t|
@@ -117,7 +117,7 @@ ActiveRecord::Schema.define(version: 20160322220321) do
     t.string   "img"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
-    t.integer  "coordinates_lattitude"
+    t.float    "coordinates_latitude"
     t.integer  "coordinates_longitude"
   end
 
