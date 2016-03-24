@@ -1,6 +1,6 @@
 class CoordinateLatShouldBeFloat < ActiveRecord::Migration
   def up
-    change_column :venues, :coordinates_latitude, 'float USING CAST(coordinates_lattitude AS float)'
+    change_column :venues, :coordinates_latitude, 'float USING CAST(coordinates_latitude AS float)'
   end
 
   def down
