@@ -1,0 +1,11 @@
+<h1>Festival Schedule/Lincoln Calling 2016</h1>
+<% @days.each do |day| %>
+  <% daysevents = @events.byday(day) %>
+  <% if daysevents %>
+    <h3><%= day %></h3>
+      <% daysevents.each do |event| %>
+        <p><%= event.artist.name%> at <%= event.venue.name %>
+        <p><%= event.starttime %></p>
+      <%end%>
+  <% end %>
+<% end %>

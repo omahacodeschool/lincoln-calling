@@ -27,4 +27,20 @@ class Event < ActiveRecord::Base
   def endtime
     self.end_date_time.strftime("%l:%M%P")
   end
+  def self.byday(weekday)
+    events = []
+    Event.all.each do |event|
+      if event.weekday == weekday
+        events << event
+      end
+    end
+    return events
+  end
 end
+
+
+
+
+
+
+
