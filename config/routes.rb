@@ -20,5 +20,6 @@ resources :venues
   root to: "misc#home"
   get "events/list" => 'events#index'
   get "artists/list" => "artists#index"
+  get "sidebar/events" => 'sidebars#events'
   get "venues/list" => "venues#index"
 end

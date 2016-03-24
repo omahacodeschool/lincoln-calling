@@ -15,6 +15,7 @@ class TicketDashboard < Administrate::BaseDashboard
     eventbrite_id: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    sold_out: Field::Boolean,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -39,6 +40,7 @@ class TicketDashboard < Administrate::BaseDashboard
     :eventbrite_id,
     :created_at,
     :updated_at,
+    :sold_out,
   ]
 
   # FORM_ATTRIBUTES
@@ -49,6 +51,7 @@ class TicketDashboard < Administrate::BaseDashboard
     :link,
     :price_in_cents,
     :eventbrite_id,
+    :sold_out,
   ]
 
   # Overwrite this method to customize how tickets are displayed
