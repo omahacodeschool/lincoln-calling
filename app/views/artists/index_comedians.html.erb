@@ -1,8 +1,20 @@
-<h1>Comedians</h1>
+<div class="header_divider_top"></div>
 
-<% @comedians.order(:headline_order).each do |comedian| %>
-  <%= comedian.image %><br>
-  <%= comedian.name %><br>
-  <%= comedian.origin %><br>
+<div class="clear">
+  <div class="page_header_left col-3">LINEUP</div>
+  <div class="page_header_right col-9">Comedy</div>
+</div>
+<div class="header_divider_bottom"></div>
 
-<% end %>
+<div class="artist_white_background">
+
+  <div class="clear">
+    <% @comedians.order(:headline_order).each do |comedian| %>
+      <div class="artist_module col-6">
+        <img class="artist_module__image" src="<%= comedian.image %>">
+        <div class="artist_module__name"><%= comedian.name %></div>
+        <div class="artist_module__origin"><%= comedian.origin %></div>
+      </div>
+    <% end %>
+  </div>
+</div>
