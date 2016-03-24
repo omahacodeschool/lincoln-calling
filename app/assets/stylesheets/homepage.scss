@@ -1,0 +1,76 @@
+
+.headliners{
+  font-family: Yanone Kaffeesatz;
+  background-color: #565351;
+  color: white;
+  font-size: 65px;
+  text-align: center;
+  padding: 20px 0px 20px 0px; 
+  margin-top: 25px;
+}
+.tickets{
+  padding-bottom: 25px;
+  background-color: #565351; 
+}
+.tickets__left{
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+.tickets__left__top{
+  background-color: #ff8110;
+  color: white;
+  text-align: center;
+}
+.tickets_top__right{
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+.tickets__text_top{
+  font-family: Yanone Kaffeesatz;
+  font-size: 40px;
+}
+.tickets__text_bottom{
+  font-size: 70px;
+  font-family: Montserrat;
+}
+
+
+.home_news{
+  background-color: white;
+  margin-top: 25px;
+}
+.home_news_headlines{
+  color: #ff8110;
+  font-family: Oswald;
+  font-size: 20px;
+  padding: 35px 15px 0px 15px;
+}
+.home_news_img{
+  object-fit: cover;
+  width: 50%;
+  height: 50%;
+}
+.home_more_news{
+  color: #c9c9c9;
+  font-family: Oswald;
+  font-size: 20px;
+  text-decoration: underline;
+  text-align: right;
+  padding-right: 15px;
+  padding-top: 15px;
+}
+.home_emails{
+  color: #565351;
+  border: 2px solid #c9c9c9;
+  margin: 25px 15px 25px 15px;
+  background-color: white;
+  padding: 10px 20px 10px 20px;
+  font-size: 20px;
+  font-family: Oswald;
+}
+#home_computer_icon{
+  text-align: right;
+}
+#home_email_text{
+  float: left;
+}
