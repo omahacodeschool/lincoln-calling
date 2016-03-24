@@ -1,5 +1,5 @@
 .artist_module {
-  margin-left: 15px;
+  margin-left: 17px;
   width: 45%;
 }
 
@@ -27,39 +27,9 @@
   padding: 5px;
 }
 
-.artist_image_left {
-
-  width: 180px;
-  height: 200px;
-  
-}
-
 .artist_white_background {
   background-color: white;
-  padding-top: 1px;
+  padding-top: 30px;
   padding-bottom: 100px;
-}
-
-.artist_search_box {
-  border: solid 1px;
-  border-color: #8f8f8f;
-  color: #c9c9c9;
-  margin: 25px 13px 25px 13px;
-  padding: 5px 0px 5px 15px;
-  background-color: white;
-}
-
-.artist_search_box__text {
-  font-family: Yanone Kaffeesatz;
-  float: left;
-  font-weight: 100;
-  font-size: 35px;
-}
-
-.artist_search_box__icon {
-  float: right;
-  font-weight: 100;
-  font-size: 35px;
-  padding-right: 10px;
 }
 

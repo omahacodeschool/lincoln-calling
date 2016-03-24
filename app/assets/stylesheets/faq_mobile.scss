@@ -1,0 +1,21 @@
+.faq {
+  margin: 20px 15px 90px 15px;
+}
+
+.faq__question {
+  background-color: #ff8110;
+  color: #565351;
+  font-weight: bold;
+  font-size: 25px;
+  padding: 10px;
+}
+
+.faq__answer {
+  background-color: white;
+  color: #565351; 
+  padding: 10px;
+  border-left: dashed 1px;
+  border-right: dashed 1px;
+  border-bottom: dashed 1px;
+  border-color: #c9c9c9;
+}
