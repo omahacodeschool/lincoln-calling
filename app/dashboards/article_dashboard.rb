@@ -11,11 +11,11 @@ class ArticleDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     user_id: Field::Number,
-    article: Field::String,
+    article_content: Field::Text,
     image: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    date_time: Field::DateTime,
+    publish_date_time: Field::DateTime,
     news_or_visitor: Field::String,
   }
 
@@ -28,7 +28,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     :id,
     :title,
     :user_id,
-    :article,
+    :article_content,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -37,11 +37,11 @@ class ArticleDashboard < Administrate::BaseDashboard
     :id,
     :title,
     :user_id,
-    :article,
+    :article_content,
     :image,
     :created_at,
     :updated_at,
-    :date_time,
+    :publish_date_time,
     :news_or_visitor,
   ]
 
@@ -51,9 +51,9 @@ class ArticleDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :title,
     :user_id,
-    :article,
+    :article_content,
     :image,
-    :date_time,
+    :publish_date_time,
     :news_or_visitor,
   ]
 

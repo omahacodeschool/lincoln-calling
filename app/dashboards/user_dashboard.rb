@@ -21,7 +21,6 @@ class UserDashboard < Administrate::BaseDashboard
     last_sign_in_ip: Field::String.with_options(searchable: false),
     blurb: Field::Text,
     profile_pic: Field::String,
-    password: Field::String,
     first_name: Field::String,
     last_name: Field::String,
   }
@@ -54,7 +53,6 @@ class UserDashboard < Administrate::BaseDashboard
     :last_sign_in_ip,
     :blurb,
     :profile_pic,
-    :password,
     :first_name,
     :last_name,
   ]
@@ -75,7 +73,6 @@ class UserDashboard < Administrate::BaseDashboard
     :last_sign_in_ip,
     :blurb,
     :profile_pic,
-    :password,
     :first_name,
     :last_name,
   ]
