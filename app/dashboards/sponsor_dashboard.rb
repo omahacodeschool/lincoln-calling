@@ -14,7 +14,7 @@ class SponsorDashboard < Administrate::BaseDashboard
     premier: Field::Boolean,
     description: Field::Text,
     logo: Field::String,
-    sponsor_order: Field::Integer
+    sponsor_order: Field::Integer,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }
@@ -39,10 +39,10 @@ class SponsorDashboard < Administrate::BaseDashboard
     premier: Field::Boolean,
     description: Field::Text,
     logo: Field::String,
-    sponsor_order: Field::Integer
+    sponsor_order: Field::Integer,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-  }
+  ]
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
@@ -53,8 +53,8 @@ class SponsorDashboard < Administrate::BaseDashboard
     premier: Field::Boolean,
     description: Field::Text,
     logo: Field::String,
-    sponsor_order: Field::Integer
-  }
+    sponsor_order: Field::Integer,
+  ]
 
   # Overwrite this method to customize how venues are displayed
   # across all pages of the admin dashboard.
