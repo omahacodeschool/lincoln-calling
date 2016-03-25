@@ -1,5 +1,8 @@
 .primary_sponsor{
-
+  background-color: white;
+  text-align: center;
+  color: #565351;
+  text-decoration: none;
 }
 .primary_sponsor__logo{
   width: 100%;
@@ -7,9 +10,7 @@
 }
 .primary_sponsor__name{
   display: block;
-  text-align: center;
   background-color: white;
-  color: #565351;
   padding: 20px 0 20px;
   line-height: 15px;
   font-size: 15px;
@@ -18,11 +19,12 @@
   border-color: #565351;
 }
 .primary_sponsor__description{
-  display: block;
-  text-align: center;
   background-color: white;
+  display: block;
   color: #565351;
   padding: 20px 0 20px;
   line-height: 15px;
-  font-size: 15px;
+  font-size: 12px;
+  line-height: 15px;
+  margin-bottom: 25px;
 }
