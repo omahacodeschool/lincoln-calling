@@ -1,29 +1,38 @@
-
 <body>
-  <div class="home_headliners">
+  <div class="headliners">
     Future Islands +<br> BOY + The Kickback
   </div>
-  <div class="clear home_tickets_top">
-    <div class ="col-6 home_tickets_left">
-      <a href="#" class="home_ticket_text_top_left home_ticket_text_base">3-DAY PASSES</a>
-      <a href="#" class="home_ticket_text_bottom_left home_ticket_text_base">$30</a>
+  <div class="clear tickets">
+    <div class="col-6">
+      <a class="ticket ticket--odd">
+        <span class="ticket__title">3-Day Passes</span>
+        <span class="ticket__price">$30</span>
+      </a>
     </div>
-    <div class ="col-6 home_tickets_right">
-      <a href="#" class="home_ticket_text_top_right home_ticket_text_base">FRIDAY</a>
-      <a href="#" class="home_ticket_text_bottom_right home_ticket_text_base">$15</a>
+
+    <div class="col-6">
+      <a class="ticket ticket--even ticket--sold_out">
+        <span class="ticket__title">THURSDAY</span>
+        <span class="ticket__price">$15</span>
+      </a>
+    </div>
+
+    <div class="col-6">
+      <a class="ticket ticket--odd">
+        <span class="ticket__title">FRIDAY</span>
+        <span class="ticket__price">$15</span>
+      </a>
+    </div>
+
+    <div class="col-6">
+      <a class="ticket ticket--even">
+        <span class="ticket__title">SATURDAY</span>
+        <span class="ticket__price">$15</span>
+      </a>
     </div>
   </div>
 
-  <div class="clear home_tickets_bottom">
-    <div class ="col-6 home_tickets_left">
-      <a href="#" class="home_ticket_text_top_left home_ticket_text_base">SATURDAY</a>
-      <a href="#" class="home_ticket_text_bottom_left home_ticket_text_base">$15</a>
-    </div>
-    <div class ="col-6 home_tickets_right">
-      <a href="#" class="home_ticket_text_top_right home_ticket_text_base">SUNDAY</a>
-      <a href="#" class="home_ticket_text_bottom_right home_ticket_text_base">$15</a>
-    </div>   
-  </div>
+
 
   <div class="clear home_news">
     <img src=/assets/beutler.jpg class="col-6 home_news_img">
@@ -38,30 +47,36 @@
   </div>
 
   <div class="side_bar">
-    <div class="side_bar_title">
+    <div class="side_bar__title">
     Festival Schedule/ Lincoln Calling 2016
     </div>
     <div class="clear dates">
-      <div class="col-4 thursday">
-        <a href="#" class="top_text">Thursday</a>
-        <a href="#" class="bottom_text">6</a>
+      <div class="col-4">
+        <a href="#" class="day_link day_link--left day_link--selected">
+          <span href="#" class="day_link__day">Thursday</span>
+          <span href="#" class="day_link__date">6</span>
+        </a>  
       </div>
-      <div class="col-4 friday">
-        <a href="#" class="top_text">Friday</a>
-        <a href="#" class="bottom_text">7</a>
+      <div class="col-4">
+        <a href="#" class="day_link day_link--mid">
+          <span href="#" class="day_link__day">Friday</span>
+          <span href="#" class="day_link__date">7</span>
+        </a> 
       </div>
-      <div class="col-4 saturday">
-        <a href="#" class="top_text">Saturday</a>
-        <a href="#" class="bottom_text">8</a>
+      <div class="col-4">
+        <a href="#" class="day_link day_link--right">
+          <span href="#" class="day_link__day">Saturday</span>
+          <span href="#" class="day_link__date">8</span>
+        </a>
       </div>
     </div>
-    <div class="concerts">
-      <div class="conert_name">Artist at Venue</div>
-      <div class="conert_time">6PM.</div>
-      <div class="conert_name">Artist at Venue</div>
-      <div class="conert_time">9PM.</div>
-      <div class="conert_name">Artist at Venue</div>
-      <div class="conert_time">9PM.</div>
+    <div class="concert">
+      <div class="conert__name">Artist at Venue</div>
+      <div class="conert__time">6PM.</div>
+      <div class="conert__name">Artist at Venue</div>
+      <div class="conert__time">9PM.</div>
+      <div class="conert__name">Artist at Venue</div>
+      <div class="conert__time">9PM.</div>
     </div>
     <a href="#" class="full_schedule">see full schedule</a>
   </div>

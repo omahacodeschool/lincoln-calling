@@ -1,0 +1,82 @@
+// Side bar begins
+
+.side_bar{
+  background-color: #dddddd;
+}
+.side_bar__title{
+  background-color: #565351;
+  color: #dddddd;
+  font-family: Yanone Kaffeesatz;
+  font-size: 30px;
+  font-weight: 100;
+  padding: 3px 0px 3px 15px;
+}
+.dates{
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+.day_link{
+  display: block;
+  background-color: #565351;
+  color: white;
+  padding: 5px 0px 5px 0px;
+  text-align: center;
+  text-decoration: none;
+}
+.day_link.day_link--selected{
+  background-color: #ff8110;
+}
+.day_link.day_link--left{
+  margin-left: 15px;
+  margin-right: 7.5px;
+}
+.day_link.day_link--mid{
+  margin-left: 7.5px;
+  margin-right: 7.5px;
+}
+.day_link.day_link--right{
+  margin-left: 7.5px;
+  margin-right: 15px;
+}
+.day_link__day{
+  font-size: 20px;
+  font-family: Oswald;
+  display: block;
+}
+.day_link__date{
+  font-size: 35px;
+  font-family: Yanone Kaffeesatz;
+  display: block;
+}
+
+.concert{
+  background-color: white;
+}
+.conert__name{
+  color: #565351;
+  font-family: Oswald;
+  font-size: 25px;
+  padding-left: 20px;
+  padding-top: 15px;
+}
+.conert__time{
+  color: #c9c9c9;
+  font-family: Oswald;
+  font-family: Yanone Kaffeesatz;
+  font-size: 20px;
+  padding-left: 20px;
+}
+.full_schedule{
+  display: block;
+  font-family: Yanone Kaffeesatz;
+  font-size: 25px;
+  color: #8f8f8f;
+  background-color:#c9c9c9;
+  padding: 5px 20px 5px 0px;
+  text-decoration: underline;
+  text-align: right;
+}
+
+
+
+
