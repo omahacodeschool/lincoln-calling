@@ -3,12 +3,15 @@
 <body>
 
   <% @articles.each do |article| %>
-    <a href="/news/<%= article.id %>">
-      <img src="<%= article.image %>" alt="Article Pic">
+<!--     <a href="/news/<%= article.id %>">
+ -->      <img src="<%= article.image %>" alt="Article Pic">
       <h3><%= article.title %> </h3>
-    </a>
+    <!-- </a> -->
   <% end %>
 
-  <a href="/news/#more">More Stories</a>
+  <a href="/news/more">More Stories</a>
+  
+</body>
 
-</body> 
+  
+
