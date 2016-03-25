@@ -14,7 +14,7 @@ class SponsorDashboard < Administrate::BaseDashboard
     premier: Field::Boolean,
     description: Field::Text,
     logo: Field::String,
-    sponsor_order: Field::Integer,
+    sponsor_order: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }
@@ -39,7 +39,7 @@ class SponsorDashboard < Administrate::BaseDashboard
     premier: Field::Boolean,
     description: Field::Text,
     logo: Field::String,
-    sponsor_order: Field::Integer,
+    sponsor_order: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   ]
@@ -53,7 +53,7 @@ class SponsorDashboard < Administrate::BaseDashboard
     premier: Field::Boolean,
     description: Field::Text,
     logo: Field::String,
-    sponsor_order: Field::Integer,
+    sponsor_order: Field::Number,
   ]
 
   # Overwrite this method to customize how venues are displayed
