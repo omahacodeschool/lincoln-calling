@@ -18,7 +18,7 @@ class BandDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     headline_order: Field::Number,
-    is_band: Field::Boolean,
+    is_band: Field::Boolean
   }
 
   # COLLECTION_ATTRIBUTES
@@ -30,7 +30,7 @@ class BandDashboard < Administrate::BaseDashboard
     :id,
     :name,
     :genre,
-    :origin,
+    :origin
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -46,7 +46,7 @@ class BandDashboard < Administrate::BaseDashboard
     :created_at,
     :updated_at,
     :headline_order,
-    :is_band,
+    :is_band
   ]
 
   # FORM_ATTRIBUTES
@@ -60,7 +60,7 @@ class BandDashboard < Administrate::BaseDashboard
     :bio,
     :image,
     :headline_order,
-    :is_band,
+    :is_band
   ]
 
   # Overwrite this method to customize how bands are displayed

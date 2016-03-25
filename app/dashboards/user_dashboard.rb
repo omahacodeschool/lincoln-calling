@@ -24,7 +24,7 @@ class UserDashboard < Administrate::BaseDashboard
     first_name: Field::String,
     last_name: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }
 
   # COLLECTION_ATTRIBUTES
@@ -36,7 +36,7 @@ class UserDashboard < Administrate::BaseDashboard
     :id,
     :email,
     :encrypted_password,
-    :reset_password_token,
+    :reset_password_token
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -58,7 +58,7 @@ class UserDashboard < Administrate::BaseDashboard
     :first_name,
     :last_name,
     :created_at,
-    :updated_at,
+    :updated_at
   ]
 
   # FORM_ATTRIBUTES
@@ -78,7 +78,7 @@ class UserDashboard < Administrate::BaseDashboard
     :blurb,
     :profile_pic,
     :first_name,
-    :last_name,
+    :last_name
   ]
 
   # Overwrite this method to customize how users are displayed
