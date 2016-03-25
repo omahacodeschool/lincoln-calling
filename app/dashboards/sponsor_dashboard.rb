@@ -10,8 +10,11 @@ class SponsorDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     name: Field::String,
+    website: Field::String,
+    premier: Field::Boolean,
     description: Field::Text,
     logo: Field::String,
+    sponsor_order: Field::Integer
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }
@@ -24,35 +27,34 @@ class SponsorDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :name,
-    :address,
-    :info,
+    :premier,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :id,
-    :name,
-    :address,
-    :info,
-    :img,
-    :created_at,
-    :updated_at,
-    :coordinates_latitude,
-    :coordinates_longitude,
-  ]
+    id: Field::Number,
+    name: Field::String,
+    website: Field::String,
+    premier: Field::Boolean,
+    description: Field::Text,
+    logo: Field::String,
+    sponsor_order: Field::Integer
+    created_at: Field::DateTime,
+    updated_at: Field::DateTime,
+  }
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :name,
-    :address,
-    :info,
-    :img,
-    :coordinates_latitude,
-    :coordinates_longitude,
-  ]
+    name: Field::String,
+    website: Field::String,
+    premier: Field::Boolean,
+    description: Field::Text,
+    logo: Field::String,
+    sponsor_order: Field::Integer
+  }
 
   # Overwrite this method to customize how venues are displayed
   # across all pages of the admin dashboard.
