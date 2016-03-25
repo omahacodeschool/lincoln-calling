@@ -59,3 +59,8 @@ group :staging, :production do
   gem "rails_stdout_logging"
   gem "rack-timeout"
 end
+
+gem 'pronto'
+gem 'pronto-rubocop'
+gem 'pronto-reek'
+gem 'pronto-rails_best_practices'
