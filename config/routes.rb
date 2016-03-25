@@ -9,6 +9,7 @@ resources :plans
 resources :tickets
 resources :venues
 resources :sponsors
+resources :bands
 
 
     root to: "users#index"
