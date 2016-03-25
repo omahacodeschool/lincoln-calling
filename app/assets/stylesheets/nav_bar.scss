@@ -8,8 +8,7 @@
   text-shadow: 3px 6px #8f8f8f;
 }
 
-// This is for the nav bar =====
-.nav_menu{
+.nav_bar{
   font-family: Oswald;
   padding: 10px 0px 10px 0px;
   background-color: #565351;
@@ -18,7 +17,7 @@
   font-size: 20px;
 }
 
-.nav_menu__triangle_up{
+.nav_bar__triangle_up{
   width: 0;
   height: 0;
   padding-top: 8px;
@@ -26,7 +25,7 @@
   border-right: 15px solid transparent;
   border-bottom: 15px solid white;
 }
-.nav_menu__triangle_up.triangle_up--left{
+.nav_bar__triangle_up.triangle_up--left{
   float:right;
 }
 .triangle_down{
@@ -42,21 +41,21 @@
 }
 
 
-.left_menu{
+.nav_bar__menu_left{
   padding: 10px 0px 0px 0px;
   background-color: #565351;
   color: white;
   font-size: 20px;
 }
 
-.right_menu{
+.nav_bar__menu_right{
   padding: 10px 0px 0px 0px;
   background-color: #565351;
   color: white;
   font-size: 20px;
 }
 
-.nav_bar__link{
+.nav_bar_menu__link{
   font-family: Oswald;
   padding-left: 30px;
   padding-bottom: 14px;
@@ -65,22 +64,8 @@
   text-decoration: none;
 }
 
-//==========================
-
-.nav_bar {
+.nav_bar_menu {
   background-color: #565351;
   margin-bottom: 25px;
 }
 
-// #visitor{
-//   display: block;
-//   text-decoration: none;
-//   font-family: Oswald;
-//   padding-left: 30px;
-//   padding-bottom: 14px;
-//   background-color: #565351;
-//   color: white;
-//   font-size: 20px;
-//   padding-bottom: 15px;
-//   margin-bottom: 25px;
-// }
