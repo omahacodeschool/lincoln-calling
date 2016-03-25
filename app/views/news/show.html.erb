@@ -1,13 +1,13 @@
-<h1>NEWS | <% @article.title %></h1>
+<h1>NEWS | <%= @article.title %></h1>
 
-<img src="<@article.image" alt="Article Pic" >
+<img src="<%= @article.image %>" alt="Article Pic" >
 <h2><%= @article.title %></h2><br>
-<h6>by ERB for User Name Here | published <%= @article.date_time %>
+<h6>by <%= @article.user_access.user_full_name %> | published <%= @article.monthdayyear %>
 
 <p>
 
-  <%= @article.article %>
+  <%= @article.article_content %>
 
 </p>
 
-<%= @article.user_access.profile_pic %><%= @article.user_access.blurb %>
+<img src="<%= @article.user_access.profile_pic %>" alt="Profile Pic"><%= @article.user_access.blurb %>
