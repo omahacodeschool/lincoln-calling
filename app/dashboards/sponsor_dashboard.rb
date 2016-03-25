@@ -33,27 +33,27 @@ class SponsorDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    id: Field::Number,
-    name: Field::String,
-    website: Field::String,
-    premier: Field::Boolean,
-    description: Field::Text,
-    logo: Field::String,
-    sponsor_order: Field::Number,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    :id,
+    :name,
+    :website,
+    :premier,
+    :description,
+    :logo,
+    :sponsor_order,
+    :created_at,
+    :updated_at,
   ]
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    name: Field::String,
-    website: Field::String,
-    premier: Field::Boolean,
-    description: Field::Text,
-    logo: Field::String,
-    sponsor_order: Field::Number,
+    :name,
+    :website,
+    :premier,
+    :description,
+    :logo,
+    :sponsor_order,
   ]
 
   # Overwrite this method to customize how venues are displayed

@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users
-<<<<<<< HEAD
 resources :articles
 resources :artists
 resources :events
@@ -10,14 +9,7 @@ resources :plans
 resources :tickets
 resources :venues
 resources :sponsors
-=======
-    resources :articles
-    resources :artists
-    resources :events
-    resources :plans
-    resources :tickets
-    resources :venues
->>>>>>> master
+
 
     root to: "users#index"
   end
