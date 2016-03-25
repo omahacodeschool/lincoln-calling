@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get "news/:id" => 'news#show'
+  
   namespace :admin do
     resources :users
     resources :articles
@@ -20,6 +22,7 @@ Rails.application.routes.draw do
   get "artists/list" => "artists#index"
   get "artists/list/comedians" => "artists#index_comedians"
   get "sidebar/events" => 'sidebars#events'
+  get "sidebar/artists/:id" => "sidebars#artists"
   get "venues/list" => "venues#index"
   get "news" => 'news#index'
 end

@@ -1,0 +1,13 @@
+<h1>NEWS | <%= @article.title %></h1>
+
+<img src="<%= @article.image %>" alt="Article Pic" >
+<h2><%= @article.title %></h2><br>
+<h6>by <%= @article.user_access.user_full_name %> | published <%= @article.monthdayyear %>
+
+<p>
+
+  <%= @article.article_content %>
+
+</p>
+
+<img src="<%= @article.user_access.profile_pic %>" alt="Profile Pic"><%= @article.user_access.blurb %>
