@@ -1,12 +1,13 @@
 .artist_profile {
-  border-top: solid 7px;
-  border-color: #565351;
   background-color: #8f8f8f;
 }
 
 .artist_profile__image {
+  display: block;
   width: 100%;
   margin-top: 30px;
+  border-top: solid 15px;
+  border-color: #565351;
 }
 
 .artist_info {
