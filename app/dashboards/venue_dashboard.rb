@@ -16,7 +16,7 @@ class VenueDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     coordinates_latitude: Field::Number.with_options(decimals: 2),
-    coordinates_longitude: Field::Number.with_options(decimals: 2)
+    coordinates_longitude: Field::Number.with_options(decimals: 2),
   }
 
   # COLLECTION_ATTRIBUTES
@@ -28,7 +28,7 @@ class VenueDashboard < Administrate::BaseDashboard
     :id,
     :name,
     :address,
-    :info
+    :info,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -42,7 +42,7 @@ class VenueDashboard < Administrate::BaseDashboard
     :created_at,
     :updated_at,
     :coordinates_latitude,
-    :coordinates_longitude
+    :coordinates_longitude,
   ]
 
   # FORM_ATTRIBUTES
@@ -54,7 +54,7 @@ class VenueDashboard < Administrate::BaseDashboard
     :info,
     :img,
     :coordinates_latitude,
-    :coordinates_longitude
+    :coordinates_longitude,
   ]
 
   # Overwrite this method to customize how venues are displayed

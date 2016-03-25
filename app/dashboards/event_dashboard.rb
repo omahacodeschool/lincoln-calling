@@ -15,7 +15,7 @@ class EventDashboard < Administrate::BaseDashboard
     start_date_time: Field::DateTime,
     end_date_time: Field::DateTime,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime
+    updated_at: Field::DateTime,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -27,7 +27,7 @@ class EventDashboard < Administrate::BaseDashboard
     :id,
     :artist_id,
     :venue_id,
-    :minimum_age
+    :minimum_age,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -40,7 +40,7 @@ class EventDashboard < Administrate::BaseDashboard
     :start_date_time,
     :end_date_time,
     :created_at,
-    :updated_at
+    :updated_at,
   ]
 
   # FORM_ATTRIBUTES
@@ -51,7 +51,7 @@ class EventDashboard < Administrate::BaseDashboard
     :venue_id,
     :minimum_age,
     :start_date_time,
-    :end_date_time
+    :end_date_time,
   ]
 
   # Overwrite this method to customize how events are displayed

@@ -16,7 +16,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     publish_date_time: Field::DateTime,
-    news_or_visitor: Field::String
+    news_or_visitor: Field::String,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -28,7 +28,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     :id,
     :title,
     :user_id,
-    :article_content
+    :article_content,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -42,7 +42,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     :created_at,
     :updated_at,
     :publish_date_time,
-    :news_or_visitor
+    :news_or_visitor,
   ]
 
   # FORM_ATTRIBUTES
@@ -54,7 +54,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     :article_content,
     :image,
     :publish_date_time,
-    :news_or_visitor
+    :news_or_visitor,
   ]
 
   # Overwrite this method to customize how articles are displayed

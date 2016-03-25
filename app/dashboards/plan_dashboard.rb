@@ -12,7 +12,7 @@ class PlanDashboard < Administrate::BaseDashboard
     phone_number: Field::Number,
     event_id: Field::Number,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime
+    updated_at: Field::DateTime,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -24,7 +24,7 @@ class PlanDashboard < Administrate::BaseDashboard
     :id,
     :phone_number,
     :event_id,
-    :created_at
+    :created_at,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -34,7 +34,7 @@ class PlanDashboard < Administrate::BaseDashboard
     :phone_number,
     :event_id,
     :created_at,
-    :updated_at
+    :updated_at,
   ]
 
   # FORM_ATTRIBUTES
@@ -42,7 +42,7 @@ class PlanDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :phone_number,
-    :event_id
+    :event_id,
   ]
 
   # Overwrite this method to customize how plans are displayed
