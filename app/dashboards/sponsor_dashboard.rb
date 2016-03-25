@@ -16,7 +16,7 @@ class SponsorDashboard < Administrate::BaseDashboard
     sponsor_order: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    logo: Field::String,
+    logo: Field::String
   }
 
   # COLLECTION_ATTRIBUTES
@@ -28,7 +28,7 @@ class SponsorDashboard < Administrate::BaseDashboard
     :id,
     :name,
     :website,
-    :premier,
+    :premier
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -42,7 +42,7 @@ class SponsorDashboard < Administrate::BaseDashboard
     :sponsor_order,
     :created_at,
     :updated_at,
-    :logo,
+    :logo
   ]
 
   # FORM_ATTRIBUTES
@@ -54,7 +54,7 @@ class SponsorDashboard < Administrate::BaseDashboard
     :premier,
     :description,
     :sponsor_order,
-    :logo,
+    :logo
   ]
 
   # Overwrite this method to customize how sponsors are displayed
