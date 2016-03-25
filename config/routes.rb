@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  
-  get "news" => 'news#index'
 
   namespace :admin do
     resources :users
@@ -10,6 +8,8 @@ resources :events
 resources :plans
 resources :tickets
 resources :venues
+resources :sponsors
+
 
     root to: "users#index"
   end
@@ -21,4 +21,5 @@ resources :venues
   get "artists/list/comedians" => "artists#index_comedians"
   get "sidebar/events" => 'sidebars#events'
   get "venues/list" => "venues#index"
+  get "news" => 'news#index'
 end

@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class UserDashboard < Administrate::BaseDashboard
+class SponsorDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -9,14 +9,14 @@ class UserDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    email: Field::String,
-    password: Field::String,
+    name: Field::String,
+    website: Field::String,
+    premier: Field::Boolean,
+    description: Field::Text,
+    logo: Field::String,
+    sponsor_order: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    first_name: Field::String,
-    last_name: Field::String,
-    profile_pic: Field::String,
-    blurb: Field::Text,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -25,19 +25,21 @@ class UserDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :email,
-    :first_name,
-    :last_name,
+    :id,
+    :name,
+    :premier,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :email,
-    :first_name,
-    :last_name,
-    :profile_pic,
-    :blurb,
+    :id,
+    :name,
+    :website,
+    :premier,
+    :description,
+    :logo,
+    :sponsor_order,
     :created_at,
     :updated_at,
   ]
@@ -46,18 +48,18 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :email,
-    :first_name,
-    :last_name,
-    :profile_pic,
-    :blurb,
-    :password,
+    :name,
+    :website,
+    :premier,
+    :description,
+    :logo,
+    :sponsor_order,
   ]
 
-  # Overwrite this method to customize how users are displayed
+  # Overwrite this method to customize how venues are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(user)
-    "#{user.email}"
-  end
+  # def display_resource(venue)
+  #   "Venue ##{venue.id}"
+  # end
 end
