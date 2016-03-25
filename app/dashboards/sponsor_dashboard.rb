@@ -10,13 +10,10 @@ class SponsorDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     name: Field::String,
-    address: Field::String,
-    info: Field::Text,
-    img: Field::String,
+    description: Field::Text,
+    logo: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    coordinates_latitude: Field::Number.with_options(decimals: 2),
-    coordinates_longitude: Field::Number.with_options(decimals: 2),
   }
 
   # COLLECTION_ATTRIBUTES
