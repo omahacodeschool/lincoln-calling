@@ -21,4 +21,5 @@ resources :sponsors
   get "artists/list" => "artists#index"
   get "sidebar/events" => 'sidebars#events'
   get "venues/list" => "venues#index"
+  get "news" => 'news#index'
 end
