@@ -2,6 +2,8 @@
 .map__image{
   width: 100%;
   display: block;
+  margin-bottom: 25px;
+
 }
 .teardrop__color{
   color: white;
@@ -20,10 +22,20 @@
   font-family: Oswald;
   font-weight: bold;
   font-size: 45px;
-  margin-top: 25px;
   background-color: white;
+  padding: 0px;
 }
 .venues__actual.venues__actual--selected{
   color: white;
   background-color: #565351;  
+}
+.venue_profile{
+  display: none;
+}
+
+
+@media (min-width: 740px){
+  .venue_profile{
+    display: block;
+  }
 }
