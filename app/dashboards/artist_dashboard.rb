@@ -13,7 +13,7 @@ class ArtistDashboard < Administrate::BaseDashboard
     genre: Field::String,
     origin: Field::String,
     website: Field::String,
-    bio: Field::String,
+    bio: Field::Text,
     image: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,

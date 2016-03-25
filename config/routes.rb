@@ -10,6 +10,7 @@ resources :events
 resources :plans
 resources :tickets
 resources :venues
+resources :sponsors
 
     root to: "users#index"
   end
