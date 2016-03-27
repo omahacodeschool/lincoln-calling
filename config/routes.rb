@@ -28,4 +28,5 @@ Rails.application.routes.draw do
   get "venues/list" => "venues#index"
   get "news" => 'news#index'
   get "visitors" => 'visitors#index'
+  get "visitors/:id" => 'visitors#show'
 end
