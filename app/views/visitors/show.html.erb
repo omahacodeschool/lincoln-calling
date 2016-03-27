@@ -1,13 +1,12 @@
-<h1>Visitor's Guide | <%= @article.title %></h1>
+<div class="page_header__left">Info</div>
+<img class="news__image" src=<%=@article.image%>></div>
+<div class="news_container container">
+  
+  <div class="news_single__title"><%= @article.title %></div>
+  <div class="news_single__content"><%= @article.article_content %>
+  </div>
+</div>
 
-<img src="<%= @article.image %>" alt="Article Pic" >
-<h2><%= @article.title %></h2><br>
 <h6>by <%= @article.user_access.user_full_name %> | published <%= @article.monthdayyear %>
-
-<p>
-
-  <%= @article.article_content %>
-
-</p>
-
 <img src="<%= @article.user_access.profile_pic %>" alt="Profile Pic"><%= @article.user_access.blurb %>
+  
