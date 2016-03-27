@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class ArticleDashboard < Administrate::BaseDashboard
+class VisitorDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -16,7 +16,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     publish_date_time: Field::DateTime,
-    type: Field::String,
+    type: Field::String
   }
 
   # COLLECTION_ATTRIBUTES
@@ -28,7 +28,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     :id,
     :title,
     :user_id,
-    :article_content,
+    :article_content
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -42,7 +42,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     :created_at,
     :updated_at,
     :publish_date_time,
-    :type,
+    :type
   ]
 
   # FORM_ATTRIBUTES
@@ -54,13 +54,13 @@ class ArticleDashboard < Administrate::BaseDashboard
     :article_content,
     :image,
     :publish_date_time,
-    :type,
+    :type
   ]
 
-  # Overwrite this method to customize how articles are displayed
+  # Overwrite this method to customize how visitors are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(article)
-  #   "Article ##{article.id}"
+  # def display_resource(visitor)
+  #   "Visitor ##{visitor.id}"
   # end
 end
