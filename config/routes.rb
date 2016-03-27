@@ -27,4 +27,5 @@ Rails.application.routes.draw do
   get "sidebar/artists/:id" => "sidebars#artists"
   get "venues/list" => "venues#index"
   get "news" => 'news#index'
+  get "visitors" => 'visitors#index'
 end
