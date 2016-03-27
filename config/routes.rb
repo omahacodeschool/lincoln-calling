@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     resources :sponsors
     resources :bands
     resources :comedians
+    resources :visitors
+    resources :features
     root to: "users#index"
   end
 
