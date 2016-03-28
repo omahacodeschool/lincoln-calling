@@ -18,7 +18,7 @@ class ArtistDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     headline_order: Field::Number,
-    is_band: Field::Boolean,
+    type: Field::String,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -46,7 +46,7 @@ class ArtistDashboard < Administrate::BaseDashboard
     :created_at,
     :updated_at,
     :headline_order,
-    :is_band,
+    :type,
   ]
 
   # FORM_ATTRIBUTES
@@ -60,7 +60,7 @@ class ArtistDashboard < Administrate::BaseDashboard
     :bio,
     :image,
     :headline_order,
-    :is_band,
+    :type,
   ]
 
   # Overwrite this method to customize how artists are displayed

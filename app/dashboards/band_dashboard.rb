@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class ArticleDashboard < Administrate::BaseDashboard
+class BandDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -9,13 +9,15 @@ class ArticleDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    title: Field::String,
-    user_id: Field::Number,
-    article_content: Field::Text,
+    name: Field::String,
+    genre: Field::String,
+    origin: Field::String,
+    website: Field::String,
+    bio: Field::Text,
     image: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    publish_date_time: Field::DateTime,
+    headline_order: Field::Number,
     type: Field::String,
   }
 
@@ -26,22 +28,24 @@ class ArticleDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
-    :title,
-    :user_id,
-    :article_content,
+    :name,
+    :genre,
+    :origin,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :id,
-    :title,
-    :user_id,
-    :article_content,
+    :name,
+    :genre,
+    :origin,
+    :website,
+    :bio,
     :image,
     :created_at,
     :updated_at,
-    :publish_date_time,
+    :headline_order,
     :type,
   ]
 
@@ -49,18 +53,20 @@ class ArticleDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :title,
-    :user_id,
-    :article_content,
+    :name,
+    :genre,
+    :origin,
+    :website,
+    :bio,
     :image,
-    :publish_date_time,
+    :headline_order,
     :type,
   ]
 
-  # Overwrite this method to customize how articles are displayed
+  # Overwrite this method to customize how bands are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(article)
-  #   "Article ##{article.id}"
+  # def display_resource(band)
+  #   "Band ##{band.id}"
   # end
 end

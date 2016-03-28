@@ -3,4 +3,8 @@ class SidebarsController  < ActionController::Base
     @events = Event.all
     @days = ["Thursday","Friday","Saturday"]
   end
+
+  def artists
+    @artist = Artist.find_by_id(params[:id])
+  end
 end

@@ -22,16 +22,41 @@
   margin-bottom: 20px;
 }
 
+.news_single__content {
+  padding-bottom: 30px;
+}
+
 .news_container {
   background-color: white;
   padding-top: 1px;
   padding-bottom: 15px;
 }
 
-.sidebar {
-
+.writer__image {
+  display: block;
+  width: 100px;
+  height:50px;
+  width: 50px;
+  float: left;
 }
 
-@media (max-width: 740px) {
-
+.writer__info {
+  background-color: white;
+  color: #dddddd;
+  padding: 25px 0px 25px 65px;
 }
+
+
+.home_emails {
+  display: none;
+}
+
+@media (min-width: 740px) {
+  .home_emails {
+  display: block;
+}
+}
+
+
+
+
