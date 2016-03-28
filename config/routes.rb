@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :comedians
     resources :visitors
     resources :features
-    resources :faq
+    resources :faqs
     root to: "users#index"
   end
 
