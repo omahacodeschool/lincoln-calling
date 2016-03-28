@@ -1,10 +1,10 @@
 class ArtistsController < ApplicationController
 
   def index
-    @artists = Artist.where(:is_band => true)
+    @artists = Band.all
   end
 
   def index_comedians
-    @comedians = Artist.where(:is_band => false)
+    @comedians = Comedian.all
   end
 end

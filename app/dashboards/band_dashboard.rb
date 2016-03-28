@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class SponsorDashboard < Administrate::BaseDashboard
+class BandDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -10,13 +10,15 @@ class SponsorDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     name: Field::String,
+    genre: Field::String,
+    origin: Field::String,
     website: Field::String,
-    premier: Field::Boolean,
-    description: Field::Text,
-    sponsor_order: Field::Number,
+    bio: Field::Text,
+    image: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    logo: Field::String,
+    headline_order: Field::Number,
+    type: Field::String,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -27,8 +29,8 @@ class SponsorDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :name,
-    :website,
-    :premier,
+    :genre,
+    :origin,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -36,13 +38,15 @@ class SponsorDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :id,
     :name,
+    :genre,
+    :origin,
     :website,
-    :premier,
-    :description,
-    :sponsor_order,
+    :bio,
+    :image,
     :created_at,
     :updated_at,
-    :logo,
+    :headline_order,
+    :type,
   ]
 
   # FORM_ATTRIBUTES
@@ -50,17 +54,19 @@ class SponsorDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :name,
+    :genre,
+    :origin,
     :website,
-    :premier,
-    :description,
-    :sponsor_order,
-    :logo,
+    :bio,
+    :image,
+    :headline_order,
+    :type,
   ]
 
-  # Overwrite this method to customize how sponsors are displayed
+  # Overwrite this method to customize how bands are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(sponsor)
-  #   "Sponsor ##{sponsor.id}"
+  # def display_resource(band)
+  #   "Band ##{band.id}"
   # end
 end

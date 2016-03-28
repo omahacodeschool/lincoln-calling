@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class SponsorDashboard < Administrate::BaseDashboard
+class FeatureDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -9,14 +9,14 @@ class SponsorDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    name: Field::String,
-    website: Field::String,
-    premier: Field::Boolean,
-    description: Field::Text,
-    sponsor_order: Field::Number,
+    title: Field::String,
+    user_id: Field::Number,
+    article_content: Field::Text,
+    image: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    logo: Field::String,
+    publish_date_time: Field::DateTime,
+    type: Field::String
   }
 
   # COLLECTION_ATTRIBUTES
@@ -26,41 +26,41 @@ class SponsorDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
-    :name,
-    :website,
-    :premier,
+    :title,
+    :user_id,
+    :article_content
   ]
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :id,
-    :name,
-    :website,
-    :premier,
-    :description,
-    :sponsor_order,
+    :title,
+    :user_id,
+    :article_content,
+    :image,
     :created_at,
     :updated_at,
-    :logo,
+    :publish_date_time,
+    :type
   ]
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :name,
-    :website,
-    :premier,
-    :description,
-    :sponsor_order,
-    :logo,
+    :title,
+    :user_id,
+    :article_content,
+    :image,
+    :publish_date_time,
+    :type
   ]
 
-  # Overwrite this method to customize how sponsors are displayed
+  # Overwrite this method to customize how features are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(sponsor)
-  #   "Sponsor ##{sponsor.id}"
+  # def display_resource(feature)
+  #   "Feature ##{feature.id}"
   # end
 end
