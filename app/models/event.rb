@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
-  belongs_to :venue, :artist
+  belongs_to :venue
+  belongs_to :artist
 
   # #returns the venue id for event
   # def venue
