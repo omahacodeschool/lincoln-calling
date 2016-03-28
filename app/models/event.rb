@@ -1,3 +1,5 @@
+#Model for Event
+#The Event Schema includes artist_id:integer, venue_id:integer, minimum_age:string(for example: "21 and Older"), start_date_time:datetime, end_date_time:datetime
 class Event < ActiveRecord::Base
   belongs_to(:venue)
   belongs_to(:artist)

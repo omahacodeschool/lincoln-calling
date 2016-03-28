@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class ArticleDashboard < Administrate::BaseDashboard
+class FeatureDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -57,10 +57,10 @@ class ArticleDashboard < Administrate::BaseDashboard
     :type,
   ]
 
-  # Overwrite this method to customize how articles are displayed
+  # Overwrite this method to customize how features are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(article)
-  #   "Article ##{article.id}"
+  # def display_resource(feature)
+  #   "Feature ##{feature.id}"
   # end
 end

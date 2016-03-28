@@ -1,0 +1,13 @@
+<% @about.each do |about| %>  
+  <div class="clear">
+    <div class="page_header__left"><%= about.title.upcase%></div>
+  </div>
+  <div class="white_background">
+    <div class="clear">
+      <div class="about">      
+        <img class="about__image" src=<%= about.image %>>
+        <div class="about__content"><%= about.article_content%></div>
+      </div>
+    </div>
+  </div>
+<% end %>

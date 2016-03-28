@@ -1,12 +1,15 @@
+#Model for Article--has two main classes News and Visitor, and two additional, lesser used classes, About and FAQ
+#The schema for the model includes title:string user_id:integer(user id of the author), article_content:text, image:string(article image),publish_date_time:date_time, and type:string(where we establish a Class of News or Visitor, or less often, FAQ or About)
+
 class Article < ActiveRecord::Base
   
-  def self.news_articles
-    self.where(news_or_visitor: "news")
-  end
+  # def self.news_articles
+  #   self.where(news_or_visitor: "news")
+  # end
 
-  def self.visitor_articles
-    self.where(news_or_visitor: "visitor")
-  end
+  # def self.visitor_articles
+  #   self.where(news_or_visitor: "visitor")
+  # end
 
   def user_access
     x = self.user_id

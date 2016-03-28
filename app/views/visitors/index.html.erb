@@ -1,0 +1,12 @@
+<div class="clear">
+  <div class="page_header_left">VISITOR GUIDE</div>
+</div>
+<div class="clear">
+  <div class="visitor_guide">
+  <% @articles.each do |article| %>
+    <a href="/info/visitors/<%= article.id %>">
+      <img class="visitor_guide__image" src=<%= article.image %>></div>
+    </a>
+    <div class="visitor_guide__title"><%= article.title %></div>
+  <% end %>
+</div>
