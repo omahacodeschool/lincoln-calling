@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :comedians
     resources :visitors
     resources :features
+    resources :faqs
     root to: "users#index"
   end
 
@@ -27,6 +28,7 @@ Rails.application.routes.draw do
   get "sidebar/artists/:id" => "sidebars#artists"
   get "venues/list" => "venues#index"
   get "news" => 'news#index'
-  get "visitors" => 'visitors#index'
-  get "visitors/:id" => 'visitors#show'
+  get "info/visitors" => 'visitors#index'
+  get "info/visitors/:id" => 'visitors#show'
+  get "info/faq" => 'info#faq'
 end
