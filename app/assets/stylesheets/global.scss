@@ -55,6 +55,13 @@ body{
  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAATUlEQVQYV2NkQAN37979DxJSVlZmRJZC4YAUwRQgs0Ea4ArRJUCSyGJghdgUwayFyTHiU4SsmHiFRFuN7hbkIMHwDDbFOIMHWTG2AAcADK5HN3l5s5EAAAAASUVORK5CYII=) repeat;
 }
 
+@media (min-width: $breakpoint-tablet){
+  .page_header{
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
 
 
 
