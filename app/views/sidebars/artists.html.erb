@@ -1,0 +1,16 @@
+<h1>Artist sidebar</h1>
+
+<%= @artist.name %><br>
+<%= @artist.website %><br>
+<%= @artist.origin %><br>
+<% @artist.event_start.each do |event| %>
+  <%= event %><br>
+<% end %>
+<% @artist.event_end.each do |event| %>
+  <%= event %><br>
+<% end %>
+<% @artist.venue_name.each do |event| %>
+  <%= event %><br>
+<% end %>
+<%= @artist.bio %><br>
+
