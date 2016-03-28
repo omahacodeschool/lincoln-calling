@@ -27,7 +27,7 @@ class FaqDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :title,
-    :user_id,
+    # :user_id,
     :article_content,
   ]
 
@@ -35,11 +35,11 @@ class FaqDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :id,
-    :title,
-    :user_id,
+     :title,
+    # :user_id,
     :article_content,
-    :image,
-    :created_at,
+    # :image,
+    # :created_at,
     :updated_at,
     :publish_date_time,
     :type,
@@ -50,9 +50,9 @@ class FaqDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :title,
-    :user_id,
+    # :user_id,
     :article_content,
-    :image,
+    # :image,
     :publish_date_time,
     :type,
   ]
@@ -60,7 +60,7 @@ class FaqDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how faqs are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(faq)
-  #   "Faq ##{faq.id}"
-  # end
+  def display_resource(faq)
+    "Frequently Asked Question ##{faq.id}"
+  end
 end
