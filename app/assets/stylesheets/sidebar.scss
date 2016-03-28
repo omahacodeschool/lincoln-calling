@@ -10,6 +10,7 @@
   font-size: 30px;
   font-weight: 100;
   padding: 3px 0px 3px 15px;
+  white-space: nowrap;
 }
 .dates{
   margin-top: 10px;
@@ -52,14 +53,14 @@
 .concert{
   background-color: white;
 }
-.conert__name{
+.concert__name{
   color: #565351;
   font-family: Oswald;
   font-size: 25px;
   padding-left: 20px;
   padding-top: 15px;
 }
-.conert__time{
+.concert__time{
   color: #c9c9c9;
   font-family: Oswald;
   font-family: Yanone Kaffeesatz;

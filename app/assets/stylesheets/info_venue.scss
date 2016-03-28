@@ -12,7 +12,7 @@
   padding: 5px 0px 5px 20px;
   margin-bottom: 10px;
 }
-.venues__actual{
+.venues__text{
   color: #565351;
   background-color: #dddddd;
   padding: 5px 0px 5px 20px;
@@ -24,8 +24,9 @@
   font-size: 45px;
   background-color: white;
   padding: 0px;
+  max-height: 100%;
 }
-.venues__actual.venues__actual--selected{
+.venues__text.venues__text--selected{
   color: white;
   background-color: #565351;  
 }
@@ -37,5 +38,8 @@
 @media (min-width: 740px){
   .venue_profile{
     display: block;
+  }
+  .side_bar{
+    font-size: 2vw;
   }
 }

@@ -15,6 +15,7 @@
   color: white;
   text-align: center;
   font-size: 20px;
+  overflow: hidden;
 }
 
 .nav_bar__triangle_up{
@@ -43,14 +44,14 @@
 
 .nav_bar__menu_left{
   padding: 10px 0px 0px 0px;
-  background-color: #565351;
+
   color: white;
   font-size: 20px;
 }
 
 .nav_bar__menu_right{
   padding: 10px 0px 0px 0px;
-  background-color: #565351;
+
   color: white;
   font-size: 20px;
 }
@@ -67,5 +68,6 @@
 .nav_bar_menu {
   background-color: #565351;
   margin-bottom: 25px;
+  overflow: hidden;
 }
 
