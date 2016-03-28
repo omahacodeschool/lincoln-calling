@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :visitors
     resources :features
     resources :faqs
+    resources :abouts
     root to: "users#index"
   end
 
@@ -31,4 +32,5 @@ Rails.application.routes.draw do
   get "info/visitors" => 'visitors#index'
   get "info/visitors/:id" => 'visitors#show'
   get "info/faq" => 'info#faq'
+  get "info/about" => 'info#about'
 end
