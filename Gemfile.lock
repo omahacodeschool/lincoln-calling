@@ -83,6 +83,11 @@ GEM
     capybara-webkit (1.8.0)
       capybara (>= 2.3.0, < 2.7.0)
       json
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     code_analyzer (0.4.5)
       sexp_processor
     codeclimate-engine-rb (0.3.1)
@@ -363,6 +368,7 @@ DEPENDENCIES
   bullet
   bundler-audit (>= 0.5.0)
   capybara-webkit
+  carrierwave
   database_cleaner
   delayed_job_active_record
   devise
