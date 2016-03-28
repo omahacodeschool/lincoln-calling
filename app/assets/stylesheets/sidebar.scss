@@ -2,15 +2,18 @@
 
 .side_bar{
   background-color: #dddddd;
+
 }
 .side_bar__title{
   background-color: #565351;
   color: #dddddd;
   font-family: Yanone Kaffeesatz;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 100;
   padding: 3px 0px 3px 15px;
   white-space: nowrap;
+  overflow: scroll;
+  clear: both;
 }
 .dates{
   margin-top: 10px;
@@ -78,6 +81,33 @@
   text-align: right;
 }
 
+@media (min-width: 740px){
+  .side_bar{
+    margin-right: 15px;
+    margin-left: 7.5px;
+  }
+  .side_bar__title{
+    font-size: 20px;
+  }
+  .day_link__day{
+    font-size: 15px;
+  }
+  .day_link__date{
+    font-size: 30px;
+  }
+  .day_link.day_link--left{
+    margin-left: 5px;
+    margin-right: 2.5px;
+  }
+.day_link.day_link--mid{
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+  }
+.day_link.day_link--right{
+    margin-left: 2.5px;
+    margin-right: 5px;
+  }
 
+}
 
 
