@@ -1,4 +1,5 @@
 class Artist < ActiveRecord::Base
+  has_many(:events)
 
   def event_start
     event_start = []

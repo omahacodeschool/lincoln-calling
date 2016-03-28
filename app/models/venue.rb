@@ -1,5 +1,5 @@
 class Venue < ActiveRecord::Base
-  has_many :events
+  has_many(:events)
   ## allevents find all events at given venue
   #
   # Returns Array of Event objects
