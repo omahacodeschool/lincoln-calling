@@ -30,4 +30,5 @@ Rails.application.routes.draw do
   get "news" => 'news#index'
   get "info/visitors" => 'visitors#index'
   get "info/visitors/:id" => 'visitors#show'
+  get "info/faq" => 'info#faq'
 end
