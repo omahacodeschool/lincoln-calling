@@ -8,6 +8,7 @@ class ComedianDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    events: Field::HasMany,
     id: Field::Number,
     name: Field::String,
     genre: Field::String,
@@ -27,15 +28,16 @@ class ComedianDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
+    :events,
     :id,
     :name,
     :genre,
-    :origin,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
+    :events,
     :id,
     :name,
     :genre,
@@ -53,6 +55,7 @@ class ComedianDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
+    :events,
     :name,
     :genre,
     :origin,
@@ -66,7 +69,7 @@ class ComedianDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how comedians are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(comedian)
-  #   "Comedian ##{comedian.id}"
-  # end
+  def display_resource(comedian)
+    "Comedian #{comedian.name}"
+  end
 end
