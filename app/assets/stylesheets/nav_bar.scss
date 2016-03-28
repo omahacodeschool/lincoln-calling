@@ -1,9 +1,21 @@
 .orange_box{
   font-family: Montserrat;
-  padding: 10px 0px 10px 0px;
+  padding: 15px 0px 15px 0px;
   background-color: #ff8110;
   color: white;
   text-align: center;
+
+  
+}
+.orange_box__icon{
+  display: none;
+  float: left;
+  font-size: 80px;
+  border-right: 2px solid white;
+  margin: -21px 0px 0px 0px;
+  padding: 16px 29px 6px 25px;
+}
+.orange_box__text{
   font-size: 40px;
   text-shadow: 3px 6px #8f8f8f;
 }
@@ -69,5 +81,14 @@
   background-color: #565351;
   margin-bottom: 25px;
   overflow: hidden;
+}
+
+@media (min-width: $breakpoint-tablet){
+  .orange_box__icon{
+    display: inline;
+  }
+  .orange_box__text{
+    font-size: 55px;
+  }
 }
 
