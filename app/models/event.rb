@@ -1,8 +1,11 @@
 class Event < ActiveRecord::Base
-  #returns the venue id for event
-  def venue
-    Venue.find_by_id(self.venue_id)
-  end
+  belongs_to :venue, :artist
+
+  # #returns the venue id for event
+  # def venue
+  #   Venue.find_by_id(self.venue_id)
+  # end
+
   #returns the artist id for event
   def artist
     Artist.find_by_id(self.artist_id)
