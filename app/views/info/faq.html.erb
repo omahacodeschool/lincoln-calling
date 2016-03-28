@@ -1,3 +1,10 @@
-<% @faq.each do |faq| %>
-  <p><%= faq.title %></p>
-<% end %>
+<div class="white_background">
+  <div class="clear">
+    <div class="faq">
+      <% @faq.each do |faq| %>
+        <div class="faq__question"><%=faq.title%></div>
+        <div class="faq__answer"><%=faq.article_content%></div>
+      <% end %>
+    </div>
+  </div>
+</div>
