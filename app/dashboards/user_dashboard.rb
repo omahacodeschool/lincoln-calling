@@ -12,7 +12,7 @@ class UserDashboard < Administrate::BaseDashboard
     email: Field::String,
     password: Field::String,
     blurb: Field::Text,
-    profile_pic: Field::String,
+    profile_pic: CarrierwaveField,
     first_name: Field::String,
     last_name: Field::String,
     created_at: Field::DateTime,
@@ -29,6 +29,7 @@ class UserDashboard < Administrate::BaseDashboard
     :email,
     :first_name,
     :last_name,
+    :profile_pic,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -62,4 +63,5 @@ class UserDashboard < Administrate::BaseDashboard
   def display_resource(user)
     "User #{user.first_name} #{user.last_name}"
   end
+
 end

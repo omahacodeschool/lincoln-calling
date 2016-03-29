@@ -16,7 +16,7 @@ class SponsorDashboard < Administrate::BaseDashboard
     sponsor_order: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    logo: Field::String,
+    logo: CarrierwaveField,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -29,6 +29,7 @@ class SponsorDashboard < Administrate::BaseDashboard
     :name,
     :website,
     :premier,
+    :logo
   ]
 
   # SHOW_PAGE_ATTRIBUTES

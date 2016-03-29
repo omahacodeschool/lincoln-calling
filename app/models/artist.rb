@@ -53,4 +53,6 @@ class Artist < ActiveRecord::Base
     return venue_address
   end
 
+  mount_uploader :image, ArtistImageUploader
+
 end

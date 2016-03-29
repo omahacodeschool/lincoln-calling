@@ -1,0 +1,83 @@
+$schedule-left-column-width: 80px;
+$schedule-venue-column-width: $schedule-left-column-width * 2;
+$pixels-per-fifteen-minutes: 40px;
+
+.schedule_times{
+  float: left;
+  width: $schedule-left-column-width;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.schedule_times__item{
+  height: $pixels-per-fifteen-minutes * 4;
+}
+
+.venue_shows_container{
+  margin-left: $schedule-left-column-width;
+}
+
+.venue_shows{
+}
+
+.venue_shows.venue_shows--hide-for-tablet{
+  display: none;
+}
+.triangle-left {
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  border-right: 100px solid red;
+  border-bottom: 50px solid transparent;
+}
+.triangle-right {
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  border-left: 100px solid red;
+  border-bottom: 50px solid transparent;
+}
+
+@media (min-width: 420px){
+  .venue_shows{
+    float: left;
+    width: $schedule-venue-column-width;
+  }
+
+  .venue_shows.venue_shows--hide-for-tablet{
+    display: block;
+  }
+}
+
+.show{
+  background: #999;
+  border-left: 10px solid #999;
+}
+.show.show--empty{
+  background: transparent;
+  border-left: none;
+}
+
+.show.show--all_ages{
+  border-left-color: #F67C00;
+}
+.show.show--18-plus{
+  border-left-color: #00F61D;
+}
+.show.show--21-plus{
+  border-left-color: #F6008D;
+}
+
+.show--15, .show--empty-15{
+  height: $pixels-per-fifteen-minutes;
+}
+.show--30, .show--empty-30{
+  height: $pixels-per-fifteen-minutes * 2;
+}
+.show--45, .show--empty-45{
+  height: $pixels-per-fifteen-minutes * 3;
+}
+.show--60, .show--empty-60{
+  height: $pixels-per-fifteen-minutes * 4;
+}
