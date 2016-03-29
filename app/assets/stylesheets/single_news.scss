@@ -64,7 +64,7 @@
   display: none;
 }
 
-@media ($breakpoint-tablet) {
+@media (min-width: $breakpoint-tablet) {
 
   .home_emails {
     display: block;
