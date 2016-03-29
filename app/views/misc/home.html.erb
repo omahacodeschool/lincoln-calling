@@ -53,16 +53,7 @@
           <a href="#" class="day_link day_link--left day_link--selected">
             <span href="#" class="day_link__day">Thursday</span>
             <span href="#" class="day_link__date">6</span>
-          </a>
-          <div class="concert">
-            <% daysevents = @events.byday("Thursday") %>
-            <% if daysevents %>
-              <% daysevents.each do |event| %>
-                <div class="concert__name"><%= event.artist.name%> at <%= event.venue.name %></div>
-                <div class="concert__time"><%= event.starttime %></div>
-              <%end%>
-            <%end%>
-          </div>  
+          </a>  
         </div>
         <div class="col-4">
           <a href="#" class="day_link day_link--mid">
@@ -78,7 +69,8 @@
         </div>
       </div>
       <div class="concert">
-        <% daysevents = @events.byday("Thursday") %>
+        <% day = "Friday" %>
+        <% daysevents = @events.byday(day) %>
         <% if daysevents %>
           <% daysevents.each do |event| %>
             <div class="concert__name"><%= event.artist.name%> at <%= event.venue.    name %></div>
