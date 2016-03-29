@@ -21,6 +21,16 @@
   text-align: center;
 }
 
+.page_header__left_full{
+  font-family: Oswald;
+  color: #565351;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0px 10px 0px 20px;
+  background-color: #c9c9c9;
+  text-align: left;
+}
+
 .page_header__right{
   font-family: Yanone Kaffeesatz;
   color: #565351;
@@ -65,10 +75,31 @@
   text-align: right;
   width: 80%
 }
-
+.home_emails{
+  color: #565351;
+  border: 2px solid #c9c9c9;
+  margin: 25px 0px 25px 0px;
+  background-color: white;
+  padding: 10px 20px 10px 20px;
+  font-size: 20px;
+  font-family: Oswald;
+}
+  .footer{
+    margin-top: 25px;
+  }
 
 @media (min-width: $breakpoint-tablet){
   .page_header{
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .home_emails {
+    display: block;
+    font-size: 16px;
+    padding: 1px;
+    margin: 0px 15px 25px 0px;
+  }
+  .footer{
     margin-left: 15px;
     margin-right: 15px;
   }
