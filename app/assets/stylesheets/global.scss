@@ -21,13 +21,8 @@
   text-align: center;
 }
 
-.page_header__left_full{
-  font-family: Oswald;
-  color: #565351;
-  font-size: 20px;
-  font-weight: bold;
-  padding: 0px 10px 0px 20px;
-  background-color: #c9c9c9;
+.page_header__left.page_header__left--full{
+  width: 100%;
   text-align: left;
 }
 
