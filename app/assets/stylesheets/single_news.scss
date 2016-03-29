@@ -55,8 +55,11 @@
   display: none;
 }
 
+.side_bar {
+  display: none;
+}
 
-@media (min-width: $container-tablet) {
+@media (min-width: $breakpoint-tablet) {
 
 
   .news_single__image {
@@ -89,6 +92,10 @@
     padding: 2px 3px 1px 3px;
     margin: 0px 10px 25px 10px;
     color: #c9c9c9;
+  }
+
+  .side_bar {
+    display: block;
   }
 }
 

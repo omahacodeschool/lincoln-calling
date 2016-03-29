@@ -17,8 +17,18 @@
   font-weight: bold;
   padding: 0px 10px 0px 20px;
   background-color: #c9c9c9;
-  width: 20%;
+  width: 25%;
   text-align: center;
+}
+
+.page_header__left_full{
+  font-family: Oswald;
+  color: #565351;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0px 10px 0px 20px;
+  background-color: #c9c9c9;
+  text-align: left;
 }
 
 .page_header__right{
@@ -30,7 +40,7 @@
   font-weight: 300;
   border-left: solid white 1px;
   float: right;
-  width: 80%;
+  width: 75%;
 }
 
 .header_divider_top {
@@ -63,7 +73,7 @@
   padding-right: 10px;
   background-color: #c9c9c9;
   text-align: right;
-  width: 85%
+  width: 80%
 }
 .home_emails{
   color: #565351;
@@ -102,7 +112,7 @@
   background-color: #c9c9c9;
   font-weight: 300;
   border-left: solid white 1px;
-  width: 15%;
+  width: 20%;
   float:right;
   text-align: center;
 }
