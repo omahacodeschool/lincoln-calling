@@ -12,7 +12,7 @@ class VisitorDashboard < Administrate::BaseDashboard
     title: Field::String,
     user_id: Field::Number,
     article_content: Field::Text,
-    image: Field::String,
+    image: CarrierwaveField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     publish_date_time: Field::DateTime,
@@ -29,6 +29,7 @@ class VisitorDashboard < Administrate::BaseDashboard
     :title,
     :user_id,
     :article_content,
+    :image, 
   ]
 
   # SHOW_PAGE_ATTRIBUTES

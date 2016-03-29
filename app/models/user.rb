@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
   def user_full_name
     return self.first_name + " " + self.last_name
   end
+
+  mount_uploader :profile_pic, ProfilePicUploader
 end

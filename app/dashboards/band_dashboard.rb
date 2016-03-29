@@ -15,7 +15,7 @@ class BandDashboard < Administrate::BaseDashboard
     origin: Field::String,
     website: Field::String,
     bio: Field::Text,
-    image: Field::String,
+    image: CarrierwaveField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     headline_order: Field::Number,
@@ -32,6 +32,7 @@ class BandDashboard < Administrate::BaseDashboard
     :id,
     :name,
     :genre,
+    :image,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
