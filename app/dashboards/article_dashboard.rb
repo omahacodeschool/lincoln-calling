@@ -29,7 +29,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     :title,
     :user_id,
     :article_content,
-    :image,
+    :image, 
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -61,7 +61,7 @@ class ArticleDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how articles are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(article)
-    "#{article.title} (#{article.type})"
-  end
+  # def display_resource(article)
+  #   "Article ##{article.id}"
+  # end
 end

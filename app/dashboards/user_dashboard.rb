@@ -20,7 +20,7 @@ class UserDashboard < Administrate::BaseDashboard
     current_sign_in_ip: Field::String.with_options(searchable: false),
     last_sign_in_ip: Field::String.with_options(searchable: false),
     blurb: Field::Text,
-    profile_pic: Field::String,
+    profile_pic: CarrierwaveField,
     first_name: Field::String,
     last_name: Field::String,
     created_at: Field::DateTime,
@@ -37,6 +37,7 @@ class UserDashboard < Administrate::BaseDashboard
     :email,
     :encrypted_password,
     :reset_password_token,
+    :profile_pic
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -84,7 +85,7 @@ class UserDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how users are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(user)
-    "#{user.first_name} #{user.last_name}"
-  end
+  # def display_resource(user)
+  #   "User ##{user.id}"
+  # end
 end
