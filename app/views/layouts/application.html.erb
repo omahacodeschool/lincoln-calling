@@ -25,21 +25,21 @@
   </div>
   <div class="clear">
     <div class="col-12-tablet">
-      <div class="nav_bar">
+      <div class="nav_bar" id="collapsable_nav">
         <div class="col-4">
-          <div class="nav_bar__triangle_up triangle_up--left"></div>
+          <div id="triangle_left" class="triangle_down triangle_down--left"></div>
         </div>
         <div class="col-4">
-          <div class="nav_bar__text">CLOSE MENU</div>
+          <div class="nav_bar__text" id="collapsable_nav_link_text">OPEN MENU</div>
         </div>
         <div class="col-4">
-          <div class="nav_bar__triangle_up triangle_up--right"></div>
+          <div id="triangle_right" class="triangle_down"></div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="clear ">
+  <div class="clear is_hidden" id="collapsable_nav_contents">
     <div class="col-12-tablet">
       <div class="nav_bar_menu">
         <div class="col-6 nav_bar__menu_left">
@@ -63,30 +63,30 @@
 <%= yield %>
 
 <div class="clear">
+  <div class="footer">
 
-  <div class="footer_top col-3">
-    <div class="footer_top__sponsor">SPONSORS:</div>
-  </div>
-  
-  <div class="footer_top col-3">
-    <div class="footer_top__sponsor_logo">LOGO</div>
-  </div>
-  
-  <div class="footer_top col-3">
-    <div class="footer_top__sponsor_logo">LOGO</div>
-  </div>
-  
-  <div class="footer_top col-3">
-    <div class="footer_top__sponsor_logo">LOGO</div>
-  </div>
-</div>
+    <div class="footer_top col-3">
+      <div class="footer_top__sponsor">SPONSORS:</div>
+    </div>
+    
+    <div class="footer_top col-3">
+      <div class="footer_top__sponsor_logo">LOGO</div>
+    </div>
+    
+    <div class="footer_top col-3">
+      <div class="footer_top__sponsor_logo">LOGO</div>
+    </div>
+    
+    <div class="footer_top col-3">
+      <div class="footer_top__sponsor_logo">LOGO</div>
+    </div>
 
-<div class="clear">
+  <div class="clear">
 
-  <div class="footer_bottom">
-    <div class="footer_bottom__site_creator">SITE BY: OCS</div>
+    <div class="footer_bottom">
+      <div class="footer_bottom__site_creator">SITE BY: OCS</div>
+    </div>
   </div>
-
 </div>
 
   <%= render "javascript" %>

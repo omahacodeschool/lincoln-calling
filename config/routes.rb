@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   get "info/faq" => 'info#faq'
   get "info/about" => 'info#about'
   get "news" => 'news#index'
+  get "news/:id" => "news#show"
   get "sidebar/events" => 'sidebars#events'
   get "sidebar/artists/:id" => "sidebars#artists"
   get "sponsors/list" => "sponsors#index"

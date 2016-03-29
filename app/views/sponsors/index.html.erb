@@ -1,1 +1,32 @@
-<h1>Sponsors</h1>
+<div class="clear">
+  <div class="page_header__left">SPONSORS</div>
+</div>
+<!-- Sponsor module -->
+<div class="col-3-tablet">
+  <% @sponsors.order(:sponsor_order).each do |sponsor| %>
+    <% if sponsor.premier == true %>
+      <a href="<%=sponsor.website%>" class="primary_sponsor">
+        <img src="<%=sponsor.logo%>" class="primary_sponsor__logo">
+        <span class="primary_sponsor__name"><%=sponsor.name%></span>
+        <span class="primary_sponsor__description"><%=sponsor.description%></span>
+      </a>
+    <% end %>
+  <% end %>  
+</div> 
+  
+
+
+  
+    
+  
+    
+    
+  
+<!-- This is the code for displaying the non-premier sponsors when we figure out how we're displaying them. -->
+
+<!-- # <% @sponsors.order(:sponsor_order).each do |sponsor| %>
+#   <% if sponsor.premier == false %>
+#     <%= sponsor.logo %><br>
+#   <% end %>
+# <% end %>
+ -->
