@@ -1,11 +1,11 @@
 .artist_module {
-  margin-left: 15px;
-  width: 45%;
+  float: left;
+  margin: 7.5px;
+
 }
 
 .artist_module__image{
   width: 100%;
-  object-fit: cover;
   display: block;
 }
 
@@ -13,12 +13,8 @@
   background-color: #8f8f8f;
   color: white;
   text-align: center;
-  padding: 30px;
+  padding: 20px;
 }
-// .artist_module__name.artist_module__name--highlighted{
-//   background-color: #EDFFA9;
-//   color: #0056FF;
-// }
 
 .artist_module__origin {
   background-color: #c9c9c9;
@@ -27,17 +23,9 @@
   padding: 5px;
 }
 
-.artist_image_left {
-
-  width: 180px;
-  height: 200px;
-  
-}
-
 .artist_white_background {
   background-color: white;
-  padding-top: 1px;
-  padding-bottom: 100px;
+  overflow: hidden;
 }
 
 .artist_search_box {
@@ -51,15 +39,26 @@
 
 .artist_search_box__text {
   font-family: Yanone Kaffeesatz;
-  float: left;
   font-weight: 100;
   font-size: 35px;
 }
 
 .artist_search_box__icon {
   float: right;
-  font-weight: 100;
-  font-size: 35px;
-  padding-right: 10px;
+  position: relative;
+  top: 14px;
+  right: 22px;
 }
+
+
+@media (min-width: $breakpoint-tablet){
+
+  .artist_search_box {
+  width: 40%;
+  }
+
+}
+
+
+
 
