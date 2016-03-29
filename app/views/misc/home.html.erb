@@ -11,7 +11,11 @@
     </div>
     <div class="bands__others">
       <% @otherartists.each do |artist| %>
-        <%= artist.name %> + 
+        <% if artist == @otherartists[-1]%>
+          <%= artist.name %>
+        <% else %>
+          <%= artist.name %> + 
+        <% end %>
       <% end%>
     </div>
   </div>
