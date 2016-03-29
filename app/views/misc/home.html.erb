@@ -1,4 +1,18 @@
-
+<div class="clear">
+  <div class="col-8-tablet">
+    <div class="clear home_news">
+      <% @articles.each do |article|%>
+        <img src=<%=article.image%> class="col-6 home_news_img">
+        <div class="col-6 home_news_headlines"> <%=article.title%></div>
+        <a href="/news" class="home_more_news">see more news</a>
+      <%end%>
+    </div>
+  </div>
+  <div class="col-4-tablet">
+    <div class="home_emails">
+      <div id="home_computer_icon" class="icon"></div>
+      <div id="home_email_text">SIGN UP FOR EMAIL UPDATES</div>
+    </div>
 
     <div class="side_bar">
       <div class="side_bar__title">
