@@ -63,7 +63,7 @@ class VenueDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how venues are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(venue)
-    "#{venue.name}"
-  end
+  # def display_resource(venue)
+  #   "Venue ##{venue.id}"
+  # end
 end
