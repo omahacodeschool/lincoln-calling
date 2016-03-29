@@ -51,11 +51,6 @@
   padding: 25px 0px 25px 65px;
 }
 
-
-.home_emails {
-  display: none;
-}
-
 .news_single__byline {
   display: none;
 }
@@ -66,12 +61,6 @@
 
 @media (min-width: $breakpoint-tablet) {
 
-  .home_emails {
-    display: block;
-    font-size: 16px;
-    padding: 1px;
-    margin: 0 0px 25px 0px;
-  }
 
   .news_single__image {
     display: block;
