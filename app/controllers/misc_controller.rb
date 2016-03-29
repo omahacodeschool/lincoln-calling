@@ -1,7 +1,9 @@
 class MiscController < ApplicationController
   def home
     @events = Event.all
-    #once we have full web views, this number will have to be bigger
-    @articles = Feature.all.order("id DESC").limit(1)
+    articles = Feature.all.order("id DESC").limit(4)
+    @featurearticle = articles[0]
+    @articles = articles[1..3]
+    @artists= Band.order(:headline_order).limit(3)
   end  
 end
