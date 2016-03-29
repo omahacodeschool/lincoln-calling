@@ -77,11 +77,9 @@
   font-family: Oswald;
 }
 #home_computer_icon{
-  text-align: right;
+  float: right;
+  position: relative;
+  top: 5px;
 }
-#home_email_text{
-  float: left;
-}
-
 
 

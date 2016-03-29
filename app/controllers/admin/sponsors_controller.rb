@@ -5,12 +5,12 @@ module Admin
     #
     # def index
     #   super
-    #   @resources = Venue.all.paginate(10, params[:page])
+    #   @resources = Sponsor.all.paginate(10, params[:page])
     # end
 
     # Define a custom finder by overriding the `find_resource` method:
     # def find_resource(param)
-    #   Venue.find_by!(slug: param)
+    #   Sponsor.find_by!(slug: param)
     # end
 
     # See https://administrate-docs.herokuapp.com/customizing_controller_actions

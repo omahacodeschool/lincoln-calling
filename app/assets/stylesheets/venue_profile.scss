@@ -2,8 +2,10 @@
   border-top: solid 10px;
   border-color: #565351;
   background-color: #8f8f8f;
+  max-height: 400px;
+  overflow: scroll;
 }
-
+//.right {   width: 24.5%;  background: #232323; color: #ccc;}
 .venue_profile__image {
   width: 100%;
   margin-top: 15px;

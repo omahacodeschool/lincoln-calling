@@ -13,10 +13,10 @@ class SponsorDashboard < Administrate::BaseDashboard
     website: Field::String,
     premier: Field::Boolean,
     description: Field::Text,
-    logo: Field::String,
     sponsor_order: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    logo: Field::String,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -27,6 +27,7 @@ class SponsorDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :name,
+    :website,
     :premier,
   ]
 
@@ -38,10 +39,10 @@ class SponsorDashboard < Administrate::BaseDashboard
     :website,
     :premier,
     :description,
-    :logo,
     :sponsor_order,
     :created_at,
     :updated_at,
+    :logo,
   ]
 
   # FORM_ATTRIBUTES
@@ -52,14 +53,14 @@ class SponsorDashboard < Administrate::BaseDashboard
     :website,
     :premier,
     :description,
-    :logo,
     :sponsor_order,
+    :logo,
   ]
 
-  # Overwrite this method to customize how venues are displayed
+  # Overwrite this method to customize how sponsors are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(venue)
-  #   "Venue ##{venue.id}"
+  # def display_resource(sponsor)
+  #   "Sponsor ##{sponsor.id}"
   # end
 end
