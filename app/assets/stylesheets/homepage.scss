@@ -1,15 +1,26 @@
-
-.headliners{
-  font-family: Yanone Kaffeesatz;
+.bands_and_tickets{
   background-color: #565351;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+.bands{
+  font-family: Yanone Kaffeesatz;
   color: white;
-  font-size: 65px;
   text-align: center;
-  padding: 20px 0px 20px 0px; 
+  width: 500px;
+  margin: 0 auto;
+}
+.bands__headliners{
+  font-size: 65px;
+  padding: 20px 0px 10px 0px; 
+}
+.bands__others{
+  display: none;
+  font-size: 25px;
 }
 .tickets{
   padding-bottom: 25px;
-  background-color: #565351;
+  padding-top: 25px;
 }
 .ticket{
   display: block;
@@ -45,20 +56,26 @@
 
 .home_news{
   background-color: white;
-  margin-top: 25px;
 }
-.home_news_headlines{
-  color: #ff8110;
+.home_news__headlines{
+  color: #8f8f8f;
   font-family: Oswald;
   font-size: 20px;
   padding: 35px 15px 0px 15px;
 }
-.home_news_img{
+.home_news__headlines.home_news__headlines--selected{
+  color: #ff8110;
+}
+.home_news__headlines.home_news__headlines--tablet{
+  display: none;
+}
+.home_news__img{
   object-fit: cover;
   width: 50%;
-  height: 50%;
 }
-.home_more_news{
+
+.home_news__more__text{
+  display: block;
   color: #c9c9c9;
   font-family: Oswald;
   font-size: 20px;
@@ -66,20 +83,44 @@
   text-align: right;
   padding-right: 15px;
   padding-top: 15px;
+
 }
-.home_emails{
-  color: #565351;
-  border: 2px solid #c9c9c9;
-  margin: 25px 15px 25px 15px;
-  background-color: white;
-  padding: 10px 20px 10px 20px;
-  font-size: 20px;
-  font-family: Oswald;
-}
+
 #home_computer_icon{
   float: right;
   position: relative;
   top: 5px;
 }
+.container__map_and_venue{
+  float: left;
+  width: 100%;
+}
+
+@media (min-width: $breakpoint-tablet){
+  .bands__others{
+    display: inline;
+  }
+  .bands_and_tickets{
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .home_news__img{
+    object-fit: cover;
+    width: 50%;
+    height: 400px;
+  }
+  .home_news__more{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+  }
+  .home_news__headlines.home_news__headlines--tablet{
+    display: block;
+  }
+}
+
+
+
+
 
 
