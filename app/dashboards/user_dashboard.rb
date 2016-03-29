@@ -10,6 +10,7 @@ class UserDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     email: Field::String,
+    password: Field::String,
     blurb: Field::Text,
     profile_pic: Field::String,
     first_name: Field::String,
@@ -26,8 +27,8 @@ class UserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :email,
-    :encrypted_password,
-    :reset_password_token,
+    :first_name,
+    :last_name,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
