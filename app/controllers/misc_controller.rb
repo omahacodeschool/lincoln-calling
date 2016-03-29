@@ -1,7 +1,5 @@
 class MiscController < ApplicationController
-
   def home
-    
-  end
-  
+    @events = Event.all
+  end  
 end

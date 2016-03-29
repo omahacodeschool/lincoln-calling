@@ -1,0 +1,48 @@
+
+
+    <div class="side_bar">
+      <div class="side_bar__title">
+      Festival Schedule/ Lincoln Calling 2016
+      </div>
+      <div class="clear dates">
+        <div class="col-4">
+          <a href="#" class="day_link day_link--left day_link--selected">
+            <span href="#" class="day_link__day">Thursday</span>
+            <span href="#" class="day_link__date">6</span>
+          </a>
+          <div class="concert">
+            <% daysevents = @events.byday("Thursday") %>
+            <% if daysevents %>
+              <% daysevents.each do |event| %>
+                <div class="concert__name"><%= event.artist.name%> at <%= event.venue.name %></div>
+                <div class="concert__time"><%= event.starttime %></div>
+              <%end%>
+            <%end%>
+          </div>  
+        </div>
+        <div class="col-4">
+          <a href="#" class="day_link day_link--mid">
+            <span href="#" class="day_link__day">Friday</span>
+            <span href="#" class="day_link__date">7</span>
+          </a> 
+        </div>
+        <div class="col-4">
+          <a href="#" class="day_link day_link--right">
+            <span href="#" class="day_link__day">Saturday</span>
+            <span href="#" class="day_link__date">8</span>
+          </a>
+        </div>
+      </div>
+      <div class="concert">
+        <% daysevents = @events.byday("Thursday") %>
+        <% if daysevents %>
+          <% daysevents.each do |event| %>
+            <div class="concert__name"><%= event.artist.name%> at <%= event.venue.    name %></div>
+            <div class="concert__time"><%= event.starttime %></div>
+          <%end%>
+        <%end%>
+      </div>
+      <a href="#" class="full_schedule">see full schedule</a>
+    </div>
+  </div>
+</div>
