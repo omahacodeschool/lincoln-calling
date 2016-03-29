@@ -15,7 +15,7 @@ class ArtistDashboard < Administrate::BaseDashboard
     origin: Field::String,
     website: Field::String,
     bio: Field::Text,
-    image: Field::String,
+    image: CarrierwaveField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     headline_order: Field::Number,
@@ -32,6 +32,7 @@ class ArtistDashboard < Administrate::BaseDashboard
     :id,
     :name,
     :genre,
+    :image,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -69,7 +70,7 @@ class ArtistDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how artists are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(artist)
-    "#{artist.name} (#{artist.type})"
-  end
+  # def display_resource(artist)
+  #   "Artist ##{artist.id}"
+  # end
 end

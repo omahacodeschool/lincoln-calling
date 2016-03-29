@@ -23,4 +23,5 @@ class Article < ActiveRecord::Base
     self.publish_date_time.strftime("%B %e, %Y")
   end
   
+  mount_uploader :image, ArticleImageUploader
 end

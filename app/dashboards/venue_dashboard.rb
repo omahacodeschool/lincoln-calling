@@ -13,7 +13,7 @@ class VenueDashboard < Administrate::BaseDashboard
     name: Field::String,
     address: Field::String,
     info: Field::Text,
-    img: Field::String,
+    img: CarrierwaveField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     coordinates_latitude: Field::Number.with_options(decimals: 2),
@@ -30,6 +30,7 @@ class VenueDashboard < Administrate::BaseDashboard
     :id,
     :name,
     :address,
+    :img
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -63,7 +64,7 @@ class VenueDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how venues are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(venue)
-    "#{venue.name}"
-  end
+  # def display_resource(venue)
+  #   "Venue ##{venue.id}"
+  # end
 end
