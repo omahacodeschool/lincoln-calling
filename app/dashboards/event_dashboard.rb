@@ -8,9 +8,9 @@ class EventDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    venue: Field::BelongsTo,
+    artist: Field::BelongsTo,
     id: Field::Number,
-    artist_id: Field::Number,
-    venue_id: Field::Number,
     minimum_age: Field::String,
     start_date_time: Field::DateTime,
     end_date_time: Field::DateTime,
@@ -24,18 +24,18 @@ class EventDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
+    :venue,
+    :artist,
     :id,
-    :artist_id,
-    :venue_id,
     :minimum_age,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
+    :venue,
+    :artist,
     :id,
-    :artist_id,
-    :venue_id,
     :minimum_age,
     :start_date_time,
     :end_date_time,
@@ -47,8 +47,8 @@ class EventDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :artist_id,
-    :venue_id,
+    :venue,
+    :artist,
     :minimum_age,
     :start_date_time,
     :end_date_time,
