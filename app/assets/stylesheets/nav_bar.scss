@@ -25,7 +25,7 @@
   background-color: #565351;
   color: white;
   text-align: center;
-  font-size: 20px;
+  font-size: 15px;
   overflow: hidden;
 }
 
@@ -89,6 +89,17 @@
   .orange_box__text{
     font-size: 55px;
   }
+  .nav_bar{
+  font-family: Oswald;
+  padding: 10px 0px 10px 0px;
+  background-color: #565351;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  overflow: hidden;
+  }
 }
 
-
+#collapsable_nav_contents.is_hidden{
+  display: none;
+}
