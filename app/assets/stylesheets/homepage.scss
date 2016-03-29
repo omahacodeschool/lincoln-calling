@@ -7,7 +7,6 @@
   font-family: Yanone Kaffeesatz;
   color: white;
   text-align: center;
-  width: 500px;
   margin: 0 auto;
 }
 .bands__headliners{
@@ -61,7 +60,7 @@
   color: #8f8f8f;
   font-family: Oswald;
   font-size: 20px;
-  padding: 35px 15px 0px 15px;
+  padding: 10px 15px 0px 15px;
 }
 .home_news__headlines.home_news__headlines--selected{
   color: #ff8110;
@@ -100,9 +99,17 @@
   .bands__others{
     display: inline;
   }
+  .bands{
+    width: 500px;
+  }
   .bands_and_tickets{
     margin-left: 15px;
     margin-right: 15px;
+  }
+  .home_news__headlines{
+    height: 100%;
+    overflow: scroll;
+
   }
   .home_news__img{
     object-fit: cover;
