@@ -6,37 +6,37 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create(first_name: 'User', last_name: 'Testerson', email: 'user@testuser.test', blurb: 'blurb blurb blurb blurb blurb', profile_pic: '/assets/boy.png')
+user = User.create! :id => 1, :first_name => 'John', :last_name => 'Testuser', :email => 'john@gmail.com', blurb: 'blurb blurb blurb blurb blurb', profile_pic: '/assets/boy.png',:password => 'topsecret', :password_confirmation => 'topsecret'
 
 band_list = [
-  [ "Future Islands", "Rock", "Maryland", "google.com", "bio bio bio bio bio bio bio bio", "/assets/boy.png", 1, "Band" ],
-  [ "Boy", "Rock", "Germany", "google.com", "bio bio bio bio bio bio bio bio", "/assets/boy.png", 2, "Band" ],
-  [ "The Kickback", "Pop", "Illinois", "google.com", "bio bio bio bio bio bio bio bio", "/assets/boy.png", 3, "Band" ],
-  [ "Jack Hotel", "Pop", "Nebraska", "google.com", "bio bio bio bio bio bio bio bio", "/assets/boy.png", 4, "Band" ],
-  [ "Twinsmith", "Rock", "Nebraska", "google.com", "bio bio bio bio bio bio bio bio", "/assets/boy.png", 5, "Band" ],
-  [ "AZP", "Folk", "Nebraska", "google.com", "bio bio bio bio bio bio bio bio", "/assets/boy.png", 6, "Band" ]
+  [ 1,"Future Islands", "Rock", "Maryland", "google.com", "bio bio bio bio bio bio bio bio", "/assets/boy.png", 1, "Band" ],
+  [ 2,"Boy", "Rock", "Germany", "google.com", "bio bio bio bio bio bio bio bio", "/assets/boy.png", 2, "Band" ],
+  [ 3,"The Kickback", "Pop", "Illinois", "google.com", "bio bio bio bio bio bio bio bio", "/assets/boy.png", 3, "Band" ],
+  [ 4,"Jack Hotel", "Pop", "Nebraska", "google.com", "bio bio bio bio bio bio bio bio", "/assets/boy.png", 4, "Band" ],
+  [ 5,"Twinsmith", "Rock", "Nebraska", "google.com", "bio bio bio bio bio bio bio bio", "/assets/boy.png", 5, "Band" ],
+  [ 6,"AZP", "Folk", "Nebraska", "google.com", "bio bio bio bio bio bio bio bio", "/assets/boy.png", 6, "Band" ]
 ]
 
-band_list.each do |name, genre, origin, website, bio, image, headline_order|
-  Band.create( name: name, genre: genre, origin: origin, website: website, bio: bio, image: image, headline_order: headline_order)
+band_list.each do |id, name, genre, origin, website, bio, image, headline_order|
+  Band.create(id: id, name: name, genre: genre, origin: origin, website: website, bio: bio, image: image, headline_order: headline_order)
 end
 
 comedian_list = [
-  [ "Hank Misterson", "Nebraska", "google.com", "bio bio bio bio bio bio bio bio", "/assets/boy.png", 1],
-  [ "Larissa Mursterson", "Germany", "google.com", "bio bio bio bio bio bio bio bio", "/assets/boy.png", 2],
-  [ "Helen Masterson", "Illinois", "google.com", "bio bio bio bio bio bio bio bio", "/assets/boy.png", 3]
+  [ 7,"Hank Misterson", "Nebraska", "google.com", "bio bio bio bio bio bio bio bio", "/assets/boy.png", 1],
+  [ 8, "Larissa Mursterson", "Germany", "google.com", "bio bio bio bio bio bio bio bio", "/assets/boy.png", 2],
+  [ 9, "Helen Masterson", "Illinois", "google.com", "bio bio bio bio bio bio bio bio", "/assets/boy.png", 3]
 ]
-comedian_list.each do |name, origin, website, bio, image, headline_order|
-  Comedian.create( name: name, origin: origin, website: website, bio: bio, image: image, headline_order: headline_order)
+comedian_list.each do |id, name, origin, website, bio, image, headline_order|
+  Comedian.create(id:id, name: name, origin: origin, website: website, bio: bio, image: image, headline_order: headline_order)
 end
 
 venue_list = [
-  [ "The Bourbon", "125 N First Street", "bio bio bio bio bio bio bio bio", "/assets/Bourbon_Theater.png", 40.8134, 96.7006],
-  [ "Duffy's Tavern", "125 N Second Street", "bio bio bio bio bio bio bio bio", "/assets/Bourbon_Theater.png", 40.8138, 96.7007],
-  [ "Yia Yia's Pizza", "125 N Third Street", "bio bio bio bio bio bio bio bio", "/assets/Bourbon_Theater.png", 40.8140, 96.7008]
+  [ 1,"The Bourbon", "125 N First Street", "bio bio bio bio bio bio bio bio", "/assets/Bourbon_Theater.png", 40.8134, 96.7006],
+  [ 2,"Duffy's Tavern", "125 N Second Street", "bio bio bio bio bio bio bio bio", "/assets/Bourbon_Theater.png", 40.8138, 96.7007],
+  [ 3,"Yia Yia's Pizza", "125 N Third Street", "bio bio bio bio bio bio bio bio", "/assets/Bourbon_Theater.png", 40.8140, 96.7008]
 ]
-venue_list.each do |name, address, info, img, coordinates_latitude, coordinates_longitude|
-  Venue.create(name: name, address: address, info: info, img: img, coordinates_latitude: coordinates_latitude, coordinates_longitude: coordinates_longitude)
+venue_list.each do |id, name, address, info, img, coordinates_latitude, coordinates_longitude|
+  Venue.create(id: id, name: name, address: address, info: info, img: img, coordinates_latitude: coordinates_latitude, coordinates_longitude: coordinates_longitude)
 end
 
 feature_list = [
