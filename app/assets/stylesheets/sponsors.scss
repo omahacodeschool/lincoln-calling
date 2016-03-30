@@ -28,3 +28,24 @@
   line-height: 15px;
   margin-bottom: 25px;
 }
+
+.home_emails {
+  display: none;
+}
+
+.side_bar {
+  display: none;
+}
+
+@media (min-width: $breakpoint-tablet) {
+
+  .home_emails {
+    display: block;
+    font-size: 16px;
+    padding: 1px;
+  }
+
+  .side_bar {
+    display: block;
+  }
+}
