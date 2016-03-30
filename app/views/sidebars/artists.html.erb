@@ -9,8 +9,8 @@
 <% @artist.events.each do |event| %>
   <%= event.endtime %><br>
 <% end %>
-<% @artist.venue_name.each do |event| %>
-  <%= event %><br>
+<% @artist.events.each do |event| %>
+  <%= event.venue.name %><br>
 <% end %>
 <%= @artist.bio %><br>
 
