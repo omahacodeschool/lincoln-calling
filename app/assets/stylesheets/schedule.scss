@@ -9,17 +9,20 @@ $pixels-per-fifteen-minutes: 40px;
   padding: 0;
   list-style: none;
 }
-
-
+.white_panel{
+  background-color: white;
+  overflow: hidden;
+}
+.plan_festival_button.plan_festival_button--hide{
+  display: none;
+}
 .schedule_times__item{
   height: $pixels-per-fifteen-minutes * 4;
 }
-
 .venue_shows_container{
   margin-left: $schedule-left-column-width;
   margin-right: $schedule-left-column-width;
 }
-
 .venue_picker{
   width: 100%;
 }
@@ -28,8 +31,16 @@ $pixels-per-fifteen-minutes: 40px;
   width: $schedule-left-column-width;
   height: $schedule-left-column-width;
 }
-
-.venue_shows.venue_shows--hide-for-tablet{
+.venue_shows.venue_shows--hide-2{
+  display: none;
+}
+.venue_shows.venue_shows--hide-3{
+  display: none;
+}
+.venue_shows.venue_shows--hide-4{
+  display: none;
+}
+.venue_shows.venue_shows--hide-5{
   display: none;
 }
 .venue_box{
@@ -43,11 +54,19 @@ $pixels-per-fifteen-minutes: 40px;
   font-family: Yanone Kaffeesatz;
   font-size: 25px;
   height: 60px;
-  
-  border: 2px solid red;
+  border: 2px solid #c9c9c9;
 }
 .venue_box__text.venue_box__text--2{
   display: none;
+}
+.venue_box__text.venue_box__text--3{
+  display: none;
+}
+.venue_box__text.venue_box__text--4{
+  display: none;  
+}
+.venue_box__text.venue_box__text--5{
+  display: none;  
 }
 .float_left{
    float: left;
@@ -79,8 +98,10 @@ $pixels-per-fifteen-minutes: 40px;
     float: left;
     width: 50%;
   }
-
-  .venue_shows.venue_shows--hide-for-tablet{
+  .plan_festival_button.plan_festival_button--hide{
+  display: block;
+}
+  .venue_shows.venue_shows--hide-2{
     display: block;
   }
   .venue_box{
@@ -93,14 +114,63 @@ $pixels-per-fifteen-minutes: 40px;
   }
   .venue_box__text.venue_box__text--2{
     display: block;
-    width: 50%;
+  }
+}
+
+@media (min-width: 560px){
+  .venue_shows{
+    float: left;
+    width: 33.333333%;
+  }
+  .venue_shows.venue_shows--hide-3{
+  display: block;
+  }
+  .venue_box__text{
+    width: 33.3333333%;
     float: left;
     text-align: none;
   }
-  // .schedule_container{
-  //   max-width: 420px;
-  //   margin: 0 auto;
-  // }
+  .venue_box__text.venue_box__text--3{
+    display: block;
+  }
+}
+@media (min-width: $breakpoint-tablet){
+  .venue_shows{
+    float: left;
+    width: 25%;
+  }
+  .venue_shows.venue_shows--hide-4{
+  display: block;
+  }
+  .venue_box__text{
+    width: 25%;
+    float: left;
+    text-align: none;
+  }
+  .venue_box__text.venue_box__text--4{
+    display: block;
+  }
+  .white_panel{
+  margin-left: 15px;
+  margin-right: 15px;
+  }
+}
+@media (min-width: $breakpoint-desktop){
+  .venue_shows{
+    float: left;
+    width: 20%;
+  }
+  .venue_shows.venue_shows--hide-5{
+  display: block;
+  }
+  .venue_box__text{
+    width: 20%;
+    float: left;
+    text-align: none;
+  }
+  .venue_box__text.venue_box__text--5{
+    display: block;
+  }
 }
 
 .show{
