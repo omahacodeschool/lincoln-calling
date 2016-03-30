@@ -83,12 +83,13 @@
   text-align: right;
 }
 
-@media (min-width: 740px){
+@media (min-width: $breakpoint-tablet) {
 
   .side_bar_container {
-  border-left: solid 1px;
-  border-color:#565351;
+    border-left: solid 3px;
+    border-color: red;
   }
+
   .side_bar{
    float: right;
    width: 100%;
