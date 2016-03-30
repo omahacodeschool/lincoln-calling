@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-  get "news/:id" => 'news#show'
   
   namespace :admin do
     resources :users
