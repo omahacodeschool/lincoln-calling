@@ -21,7 +21,6 @@ $pixels-per-fifteen-minutes: 40px;
   border: 1px solid #565561;
   background-color: white;
   overflow: hidden;
-  
 }
 .day_picker__text{
   color: #565651;
@@ -42,6 +41,12 @@ $pixels-per-fifteen-minutes: 40px;
 //----------------------
 .plan_festival_button.plan_festival_button--hide{
   display: none;
+  float: right;
+  font-family: Oswald;
+  font-size: 15px;
+  background: #565651;
+  color: white;
+  padding: 9px;
 }
 .schedule_times__item{
   height: $pixels-per-fifteen-minutes * 4;
@@ -122,6 +127,10 @@ $pixels-per-fifteen-minutes: 40px;
 }
 
 @media (min-width: 420px){
+  .day_picker{
+  width: 50%;
+  float: left;
+}
   .venue_shows{
     float: left;
     width: 50%;
@@ -184,6 +193,10 @@ $pixels-per-fifteen-minutes: 40px;
   }
 }
 @media (min-width: $breakpoint-desktop){
+.day_picker{
+  width: 40%;
+  float: left;
+}
   .venue_shows{
     float: left;
     width: 20%;
