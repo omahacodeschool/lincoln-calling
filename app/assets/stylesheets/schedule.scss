@@ -1,19 +1,17 @@
 $schedule-left-column-width: 60px;
 $schedule-venue-column-width: $schedule-left-column-width * 2;
 $pixels-per-fifteen-minutes: 40px;
+$all-ages-color: #F5BB28;
+$eighteen-plus-color: #6EA40E;
+$twentyone-plus-color: #CC4723;
 
-.schedule_times{
-  float: left;
-  width: $schedule-left-column-width;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
+
 .white_panel{
   background-color: white;
   overflow: hidden;
+  padding-bottom: 25px;
 }
-//you are here-----------
+
 .schedule_header{
   margin: 20px 15px;
 }
@@ -38,7 +36,6 @@ $pixels-per-fifteen-minutes: 40px;
   border-top: 10px solid #565651;
   float: right;
 }
-//----------------------
 .plan_festival_button.plan_festival_button--hide{
   display: none;
   float: right;
@@ -48,8 +45,46 @@ $pixels-per-fifteen-minutes: 40px;
   color: white;
   padding: 9px;
 }
+//Age Key
+.ages{
+  color: #565651;
+  font-family: Yanone Kaffeesatz;
+  font-size: 18px;
+  margin-left: 15px;
+  padding: 10px 10px 10px 0px;
+}
+.all_ages{
+  border-left: 8px solid $all-ages-color;
+  float: left;
+  padding-right: 20px;
+  padding-left: 8px
+}
+.eighteen_plus{
+  border-left: 8px solid $eighteen-plus-color;
+  float: left;
+  padding-right: 20px;
+  padding-left: 8px
+}
+.twentyone_plus{
+  border-left: 8px solid $twentyone-plus-color;
+  float: left;
+  padding-right: 20px;
+  padding-left: 8px
+}
+
+//Times on the left
+.schedule_times{
+  float: left;
+  width: $schedule-left-column-width;
+  margin: 0;
+  padding-left: 15px;
+  list-style: none;
+}
 .schedule_times__item{
   height: $pixels-per-fifteen-minutes * 4;
+  font-family: 'Yanone Kaffeesatz';
+  font-size: 16px;
+  color: #565561;
 }
 .venue_shows_container{
   margin-left: $schedule-left-column-width;
@@ -125,19 +160,39 @@ $pixels-per-fifteen-minutes: 40px;
   border-left: 15px solid white;
   border-bottom: 15px solid transparent;
 }
-
+.venue_shows{
+  float: left;
+  width: 50%;
+  border: 1px solid #8f8f8f
+}
 @media (min-width: 420px){
   .day_picker{
-  width: 50%;
-  float: left;
-}
+    width: 50%;
+    float: left;
+  }
+  .ages{
+    margin-left: $schedule-left-column-width;
+  }
+  .all_ages{
+    padding-right: 24px;
+    padding-left: 10px
+  }
+  .eighteen_plus{
+    padding-right: 24px;
+    padding-left: 10px
+  }
+  .twentyone_plus{
+    padding-right: 24px;
+    padding-left: 10px
+  }
   .venue_shows{
     float: left;
     width: 50%;
+    border: 1px solid #8f8f8f
   }
   .plan_festival_button.plan_festival_button--hide{
-  display: block;
-}
+    display: block;
+  }
   .venue_shows.venue_shows--hide-2{
     display: block;
   }
@@ -225,16 +280,18 @@ $pixels-per-fifteen-minutes: 40px;
 .show.show--empty{
   background: transparent;
   border-left: none;
+  border-top: 1px solid #8f8f8f;
+  border-bottom: 1px solid #8f8f8f;
 }
 
 .show.show--all_ages{
-  border-left-color: #F67C00;
+  border-left-color: $all-ages-color;
 }
 .show.show--18-plus{
-  border-left-color: #00F61D;
+  border-left-color: $eighteen-plus-color;
 }
 .show.show--21-plus{
-  border-left-color: #F6008D;
+  border-left-color: $twentyone-plus-color;
 }
 
 .show--15, .show--empty-15{
