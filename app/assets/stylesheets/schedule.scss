@@ -24,19 +24,36 @@ $pixels-per-fifteen-minutes: 40px;
 .venue_shows.venue_shows--hide-for-tablet{
   display: none;
 }
-.triangle-left {
-  width: 0;
-  height: 0;
-  border-top: 50px solid transparent;
-  border-right: 100px solid red;
-  border-bottom: 50px solid transparent;
+.venue_picker{
+  background-color: white;
+  overflow: hidden;
 }
-.triangle-right {
+.veneu_picker__text{
+  text-align: center;
+}
+.float_left{
+   float: left;
+}
+.float_right{
+  float: right;
+}
+.venue_picker__triangle-left {
   width: 0;
   height: 0;
-  border-top: 50px solid transparent;
-  border-left: 100px solid red;
-  border-bottom: 50px solid transparent;
+  padding-left: 15px;
+  border-top: 15px solid transparent;
+  border-right: 15px solid red;
+  border-bottom: 15px solid transparent;
+  background-color: #c9c9c9;
+}
+.venue_picker__triangle-right {
+  width: 0;
+  height: 0;
+  padding-right: 15px;
+  border-top: 15px solid transparent;
+  border-left: 15px solid red;
+  border-bottom: 15px solid transparent;
+  background-color: #c9c9c9;
 }
 
 @media (min-width: 420px){
