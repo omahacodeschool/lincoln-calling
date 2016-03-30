@@ -68,6 +68,21 @@ end
 
 About.create(title: "About", user_id: 1, article_content: "content content content content content content content content content content content content content content content content content content content content content content content content content",2016-05-26 21:55:19)
 
+events_list = [
+  [1,1,21,2016-10-06 19:00:00,2016-10-06 19:30:00],
+  [2,2,18,2016-10-06 21:00:00,2016-10-06 21:30:00],
+  [3,3,0,2016-10-06 22:00:00,2016-10-06 23:30:00],
+  [4,1,21,2016-10-07 19:00:00,2016-10-07 21:30:00],
+  [5,2,18,2016-10-07 21:00:00,2016-10-07 21:30:00],
+  [6,1,21,2016-10-07 22:00:00,2016-10-07 22:30:00],
+  [7,3,0,2016-10-08 19:00:00,2016-10-08 19:30:00],
+  [8,2,18,2016-10-08 21:00:00,2016-10-08 22:30:00],
+  [9,1,21,2016-10-08 22:00:00,2016-10-08 22:30:00],
+]
+events_list.each do |artist_id, venue_id, minimum_age, start_date_time, end_date_time|
+  Event.create(artist_id: artist_id, venue_id: venue_id, minimum_age: minimum_age, start_date_time: start_date_time, end_date_time: end_date_time)
+  
+end
 
 
 
