@@ -5,6 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+User.create(first_name: 'User', last_name: 'Testerson', email: 'user@testuser.test', blurb: 'blurb blurb blurb blurb blurb', profile_pic: '/assets/boy.png')
+
 band_list = [
   [ "Future Islands", "Rock", "Maryland", "google.com", "bio bio bio bio bio bio bio bio", "/assets/boy.png", 1, "Band" ],
   [ "Boy", "Rock", "Germany", "google.com", "bio bio bio bio bio bio bio bio", "/assets/boy.png", 2, "Band" ],
@@ -26,3 +29,9 @@ comedian_list = [
 comedian_list.each do |name, origin, website, bio, image, headline_order|
   Band.create( name: name, origin: origin, website: website, bio: bio, image: image, headline_order: headline_order)
 end
+
+venue_list = [
+  [ "Hank Misterson", "Nebraska", "google.com", "bio bio bio bio bio bio bio bio", "/assets/boy.png", 1],
+]
+
+
