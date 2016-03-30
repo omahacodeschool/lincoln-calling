@@ -25,7 +25,7 @@ $pixels-per-fifteen-minutes: 40px;
 .triangle_box{
   background-color: #c9c9c9;
   width: $schedule-left-column-width;
-  height: $schedule-left-column-width / 2;
+  height: $schedule-left-column-width;
 }
 
 .venue_shows.venue_shows--hide-for-tablet{
@@ -34,11 +34,17 @@ $pixels-per-fifteen-minutes: 40px;
 .venue_box{
   background-color: white;
   overflow: hidden;
-  height: 60px;
-  width: calc(100% - 126px);
+  width: calc(100% - 120px);
+  
 }
 .venue_box__text{
   text-align: center;
+  padding-top: 15; 
+  font-family: Yanone Kaffeesatz;
+  font-size: 25px;
+  height: 60px;
+  
+  border: 2px solid red;
 }
 .venue_box__text.venue_box__text--2{
   display: none;
@@ -52,8 +58,8 @@ $pixels-per-fifteen-minutes: 40px;
 .triangle_box__triangle-left {
   width: 0;
   height: 0;
-  padding-left: 8px;
-  margin-right: 10px;
+  margin-left: 15px;
+  margin-top: 15px;
   border-top: 15px solid transparent;
   border-right: 15px solid white;
   border-bottom: 15px solid transparent;
@@ -61,8 +67,8 @@ $pixels-per-fifteen-minutes: 40px;
 .triangle_box__triangle-right {
   width: 0;
   height: 0;
-  padding-right: 8px;
-  margin-left: 10px;
+  margin-left: 28px;
+  margin-top: 15px;
   border-top: 15px solid transparent;
   border-left: 15px solid white;
   border-bottom: 15px solid transparent;
