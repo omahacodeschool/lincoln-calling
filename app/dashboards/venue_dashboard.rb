@@ -65,6 +65,6 @@ class VenueDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(venue)
-    "Venue ##{venue.name}"
+    "#{venue.name}"
   end
 end

@@ -71,6 +71,6 @@ class ArtistDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(artist)
-    "Artist ##{artist.name}"
+    "#{artist.name}"
   end
 end
