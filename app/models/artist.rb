@@ -3,36 +3,8 @@
 class Artist < ActiveRecord::Base
   has_many(:events)
 
-  def event_start
-    event_start = []
-    x = self.id
-    y = Event.where(:artist_id => x)
-    y.each do |event|
-      event_start << event.starttime
-    end
-    return event_start
-  end
-
-  def event_end
-    event_end = []
-    x = self.id
-    y = Event.where(:artist_id => x)
-    y.each do |event|
-      event_end << event.endtime
-    end
-    return event_end
-  end
-
-  def event_venue_id
-    event_venue_id = []
-    x = self.id
-    y = Event.where(:artist_id => x)
-    y.each do |event|
-      event_venue_id << event.venue_id
-    end
-    return event_venue_id
-  end
-
+  def get_venue_ids
+    venue_ids = []
   def venue_name
     venue_name = []
     x = self.event_venue_id
