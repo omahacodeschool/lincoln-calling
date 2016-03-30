@@ -80,8 +80,29 @@ events_list = [
   [9,1,21,2016-10-08 22:00:00,2016-10-08 22:30:00],
 ]
 events_list.each do |artist_id, venue_id, minimum_age, start_date_time, end_date_time|
-  Event.create(artist_id: artist_id, venue_id: venue_id, minimum_age: minimum_age, start_date_time: start_date_time, end_date_time: end_date_time)
-  
+  Event.create(artist_id: artist_id, venue_id: venue_id, minimum_age: minimum_age, start_date_time: start_date_time, end_date_time: end_date_time)  
+end
+
+sponsors_list = [
+  ["Hudl", "google.com",true,"content content content content",1,"/assets/images/hudl.png"],
+  ["Omaha Code School", "google.com",true,"content content content content",2,"/assets/images/ocs.png"],
+  ["Firespring", "google.com",true,"content content content content",3,"/assets/images/firespring.png"],
+  ["Other Sponsor1", "google.com",false,"content content content content",4,"/assets/images/lincoln.png"],
+  ["Other Sponsor2", "google.com",false,"content content content content",4,"/assets/images/lincoln.png"],
+  ["Other Sponsor3", "google.com",false,"content content content content",4,"/assets/images/lincoln.png"]
+]
+sponsors_list.each do |name, website, premiere, description, sponsor_order, logo|
+  Sponsor.create(name: name, website: website, premiere: premiere, description:description, sponsor_order:sponsor_order, logo:logo)
+end
+
+tickets_list = [
+  ["Three Day Pass", "eventbrite.com", 3000, true],
+  ["Thursday", "eventbrite.com", 1500, false],
+  ["Friday", "eventbrite.com", 1500, false],
+  ["Saturday", "eventbrite.com", 1500, false]
+]
+tickets_list.each do |name, link, price_in_cents, sold_out|
+  Ticket.create(name: name, link: link, price_in_cents: price_in_cents, sold_out: sold_out)
 end
 
 
