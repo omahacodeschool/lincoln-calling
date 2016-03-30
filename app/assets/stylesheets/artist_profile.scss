@@ -1,5 +1,5 @@
 .overlay{
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -13,6 +13,7 @@
   overflow: hidden;
   position: relative;
   padding-bottom: 10px;
+  max-height: 75%;
 }
 
 .artist_profile__image {
@@ -49,7 +50,6 @@
 }
 
 .artist_performance_info {
-  background-color: #8f8f8f;
   color: white;
   text-align: left;
   padding: 10px 0;
@@ -59,10 +59,11 @@
 }
 
 .artist_bio {
-  background-color: #8f8f8f;
   color: white;
   text-align: left;
-  padding: 25px 0;
+  padding: 25px 15px 0 0;
+  max-height: 150px;
+  overflow: scroll;
 }
 
 .close_button {
