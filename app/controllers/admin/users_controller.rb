@@ -1,5 +1,12 @@
 module Admin
   class UsersController < Admin::ApplicationController
+    before_filter :authenticate_admin, only: [:new, :edit]
+
+    def authenticate_admin
+      # if current_user.nil? || !current_user.admin?
+      #   redirect_to '/admin', {alert: "You are not authorized to edit or create users."}
+      # end
+    end
     # To customize the behavior of this controller,
     # simply overwrite any of the RESTful actions. For example:
     #

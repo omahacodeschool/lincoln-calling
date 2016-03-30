@@ -4,15 +4,6 @@ class Event < ActiveRecord::Base
   belongs_to(:venue)
   belongs_to(:artist)
 
-  # #returns the venue id for event
-  # def venue
-  #   Venue.find_by_id(self.venue_id)
-  # end
-
-  #returns the artist id for event
-  def artist
-    Artist.find_by_id(self.artist_id)
-  end
   #returns the full word for day of week of event
   #example: Thursday
   def weekday

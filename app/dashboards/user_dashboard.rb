@@ -15,6 +15,7 @@ class UserDashboard < Administrate::BaseDashboard
     profile_pic: CarrierwaveField,
     first_name: Field::String,
     last_name: Field::String,
+    admin: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }
@@ -41,6 +42,7 @@ class UserDashboard < Administrate::BaseDashboard
     :profile_pic,
     :first_name,
     :last_name,
+    :admin,
     :created_at,
     :updated_at,
   ]
@@ -51,6 +53,7 @@ class UserDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :email,
     :password,
+    :admin,
     :blurb,
     :profile_pic,
     :first_name,
