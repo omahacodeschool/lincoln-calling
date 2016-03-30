@@ -1,4 +1,4 @@
-$schedule-left-column-width: 80px;
+$schedule-left-column-width: 60px;
 $schedule-venue-column-width: $schedule-left-column-width * 2;
 $pixels-per-fifteen-minutes: 40px;
 
@@ -16,20 +16,32 @@ $pixels-per-fifteen-minutes: 40px;
 
 .venue_shows_container{
   margin-left: $schedule-left-column-width;
+  margin-right: $schedule-left-column-width;
 }
 
-.venue_shows{
+.venue_picker{
+  width: 100%;
+}
+.triangle_box{
+  background-color: #c9c9c9;
+  width: $schedule-left-column-width;
+  height: $schedule-left-column-width / 2;
 }
 
 .venue_shows.venue_shows--hide-for-tablet{
   display: none;
 }
-.venue_picker{
+.venue_box{
   background-color: white;
   overflow: hidden;
+  height: 60px;
+  width: calc(100% - 126px);
 }
-.veneu_picker__text{
+.venue_box__text{
   text-align: center;
+}
+.venue_box__text.venue_box__text--2{
+  display: none;
 }
 .float_left{
    float: left;
@@ -37,23 +49,23 @@ $pixels-per-fifteen-minutes: 40px;
 .float_right{
   float: right;
 }
-.venue_picker__triangle-left {
+.triangle_box__triangle-left {
   width: 0;
   height: 0;
-  padding-left: 15px;
+  padding-left: 8px;
+  margin-right: 10px;
   border-top: 15px solid transparent;
-  border-right: 15px solid red;
+  border-right: 15px solid white;
   border-bottom: 15px solid transparent;
-  background-color: #c9c9c9;
 }
-.venue_picker__triangle-right {
+.triangle_box__triangle-right {
   width: 0;
   height: 0;
-  padding-right: 15px;
+  padding-right: 8px;
+  margin-left: 10px;
   border-top: 15px solid transparent;
-  border-left: 15px solid red;
+  border-left: 15px solid white;
   border-bottom: 15px solid transparent;
-  background-color: #c9c9c9;
 }
 
 @media (min-width: 420px){
@@ -64,6 +76,16 @@ $pixels-per-fifteen-minutes: 40px;
 
   .venue_shows.venue_shows--hide-for-tablet{
     display: block;
+  }
+  .venue_box{
+    width: calc(100% - 126px); 
+  }
+  .venue_box__text{
+    width: 50%;
+  }
+  .venue_box__text.venue_box__text--2{
+    display: block;
+    width: 50%;
   }
 }
 
