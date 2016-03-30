@@ -27,7 +27,7 @@ comedian_list = [
   [ "Helen Masterson", "Illinois", "google.com", "bio bio bio bio bio bio bio bio", "/assets/boy.png", 3]
 ]
 comedian_list.each do |name, origin, website, bio, image, headline_order|
-  Band.create( name: name, origin: origin, website: website, bio: bio, image: image, headline_order: headline_order)
+  Comedian.create( name: name, origin: origin, website: website, bio: bio, image: image, headline_order: headline_order)
 end
 
 venue_list = [
