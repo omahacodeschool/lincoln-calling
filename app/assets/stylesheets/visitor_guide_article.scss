@@ -2,6 +2,12 @@
   margin-bottom: 25px;
 }
 
+.visitors_guide_article {
+  border-right: 0px;
+  border-color: none;
+
+}
+
 .visitors_guide_article__image {
   display: block;
   width: 100%;
@@ -44,36 +50,11 @@
   padding: 25px 0px 25px 65px;
 }
 
+@media (min-width: $breakpoint-tablet) {
 
+  .visitors_guide_article {
+    border-right: 1px solid;
+    border-color: #8f8f8f;
+  }
 
-// .social_footer__left{
-//   font-family: Oswald;
-//   color: #565351;
-//   font-size: 20px;
-//   font-weight: bold;
-//   padding: 0px 10px 0px 20px;
-//   background-color: #c9c9c9;
-//   text-align: right;
-// }
-
-// .social_footer__right{
-//   font-family: Yanone Kaffeesatz;
-//   color: #565351;
-//   font-size: 15px;
-//   padding: 1px 15px 3px 0;
-//   background-color: #c9c9c9;
-//   font-weight: 300;
-//   border-left: solid white 1px;
-//   text-align: right;
-// }
-
-// .social_footer__top {
-//   padding:3px;
-//   background-color: #c9c9c9;
-// }
-
-// .soical_footer__bottom {
-//   padding:3px;
-//   background-color: #c9c9c9;
-//   margin-bottom: 25px;
-// }
+}

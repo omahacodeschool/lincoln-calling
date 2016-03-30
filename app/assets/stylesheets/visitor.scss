@@ -1,7 +1,10 @@
-
+.page_header {
+  margin-bottom: 25px;
+}
 
 .visitor_guide {
-  margin: 25px 25px 0 25px; 
+  float: left;
+  margin-bottom: 50px; 
 }
 
 .visitor_guide__image {
@@ -15,22 +18,34 @@
   padding: 10px 10px 10px;
   line-height: 15px;
   font-size: 15px;
-  font-weight: bold;
-  margin: 0 25px 0px 25px;
   border-bottom: solid 5px;
   border-color: #ff8110;
 }
 
-.writer__image {
-  display: block;
-  width: 100px;
-  height:50px;
-  width: 50px;
-  float: left;
+.home_emails {
+  display: none;
 }
 
-.writer__info {
-  background-color: white;
-  color: #dddddd;
-  padding: 25px 0px 25px 65px;
+.side_bar {
+  display: none;
+}
+
+@media (min-width: $breakpoint-tablet) {
+
+  .visitor_guide {
+    float: left;
+    width: 50%;
+    margin-bottom: 50px;
+  }
+
+  .home_emails {
+    display: block;
+    font-size: 16px;
+    padding: 1px;
+    margin: 0 0px 25px 0px;
+  }
+
+  .side_bar {
+    display: block;
+  }
 }

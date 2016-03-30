@@ -97,6 +97,8 @@ a:hover {
     font-size: 16px;
     padding: 1px;
     margin: 0px 15px 25px 0px;
+    width: 100%;
+    float: right;
   }
   .footer{
     margin-left: 15px;
@@ -106,7 +108,9 @@ a:hover {
 
 .social_footer__icon{
   color: #565351;
-  font-size: 30px;
+  font-size: 15px;
+  padding-top: 10px;
+  padding-bottom: 5px;
   background-color: #c9c9c9;
   border-left: solid white 1px;
   width: 20%;
