@@ -13,6 +13,33 @@ $pixels-per-fifteen-minutes: 40px;
   background-color: white;
   overflow: hidden;
 }
+//you are here-----------
+.schedule_header{
+  margin: 20px 15px;
+}
+.day_picker{
+  border: 1px solid #565561;
+  background-color: white;
+  overflow: hidden;
+  
+}
+.day_picker__text{
+  color: #565651;
+  font-family: Yanone Kaffeesatz;
+  font-size: 25px;
+  float: left;
+  margin: 5px;
+}
+.day_picker__triangle_down{
+  width: 0;
+  height: 0;
+  margin: 15px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #565651;
+  float: right;
+}
+//----------------------
 .plan_festival_button.plan_festival_button--hide{
   display: none;
 }
@@ -49,9 +76,10 @@ $pixels-per-fifteen-minutes: 40px;
   width: calc(100% - 120px);
 }
 .venue_box__text{
+  color: #565651;
   text-align: center;
-  padding-top: 15; 
-  font-family: Yanone Kaffeesatz;
+  padding-top: 13px; 
+  font-family: Oswald;
   font-size: 25px;
   height: 60px;
   border: 2px solid #c9c9c9;
@@ -174,8 +202,12 @@ $pixels-per-fifteen-minutes: 40px;
 }
 
 .show{
-  background: #999;
-  border-left: 10px solid #999;
+  background: #8f8f8f;
+  border-left: 10px solid #8f8f8f;
+  font-family: Oswald;
+  font-size: 20px;
+  color: white;
+  text-align: center;
 }
 .show.show--empty{
   background: transparent;
@@ -194,13 +226,27 @@ $pixels-per-fifteen-minutes: 40px;
 
 .show--15, .show--empty-15{
   height: $pixels-per-fifteen-minutes;
+  line-height: $pixels-per-fifteen-minutes;
+  white-space: nowrap;
 }
 .show--30, .show--empty-30{
   height: $pixels-per-fifteen-minutes * 2;
+  line-height: $pixels-per-fifteen-minutes * 2;
+  white-space: nowrap;
 }
 .show--45, .show--empty-45{
   height: $pixels-per-fifteen-minutes * 3;
+  line-height: $pixels-per-fifteen-minutes *3;
+  white-space: nowrap;
 }
 .show--60, .show--empty-60{
   height: $pixels-per-fifteen-minutes * 4;
+  line-height: $pixels-per-fifteen-minutes * 4;
+  white-space: nowrap;
 }
+
+
+
+
+
+
