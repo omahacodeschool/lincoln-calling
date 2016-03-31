@@ -20,7 +20,7 @@ $twentyone-plus-color: #CC4723;
   border: 1px solid #565561;
   background-color: white;
   overflow: hidden;
-  position: absolute;
+  //position: absolute;
   //display: inline-block;
 }
 .day_picker__text.day_picker__text--hide{
@@ -177,7 +177,7 @@ $twentyone-plus-color: #CC4723;
 }
 .venue_shows{
   float: left;
-  width: 50%;
+  width: 100%;
   border: 1px solid #8f8f8f
 }
 @media (min-width: 420px){
