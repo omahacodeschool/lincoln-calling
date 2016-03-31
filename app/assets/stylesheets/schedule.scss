@@ -23,21 +23,26 @@ $twentyone-plus-color: #CC4723;
   //position: absolute;
   //display: inline-block;
 }
-.day_picker__text.day_picker__text--hide{
+#other_days{
   display: none;
   position: absolute;
   background-color: white;
-  min-width: 160px;
-  padding: 12px 0px;
-  z-index: 1;
+  min-width: 50%;
+  border: 1px solid #8f8f8f;
 }
 
 .day_picker__text{
   color: #565651;
   font-family: Yanone Kaffeesatz;
   font-size: 25px;
-  //float: left;
   margin: 5px;
+}
+.other_days__text{
+  color: #565651;
+  font-family: Yanone Kaffeesatz;
+  font-size: 25px;
+  margin: 5px;
+  //border-top: 1px solid #8f8f8f;
 }
 .day_picker__triangle_down{
   width: 0;
@@ -46,6 +51,16 @@ $twentyone-plus-color: #CC4723;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-top: 10px solid #565651;
+  float: right;
+}
+.other_days__triangle_up{
+  width: 0;
+  height: 0;
+  margin: 15px;
+  padding-top: 5px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #565651;
   float: right;
 }
 //Plan Your Festival Button
