@@ -9,11 +9,16 @@
 }
 
 .artist_profile {
+  display: none;
   background-color: #8f8f8f;
   overflow: hidden;
   position: relative;
   padding-bottom: 10px;
   max-height: 75%;
+}
+
+.artist_profile.artist_profile--shown {
+  display: block;
 }
 
 .artist_profile__image {
