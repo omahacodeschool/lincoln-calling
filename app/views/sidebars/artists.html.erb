@@ -3,14 +3,14 @@
 <%= @artist.name %><br>
 <%= @artist.website %><br>
 <%= @artist.origin %><br>
-<% @artist.event_start.each do |event| %>
-  <%= event %><br>
+<% @artist.events.each do |event| %>
+  <%= event.starttime %><br>
 <% end %>
-<% @artist.event_end.each do |event| %>
-  <%= event %><br>
+<% @artist.events.each do |event| %>
+  <%= event.endtime %><br>
 <% end %>
-<% @artist.venue_name.each do |event| %>
-  <%= event %><br>
+<% @artist.events.each do |event| %>
+  <%= event.venue.name %><br>
 <% end %>
 <%= @artist.bio %><br>
 
