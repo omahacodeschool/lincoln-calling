@@ -15,10 +15,24 @@ $twentyone-plus-color: #CC4723;
 .schedule_header{
   margin: 20px 15px;
 }
+//Day Picker Starts
 .day_picker{
   border: 1px solid #565561;
   background-color: white;
   overflow: hidden;
+  position: absolute;
+  //display: inline-block;
+}
+.day_picker__text.day_picker__text--hide{
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  padding: 12px 0px;
+  z-index: 1;
+}
+.day_picker:hover .day_picker__text.day_picker__text--hide {
+  display: block;
 }
 .day_picker__text{
   color: #565651;
@@ -36,6 +50,7 @@ $twentyone-plus-color: #CC4723;
   border-top: 10px solid #565651;
   float: right;
 }
+//Plan Your Festival Button
 .plan_festival_button.plan_festival_button--hide{
   display: none;
   float: right;
