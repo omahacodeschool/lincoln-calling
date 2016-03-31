@@ -1,8 +1,4 @@
 
-.about {
-  margin: 25px 25px 25px 25px; 
-}
-
 .about__image {
   display: block;
   width: 100%;
@@ -17,4 +13,26 @@
   line-height: 15px;
   font-size: 15px;
   font-weight: bold;
+}
+
+.home_emails {
+  display: none;
+}
+
+.side_bar {
+  display: none;
+}
+
+@media (min-width: $breakpoint-tablet) {
+
+  .home_emails {
+    display: block;
+    font-size: 16px;
+    padding: 1px;
+    margin: 0px 25px 0px;
+  }
+
+  .side_bar {
+    display: block;
+  }
 }

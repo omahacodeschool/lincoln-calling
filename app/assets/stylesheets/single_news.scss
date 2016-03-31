@@ -60,7 +60,13 @@
 }
 
 @media (min-width: $breakpoint-tablet) {
+  
+  .news_single_container{
+    border-right: solid 1px;
+    border-color: #565351;
 
+  }
+  
 
   .news_single__image {
     display: block;

@@ -4,7 +4,20 @@
   padding-bottom: 15px;
   text-align: center;
   color: white;
+  font-size: 20px;
+}
+
+.footer_top__sponsor_text {
+  font-size: 12px;
   font-family: Oswald;
+  text-align: center;
+}
+
+.footer_bottom__site_creator {
+  width: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer_bottom {
@@ -12,5 +25,15 @@
   text-align: center;
   color: white;
   padding-top: 15px;
-  padding-bottom: 50px;
+  padding-bottom: 15px;
+}
+
+@media (min-width: $breakpoint-tablet) {
+
+  .footer_top__sponsor_text {
+  font-size: 25px;
+  }
+  .footer_top {
+  font-size: 50px;
+  }  
 }
