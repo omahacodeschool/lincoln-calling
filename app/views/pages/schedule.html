@@ -1,87 +1,408 @@
-<div class="page_header">
-  <div class="page_header__right">Schedule</div>
-  <div class="page_header__left">Lineup</div>
-</div>
 
-<div class="white_panel">
-  <div class="schedule_header">
-    <div class="day_picker">
-      Day Picker
-    </div>
-
-    <div class="plan_festival_button">
-      Plan Festival
-    </div>
+  <div class="page_header">
+    <div class="page_header__right">Schedule</div>
+    <div class="page_header__left">Lineup</div>
   </div>
 
-  <div class="venue_picker">
-      Zoo Bar
-  </div>
+  <div class="white_panel">
+    <div class="schedule_header">
+      <div class="day_picker" id="day_picker_box">
+        <div class="day_picker__triangle_down"></div>
+        <div class="day_picker__text" id="current_day">Thursday Oct. 6</div>
 
-  <div class="schedule_lineup">
-    <ul class="schedule_times">
-      <li class="schedule_times__item">5 p.m.</li>
-      <li class="schedule_times__item">6 p.m.</li>
-      <li class="schedule_times__item">7 p.m.</li>
-      <li class="schedule_times__item">8 p.m.</li>
-      <li class="schedule_times__item">9 p.m.</li>
-      <li class="schedule_times__item">10 p.m.</li>
-      <li class="schedule_times__item">11 p.m.</li>
-      <li class="schedule_times__item">12 a.m.</li>
-      <li class="schedule_times__item">1 a.m.</li>
-    </ul>
 
-    <div class="venue_shows_container">
-      <div class="venue_shows">
-        <div class="show show--30">
-          The Bottletops
+      </div>
+
+        <div id="other_days">
+          <div class="other_days__triangle_up"></div>
+          <div class="other_days__text" id="thurs">Thursday Oct. 6</div>
+          <div class="other_days__text" id="fri">Friday Oct. 7</div>
+          <div class="other_days__text" id="sat">Saturday Oct. 8</div>
         </div>
 
-        <div class="show show--empty show--empty-30"></div>
+      <div class="plan_festival_button plan_festival_button--hide">
+        PLAN YOUR FESTIVAL
+      </div>
+      <div style="clear: both"></div>
+    </div>
 
-        <div class="show show--45">
-          Jack Hotel
+    <div class="venue_picker">
+      <div class="triangle_box float_left">
+        <div class="triangle_box__triangle-left"></div>
+      </div>
+      <div class="venue_box float_left">  
+        <div class="venue_box__text">Zoo Bar</div>
+        <div class="venue_box__text venue_box__text--2">Bourbon Theatre</div>
+        <div class="venue_box__text venue_box__text--3">Duffy's Tavern</div>
+        <div class="venue_box__text venue_box__text--4">Fat Toad</div>
+        <div class="venue_box__text venue_box__text--5">Yia Yia's</div>
+      </div>
+      <div class="triangle_box float_left">
+        <div class="triangle_box__triangle-right"></div>
+      </div>
+      <div style="clear: both"></div>
+    </div>
+
+    <div class="ages">
+      <div class="all_ages">All Ages</div>
+      <div class="eighteen_plus">18 and older</div>
+      <div class="twentyone_plus">21 and older</div>
+      <div style="clear: both"></div>
+    </div>
+
+    <div class="schedule_lineup">
+      <ul class="schedule_times">
+        <li class="schedule_times__item">5 p.m.</li>
+        <li class="schedule_times__item">6 p.m.</li>
+        <li class="schedule_times__item">7 p.m.</li>
+        <li class="schedule_times__item">8 p.m.</li>
+        <li class="schedule_times__item">9 p.m.</li>
+        <li class="schedule_times__item">10 p.m.</li>
+        <li class="schedule_times__item">11 p.m.</li>
+        <li class="schedule_times__item">12 a.m.</li>
+        <li class="schedule_times__item">1 a.m.</li>
+      </ul>
+
+      <div class="venue_shows_container" id="thursday_shows">
+        <div class="venue_shows">
+          <div class="show show--60 show--21-plus">
+            The Bottletops
+          </div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--45 show--18-plus">
+            Jack Hotel
+          </div>
+
+          <div class="show show--empty show--empty-15"></div>
+
+          <div class="show show--45 show--18-plus">
+            Tsumi
+          </div>
+
+          <div class="show show--empty show--empty-15"></div>
+
+          <div class="show show--60 show--18-plus">
+            Bob Dylan
+          </div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--60 show--18-plus">
+            Kiss
+          </div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--empty show--empty-60"></div>
         </div>
 
-        <div class="show show--empty show--empty-30"></div>
+        <div class="venue_shows venue_shows--hide-2">
+          <div class="show show--all_ages show--45">
+            Led Zeppelin
+          </div>
 
-        <div class="show show--45">
-          Tsumi
+          <div class="show show--empty show--empty-15"></div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--45 show--21-plus">
+            Ying Yang Twins
+          </div>
+
+          <div class="show show--empty show--empty-15"></div>
+
+          <div class="show show--60 show--21-plus">
+            JAY Z
+          </div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--empty show--empty-60"></div>
         </div>
 
-        <div class="show show--empty show--empty-45"></div>
+        <div class="venue_shows venue_shows--hide-3">
+          <div class="show show--all_ages show--45">
+            Led Zeppelin
+          </div>
 
-        <div class="show show--60">
-          Bob Dylan
+          <div class="show show--empty show--empty-15"></div>
+
+          <div class="show show--60 show--21-plus">
+            Beach Boys
+          </div>
+
+          <div class="show show--empty show--empty-30"></div>
+
+          <div class="show show--45 show--21-plus">
+            Outkast
+          </div>
+
+          <div class="show show--empty show--empty-45"></div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--60 show--all_ages">
+            Hanson
+          </div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--empty show--empty-60"></div>
+        </div>
+
+        <div class="venue_shows venue_shows--hide-4">
+          <div class="show show--all_ages show--30">
+            Nelly
+          </div>
+
+          <div class="show show--empty show--empty-30"></div>
+
+          <div class="show show--60 show--21-plus">
+            Taylor Swift
+          </div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--60 show--21-plus">
+            Elvis
+          </div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--empty show--empty-60"></div>
+          
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--60 show--21-plus">
+            Destiny's Child
+          </div> 
+
+        </div>
+        <div class="venue_shows venue_shows--hide-5">
+          <div class="show show--all_ages show--45">
+            Drake
+          </div>
+
+          <div class="show show--empty show--empty-15"></div>
+
+          <div class="show show--60 show--21-plus">
+            Beach Boys
+          </div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--45 show--21-plus">
+            Kanye
+          </div>
+
+          <div class="show show--empty show--empty-15"></div>
+
+          <div class="show show--60 show--21-plus">
+            Simon and Garfunkle
+          </div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--60 show--21-plus">
+            Wiz Kalifa
+          </div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--empty show--empty-60"></div>
+           
+                  
         </div>
       </div>
 
-      <div class="venue_shows venue_shows--hide-for-tablet">
-        <div class="show show--all_ages show--45">
-          Led Zeppelin
+      <div class="venue_shows_container" id="friday_shows">
+        <div class="venue_shows">
+          <div class="show show--60 show--21-plus">
+            Joy Division
+          </div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--30 show--18-plus">
+            Noah and the Whale
+          </div>
+
+          <div class="show show--empty show--empty-30"></div>
+
+          <div class="show show--45 show--18-plus">
+            Tsumi
+          </div>
+
+          <div class="show show--empty show--empty-15"></div>
+
+          <div class="show show--60 show--18-plus">
+            The Eagles
+          </div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--60 show--18-plus">
+            Creedence Clearwater Revival
+          </div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--empty show--empty-60"></div>
         </div>
 
-        <div class="show show--empty show--empty-15"></div>
+        <div class="venue_shows venue_shows--hide-2">
+          <div class="show show--all_ages show--60">
+            Tom Petty and the Hearbreakers
+          </div>
 
-        <div class="show show--60">
-          Beach Boys
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--30 show--21-plus">
+            ZZ Top
+          </div>
+
+          <div class="show show--empty show--empty-30"></div>
+
+          <div class="show show--60 show--all_ages">
+            JAY Z
+          </div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--empty show--empty-60"></div>
         </div>
 
-        <div class="show show--empty show--empty-30"></div>
+        <div class="venue_shows venue_shows--hide-3">
+          <div class="show show--all_ages show--45">
+            Led Zeppelin
+          </div>
 
-        <div class="show show--45">
-          Tsumi
+          <div class="show show--empty show--empty-15"></div>
+
+          <div class="show show--60 show--18-plus">
+            Beach Boys
+          </div>
+
+          <div class="show show--empty show--empty-30"></div>
+
+          <div class="show show--45 show--21-plus">
+            Outkast
+          </div>
+
+          <div class="show show--empty show--empty-45"></div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--60 show--18-plus">
+            Catfish and the Bottleman
+          </div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--empty show--empty-60"></div>
         </div>
 
-        <div class="show show--empty show--empty-45"></div>
+        <div class="venue_shows venue_shows--hide-4">
+          <div class="show show--all_ages show--30">
+            Nelly
+          </div>
 
-        <div class="show show--60">
-          Bob Dylan
+          <div class="show show--empty show--empty-30"></div>
+
+          <div class="show show--30 show--18-plus">
+            Alisha Keys
+          </div>
+
+          <div class="show show--empty show--empty-30"></div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--60 show--21-plus">
+            Ke$ha
+          </div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--empty show--empty-60"></div>
+          
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--60 show--21-plus">
+            Beyonce
+          </div> 
+
+        </div>
+        <div class="venue_shows venue_shows--hide-5">
+          <div class="show show--all_ages show--45">
+            Drake
+          </div>
+
+          <div class="show show--empty show--empty-15"></div>
+
+          <div class="show show--30 show--21-plus">
+            Sugar Ray
+          </div>
+
+          <div class="show show--empty show--empty-30"></div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--30 show--21-plus">
+            Toby Keith
+          </div>
+
+          <div class="show show--empty show--empty-30"></div>
+
+          <div class="show show--60 show--21-plus">
+            Chiddy Bang
+          </div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--45 show--21-plus">
+            Slipknot
+          </div>
+
+          <div class="show show--empty show--empty-15"></div>
+
+          <div class="show show--empty show--empty-60"></div>
+
+          <div class="show show--60 show--21-plus">
+            Jimmy Buffet
+          </div>
+                 
         </div>
       </div>
-    </div>
 
-    <div style="clear: both"></div>
-    
+      <div style="clear: both"></div>
+      
+    </div>
   </div>
-</div>
+
+
+
+
+
+
