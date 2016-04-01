@@ -56,13 +56,11 @@
       <img src=<%= @featurearticle.image%> class="col-6 no_padding home_news__img">
       <div class="col-6 no_padding"> 
       <div class="home_news__headlines">
-        <div class="home_news__headlines home_news__headlines--selected"> 
-          <a href="/news"><%= @featurearticle.title%></a>
-        </div>
+        <a href="/news/<%=@featurearticle.id%>" class="home_link">
+          <div class="home_news__headlines home_news__headlines--selected"> 
+            <%= @featurearticle.title%></div></a>
         <% @articles.each do |article| %>
-          <div class="home_news__headlines home_news__headlines--tablet">
-            <a href="/news"><%= article.title %></a>
-          </div>
+          <a href="/news/<%=article.id%>"class="home_link"><div class="home_news__headlines home_news__headlines--tablet"><%= article.title %></div></a>          
         <% end %>
       </div>
       </div>
