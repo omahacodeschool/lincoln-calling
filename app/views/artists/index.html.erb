@@ -1,35 +1,56 @@
-<div class="header_divider_top"></div>
+<div class="page_header">
+  <div class="header_divider_top"></div>
+  <div class="page_header__right">Artist</div>
+  <div class="page_header__left">LINEUP</div>
+  <div class="header_divider_bottom"></div>
+</div> 
 
-<div class="clear">
-  <div class="page_header_left col-3">LINEUP</div>
-  <div class="page_header_right col-9">Artists</div>
-</div>
-<div class="header_divider_bottom"></div>
-
-<div class="artist_white_background">
-
-  <div class="clear">
-    
-    <div class="clear artist_search_box">
-      <div class="artist_search_box__text">Search for a band</div>
-      <div class="artist_search_box__icon"></div>
+<div class="artist_white_background container">
+  <div class="clear artist_search_box">
+    <div class="artist_search_box__icon icon"></div>
+    <div class="artist_search_box__text">Search for a band</div>
+  </div>
+ 
+  <div class="no_padding">   
+    <div class="no_padding col-6 col-4-tablet">
+      <div class="artist_module">
+        <% @artists.order(:headline_order).each do |artist| %>
+          <img class="artist_module__image " src="<%= artist.image %>">
+          <div class="artist_module__name"><%= artist.name %></div>
+          <div class="artist_module__origin"><%= artist.origin %></div>
+          <!-- "overlay" is the hidden artist popup box -->
+          <div class="overlay artist_profile">
+            <div class="clear"> 
+              <div class="artist_profile container container-tablet">
+                <div class="close_button col-1-tablet">X</div>
+                  <div class="col-7-tablet">
+                    <img class="artist_profile__image" src="<% artist.image %>">
+                  </div>
+                  <div class="artist_info col-4-tablet">
+                    <div class="artist_info__name"><% artist.name %></div>
+                    <div class="artist_info__link"><% artist.website %></div>
+                    <div class="artist_info__origin"><% artist.origin %></div>
+                  </div>
+                  <div class="artist_performance_info col-4-tablet">
+                    <% artist.events.each do |event| %>
+                      <div class="artist_performance_info__date_time"><%= event.weekday%>, <%= event.monthday %><br>
+                      @ <%= event.starttime %><br>
+                      <%= event.venue.name %><br>
+                    <% end %>
+                    DATE/TIME</div>
+                    <div class="artist_performance_info__venue">Venue</div>
+                  </div>
+                  <div class="col-4-tablet no_padding">  
+                   <div class="artist_bio"><% artist.bio %></div>
+                  </div>
+              </div>
+            <div>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
-
-  <div class="clear">
-    <% @artists.order(:headline_order).each do |artist| %>
-      <div class="artist_module col-6">
-        <img class="artist_module__image" src="<%= artist.image %>">
-        <div class="artist_module__name"><%= artist.name %></div>
-        <div class="artist_module__origin"><%= artist.origin %></div>
-      </div>
-    <% end %>  
-  </div>
 </div>
-
-
-
-
 
   
  

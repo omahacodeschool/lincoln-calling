@@ -1,83 +1,369 @@
-$schedule-left-column-width: 80px;
+$schedule-left-column-width: 60px;
 $schedule-venue-column-width: $schedule-left-column-width * 2;
 $pixels-per-fifteen-minutes: 40px;
+$all-ages-color: #F5BB28;
+$eighteen-plus-color: #6EA40E;
+$twentyone-plus-color: #CC4723;
 
+
+.white_panel{
+  background-color: white;
+  overflow: hidden;
+  padding-bottom: 25px;
+  position: relative;
+}
+
+.schedule_header{
+  margin: 20px 15px;
+  position: relative;
+}
+//Day Picker Starts
+.day_picker{
+  border: 1px solid #565561;
+  background-color: white;
+  overflow: hidden;
+  //position: relative;
+  //display: inline-block;
+}
+#other_days{
+  display: none;
+  position: absolute;
+  top: 0px;
+  background-color: white;
+  width: 100%;
+  border: 1px solid #8f8f8f;
+}
+
+.day_picker__text{
+  color: #565651;
+  font-family: Yanone Kaffeesatz;
+  font-size: 25px;
+  margin: 5px;
+}
+.other_days__text{
+  color: #565651;
+  font-family: Yanone Kaffeesatz;
+  font-size: 25px;
+  margin: 5px;
+  //border-top: 1px solid #8f8f8f;
+}
+.day_picker__triangle_down{
+  width: 0;
+  height: 0;
+  margin: 15px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #565651;
+  float: right;
+}
+.other_days__triangle_up{
+  width: 0;
+  height: 0;
+  margin: 15px;
+  padding-top: 5px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #565651;
+  float: right;
+}
+//Plan Your Festival Button
+.plan_festival_button.plan_festival_button--hide{
+  display: none;
+  float: right;
+  font-family: Oswald;
+  font-size: 15px;
+  background: #565651;
+  color: white;
+  padding: 9px;
+}
+//Note: These are ages for the key above. Not the colored bars on the events.
+.ages{
+  color: #565651;
+  font-family: Yanone Kaffeesatz;
+  font-size: 18px;
+  margin-left: 15px;
+  padding: 10px 10px 10px 0px;
+}
+.all_ages{
+  border-left: 8px solid $all-ages-color;
+  float: left;
+  padding-right: 20px;
+  padding-left: 8px
+}
+.eighteen_plus{
+  border-left: 8px solid $eighteen-plus-color;
+  float: left;
+  padding-right: 20px;
+  padding-left: 8px
+}
+.twentyone_plus{
+  border-left: 8px solid $twentyone-plus-color;
+  float: left;
+  padding-right: 20px;
+  padding-left: 8px
+}
+//-------------------------------------------------------------
+
+//Times on the left
 .schedule_times{
   float: left;
   width: $schedule-left-column-width;
   margin: 0;
-  padding: 0;
+  padding-left: 15px;
   list-style: none;
 }
-
 .schedule_times__item{
   height: $pixels-per-fifteen-minutes * 4;
+  font-family: 'Yanone Kaffeesatz';
+  font-size: 16px;
+  color: #565561;
 }
-
 .venue_shows_container{
   margin-left: $schedule-left-column-width;
+  margin-right: $schedule-left-column-width;
 }
-
-.venue_shows{
+.venue_picker{
+  width: 100%;
 }
-
-.venue_shows.venue_shows--hide-for-tablet{
+.triangle_box{
+  background-color: #c9c9c9;
+  width: $schedule-left-column-width;
+  height: $schedule-left-column-width;
+}
+.venue_shows.venue_shows--hide-2{
   display: none;
 }
-.triangle-left {
+.venue_shows.venue_shows--hide-3{
+  display: none;
+}
+.venue_shows.venue_shows--hide-4{
+  display: none;
+}
+.venue_shows.venue_shows--hide-5{
+  display: none;
+}
+.venue_box{
+  background-color: white;
+  overflow: hidden;
+  width: calc(100% - 120px);
+}
+.venue_box__text{
+  color: #565651;
+  text-align: center;
+  padding-top: 13px; 
+  font-family: Oswald;
+  font-size: 25px;
+  height: 60px;
+  border: 2px solid #c9c9c9;
+}
+.venue_box__text.venue_box__text--2{
+  display: none;
+}
+.venue_box__text.venue_box__text--3{
+  display: none;
+}
+.venue_box__text.venue_box__text--4{
+  display: none;  
+}
+.venue_box__text.venue_box__text--5{
+  display: none;  
+}
+.float_left{
+   float: left;
+}
+.float_right{
+  float: right;
+}
+.triangle_box__triangle-left {
   width: 0;
   height: 0;
-  border-top: 50px solid transparent;
-  border-right: 100px solid red;
-  border-bottom: 50px solid transparent;
+  margin-left: 15px;
+  margin-top: 15px;
+  border-top: 15px solid transparent;
+  border-right: 15px solid white;
+  border-bottom: 15px solid transparent;
 }
-.triangle-right {
+.triangle_box__triangle-right {
   width: 0;
   height: 0;
-  border-top: 50px solid transparent;
-  border-left: 100px solid red;
-  border-bottom: 50px solid transparent;
+  margin-left: 28px;
+  margin-top: 15px;
+  border-top: 15px solid transparent;
+  border-left: 15px solid white;
+  border-bottom: 15px solid transparent;
 }
-
+.venue_shows{
+  float: left;
+  width: 100%;
+  border: 1px solid #8f8f8f
+}
 @media (min-width: 420px){
+  .day_picker{
+    width: 50%;
+    float: left;
+  }
+  #other_days{
+    width: 50%;
+  }
+  //Note: These are ages for the key above. Not the colored bars on the events.
+  .ages{
+    margin-left: $schedule-left-column-width;
+  }
+  .all_ages{
+    padding-right: 24px;
+    padding-left: 10px
+  }
+  .eighteen_plus{
+    padding-right: 24px;
+    padding-left: 10px
+  }
+  .twentyone_plus{
+    padding-right: 24px;
+    padding-left: 10px
+  }
+  //-------------------------------------------
   .venue_shows{
     float: left;
-    width: $schedule-venue-column-width;
+    width: 50%;
+    border: 1px solid #8f8f8f
   }
+  .plan_festival_button.plan_festival_button--hide{
+    display: block;
+  }
+  .venue_shows.venue_shows--hide-2{
+    display: block;
+  }
+  .venue_box{
+    width: calc(100% - 120px); 
+  }
+  .venue_box__text{
+    width: 50%;
+    float: left;
+    text-align: none;
+  }
+  .venue_box__text.venue_box__text--2{
+    display: block;
+  }
+}
 
-  .venue_shows.venue_shows--hide-for-tablet{
+@media (min-width: 560px){
+  .venue_shows{
+    float: left;
+    width: 33.333333%;
+  }
+  .venue_shows.venue_shows--hide-3{
+  display: block;
+  }
+  .venue_box__text{
+    width: 33.3333333%;
+    float: left;
+    text-align: none;
+  }
+  .venue_box__text.venue_box__text--3{
+    display: block;
+  }
+}
+@media (min-width: $breakpoint-tablet){
+  .venue_shows{
+    float: left;
+    width: 25%;
+  }
+  .venue_shows.venue_shows--hide-4{
+  display: block;
+  }
+  .venue_box__text{
+    width: 25%;
+    float: left;
+    text-align: none;
+  }
+  .venue_box__text.venue_box__text--4{
+    display: block;
+  }
+  .white_panel{
+  margin-left: 15px;
+  margin-right: 15px;
+  }
+}
+@media (min-width: $breakpoint-desktop){
+  .day_picker{
+    width: 40%;
+    float: left;
+  }
+  #other_days{
+    width: 40%;
+  }
+  .venue_shows{
+    float: left;
+    width: 20%;
+  }
+  .venue_shows.venue_shows--hide-5{
+  display: block;
+  }
+  .venue_box__text{
+    width: 20%;
+    float: left;
+    text-align: none;
+  }
+  .venue_box__text.venue_box__text--5{
     display: block;
   }
 }
 
 .show{
-  background: #999;
-  border-left: 10px solid #999;
+  background: #8f8f8f;
+  border-left: 10px solid #8f8f8f;
+  font-family: Oswald;
+  font-size: 20px;
+  color: white;
+  text-align: center;
 }
 .show.show--empty{
   background: transparent;
   border-left: none;
+  border-top: 1px solid #8f8f8f;
+  border-bottom: 1px solid #8f8f8f;
 }
 
 .show.show--all_ages{
-  border-left-color: #F67C00;
+  border-left-color: $all-ages-color;
 }
 .show.show--18-plus{
-  border-left-color: #00F61D;
+  border-left-color: $eighteen-plus-color;
 }
 .show.show--21-plus{
-  border-left-color: #F6008D;
+  border-left-color: $twentyone-plus-color;
 }
 
 .show--15, .show--empty-15{
   height: $pixels-per-fifteen-minutes;
+  line-height: $pixels-per-fifteen-minutes;
+  white-space: nowrap;
 }
 .show--30, .show--empty-30{
   height: $pixels-per-fifteen-minutes * 2;
+  line-height: $pixels-per-fifteen-minutes * 2;
+  white-space: nowrap;
 }
 .show--45, .show--empty-45{
   height: $pixels-per-fifteen-minutes * 3;
+  line-height: $pixels-per-fifteen-minutes *3;
+  white-space: nowrap;
 }
 .show--60, .show--empty-60{
   height: $pixels-per-fifteen-minutes * 4;
+  line-height: $pixels-per-fifteen-minutes * 4;
+  white-space: nowrap;
 }
+#thursday_shows{
+  display: block;
+}
+
+#friday_shows{
+  display: none;
+}
+
+
+
+
+
+

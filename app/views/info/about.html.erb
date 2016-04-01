@@ -1,13 +1,66 @@
-<% @about.each do |about| %>  
-  <div class="clear">
-    <div class="page_header__left"><%= about.title.upcase%></div>
+<div class="page_header">
+  <div class="header_divider_top"></div>
+  <div class="page_header__left page_header__left--full">ABOUT</div>
+  <div class="header_divider_bottom"></div>
+</div>
+
+  
+<div class="clear">
+
+  <div class="about col-8-tablet">
+    <% @about.each do |about| %>
+      <img class="about__image" src="<%=about.image%>">
+      <div class="about__content"><%=about.article_content%></div>
+    <% end %>
   </div>
-  <div class="white_background">
-    <div class="clear">
-      <div class="about">      
-        <img class="about__image" src=<%= about.image %>>
-        <div class="about__content"><%= about.article_content%></div>
+
+
+  <div class="col-4-tablet">
+    <a href="http://hearnebraska.us1.list-manage1.com/subscribe?u=8a195706cf10047ecb6091c5e&id=e8436333d5">
+      <div class="home_emails">
+        <div id="home_computer_icon" class="icon"></div>
+        <div id="home_email_text">SIGN UP FOR EMAIL UPDATES</div>
       </div>
+    </a>
+  </div>
+
+      <!-- Show Sidebar -->
+  <div class="col-4-tablet">
+    <div class="side_bar">
+      <div class="side_bar__title">
+      Festival Schedule/ Lincoln Calling 2016
+      </div>
+      <div class="clear dates">
+        <div class="col-4 no_padding">
+          <a href="#" class="day_link day_link--left day_link--selected">
+            <span href="#" class="day_link__day">Thursday</span>
+            <span href="#" class="day_link__date">6</span>
+          </a>  
+        </div>
+        <div class="col-4 no_padding">
+          <a href="#" class="day_link day_link--mid">
+            <span href="#" class="day_link__day">Friday</span>
+            <span href="#" class="day_link__date">7</span>
+          </a> 
+        </div>
+        <div class="col-4 no_padding">
+          <a href="#" class="day_link day_link--right">
+            <span href="#" class="day_link__day">Saturday</span>
+            <span href="#" class="day_link__date">8</span>
+          </a>
+        </div>
+      </div>
+      <div class="concert">
+        <% day = "Thursday" %>
+        <% daysevents = @events.byday(day) %>
+        <% if daysevents %>
+          <% daysevents.each do |event| %>
+            <div class="concert__name"><%= event.artist.name%> at <%= event.venue.    name %></div>
+            <div class="concert__time"><%= event.starttime %></div>
+          <%end%>
+        <%end%>
+      </div>
+      <a href="/events/list" class="full_schedule">see full schedule</a>
     </div>
   </div>
-<% end %>
+</div>
