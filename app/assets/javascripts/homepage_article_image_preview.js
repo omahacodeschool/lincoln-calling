@@ -15,14 +15,12 @@ function remove_featured_class(featuredclass){
   }
 }
 
-var homepage_headline = document.getElementsByClassName("home_news__headlines");
-function should_it_disappear(){
-  hide_old_image("feature_image")
-  remove_featured_class("home_news__headlines--selected")
-}
+var homepage_headline = document.getElementsByClassName("home_news__headlines--headline");
+
 for (var i = homepage_headline.length - 1; i >= 0; i--) {
   var headline = homepage_headline[i];
   headline.addEventListener("mouseover",function(event){
+    console.log(event.target.id);
     var headline_image = document.getElementById("image_"+(event.target.id));
     hide_old_image("feature_image")
     remove_featured_class("home_news__headlines--selected")

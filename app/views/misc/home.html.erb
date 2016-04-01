@@ -65,9 +65,9 @@
         <% @articles.each do |headline| %>
           <%if headline == @articles[0] %>
             <a href="/news/<%=headline.id%>" class="home_link">
-            <div id ="<%=headline.id%>" class="home_news__headlines home_news__headlines--selected"><%= headline.title%></div></a>
+            <div id ="<%=headline.id%>" class="home_news__headlines home_news__headlines--headline home_news__headlines--selected"><%= headline.title%></div></a>
           <% else %>
-            <a href="/news/<%=headline.id%>"class="home_link"><div id ="<%=headline.id%>" class="home_news__headlines headline_for_<%=headline.id%> home_news__headlines--tablet"><%= headline.title %></div></a>  
+            <a href="/news/<%=headline.id%>"class="home_link"><div id ="<%=headline.id%>" class="home_news__headlines home_news__headlines--headline headline_for_<%=headline.id%> home_news__headlines--tablet"><%= headline.title %></div></a>  
           <% end %>
         <% end %>
       </div>
