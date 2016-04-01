@@ -5,6 +5,7 @@ class InfoController < ApplicationController
   end
   def about
     @about = About.all
+    @events = Event.all
     render "about"
   end
 end
