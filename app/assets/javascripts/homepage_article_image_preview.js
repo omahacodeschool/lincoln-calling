@@ -2,9 +2,11 @@
 //the photo changes to the selected headline's image
 function hide_old_image(featuredclass){
   var featured_image = document.getElementsByClassName(featuredclass);
+
   for (var i = featured_image.length - 1; i >= 0; i--) {
     featured_image[i].classList.add("is_hidden");
-  }
+  };
+
 };
 function remove_featured_class(featuredclass){
   var featured_headline = document.getElementsByClassName(featuredclass);
@@ -14,7 +16,10 @@ function remove_featured_class(featuredclass){
 }
 
 var homepage_headline = document.getElementsByClassName("home_news__headlines");
-
+function should_it_disappear(){
+  hide_old_image("feature_image")
+  remove_featured_class("home_news__headlines--selected")
+}
 for (var i = homepage_headline.length - 1; i >= 0; i--) {
   var headline = homepage_headline[i];
   headline.addEventListener("mouseover",function(event){
