@@ -10,24 +10,27 @@ $twentyone-plus-color: #CC4723;
   background-color: white;
   overflow: hidden;
   padding-bottom: 25px;
+  position: relative;
 }
 
 .schedule_header{
   margin: 20px 15px;
+  position: relative;
 }
 //Day Picker Starts
 .day_picker{
   border: 1px solid #565561;
   background-color: white;
   overflow: hidden;
-  //position: absolute;
+  //position: relative;
   //display: inline-block;
 }
 #other_days{
   display: none;
   position: absolute;
+  top: 0px;
   background-color: white;
-  min-width: 50%;
+  width: 100%;
   border: 1px solid #8f8f8f;
 }
 
@@ -198,6 +201,9 @@ $twentyone-plus-color: #CC4723;
     width: 50%;
     float: left;
   }
+  #other_days{
+    width: 50%;
+  }
   .ages{
     margin-left: $schedule-left-column-width;
   }
@@ -276,10 +282,13 @@ $twentyone-plus-color: #CC4723;
   }
 }
 @media (min-width: $breakpoint-desktop){
-.day_picker{
-  width: 40%;
-  float: left;
-}
+  .day_picker{
+    width: 40%;
+    float: left;
+  }
+  #other_days{
+    width: 40%;
+  }
   .venue_shows{
     float: left;
     width: 20%;
@@ -341,6 +350,13 @@ $twentyone-plus-color: #CC4723;
   height: $pixels-per-fifteen-minutes * 4;
   line-height: $pixels-per-fifteen-minutes * 4;
   white-space: nowrap;
+}
+#thursday_shows{
+  display: block;
+}
+
+#friday_shows{
+  display: none;
 }
 
 
