@@ -12,6 +12,7 @@ day_picker_box.addEventListener("click", function(){
 });
 
 thurs.addEventListener("click", function(){
+  alert(event.target.innerHTML);
   current_day.innerHTML = event.target.innerHTML
   other_days.style.display = "none";
   thursday_shows.style.display = "block";
