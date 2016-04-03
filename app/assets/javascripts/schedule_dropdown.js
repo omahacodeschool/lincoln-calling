@@ -1,3 +1,4 @@
+//a drop down of the festival days on the schedule view
 var day_picker_box = document.getElementById("day_picker_box");
 var thurs = document.getElementById("thurs");
 var fri = document.getElementById("fri");
