@@ -5,7 +5,7 @@
   <% venue.events.each do |event| %>
     <p><%= event.weekday%>, <%= event.monthday%>
     <p><%= event.starttime %> to <%=event.endtime%></p>
-    <p><%= (Time.parse(event.endtime) - Time.parse(event.starttime)) / 3600 %></p>
+    <p>(<%= (Time.parse(event.endtime) - Time.parse(event.starttime)) / 60 %> minutes long)</p>
     <p><%= event.artist.name%> 
     <p> minimum age: <%= event.minimum_age %></p>
   <%end%>
