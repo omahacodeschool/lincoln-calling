@@ -1,3 +1,5 @@
+ <!-- This page needs more integrating before it's done. -->
+
  <!-- Header that tells user where they are at. -->
 <div class="page_header">
   <div class="header_divider_top"></div>
@@ -40,12 +42,11 @@
   <div class="col-8-tablet no_padding">
     <div class="venues">
       <div class="col-10 no_padding">
-        <div class="venues__text venues__text--selected">Bourbon Theater</div>
-        <div class="venues__text">Duffy's Tavern</div>
-        <div class="venues__text">Fat Toad</div>
-        <div class="venues__text">Bourbon Theatre</div>
-        <div class="venues__text">Duffy's Tavern</div>
-        <div class="venues__text">Fat Toad</div>
+        <!-- The text that follows is how the HTML will likely have to look to allow for adding the selected effect to venue locations when selected.  Or rather, the "venues__text--selected" class modifier needs to be added to make that happen via JavaScript. -->
+        <!-- <div class="venues__text venues__text--selected">Bourbon Theater</div> -->
+        <% @venues.each do |venue| %>
+          <div class="venues__text"><%= venue.name %></div>
+        <% end %>
       </div>
       <div class="col-2 no_padding">
         <div class="teardrop">
