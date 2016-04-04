@@ -8,7 +8,11 @@
 <div class="artist_white_background container">
   <div class="clear artist_search_box">
     <div class="artist_search_box__icon icon"></div>
-    <div class="artist_search_box__text">Search for a band</div>
+    <div class="artist_search_box__text">
+      <%= form_tag('/artists/search') do %>
+        <input type="string" name="search_input">
+      <% end %>
+    </div>
   </div>
  
   <div class="no_padding">   
@@ -51,8 +55,6 @@
     </div>
   </div>
 </div>
-
-  
  
     
  

@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   root to: "misc#home"
   get "artists/list" => "artists#index"
   get "artists/list/comedians" => "artists#index_comedians"
+  post "artists/search" => "artists#search"
   get "events/list" => 'events#index'
   get "info/visitors" => 'visitors#index'
   get "info/visitors/:id" => 'visitors#show'
