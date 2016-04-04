@@ -53,14 +53,22 @@
 <div class="clear">
   <div class="col-8-tablet">
     <div class="clear home_news">
-      <img src=<%= @featurearticle.image%> class="col-6 no_padding home_news__img">
+      <% @articles.each do |image| %>
+        <% if image == @articles[0] %>  
+          <img id ="image_<%=image.id%>" src=<%= image.image %> class="col-6 no_padding home_news__img feature_image">
+        <% else %>
+          <img id ="image_<%=image.id%>" src=<%= image.image %> class="col-6 no_padding home_news__img is_hidden">
+        <% end %>
+      <% end %>
       <div class="col-6 no_padding"> 
       <div class="home_news__headlines">
-        <div class="home_news__headlines home_news__headlines--selected"> <%= @featurearticle.title%>
-        </div>
-        <% @articles.each do |article| %>
-          <div class="home_news__headlines home_news__headlines--tablet"><%= article.title %>
-          </div>
+        <% @articles.each do |headline| %>
+          <%if headline == @articles[0] %>
+            <a href="/news/<%=headline.id%>" class="home_link">
+            <div id ="<%=headline.id%>" class="home_news__headlines home_news__headlines--headline home_news__headlines--selected"><%= headline.title%></div></a>
+          <% else %>
+            <a href="/news/<%=headline.id%>"class="home_link"><div id ="<%=headline.id%>" class="home_news__headlines home_news__headlines--headline headline_for_<%=headline.id%> home_news__headlines--tablet"><%= headline.title %></div></a>  
+          <% end %>
         <% end %>
       </div>
       </div>
