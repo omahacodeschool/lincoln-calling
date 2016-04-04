@@ -53,27 +53,37 @@
 <div class="clear">
   <div class="col-8-tablet">
     <div class="clear home_news">
-      <img src=<%= @featurearticle.image%> class="col-6 no_padding home_news__img">
+      <% @articles.each do |image| %>
+        <% if image == @articles[0] %>  
+          <img id ="image_<%=image.id%>" src=<%= image.image %> class="col-6 no_padding home_news__img feature_image">
+        <% else %>
+          <img id ="image_<%=image.id%>" src=<%= image.image %> class="col-6 no_padding home_news__img is_hidden">
+        <% end %>
+      <% end %>
       <div class="col-6 no_padding"> 
       <div class="home_news__headlines">
-        <div class="home_news__headlines home_news__headlines--selected"> <%= @featurearticle.title%>
-        </div>
-        <% @articles.each do |article| %>
-          <div class="home_news__headlines home_news__headlines--tablet"><%= article.title %>
-          </div>
+        <% @articles.each do |headline| %>
+          <%if headline == @articles[0] %>
+            <a href="/news/<%=headline.id%>" class="home_link">
+            <div id ="<%=headline.id%>" class="home_news__headlines home_news__headlines--headline home_news__headlines--selected"><%= headline.title%></div></a>
+          <% else %>
+            <a href="/news/<%=headline.id%>"class="home_link"><div id ="<%=headline.id%>" class="home_news__headlines home_news__headlines--headline headline_for_<%=headline.id%> home_news__headlines--tablet"><%= headline.title %></div></a>  
+          <% end %>
         <% end %>
       </div>
       </div>
       <div class="home_news__more">
-        <a href="#" class="home_news__more__text">see more news</a>
+        <a href="/news" class="home_news__more__text">see more news</a>
       </div>
     </div>
   </div>
   <div class="col-4-tablet no_padding">
-    <div class="home_emails">
-      <div id="home_computer_icon" class="icon"></div>
-      <div id="home_email_text">SIGN UP FOR EMAIL UPDATES</div>
-    </div>
+    <a href="http://hearnebraska.us1.list-manage1.com/subscribe?u=8a195706cf10047ecb6091c5e&id=e8436333d5" class="mailchimp_link">
+      <div class="home_emails">
+        <div id="home_computer_icon" class="icon"></div>
+        <div id="home_email_text">SIGN UP FOR EMAIL UPDATES</div>
+      </div>
+    </a>
 
     <div class="side_bar">
       <div class="side_bar__title">
@@ -109,7 +119,7 @@
           <%end%>
         <%end%>
       </div>
-      <a href="#" class="full_schedule">see full schedule</a>
+      <a href="/events/list" class="full_schedule">see full schedule</a>
     </div>
   </div>
 </div>

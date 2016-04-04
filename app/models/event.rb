@@ -3,7 +3,6 @@
 class Event < ActiveRecord::Base
   belongs_to(:venue)
   belongs_to(:artist)
-
   #returns the full word for day of week of event
   #example: Thursday
   def weekday
@@ -12,7 +11,7 @@ class Event < ActiveRecord::Base
   #returns the abbreviated month and day number
   #example: Oct. 6 
   def monthday
-    self.start_date_time.strftime("%b. %e")
+    self.start_date_time.strftime("%b.%e")
   end
   #returns event's start time
   #example: 1:30pm OR 12:45am etc
@@ -24,6 +23,8 @@ class Event < ActiveRecord::Base
   def endtime
     self.end_date_time.strftime("%l:%M%P")
   end
+  #class method to find all events happening on a particular day
+  #used in events index and events sidebar
   def self.byday(weekday)
     events = []
     Event.all.each do |event|
