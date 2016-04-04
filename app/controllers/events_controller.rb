@@ -3,4 +3,5 @@ class EventsController  < ActionController::Base
     @venues = Venue.all
     @events = Event.all
   end
+
 end

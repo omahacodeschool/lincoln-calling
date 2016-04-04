@@ -34,11 +34,13 @@ class Event < ActiveRecord::Base
     end
     return events
   end
+
+  def event_length(event_id)
+    event = Event.find_by_id(event_id)
+    binding.pry
+    event_length_decimal = (Time.parse(event.endtime) - Time.parse(event.starttime))/60
+    @event_length = event_length_decimal.to_i
+    return @event_length
+  end
 end
-
-
-
-
-
-
 
