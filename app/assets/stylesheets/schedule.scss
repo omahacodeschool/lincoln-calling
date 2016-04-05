@@ -353,6 +353,16 @@ $twentyone-plus-color: #CC4723;
   height: $pixels-per-fifteen-minutes * 4;
   line-height: $pixels-per-fifteen-minutes * 4;
   white-space: nowrap;
+  }
+.show--75, .show--empty-75{
+  height: $pixels-per-fifteen-minutes * 5;
+  line-height: $pixels-per-fifteen-minutes * 5;
+  white-space: nowrap;
+  }
+.show--90, .show--empty-90{
+  height: $pixels-per-fifteen-minutes * 6;
+  line-height: $pixels-per-fifteen-minutes * 6;
+  white-space: nowrap;
 }
 #thursday_shows{
   display: block;
