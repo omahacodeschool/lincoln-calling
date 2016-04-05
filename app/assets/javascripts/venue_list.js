@@ -1,8 +1,6 @@
 
-window.addEventListener("load", function(){
-  
  function createSidebarLi(json){
-  return ("<li><a>" + json.name + "</a></li>");
+  return ("<li style='list-style: none;' class='venues__text'><a class='venueMarker'>" + json.marker_title + "<div class='teardrop__color teardrop col-2 no_padding'>I</a></div></li>");
 };
 
 function bindLiToMarker($li, marker){
@@ -24,12 +22,6 @@ function createSidebar(json_array){
 
 handler = Gmaps.build('Google');
 handler.buildMap({ internal: {id: 'sidebar_builder'}}, function(){
-  var json_array = [
-    { lat: 40, lng: -80, name: 'Foo', infowindow: "I'm Foo" },
-    { lat: 45, lng: -90, name: 'Bar', infowindow: "I'm Bar" },
-    { lat: 50, lng: -85, name: 'Baz', infowindow: "I'm Baz" }
-  ];
-
   var markers = handler.addMarkers(json_array);
 
   _.each(json_array, function(json, index){
@@ -40,4 +32,4 @@ handler.buildMap({ internal: {id: 'sidebar_builder'}}, function(){
   handler.bounds.extendWith(markers);
   handler.fitMapToBounds();
 });
-});
+
