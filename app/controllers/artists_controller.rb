@@ -10,4 +10,8 @@ class ArtistsController < ApplicationController
     @artist_search_results = Artist.search_by_name(params[:search_input])
   end
   
+  def view
+    @artist = Artist.find_by_id(params[:id])
+    render "view", layout: nil
+  end
 end

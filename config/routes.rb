@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "misc#home"
   get "artists/list" => "artists#index"
+  get "artists/view/:id" => "artists#view"
   get "artists/list/comedians" => "artists#index_comedians"
   post "artists/search" => "artists#search"
   get "events/list" => 'events#index'
