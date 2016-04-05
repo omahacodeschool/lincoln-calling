@@ -1,5 +1,9 @@
+var day1Shows;
+var day2Shows;
+var day3Shows;
+var venueInfo;
 
- function createSidebarLi(json){
+function createSidebarLi(json){
   return ("<li style='list-style: none;' class='venues__text'><a value=" + `${json.id}` + " class='venueMarker' >" + json.marker_title + "<div class='teardrop__color teardrop col-2 no_padding'>I</div></a></li>");
 };
 
@@ -28,8 +32,18 @@ function clicking_sidebar_triggers_request(venue_id){
 
   request.addEventListener("load", function(event){
       var the_request = event.target;
-      var data = the_request.responseText;
-      alert(data);
+      var data = JSON.parse(the_request.responseText);
+      console.log(data);
+      for (var item in data) {
+    console.log(data[item]);
+};
+
+      console.log(data)
+      debugger
+      day1Shows = data['day1Shows'];
+      day2Shows = data['day2Shows'];
+      day3Shows = data['day3Shows'];
+      venueInfo = data['venueInfo'];
       // responseText is a built-in method for request objects.
   });
   request.send();
@@ -38,7 +52,6 @@ function clicking_sidebar_triggers_request(venue_id){
 handler = Gmaps.build('Google');
 handler.buildMap({ internal: {id: 'sidebar_builder'}}, function(){
   var markers = handler.addMarkers(json_array);
-
   _.each(json_array, function(json, index){
     json.marker = markers[index];
   });
@@ -49,13 +62,7 @@ handler.buildMap({ internal: {id: 'sidebar_builder'}}, function(){
 
   $(".venueMarker").on('click', function(){
     var venueID = $(this).attr("value");
-    var day1Shows;
-    var day2Shows;
-    var day3Shows;
-    var venueInfo;
     clicking_sidebar_triggers_request(venueID)
 });
 });
-
-
 

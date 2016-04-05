@@ -1,3 +1,4 @@
+
 require 'json'
 require 'venue_presenter'
 class VenuesController < ApplicationController
@@ -26,10 +27,10 @@ class VenuesController < ApplicationController
     @day3 = VenuePresenter.new(sat_shows)
 
     @info_hash ={}
-    @info_hash["day1Shows"] = @day1.venue_events_with_artist_info
-    @info_hash["day2Shows"] = @day2.venue_events_with_artist_info
-    @info_hash["day3Shows"] = @day3.venue_events_with_artist_info
-    @info_hash["venueData"] = @venue_data
+    @info_hash["day1Shows"] = @day1.venue_events_with_artist_info.to_json
+    @info_hash["day2Shows"] = @day2.venue_events_with_artist_info.to_json
+    @info_hash["day3Shows"] = @day3.venue_events_with_artist_info.to_json
+    @info_hash["venueData"] = @venue_data.to_json
 
     render :layout => false
   end
