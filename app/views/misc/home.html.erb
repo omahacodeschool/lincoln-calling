@@ -20,14 +20,22 @@
     </div>
   </div>
   <div class="clear tickets">
-  <% @tickets.each do |event|%>
-    <div class="col-6 col-3-tablet no_padding">
-    <!-- ticket--even ticket--sold_out -->
-      <a class="ticket ticket--odd" href="<%= event.link %>">
-        <span class="ticket__title"><%= event.name%></span>
-        <span class="ticket__price"><%= event.format_price%></span>
-      </a>
-    </div>
+    <% @tickets.each do |event|%>
+      <% if event.sold_out != true %>
+        <div class="col-6 col-3-tablet no_padding">      
+          <a class="ticket ticket--even ticket--odd" href="<%= event.link %>">
+            <span class="ticket__title"><%= event.name%></span>
+            <span class="ticket__price"><%= event.format_price%></span>
+          </a>
+        </div>
+      <% else%>
+        <div class="col-6 col-3-tablet no_padding">      
+          <a class="ticket ticket--even ticket--odd ticket--sold_out" href="<%= event.link %>">
+            <span class="ticket__title"><%= event.name%></span>
+            <span class="ticket__price"><%= event.format_price%></span>
+          </a>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
