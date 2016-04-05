@@ -20,33 +20,15 @@
     </div>
   </div>
   <div class="clear tickets">
+  <% @tickets.each do |event|%>
     <div class="col-6 col-3-tablet no_padding">
-      <a class="ticket ticket--odd" href="<%= @tickets[0].link %>">
-        <span class="ticket__title"><%=@tickets[0].name%></span>
-        <span class="ticket__price"><%=@tickets[0].format_price%></span>
+    <!-- ticket--even ticket--sold_out -->
+      <a class="ticket ticket--odd" href="<%= event.link %>">
+        <span class="ticket__title"><%= event.name%></span>
+        <span class="ticket__price"><%= event.format_price%></span>
       </a>
     </div>
-
-    <div class="col-6 col-3-tablet no_padding">
-      <a class="ticket ticket--even ticket--sold_out" href="<%= @tickets[1].link %>">
-        <span class="ticket__title"><%=@tickets[1].name%></span>
-        <span class="ticket__price"><%=@tickets[1].format_price%></span>
-      </a>
-    </div>
-
-    <div class="col-6 col-3-tablet no_padding" >
-      <a class="ticket ticket--odd" href="<%= @tickets[2].link %>">
-        <span class="ticket__title"><%=@tickets[2].name%></span>
-        <span class="ticket__price"><%=@tickets[2].format_price%></span>
-      </a>
-    </div>
-
-    <div class="col-6 col-3-tablet no_padding">
-      <a class="ticket ticket--even" href="<%= @tickets[3].link %>">
-        <span class="ticket__title"><%=@tickets[3].name%></span>
-        <span class="ticket__price"><%=@tickets[3].format_price%></span>
-      </a>
-    </div>
+    <% end %>
   </div>
 </div>
 
