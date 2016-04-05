@@ -49,7 +49,7 @@
 
     <div class="schedule_lineup">
       <ul class="schedule_times">
-        <li class="schedule_times__item" id="5pm">5 p.m.</li>
+        <li class="schedule_times__item" id="500pm">5 p.m.</li>
         <li class="schedule_times__item" id="6pm">6 p.m.</li>
         <li class="schedule_times__item" id="7pm">7 p.m.</li>
         <li class="schedule_times__item" id="8pm">8 p.m.</li>
@@ -65,7 +65,8 @@
       <div class="venue_shows_container" id="thursday_shows">
       <% @venues.each do |venue| %>
         <div class="venue_shows">
-        <% venues_events = venue.sort_venues_shows_per_day(venue.id, "Thursday") %>
+          <% venue_presenter = VenuePresenter.new(venue) %>
+          <% venues_events = venue_presenter.shows_at_venue_per_day("Thursday") %>
         <% venues_events.each do |event| %>
           <div class="show show--<%= event.event_length(event.id) %> show--<%= event.minimum_age %>-plus">
             <%= event.artist.name %>

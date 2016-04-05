@@ -1,3 +1,5 @@
+require "venue_presenter"
+
 class VenuesController < ApplicationController
   def index
     @venues = Venue.all
