@@ -15,7 +15,23 @@ class Venue < ActiveRecord::Base
         events << event
       end
     end
+
     return events
   end
  
+ end
+
+ def venue_events_by_day_with_artist_info(day)
+  final_info = {}
+  events = venue_events_by_day(day)
+
+  events.each do | event |
+    id = event.id
+    artist = event.artist.title
+    start_time = event.starttime
+    end_time = event.endttime
+    final_info[id] = {artist: artist, start_time: start_time, end_time: end_time}
+  end
+
+  return final_info
  end
