@@ -5,14 +5,17 @@ class VenuePresenter
 
   def venue_events_with_artist_info
     final_info = {}
-    @event_array.each do | event |
-      id = event.id
-      artist = event.artist.name
-      start_time = event.starttime
-      end_time = event.endtime
-      final_info[id] = {artist: artist, start_time: start_time, end_time: end_time}
+    if @event_array.empty?
+      return final_info
+    else
+      @event_array.each do | event |
+        id = event.id
+        artist = event.artist.name
+        start_time = event.starttime
+        end_time = event.endtime
+        final_info[id] = {artist: artist, start_time: start_time, end_time: end_time}
+      end
     end
-
     return final_info
- end
+  end
 end

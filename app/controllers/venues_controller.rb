@@ -1,3 +1,4 @@
+require 'json'
 require 'venue_presenter'
 class VenuesController < ApplicationController
   def index
@@ -12,9 +13,9 @@ class VenuesController < ApplicationController
   end
 
   def view
-    @venue_data = {}
     @venue = Venue.find_by_id(params[:venue_id])
-    @venue_data[@venue.id] = {address: @venue.address, image: @venue.img, info: @venue.info}
+    @venue_data = {}
+    @venue_data[@venue.name] = {address: @venue.address, image: @venue.img, info: @venue.info}
     
     th_shows = @venue.venue_events_by_day("Thursday")
     fri_shows = @venue.venue_events_by_day("Friday")
@@ -23,6 +24,14 @@ class VenuesController < ApplicationController
     @day1 = VenuePresenter.new(th_shows)
     @day2 = VenuePresenter.new(fri_shows)
     @day3 = VenuePresenter.new(sat_shows)
+
+    @info_hash ={}
+    @info_hash["day1Shows"] = @day1.venue_events_with_artist_info
+    @info_hash["day2Shows"] = @day2.venue_events_with_artist_info
+    @info_hash["day3Shows"] = @day3.venue_events_with_artist_info
+    @info_hash["venueData"] = @venue_data
+
+    render :layout => false
   end
 
 end
