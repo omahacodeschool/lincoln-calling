@@ -26,15 +26,13 @@
   <div class="col-4-tablet no_padding">
     <div class="venue_profile">
       <div class="extra_gutter">
-        <% @venues.each do |venue| %>
-          <div class="venue_info">
-            <div class="venue_info__name"><%= venue.name %></div>
-            <div class="venue_info__link"><%= venue.website %></div>
-            <div class="venue_info__address"><%= venue.address %></div>
+          <div class="venue_info" id="venueInfo">
+            <div class="venue_info__name" id="venueName"></div>
+            <div class="venue_info__link" id="venueWebsite"></div>
+            <div class="venue_info__address" id="venueAddress"></div>
           </div>
-          <img class="venue_profile__image" src="<%= venue.img %>">
-          <div class="venue_bio"><%= venue.info %></div>
-        <% end %>
+          <img class="venue_profile__image" id="venueImage" src="#">
+          <div class="venue_bio" id="venueBio"></div>
       </div>
     </div>
   </div>
@@ -53,10 +51,6 @@
     </div>
  </div>
   </div>
-  </div>
-
-
-
     <!-- Show Sidebar -->
   <div class="col-4-tablet">
     <div class="side_bar">
@@ -65,20 +59,20 @@
       </div>
       <div class="clear dates">
         <div class="col-4 no_padding">
-          <a href="#" class="day_link day_link--left day_link--selected">
+          <a href="#" class="day_link day_link--left day_link--selected" value="day1Shows">
             <span href="#" class="day_link__day">Thursday</span>
             <span href="#" class="day_link__date">6</span>
           </a>  
 
         </div>
         <div class="col-4 no_padding">
-          <a href="#" class="day_link day_link--mid">
+          <a href="#" class="day_link day_link--mid" value="day2Shows">
             <span href="#" class="day_link__day">Friday</span>
             <span href="#" class="day_link__date">7</span>
           </a> 
         </div>
         <div class="col-4 no_padding">
-          <a href="#" class="day_link day_link--right">
+          <a href="#" class="day_link day_link--right" value="day3Shows">
             <span href="#" class="day_link__day">Saturday</span>
             <span href="#" class="day_link__date">8</span>
           </a>
@@ -94,5 +88,8 @@
       </div>
       <a href="#" class="full_schedule">see full schedule</a>
     </div>
+     </div>
   </div>
-</div>
+ </div>
+
+

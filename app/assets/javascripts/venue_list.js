@@ -3,6 +3,29 @@ var day2Shows;
 var day3Shows;
 var venueInfo;
 
+
+//function updates the Venue information container. 
+//This method is called whenever an instance of the venueMarker class is clicked see: >> $(".venueMarker").on('click', function(){)
+//
+//Information this function provides on the main page: (For Venue) Name, Website, Address, Image, and Bio
+function loadVenueInfo(venueData){
+  for (var key in venueData){
+  console.log(key + " -> " + venueData[key]);   
+    var name = key;
+    var moreVenueData = venueData[key];
+    var website = moreVenueData["website"];
+    var address = moreVenueData["address"];
+    var image = moreVenueData["image"]["img"]["url"];
+    var info = moreVenueData["info"];
+}
+  document.getElementById("venueName").innerHTML = name;
+  document.getElementById("venueWebsite").innerHTML = website;
+  document.getElementById("venueWebsite").src = website;
+  document.getElementById("venueAddress").innerHTML = address;
+  document.getElementById("venueImage").src = image;
+  document.getElementById("venueBio").innerHTML = info;
+};
+
 function createSidebarLi(json){
   return ("<li style='list-style: none;' class='venues__text'><a value=" + `${json.id}` + " class='venueMarker' >" + json.marker_title + "<div class='teardrop__color teardrop col-2 no_padding'>I</div></a></li>");
 };
@@ -33,17 +56,11 @@ function clicking_sidebar_triggers_request(venue_id){
   request.addEventListener("load", function(event){
       var the_request = event.target;
       var data = JSON.parse(the_request.responseText);
-      console.log(data);
-      for (var item in data) {
-    console.log(data[item]);
-};
-
-      console.log(data)
-      debugger
-      day1Shows = data['day1Shows'];
-      day2Shows = data['day2Shows'];
-      day3Shows = data['day3Shows'];
-      venueInfo = data['venueInfo'];
+      day1Shows = JSON.parse(data['day1Shows']);
+      day2Shows = JSON.parse(data['day2Shows']);
+      day3Shows = JSON.parse(data['day3Shows']);
+      venueInfo = JSON.parse(data['venueData']);
+      loadVenueInfo(venueInfo)
       // responseText is a built-in method for request objects.
   });
   request.send();
@@ -63,6 +80,10 @@ handler.buildMap({ internal: {id: 'sidebar_builder'}}, function(){
   $(".venueMarker").on('click', function(){
     var venueID = $(this).attr("value");
     clicking_sidebar_triggers_request(venueID)
-});
+  });
+
+  $(".day_link").on('click', function(){
+    var showInfo = $(this).attr("value");
+  });
 });
 

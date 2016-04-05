@@ -16,7 +16,7 @@ class VenuesController < ApplicationController
   def view
     @venue = Venue.find_by_id(params[:venue_id])
     @venue_data = {}
-    @venue_data[@venue.name] = {address: @venue.address, image: @venue.img, info: @venue.info}
+    @venue_data[@venue.name] = {address: @venue.address, image: @venue.img, info: @venue.info, website: @venue.website}
     
     th_shows = @venue.venue_events_by_day("Thursday")
     fri_shows = @venue.venue_events_by_day("Friday")
