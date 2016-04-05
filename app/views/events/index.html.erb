@@ -75,6 +75,19 @@
       <% end %>
       </div>
 
+      <div class="venue_shows_container" id="friday_shows">
+      <% @venues.each do |venue| %>
+        <div class="venue_shows">
+        <% venues_events = venue.sort_venues_shows_per_day(venue.id, "Friday") %>
+        <% venues_events.each do |event| %>
+          <div class="show show--<%= event.event_length(event.id) %> show--<%= event.minimum_age %>-plus">
+            <%= event.artist.name %>
+          </div>
+        <% end %>
+        </div>
+      <% end %>
+      </div>
+
       <div style="clear: both"></div>
       
     </div>

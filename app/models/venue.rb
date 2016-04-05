@@ -15,6 +15,7 @@ class Venue < ActiveRecord::Base
         next
       end
     end
+    @shows_at_venue_per_day = @shows_at_venue_per_day.sort_by{ |obj| obj.start_date_time}
     return @shows_at_venue_per_day
   end
 
