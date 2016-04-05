@@ -1,15 +1,82 @@
-<h1>Lineup</h1>
-<h2>Schedule</h2>
-<% @venues.each do |venue| %>
-  <h3><%= venue.name %></h3>
-  <% venue.events.each do |event| %>
-    <p><%= event.weekday%>, <%= event.monthday%>
-    <p><%= event.starttime %> to <%=event.endtime%></p>
-    <p>(<%= event.event_length(event.id) %> minutes long)</p>
-    <p><%= event.artist.name%> 
-    <p> minimum age: <%= event.minimum_age %></p>
-  <%end%>
-<%end%>
+  <div class="page_header">
+    <div class="page_header__right">Schedule</div>
+    <div class="page_header__left">Lineup</div>
+  </div>
+
+  <div class="white_panel">
+    <div class="schedule_header">
+      <div class="day_picker" id="day_picker_box">
+        <div class="day_picker__triangle_down"></div>
+        <div class="day_picker__text" id="current_day">Thursday Oct. 6</div>
 
 
+      </div>
+
+        <div id="other_days">
+          <div class="other_days__triangle_up"></div>
+          <div class="other_days__text" id="thurs">Thursday Oct. 6</div>
+          <div class="other_days__text" id="fri">Friday Oct. 7</div>
+          <div class="other_days__text" id="sat">Saturday Oct. 8</div>
+        </div>
+
+      <div class="plan_festival_button plan_festival_button--hide">
+        PLAN YOUR FESTIVAL
+      </div>
+      <div style="clear: both"></div>
+    </div>
+
+    <div class="venue_picker">
+      <div class="triangle_box float_left">
+        <div class="triangle_box__triangle-left"></div>
+      </div>
+      <div class="venue_box float_left">  
+        <% @venues.each do |venue| %>
+          <div class="venue_box__text venue_box__text--<%= venue.id %>"><%= venue.name %></div>
+        <% end %>
+      </div>
+      <div class="triangle_box float_left">
+        <div class="triangle_box__triangle-right"></div>
+      </div>
+      <div style="clear: both"></div>
+    </div>
+
+    <div class="ages">
+      <div class="all_ages">All Ages</div>
+      <div class="eighteen_plus">18 and older</div>
+      <div class="twentyone_plus">21 and older</div>
+      <div style="clear: both"></div>
+    </div>
+
+    <div class="schedule_lineup">
+      <ul class="schedule_times">
+        <li class="schedule_times__item" id="5pm">5 p.m.</li>
+        <li class="schedule_times__item" id="6pm">6 p.m.</li>
+        <li class="schedule_times__item" id="7pm">7 p.m.</li>
+        <li class="schedule_times__item" id="8pm">8 p.m.</li>
+        <li class="schedule_times__item" id="9pm">9 p.m.</li>
+        <li class="schedule_times__item" id="10pm">10 p.m.</li>
+        <li class="schedule_times__item" id="11pm">11 p.m.</li>
+        <li class="schedule_times__item" id="12am">12 a.m.</li>
+        <li class="schedule_times__item" id="1am">1 a.m.</li>
+      </ul>
+
+<!-- _____________________________________________________________________ -->
+
+      <div class="venue_shows_container" id="thursday_shows">
+      <% @venues.each do |venue| %>
+        <div class="venue_shows">
+        <% venues_events = venue.sort_venues_shows_per_day(venue.id, "Thursday") %>
+        <% venues_events.each do |event| %>
+          <div class="show show--<%= event.event_length(event.id) %> show--<%= event.minimum_age %>-plus">
+            <%= event.artist.name %>
+          </div>
+        <% end %>
+        </div>
+      <% end %>
+      </div>
+
+      <div style="clear: both"></div>
+      
+    </div>
+  </div>
 

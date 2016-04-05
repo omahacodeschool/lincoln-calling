@@ -13,22 +13,21 @@ day_picker_box.addEventListener("click", function(){
 });
 
 thurs.addEventListener("click", function(){
-  alert(event.target.innerHTML);
-  current_day.innerHTML = event.target.innerHTML
+  current_day.innerHTML = event.target.innerHTML;
   other_days.style.display = "none";
   thursday_shows.style.display = "block";
   friday_shows.style.display = "none";
 });
 
 fri.addEventListener("click", function(){
-  current_day.innerHTML = event.target.innerHTML
+  current_day.innerHTML = event.target.innerHTML;
   other_days.style.display = "none";
   thursday_shows.style.display = "none";
   friday_shows.style.display = "block";
 });
 
 sat.addEventListener("click", function(){
-  current_day.innerHTML = event.target.innerHTML
+  current_day.innerHTML = event.target.innerHTML;
   other_days.style.display = "none";
 });
 

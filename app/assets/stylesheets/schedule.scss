@@ -209,7 +209,7 @@ $twentyone-plus-color: #CC4723;
   .ages{
     margin-left: $schedule-left-column-width;
   }
-  .all_ages{
+  .zero_plus{
     padding-right: 24px;
     padding-left: 10px
   }
@@ -324,7 +324,7 @@ $twentyone-plus-color: #CC4723;
   border-bottom: 1px solid #8f8f8f;
 }
 
-.show.show--all_ages{
+.show.show--0-plus{
   border-left-color: $all-ages-color;
 }
 .show.show--18-plus{
