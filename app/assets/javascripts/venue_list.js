@@ -1,3 +1,7 @@
+//Used Google Maps for Rails (https://github.com/apneadiving/Google-Maps-for-Rails) Gemfile for built-in maps API 
+
+// Variables will store data retrieved from XHR requests. 
+//Defined here so that tehy can be utilized throughout any interaction on the page.
 var day1Shows;
 var day2Shows;
 var day3Shows;
@@ -26,8 +30,51 @@ function loadVenueInfo(venueData){
   document.getElementById("venueBio").innerHTML = info;
 };
 
+function loadDayEventInfo(events, day){
+  console.log("NEW DAY");
+  var events = events;
+  for (var key in events){
+    console.log(key + " -> " + events[key]);
+    var artist = events[key]["artist"];
+    var start = events[key]["start_time"];
+    var end = events[key]["end_time"];
+    createArtistDiv(artist, start, end, day)
+   };
+};
+
+function createArtistDiv(artist, start, end, day){
+  jQuery('<div/>', {class: 'concert__name shows ' + day, text: artist}).hide().appendTo('.concert');
+  jQuery('<div/>', {class: 'concert__time  shows ' + day, text: start + ' - ' + end}).hide().appendTo('.concert');
+};
+
+
+
+//function used to create list element and icon element for every google maps location marker. Also sets the value of the a tag to each venue's id for later use.
 function createSidebarLi(json){
   return ("<li style='list-style: none;' class='venues__text'><a value=" + `${json.id}` + " class='venueMarker' >" + json.marker_title + "<div class='teardrop__color teardrop col-2 no_padding'>I</div></a></li>");
+};
+
+//function used to send XHR requests to the server
+function clicking_sidebar_triggers_request(venue_id){
+  var request = new XMLHttpRequest();
+  request.open("GET", "http://localhost:3000/venues/" + venue_id);
+  // a request to the server running through http-server
+
+  request.addEventListener("load", function(event){
+      var the_request = event.target;
+      var data = JSON.parse(the_request.responseText);
+      day1Shows = JSON.parse(data['day1Shows']);
+      day2Shows = JSON.parse(data['day2Shows']);
+      day3Shows = JSON.parse(data['day3Shows']);
+      venueInfo = JSON.parse(data['venueData']);
+      loadVenueInfo(venueInfo)
+      loadDayEventInfo(day1Shows, "day1Shows")
+      loadDayEventInfo(day2Shows, "day2Shows")
+      loadDayEventInfo(day3Shows, "day3Shows")
+      $( ".day1Shows" ).show();
+      // responseText is a built-in method for request objects.
+  });
+  request.send();
 };
 
 function bindLiToMarker($li, marker){
@@ -47,24 +94,6 @@ function createSidebar(json_array){
   });
 };
 
-function clicking_sidebar_triggers_request(venue_id){
-  
-  var request = new XMLHttpRequest();
-  request.open("GET", "http://localhost:3000/venues/" + venue_id);
-  // a request to the server running through http-server
-
-  request.addEventListener("load", function(event){
-      var the_request = event.target;
-      var data = JSON.parse(the_request.responseText);
-      day1Shows = JSON.parse(data['day1Shows']);
-      day2Shows = JSON.parse(data['day2Shows']);
-      day3Shows = JSON.parse(data['day3Shows']);
-      venueInfo = JSON.parse(data['venueData']);
-      loadVenueInfo(venueInfo)
-      // responseText is a built-in method for request objects.
-  });
-  request.send();
-};
 
 handler = Gmaps.build('Google');
 handler.buildMap({ internal: {id: 'sidebar_builder'}}, function(){
@@ -78,12 +107,17 @@ handler.buildMap({ internal: {id: 'sidebar_builder'}}, function(){
   handler.fitMapToBounds();
 
   $(".venueMarker").on('click', function(){
+    $( ".concert" ).empty();
     var venueID = $(this).attr("value");
     clicking_sidebar_triggers_request(venueID)
+
   });
 
   $(".day_link").on('click', function(){
-    var showInfo = $(this).attr("value");
+    var day = $(this).attr("value");
+    var daysCollection;
+    $( ".shows" ).hide();
+    $( "." + day ).show();
   });
 });
 

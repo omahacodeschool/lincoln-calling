@@ -4,7 +4,7 @@ class VenuePresenter
   end
 
   def venue_events_with_artist_info
-    final_info = {}
+    final_info = []
     if @event_array.empty?
       return final_info
     else
@@ -13,7 +13,7 @@ class VenuePresenter
         artist = event.artist.name
         start_time = event.starttime
         end_time = event.endtime
-        final_info[id] = {artist: artist, start_time: start_time, end_time: end_time}
+        final_info << {artist: artist, start_time: start_time, end_time: end_time}
       end
     end
     return final_info
