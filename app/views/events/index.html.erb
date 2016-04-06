@@ -67,10 +67,13 @@
         <div class="venue_shows">
           <% venue_presenter = VenuePresenter.new(venue) %>
           <% venues_events = venue_presenter.shows_at_venue_per_day("Thursday") %>
-        <% venues_events.each do |event| %>
-          <div class="show show--<%= event.event_length(event.id) %> show--<%= event.minimum_age %>-plus">
-            <%= event.artist.name %>
-          </div>
+          <!-- cycles through loop once for each day -->
+        <% if venues_events != nil %>
+          <% venues_events.each do |event| %> 
+            <div class="show show--<%= event.event_length(event.id) %> show--<%= event.minimum_age %>-plus">
+              <%= event.artist.name %>
+            </div>
+          <% end %>
         <% end %>
         </div>
       <% end %>

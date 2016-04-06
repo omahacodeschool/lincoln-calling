@@ -22,8 +22,14 @@ class VenuePresenter
     self.shows_with_open_time_slots(@shows_at_venue_per_day)
   end
 
-  def shows_with_open_time_slots(shows_at_venue_per_day)
-    return shows_at_venue_per_day
+  def shows_with_open_time_slots(shows_at_venue_this_day)
+    thursday_start_time = Time.parse("2016-10-06 17:00:00").to_s
+    thursday_start_time.sub! '-0500', 'UTC'
+    @shows_with_open_time_slots = []
+    i = 0
+    start_of_show = shows_at_venue_this_day[i].start_date_time
+    puts "start of show is #{start_of_show}"
+    puts "PLUS FIFTEEN IS #{start_of_show_plus_fifteen = start_of_show + 15*60}"
   end
 
   # returns [#<Event:0x007fcf920a1f90
