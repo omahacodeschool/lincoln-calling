@@ -37,9 +37,8 @@ class Event < ActiveRecord::Base
 
   #returns length of event in minutes
   #example: 30 OR 45
-  def event_length(event_id)
-    event = Event.find_by_id(event_id)
-    event_length_decimal = (Time.parse(event.endtime) - Time.parse(event.starttime))/60
+  def event_length
+    event_length_decimal = (Time.parse(self.endtime) - Time.parse(self.starttime))/60
     @event_length = event_length_decimal.to_i
     return @event_length
   end

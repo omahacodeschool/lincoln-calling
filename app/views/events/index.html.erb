@@ -70,7 +70,7 @@
           <!-- cycles through loop once for each day -->
         <% if venues_events != nil %>
           <% venues_events.each do |event| %> 
-            <div class="show show--<%= event.event_length(event.id) %> show--<%= event.minimum_age %>-plus">
+            <div class="show show--<%= event.event_length %> show--<%= event.minimum_age %>-plus">
               <%= event.artist.name %>
             </div>
           <% end %>
