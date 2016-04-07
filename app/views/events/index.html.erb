@@ -67,6 +67,7 @@
         <div class="venue_shows">
           <% venue_presenter = VenuePresenter.new(venue) %>
           <% venues_events = venue_presenter.shows_at_venue_per_day("Thursday") %>
+          <% puts "venues_events is #{venues_events}" %>
 
           <!-- cycles through loop once for each day -->
         <% if venues_events != nil %>
@@ -78,6 +79,10 @@
                 <%= event.artist.name %>
               </div>
             <% end %>
+          <% end %>
+        <% else %>
+          <% 9.times do %>
+            <div class="show show--empty show--empty-60"></div>
           <% end %>
         <% end %>
         </div>
