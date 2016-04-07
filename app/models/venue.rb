@@ -18,5 +18,3 @@ def venue_events_by_day(day)
   end
   return events
 end
-
-end

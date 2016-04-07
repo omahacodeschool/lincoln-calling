@@ -1,5 +1,6 @@
 require 'json'
 require 'venue_presenter'
+require 'schedule_presenter'
 
 class VenuesController < ApplicationController
   def index

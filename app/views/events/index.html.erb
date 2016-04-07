@@ -65,8 +65,8 @@
       <div class="venue_shows_container" id="Thursday_shows">
       <% @venues.each do |venue| %>
         <div class="venue_shows">
-          <% venue_presenter = VenuePresenter.new(venue) %>
-          <% venues_events = venue_presenter.shows_at_venue_per_day("Thursday") %>
+          <% schedule_presenter = SchedulePresenter.new(venue) %>
+          <% venues_events = schedule_presenter.shows_at_venue_per_day("Thursday") %>
           <% puts "venues_events is #{venues_events}" %>
 
           <!-- cycles through loop once for each day -->
