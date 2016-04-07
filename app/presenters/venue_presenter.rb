@@ -34,16 +34,9 @@ class VenuePresenter
     puts "start_of_show is #{start_of_show}"
 
     until current_time_check == start_of_show
+
       if empty_block_count == 4
-        if start_of_show == current_time_check + 45*60
-          @array_of_events_until_start << Event.new(start_date_time: current_time_check, end_date_time: current_time_check + 45*60)
-        elsif start_of_show == current_time_check + 30*60
-          @array_of_events_until_start << Event.new(start_date_time: current_time_check, end_date_time: current_time_check + 30*60)
-        elsif start_of_show == current_time_check + 15*60
-          @array_of_events_until_start << Event.new(start_date_time: current_time_check, end_date_time: current_time_check + 15*60)
-        else
-          @array_of_events_until_start << Event.new(start_date_time: current_time_check, end_date_time: current_time_check + 1.hour)
-        end
+        @array_of_events_until_start = check_if_show_within_hour(current_time_check, start_of_show, @array_of_events_until_start)
         empty_block_count = 0
       end
 
@@ -65,6 +58,19 @@ class VenuePresenter
     end
     @shows_with_open_time_slots << shows_at_venue_this_day[0]
     return @shows_with_open_time_slots
+  end
+
+  def check_if_show_within_hour(current_time_check, start_of_show, array_of_events_until_start)
+    if start_of_show == current_time_check + 45*60
+      array_of_events_until_start << Event.new(start_date_time: current_time_check, end_date_time: current_time_check + 45*60)
+    elsif start_of_show == current_time_check + 30*60
+      array_of_events_until_start << Event.new(start_date_time: current_time_check, end_date_time: current_time_check + 30*60)
+    elsif start_of_show == current_time_check + 15*60
+      array_of_events_until_start << Event.new(start_date_time: current_time_check, end_date_time: current_time_check + 15*60)
+    else
+      array_of_events_until_start << Event.new(start_date_time: current_time_check, end_date_time: current_time_check + 1.hour)
+    end
+    return array_of_events_until_start
   end
 
 
