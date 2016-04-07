@@ -1,3 +1,4 @@
+ if ( document.getElementsByClassName("container__map_and_venue") !== null || document.getElementsByClassName("container__map_and_venue") !== undefined) {
   //Used Google Maps for Rails (https://github.com/apneadiving/Google-Maps-for-Rails) Gemfile for built-in maps API 
 
   // Variables will store data retrieved from XHR requests. 
@@ -125,3 +126,4 @@
       event.preventDefault();
     });
   });
+};
