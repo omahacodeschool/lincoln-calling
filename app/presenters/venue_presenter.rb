@@ -54,7 +54,9 @@ class VenuePresenter
     array_of_events_until_show = []
     empty_block_count = 0
     until current_time_check == start_of_show
+      #check here if current time check is on the hour
       if empty_block_count == 4
+        array_of_events_until_show << Event.new(start_date_time: current_time_check - 1.hour, end_date_time: current_time_check)
         array_of_events_until_show = check_if_show_within_hour(current_time_check, start_of_show, array_of_events_until_show)
         empty_block_count = 0
       end
@@ -74,12 +76,15 @@ class VenuePresenter
   def check_if_show_within_hour(current_time_check, start_of_show, array_of_events_until_show)
     if start_of_show == current_time_check + 45*60
       array_of_events_until_show << Event.new(start_date_time: current_time_check, end_date_time: current_time_check + 45*60)
+      current_time_check = current_time_check + 45*60
     elsif start_of_show == current_time_check + 30*60
       array_of_events_until_show << Event.new(start_date_time: current_time_check, end_date_time: current_time_check + 30*60)
+      current_time_check = current_time_check + 30*60
     elsif start_of_show == current_time_check + 15*60
       array_of_events_until_show << Event.new(start_date_time: current_time_check, end_date_time: current_time_check + 15*60)
+      current_time_check = current_time_check + 15*60
     else
-      array_of_events_until_show << Event.new(start_date_time: current_time_check, end_date_time: current_time_check + 1.hour)
+      array_of_events_until_show << Event.new(start_date_time: current_time_check - 1.hour, end_date_time: current_time_check)
     end
     return array_of_events_until_show
   end
