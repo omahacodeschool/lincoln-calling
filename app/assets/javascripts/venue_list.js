@@ -6,7 +6,7 @@
   var day2Shows;
   var day3Shows;
   var venueInfo;
-
+  var dayDisplay = "day1Shows"
 
   //function updates the Venue information container. 
   //This method is called whenever an instance of the venueMarker class is clicked see: >> $(".venueMarker").on('click', function(){)
@@ -35,6 +35,7 @@
   function loadDayEventInfo(events, day){
     console.log("NEW DAY");
     var events = events;
+    var day = day;
     for (var key in events){
       console.log(key + " -> " + events[key]);
       var artist = events[key]["artist"];
@@ -47,7 +48,7 @@
   // method creates new divs in the concert div. The first div is for the artist who owns the event. the second div is for the start/end times of the event.
   function createArtistDiv(artist, start, end, day){
     jQuery('<div/>', {class: 'concert__name shows ' + day, text: artist}).hide().appendTo('.concert');
-    jQuery('<div/>', {class: 'concert__time  shows ' + day, text: start + ' - ' + end}).hide().appendTo('.concert');
+    jQuery('<div/>', {class: 'concert__time  shows ' + day, text: `${start}  - ${end}`}).hide().appendTo('.concert');
     
   };
   //function used to create list element and icon element for every google maps location marker. Also sets the value of the a tag to each venue's id for later use.
@@ -72,7 +73,7 @@
         loadDayEventInfo(day1Shows, "day1Shows")
         loadDayEventInfo(day2Shows, "day2Shows")
         loadDayEventInfo(day3Shows, "day3Shows")
-        $( ".day1Shows" ).show();
+        $( `.${dayDisplay}` ).show();
         // responseText is a built-in method for request objects.
     });
     request.send();
@@ -112,13 +113,15 @@
       $( ".concert" ).empty();
       var venueID = $(this).attr("value");
       clicking_sidebar_triggers_request(venueID)
+      event.preventDefault();
     });
 
     //shows or displays event data if instance of element's class is clicked.
     $(".day_link").on('click', function(){
-      var day = $(this).attr("value");
+      dayDisplay = $(this).attr("value");
       var daysCollection;
       $( ".shows" ).hide();
-      $( "." + day ).show();
+      $( `.${dayDisplay}` ).show();
+      event.preventDefault();
     });
   });
