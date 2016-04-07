@@ -5,3 +5,18 @@ class Venue < ActiveRecord::Base
   #mount_uploader enables Carrierwave   
   mount_uploader :img, VenueImageUploader
 end
+
+#class method to find all events happening on a particular day for a specific venue
+#used in events index and events sidebar
+def venue_events_by_day(day)
+  events = []
+  venue_events = Event.where({venue_id: self.id}).order(:start_date_time)
+  venue_events.each do |event|
+    if event.weekday == day
+      events << event
+    end
+  end
+  return events
+end
+
+end

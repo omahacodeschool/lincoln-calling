@@ -1,4 +1,5 @@
 class VenuePresenter
+<<<<<<< HEAD
 
   def initialize(venue_object)
     @venue = venue_object
@@ -106,4 +107,25 @@ class VenuePresenter
   # updated_at: Mon, 04 Apr 2016 14:56:38 UTC +00:00>]
   # (array of events for each venue on this day--this is Thursday @ venue 1)
 
+=======
+  def initialize(event_object_array)
+    @event_array = event_object_array
+  end
+
+  def venue_events_with_artist_info
+    final_info = []
+    if @event_array.empty?
+      return final_info
+    else
+      @event_array.each do | event |
+        id = event.id
+        artist = event.artist.name
+        start_time = event.starttime
+        end_time = event.endtime
+        final_info << {artist: artist, start_time: start_time, end_time: end_time}
+      end
+    end
+    return final_info
+  end
+>>>>>>> master
 end

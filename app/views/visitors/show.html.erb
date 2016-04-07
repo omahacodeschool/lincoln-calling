@@ -3,6 +3,9 @@
 <img class="visitors_guide_article__image" src=<%=@article.image%>>
 <div class="visitors_guide_article container">
   <div class="visitors_guide_article__title"><%= @article.title %></div>
+
+  <div class="visitors_guide_article_byline">by <%= @article.user_access.user_full_name %> | <%= @article.monthdayyear %></div>
+
   <div class="visitors_guide_article__content"><%= @article.article_content %>
   </div>
   <div class="writer clear">

@@ -34,5 +34,6 @@ Rails.application.routes.draw do
   get "sidebar/artists/:id" => "sidebars#artists"
   get "sponsors/list" => "sponsors#index"
   get "venues/list" => "venues#index"
+  get "venues/:venue_id" => "venues#view"
 
 end

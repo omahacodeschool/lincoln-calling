@@ -20,33 +20,23 @@
     </div>
   </div>
   <div class="clear tickets">
-    <div class="col-6 col-3-tablet no_padding">
-      <a class="ticket ticket--odd">
-        <span class="ticket__title">3-Day Passes</span>
-        <span class="ticket__price">$30</span>
-      </a>
-    </div>
-
-    <div class="col-6 col-3-tablet no_padding">
-      <a class="ticket ticket--even ticket--sold_out">
-        <span class="ticket__title">THURSDAY</span>
-        <span class="ticket__price">$15</span>
-      </a>
-    </div>
-
-    <div class="col-6 col-3-tablet no_padding">
-      <a class="ticket ticket--odd">
-        <span class="ticket__title">FRIDAY</span>
-        <span class="ticket__price">$15</span>
-      </a>
-    </div>
-
-    <div class="col-6 col-3-tablet no_padding">
-      <a class="ticket ticket--even">
-        <span class="ticket__title">SATURDAY</span>
-        <span class="ticket__price">$15</span>
-      </a>
-    </div>
+    <% @tickets.each do |event|%>
+      <% if event.sold_out != true %>
+        <div class="col-6 col-3-tablet no_padding">      
+          <a class="ticket ticket--even ticket--odd" href="<%= event.link %>">
+            <span class="ticket__title"><%= event.name%></span>
+            <span class="ticket__price"><%= event.format_price%></span>
+          </a>
+        </div>
+      <% else%>
+        <div class="col-6 col-3-tablet no_padding">      
+          <a class="ticket ticket--even ticket--odd ticket--sold_out" href="<%= event.link %>">
+            <span class="ticket__title"><%= event.name%></span>
+            <span class="ticket__price"><%= event.format_price%></span>
+          </a>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
 

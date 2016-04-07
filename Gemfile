@@ -22,6 +22,7 @@ gem "sprockets", ">= 3.0.0"
 gem "sprockets-es6"
 gem "title"
 gem "uglifier"
+gem 'coffee-rails'
 
 group :development do
   gem "quiet_assets"
@@ -66,3 +67,4 @@ gem 'pronto-rubocop'
 gem 'pronto-reek'
 gem 'pronto-rails_best_practices'
 gem 'carrierwave'
+gem 'gmaps4rails'
