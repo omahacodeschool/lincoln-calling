@@ -75,6 +75,7 @@
         loadDayEventInfo(day2Shows, "day2Shows")
         loadDayEventInfo(day3Shows, "day3Shows")
         $( `.${dayDisplay}` ).show();
+        debugger
         // responseText is a built-in method for request objects.
     });
     request.send();
