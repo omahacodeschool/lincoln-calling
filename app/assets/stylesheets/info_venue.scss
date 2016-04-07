@@ -1,18 +1,22 @@
 
 .map__image{
   width: 100%;
-
   display: block;
   margin-bottom: 25px;
-
 }
+
+.map__markers{
+  width: 42px;
+  height: 52px;
+}
+
 .teardrop__color{
   color: white;
   background-color: #C9C9C9;
   text-align: center;
-  padding: 5px 0px 5px 20px;
   margin-bottom: 10px;
   float: right;
+  margin-top: -2px;
 }
 .venues__text{
   color: #565351;
