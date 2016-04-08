@@ -144,6 +144,7 @@ GEM
       activesupport
       capybara
       i18n
+    geocoder (1.3.3)
     gitlab (3.6.1)
       httparty
       terminal-table
@@ -389,6 +390,7 @@ DEPENDENCIES
   factory_girl_rails
   flutie
   formulaic
+  geocoder
   gmaps4rails
   high_voltage
   honeybadger

@@ -7,10 +7,10 @@ class VenuesController < ApplicationController
     counter = 0
     @hash = Gmaps4rails.build_markers(@venues) do |venue, marker|
       marker.title venue.name
-      marker.lat venue.coordinates_latitude
-      marker.lng venue.coordinates_longitude
-      marker.infowindow venue.address
-      marker.picture({:url => venue.map_icon.url, :width => 59, :height => 83, :class => "venueMarker", :value => "day#{counter += 1}Shows"})
+      marker.lat venue.latitude
+      marker.lng venue.longitude
+      marker.infowindow "#{venue.name}:\n #{venue.address}"
+      marker.picture({:url => venue.map_icon.url, :width => 59, :height => 83, :class => "venueMarker", :id => venue.id, :value => "day#{counter += 1}Shows"})
       marker.json({:id => venue.id, :icon => venue.map_icon.url})
     end
   end

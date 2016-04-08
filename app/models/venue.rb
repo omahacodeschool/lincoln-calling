@@ -5,7 +5,8 @@ class Venue < ActiveRecord::Base
   #mount_uploader enables Carrierwave   
   mount_uploader :img, VenueImageUploader
   mount_uploader :map_icon, VenueImageUploader
-  
+  geocoded_by :address   # can also be an IP address
+  after_validation :geocode          # auto-fetch coordinates
 
   #class method to find all events happening on a particular day for a specific venue
   #used in events index and events sidebar

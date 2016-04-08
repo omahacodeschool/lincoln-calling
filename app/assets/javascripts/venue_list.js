@@ -84,11 +84,17 @@ if ( document.getElementsByClassName("map__image").length !== 0){
 
   function bindLiToMarker($li, marker){
     $li.on('click', function(){
-      handler.getMap().setZoom(14);
+      handler.getMap().setZoom(18);
       marker.setMap(handler.getMap()); //because clusterer removes map property from marker
       marker.panTo();
       google.maps.event.trigger(marker.getServiceObject(), 'click');
     })
+      $(".marker").on('click', function(){
+      var venueID = $(this).children('img').attr("value");
+      clicking_sidebar_triggers_request(venueID)
+      event.preventDefault();
+    });
+
   };
 
   //creates interactive sidebar for each venue marker on the map
@@ -109,7 +115,6 @@ if ( document.getElementsByClassName("map__image").length !== 0){
     });
 
 
-
     createSidebar(json_array);
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
@@ -120,6 +125,14 @@ if ( document.getElementsByClassName("map__image").length !== 0){
       clicking_sidebar_triggers_request(venueID)
       event.preventDefault();
     });
+
+    $('body').on('click','img',function(){
+      debugger
+      var venueID = $(this).attr("value");
+      clicking_sidebar_triggers_request(venueID)
+      event.preventDefault();
+    });
+
 
     //shows or displays event data if instance of element's class is clicked.
     $(".day_link").on('click', function(){
