@@ -1,4 +1,5 @@
- if ( document.getElementsByClassName("container__map_and_venue") !== null || document.getElementsByClassName("container__map_and_venue") !== undefined) {
+
+
   //Used Google Maps for Rails (https://github.com/apneadiving/Google-Maps-for-Rails) Gemfile for built-in maps API 
 
   // Variables will store data retrieved from XHR requests. 
@@ -54,7 +55,7 @@
   };
   //function used to create list element and icon element for every google maps location marker. Also sets the value of the a tag to each venue's id for later use.
   function createSidebarLi(json){
-    return ("<li style='list-style: none;' class='venues__text'><a value=" + `${json.id}` + " class='venueMarker' >" + json.marker_title + "<div class='teardrop__color teardrop col-2 no_padding'>I</div></a></li>");
+    return ("<li style='list-style: none;' class='venues__text'><a value=" + `${json.id}` + " class='venueMarker' >" + json.marker_title + "<div class='teardrop__color teardrop col-2 no_padding'><img class='map__markers' src=" + json.icon + "></img></div></a></li>");
   };
 
   //function used to send XHR requests to the server. Gathers event data for Venue, as well as event information.
@@ -107,6 +108,8 @@
       json.marker = markers[index];
     });
 
+
+
     createSidebar(json_array);
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
@@ -127,4 +130,3 @@
       event.preventDefault();
     });
   });
-};

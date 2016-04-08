@@ -14,10 +14,12 @@ class VenueDashboard < Administrate::BaseDashboard
     address: Field::String,
     info: Field::Text,
     img: CarrierwaveField,
+    map_icon: CarrierwaveField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     coordinates_latitude: Field::Number.with_options(decimals: 2),
     coordinates_longitude: Field::Number.with_options(decimals: 2),
+
   }
 
   # COLLECTION_ATTRIBUTES
@@ -30,7 +32,8 @@ class VenueDashboard < Administrate::BaseDashboard
     :id,
     :name,
     :address,
-    :img
+    :img,
+    :map_icon
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -42,6 +45,7 @@ class VenueDashboard < Administrate::BaseDashboard
     :address,
     :info,
     :img,
+    :map_icon,
     :created_at,
     :updated_at,
     :coordinates_latitude,
@@ -57,6 +61,7 @@ class VenueDashboard < Administrate::BaseDashboard
     :address,
     :info,
     :img,
+    :map_icon,
     :coordinates_latitude,
     :coordinates_longitude,
   ]
