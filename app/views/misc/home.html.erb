@@ -81,33 +81,39 @@
       </div>
       <div class="clear dates">
         <div class="col-4 no_padding">
-          <a href="#" class="day_link day_link--left day_link--selected">
+          <a href="#" class="day_link day_link--left day_link--selected" value="day1">
             <span href="#" class="day_link__day">Thursday</span>
             <span href="#" class="day_link__date">6</span>
           </a>  
         </div>
         <div class="col-4 no_padding">
-          <a href="#" class="day_link day_link--mid">
+          <a href="#" class="day_link day_link--mid" value="day2">
             <span href="#" class="day_link__day">Friday</span>
             <span href="#" class="day_link__date">7</span>
           </a> 
         </div>
         <div class="col-4 no_padding">
-          <a href="#" class="day_link day_link--right">
+          <a href="#" class="day_link day_link--right" value="day3">
             <span href="#" class="day_link__day">Saturday</span>
             <span href="#" class="day_link__date">8</span>
           </a>
         </div>
       </div>
       <div class="concert">
-        <% day = "Thursday" %>
-        <% daysevents = @events.byday(day) %>
-        <% if daysevents %>
-          <% daysevents.each do |event| %>
-            <div class="concert__name"><%= event.artist.name%> at <%= event.venue.    name %></div>
-            <div class="concert__time"><%= event.starttime %></div>
+         <% @day1.each do |event| %>
+            <div class="concert__name day1 shows" style="display: block;"><%= event[:venue_and_artist] %></div>
+            <div class="concert__time day1 shows" style="display: block;"><%= event[:start_time] %></div>
           <%end%>
-        <%end%>
+
+          <% @day2.each do |event| %>
+            <div class="concert__name day2 shows" style="display: none;"><%= event[:venue_and_artist] %></div>
+            <div class="concert__time day2 shows" style="display: none;"><%= event[:start_time] %></div>
+          <%end%>
+
+          <% @day3.each do |event| %>
+            <div class="concert__name day3 shows" style="display: none;"><%= event[:venue_and_artist] %></div>
+            <div class="concert__time day3 shows" style="display: none;"><%= event[:start_time] %></div>
+          <%end%>
       </div>
       <a href="/events/list" class="full_schedule">see full schedule</a>
     </div>
