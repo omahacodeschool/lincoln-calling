@@ -76,7 +76,6 @@ if ( document.getElementsByClassName("map__image").length !== 0){
         loadDayEventInfo(day2Shows, "day2Shows")
         loadDayEventInfo(day3Shows, "day3Shows")
         $( `.${dayDisplay}` ).show();
-        debugger
         // responseText is a built-in method for request objects.
     });
     request.send();
@@ -88,13 +87,7 @@ if ( document.getElementsByClassName("map__image").length !== 0){
       marker.setMap(handler.getMap()); //because clusterer removes map property from marker
       marker.panTo();
       google.maps.event.trigger(marker.getServiceObject(), 'click');
-    })
-      $(".marker").on('click', function(){
-      var venueID = $(this).children('img').attr("value");
-      clicking_sidebar_triggers_request(venueID)
-      event.preventDefault();
     });
-
   };
 
   //creates interactive sidebar for each venue marker on the map
@@ -126,13 +119,12 @@ if ( document.getElementsByClassName("map__image").length !== 0){
       event.preventDefault();
     });
 
-    $('body').on('click','img',function(){
-      debugger
-      var venueID = $(this).attr("value");
+
+      $(".marker").on('click', function(){
+      var venueID = $(this).children('img').attr("value");
       clicking_sidebar_triggers_request(venueID)
       event.preventDefault();
     });
-
 
     //shows or displays event data if instance of element's class is clicked.
     $(".day_link").on('click', function(){
