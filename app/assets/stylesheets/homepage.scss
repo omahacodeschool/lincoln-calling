@@ -29,6 +29,7 @@
   text-align: center;
   margin-bottom: 15px;
   padding: 8px 0;
+  text-decoration: none;
 }
 .ticket.ticket--sold_out{
   background-color: #ccc;
@@ -73,6 +74,10 @@
   object-fit: cover;
   width: 50%;
 }
+.home_news__img.is_hidden{
+  display: none;
+}
+
 
 .home_news__more__text{
   display: block;

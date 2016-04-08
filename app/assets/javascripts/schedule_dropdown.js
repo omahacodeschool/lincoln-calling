@@ -1,3 +1,4 @@
+
 var day_picker_box = document.getElementById("day_picker_box");
 var thurs = document.getElementById("thurs");
 var fri = document.getElementById("fri");
@@ -37,8 +38,7 @@ sat.addEventListener("click", function(){
 });
 
 
-   
 
 
 
-     
+       

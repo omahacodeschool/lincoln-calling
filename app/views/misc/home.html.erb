@@ -20,47 +20,45 @@
     </div>
   </div>
   <div class="clear tickets">
-    <div class="col-6 col-3-tablet no_padding">
-      <a class="ticket ticket--odd">
-        <span class="ticket__title">3-Day Passes</span>
-        <span class="ticket__price">$30</span>
-      </a>
-    </div>
-
-    <div class="col-6 col-3-tablet no_padding">
-      <a class="ticket ticket--even ticket--sold_out">
-        <span class="ticket__title">THURSDAY</span>
-        <span class="ticket__price">$15</span>
-      </a>
-    </div>
-
-    <div class="col-6 col-3-tablet no_padding">
-      <a class="ticket ticket--odd">
-        <span class="ticket__title">FRIDAY</span>
-        <span class="ticket__price">$15</span>
-      </a>
-    </div>
-
-    <div class="col-6 col-3-tablet no_padding">
-      <a class="ticket ticket--even">
-        <span class="ticket__title">SATURDAY</span>
-        <span class="ticket__price">$15</span>
-      </a>
-    </div>
+    <% @tickets.each do |event|%>
+      <% if event.sold_out != true %>
+        <div class="col-6 col-3-tablet no_padding">      
+          <a class="ticket ticket--even ticket--odd" href="<%= event.link %>">
+            <span class="ticket__title"><%= event.name%></span>
+            <span class="ticket__price"><%= event.format_price%></span>
+          </a>
+        </div>
+      <% else%>
+        <div class="col-6 col-3-tablet no_padding">      
+          <a class="ticket ticket--even ticket--odd ticket--sold_out" href="<%= event.link %>">
+            <span class="ticket__title"><%= event.name%></span>
+            <span class="ticket__price"><%= event.format_price%></span>
+          </a>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
 
 <div class="clear">
   <div class="col-8-tablet">
     <div class="clear home_news">
-      <img src=<%= @featurearticle.image%> class="col-6 no_padding home_news__img">
+      <% @articles.each do |image| %>
+        <% if image == @articles[0] %>  
+          <img id ="image_<%=image.id%>" src=<%= image.image %> class="col-6 no_padding home_news__img feature_image">
+        <% else %>
+          <img id ="image_<%=image.id%>" src=<%= image.image %> class="col-6 no_padding home_news__img is_hidden">
+        <% end %>
+      <% end %>
       <div class="col-6 no_padding"> 
       <div class="home_news__headlines">
-        <div class="home_news__headlines home_news__headlines--selected"> <%= @featurearticle.title%>
-        </div>
-        <% @articles.each do |article| %>
-          <div class="home_news__headlines home_news__headlines--tablet"><%= article.title %>
-          </div>
+        <% @articles.each do |headline| %>
+          <%if headline == @articles[0] %>
+            <a href="/news/<%=headline.id%>" class="home_link">
+            <div id ="<%=headline.id%>" class="home_news__headlines home_news__headlines--headline home_news__headlines--selected"><%= headline.title%></div></a>
+          <% else %>
+            <a href="/news/<%=headline.id%>"class="home_link"><div id ="<%=headline.id%>" class="home_news__headlines home_news__headlines--headline headline_for_<%=headline.id%> home_news__headlines--tablet"><%= headline.title %></div></a>  
+          <% end %>
         <% end %>
       </div>
       </div>
@@ -83,33 +81,39 @@
       </div>
       <div class="clear dates">
         <div class="col-4 no_padding">
-          <a href="#" class="day_link day_link--left day_link--selected">
+          <a href="#" class="day_link day_link--left day_link--selected" value="day1">
             <span href="#" class="day_link__day">Thursday</span>
             <span href="#" class="day_link__date">6</span>
           </a>  
         </div>
         <div class="col-4 no_padding">
-          <a href="#" class="day_link day_link--mid">
+          <a href="#" class="day_link day_link--mid" value="day2">
             <span href="#" class="day_link__day">Friday</span>
             <span href="#" class="day_link__date">7</span>
           </a> 
         </div>
         <div class="col-4 no_padding">
-          <a href="#" class="day_link day_link--right">
+          <a href="#" class="day_link day_link--right" value="day3">
             <span href="#" class="day_link__day">Saturday</span>
             <span href="#" class="day_link__date">8</span>
           </a>
         </div>
       </div>
       <div class="concert">
-        <% day = "Thursday" %>
-        <% daysevents = @events.byday(day) %>
-        <% if daysevents %>
-          <% daysevents.each do |event| %>
-            <div class="concert__name"><%= event.artist.name%> at <%= event.venue.    name %></div>
-            <div class="concert__time"><%= event.starttime %></div>
+         <% @day1.each do |event| %>
+            <div class="concert__name day1 shows" style="display: block;"><%= event[:venue_and_artist] %></div>
+            <div class="concert__time day1 shows" style="display: block;"><%= event[:start_time] %></div>
           <%end%>
-        <%end%>
+
+          <% @day2.each do |event| %>
+            <div class="concert__name day2 shows" style="display: none;"><%= event[:venue_and_artist] %></div>
+            <div class="concert__time day2 shows" style="display: none;"><%= event[:start_time] %></div>
+          <%end%>
+
+          <% @day3.each do |event| %>
+            <div class="concert__name day3 shows" style="display: none;"><%= event[:venue_and_artist] %></div>
+            <div class="concert__time day3 shows" style="display: none;"><%= event[:start_time] %></div>
+          <%end%>
       </div>
       <a href="/events/list" class="full_schedule">see full schedule</a>
     </div>

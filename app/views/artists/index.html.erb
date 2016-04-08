@@ -7,10 +7,16 @@
 
 <div class="artist_white_background container">
   <div class="clear artist_search_box">
-    <div class="artist_search_box__icon icon"></div>
-    <div class="artist_search_box__text">Search for a band</div>
+    <%= form_tag(:controller => "artists", :action => "search", :id => "searchartists", :method => "post") do %>
+      <div class="artist_search_box__icon icon">
+        <input type="submit" value="" style="font-family: HN-icons; font-size: 25px; background: none; border: 0px; margin-top:-10px;"></input>
+      </div>
+      <div class="artist_search_box__text">
+        <input style="border-width:0px; font-size:30px" type="string" name="search_input" placeholder="Search for a band">
+      </div>
+    <% end %>
   </div>
- 
+  </div> 
   <div class="no_padding">   
     <div class="no_padding col-6 col-4-tablet">
       <div class="artist_module">
@@ -51,8 +57,6 @@
     </div>
   </div>
 </div>
-
-  
  
     
  
