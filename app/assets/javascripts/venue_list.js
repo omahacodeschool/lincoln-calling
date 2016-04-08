@@ -1,5 +1,5 @@
 
-
+if ( document.getElementsByClassName("map__image").length !== 0){
   //Used Google Maps for Rails (https://github.com/apneadiving/Google-Maps-for-Rails) Gemfile for built-in maps API 
 
   // Variables will store data retrieved from XHR requests. 
@@ -130,3 +130,4 @@
       event.preventDefault();
     });
   });
+};

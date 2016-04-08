@@ -27,7 +27,7 @@ class Event < ActiveRecord::Base
   #used in events index and events sidebar
   def self.byday(weekday)
     events = []
-    Event.all.each do |event|
+    Event.all.order(:start_date_time).each do |event|
       if event.weekday == weekday
         events << event
       end
