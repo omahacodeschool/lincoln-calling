@@ -9,7 +9,7 @@ class VenuesController < ApplicationController
       marker.lat venue.coordinates_latitude
       marker.lng venue.coordinates_longitude
       marker.infowindow venue.address
-      marker.picture({:url => venue.map_icon.url, :width => 12, :height => 22})
+      marker.picture({:url => venue.map_icon.url, :width => 59, :height => 83})
       marker.json({:id => venue.id, :icon => venue.map_icon.url})
     end
   end
