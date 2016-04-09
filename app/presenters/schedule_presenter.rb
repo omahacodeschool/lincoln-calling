@@ -22,20 +22,21 @@ class SchedulePresenter
   def shows_with_blanks
     @shows_with_blanks = []
     @current_time_check = DateTime.new(2016,10,06,17,00,00, '+0')
-    @i = 0
-    until @i == @shows_at_venue_per_day.length
-      start_of_show = @shows_at_venue_per_day[@i].start_date_time
+    i = 0
+    until i == @shows_at_venue_per_day.length
+      start_of_show = @shows_at_venue_per_day[i].start_date_time
       find_show_start_time(start_of_show)
-      @shows_with_blanks << @shows_at_venue_per_day[@i]
+      @shows_with_blanks << @shows_at_venue_per_day[i]
       @current_time_check = @shows_with_blanks.last.end_date_time
       check_previous_end_time(start_of_show, end_time_of_previous_show)
-      @i += 1
+      i += 1
     end
     return @shows_with_blanks
   end
 
   def find_show_start_time(start_of_show)
     empty_block_count = 0
+    check_if_show_within_hour(start_of_show)
     while @current_time_check <= start_of_show
       if empty_block_count == 4
         @shows_with_blanks << Event.new(start_date_time: @current_time_check - 1.hour, end_date_time: @current_time_check)
@@ -50,14 +51,20 @@ class SchedulePresenter
   end
 
   def check_if_show_within_hour(start_of_show)
+    puts "@current_time_check is #{@current_time_check}"
+    puts "start_of_show is #{start_of_show}"
     if start_of_show == @current_time_check + 45.minutes
       @shows_with_blanks << Event.new(start_date_time: @current_time_check, end_date_time: @current_time_check + 45.minutes)
     elsif start_of_show == @current_time_check + 30.minutes
+      puts "CAUGHT IT"
       @shows_with_blanks << Event.new(start_date_time: @current_time_check, end_date_time: @current_time_check + 30.minutes)
     elsif start_of_show == @current_time_check + 15.minutes
       @shows_with_blanks << Event.new(start_date_time: @current_time_check, end_date_time: @current_time_check + 15.minutes)
     end
-    @current_time_check = @shows_with_blanks.last.end_date_time
+    puts "@shows_with_blanks is #{@shows_with_blanks}"
+    if @shows_with_blanks.empty? == false
+      @current_time_check = @shows_with_blanks.last.end_date_time
+    end
     return @shows_with_blanks
   end
 
