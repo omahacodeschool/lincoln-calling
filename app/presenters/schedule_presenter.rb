@@ -12,83 +12,124 @@ class SchedulePresenter
     shows_at_venue.each do |show|
       if show.weekday == week_day
         @shows_at_venue_per_day << show
-      else
-        next
       end
     end
-    @shows_at_venue_per_day.sort_by!{ |obj| obj.start_date_time}
-    shows_with_blanks
+    @shows_at_venue_per_day.sort_by! { |obj| obj.start_date_time}
+    puts "@shows_at_venue_per_day is #{@shows_at_venue_per_day}"
+    @shows_with_blanks = shows_with_blanks
     return @shows_with_blanks
   end
 
   def shows_with_blanks
     @shows_with_blanks = []
-    current_time_check = Time.parse("2016-10-06 17:00:00").to_s
-    current_time_check.sub! '-0500', 'UTC'
-    current_time_check = Time.parse(current_time_check)
+    @current_time_check = DateTime.new(2016,10,06,17,00,00, '+0')
     @i = 0
 
     until @i == @shows_at_venue_per_day.length
-      puts "@shows_at_venue_per_day is #{@shows_at_venue_per_day} It's #{@shows_at_venue_per_day.length} elements in length."
+      puts "@shows_at_venue_per_day is #{@shows_at_venue_per_day.length} elements long."
       start_of_show = @shows_at_venue_per_day[@i].start_date_time
+      puts "start_of_show is #{start_of_show}"
 
-      array_of_events_until_show = find_show_start_time(current_time_check, start_of_show)
-      puts "array_of_events_until_show is #{array_of_events_until_show}"
-      blank_spaces_to_array(array_of_events_until_show)
-      puts "blanks added to array--@shows_with_blanks is #{@shows_with_blanks}"
+      find_show_start_time(start_of_show)
+      puts "find_show_start_time method successful"
+
       @shows_with_blanks << @shows_at_venue_per_day[@i]
       puts "show added to array--@shows_with_blanks is #{@shows_with_blanks}"
 
+      @current_time_check = @shows_with_blanks.last.end_date_time
+      puts "@current_time_check is #{@current_time_check}"
+      check_previous_end_time(start_of_show, end_time_of_previous_show)
+
       @i += 1
       puts "@i is #{@i}"
-      current_time_check = end_time_of_previous_show
-      puts "current_time_check is #{current_time_check}"
-    end
-  end
-
-  def find_show_start_time(current_time_check, start_of_show)
-    array_of_events_until_show = []
-    empty_block_count = 0
-    until current_time_check == start_of_show
-      #check here if current time check is on the hour
-      if empty_block_count == 4
-        array_of_events_until_show << Event.new(start_date_time: current_time_check - 1.hour, end_date_time: current_time_check)
-        array_of_events_until_show = check_if_show_within_hour(current_time_check, start_of_show, array_of_events_until_show)
-        empty_block_count = 0
-      end
-      current_time_check = current_time_check + 15*60
-      empty_block_count += 1
-    end
-    return array_of_events_until_show
-  end
-
-  def blank_spaces_to_array(array_of_events_until_show)
-    array_of_events_until_show.each do |blank|
-      @shows_with_blanks << blank
     end
     return @shows_with_blanks
   end
 
-  def check_if_show_within_hour(current_time_check, start_of_show, array_of_events_until_show)
-    if start_of_show == current_time_check + 45*60
-      array_of_events_until_show << Event.new(start_date_time: current_time_check, end_date_time: current_time_check + 45*60)
-      current_time_check = current_time_check + 45*60
-    elsif start_of_show == current_time_check + 30*60
-      array_of_events_until_show << Event.new(start_date_time: current_time_check, end_date_time: current_time_check + 30*60)
-      current_time_check = current_time_check + 30*60
-    elsif start_of_show == current_time_check + 15*60
-      array_of_events_until_show << Event.new(start_date_time: current_time_check, end_date_time: current_time_check + 15*60)
-      current_time_check = current_time_check + 15*60
-    else
-      array_of_events_until_show << Event.new(start_date_time: current_time_check - 1.hour, end_date_time: current_time_check)
+  def find_show_start_time(start_of_show)
+    empty_block_count = 0
+    puts "empty_block_count is #{empty_block_count}"
+    while @current_time_check <= start_of_show
+    puts "@current_time_check is #{@current_time_check}"
+    puts "start_of_show is #{start_of_show}"
+      if empty_block_count == 4
+        puts "empty_block_count is 4"
+        @shows_with_blanks << Event.new(start_date_time: @current_time_check - 1.hour, end_date_time: @current_time_check)
+        puts "empty hour added--shows_with_blanks is #{@shows_with_blanks}"
+        check_if_show_within_hour(start_of_show)
+        puts "check_if_show_in_next_hour method finished. Shows w/ blanks is #{@shows_with_blanks}"
+
+        empty_block_count = 0
+        puts "empty_block_count is #{empty_block_count}"
+      else
+        @current_time_check += 15.minutes
+        puts "@current_time_check is #{@current_time_check}"
+        empty_block_count += 1
+        puts "empty_block_count is #{empty_block_count}"
+      end
     end
-    return array_of_events_until_show
+    return @shows_with_blanks
+  end
+
+  def check_if_show_within_hour(start_of_show)
+    puts "within check_if_show_within_hour method"
+    if start_of_show == @current_time_check + 45.minutes
+      puts "show in 45 minutes"
+      @shows_with_blanks << Event.new(start_date_time: @current_time_check, end_date_time: @current_time_check + 45.minutes)
+    elsif start_of_show == @current_time_check + 30.minutes
+      puts "show in 30 minutes"
+      @shows_with_blanks << Event.new(start_date_time: @current_time_check, end_date_time: @current_time_check + 30.minutes)
+    elsif start_of_show == @current_time_check + 15.minutes
+      puts "show in 15 minutes"
+      @shows_with_blanks << Event.new(start_date_time: @current_time_check, end_date_time: @current_time_check + 15.minutes)
+    end
+    puts "returning from check_if_show_within_hour--shows_with_blanks is #{@shows_with_blanks}"
+    @current_time_check = @shows_with_blanks.last.end_date_time
+    return @shows_with_blanks
   end
 
   def end_time_of_previous_show
-    end_of_previous_show = @shows_with_blanks.last.end_date_time
-    puts "end_of_previous_show is #{end_of_previous_show}"
+    puts "in end_time_of_previous_show method"
+    if @shows_with_blanks.last != nil
+      end_of_previous_show = @shows_with_blanks.last.end_date_time
+      puts "end_of_previous_show is #{end_of_previous_show}"
+    end
     return end_of_previous_show
+  end
+
+  def check_previous_end_time(start_of_show, end_time_of_previous_show)
+    if end_time_of_previous_show != nil || end_time_of_previous_show != start_of_show
+      if end_time_of_previous_show.strftime("%M").include? "15"
+        puts "------------------------------------15 check---------"
+        if end_time_of_previous_show == start_of_show - 15.minutes
+          puts "last show ended at 15 and next show starts 15 later"
+          @shows_with_blanks << Event.new(start_date_time: end_time_of_previous_show, end_date_time: start_of_show)
+        elsif end_time_of_previous_show == start_of_show - 30.minutes
+          puts "last show ended at 15 and next show starts 30 later"
+          @shows_with_blanks << Event.new(start_date_time: end_time_of_previous_show, end_date_time: start_of_show)
+        else
+          puts "last show ended at 15 and next show starts >=45 later"
+          @shows_with_blanks << Event.new(start_date_time: end_time_of_previous_show, end_date_time: end_time_of_previous_show + 45.minutes)
+        end
+      elsif end_time_of_previous_show.strftime("%M").include? "30"
+        puts "------------------------------------30 check---------"
+        if end_time_of_previous_show == start_of_show - 15.minutes
+          puts "last show ended at 30 and next show starts 15 later"
+          @shows_with_blanks << Event.new(start_date_time: end_time_of_previous_show, end_date_time: start_of_show)
+        else
+          puts "last show ended at 30 and next show starts >=30 later"
+          @shows_with_blanks << Event.new(start_date_time: end_time_of_previous_show, end_date_time: end_time_of_previous_show + 30.minutes)
+        end
+      elsif end_time_of_previous_show.strftime("%M").include? "45"
+        puts "------------------------------------45 check---------"
+        puts "last show ended at 45 and next show starts >=15 later"
+        @shows_with_blanks << Event.new(start_date_time: end_time_of_previous_show, end_date_time: end_time_of_previous_show + 15.minutes)
+      end
+    end
+    @current_time_check = @shows_with_blanks.last.end_date_time
+    puts "check_previous_end_time method finished--@current_time_check is #{@current_time_check}"
+    puts "check_previous_end_time method finished--@shows_with_blanks is #{@shows_with_blanks}"
+    return @shows_with_blanks
   end
 
   # returns [#<Event:0x007fcf920a1f90
