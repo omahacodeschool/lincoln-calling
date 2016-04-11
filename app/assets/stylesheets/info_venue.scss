@@ -1,18 +1,22 @@
 
 .map__image{
   width: 100%;
-
   display: block;
   margin-bottom: 25px;
-
 }
+
+.map__markers{
+  width: 42px;
+  height: 52px;
+}
+
 .teardrop__color{
   color: white;
   background-color: #C9C9C9;
   text-align: center;
-  padding: 5px 0px 5px 20px;
   margin-bottom: 10px;
   float: right;
+  margin-top: -2px;
 }
 .venues__text{
   color: #565351;
@@ -20,7 +24,7 @@
   padding: 5px 0px 5px 20px;
   margin-bottom: 10px;
 }
-.venues{
+.venue_list{
   font-family: Oswald;
   font-weight: bold;
   font-size: 40px;
@@ -46,7 +50,7 @@
     margin-left: 7.5px;
     margin-right: 15px;
   }
-  .venues{
+  .venue_list{
     margin-left: 15px;
     margin-right: 7.5px;
   }

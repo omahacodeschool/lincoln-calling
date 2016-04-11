@@ -12,12 +12,15 @@ class VenueDashboard < Administrate::BaseDashboard
     id: Field::Number,
     name: Field::String,
     address: Field::String,
+    website: Field::String,
     info: Field::Text,
     img: CarrierwaveField,
+    map_icon: CarrierwaveField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    coordinates_latitude: Field::Number.with_options(decimals: 2),
-    coordinates_longitude: Field::Number.with_options(decimals: 2),
+    latitude: Field::Number.with_options(decimals: 2),
+    longitude: Field::Number.with_options(decimals: 2),
+
   }
 
   # COLLECTION_ATTRIBUTES
@@ -30,7 +33,8 @@ class VenueDashboard < Administrate::BaseDashboard
     :id,
     :name,
     :address,
-    :img
+    :img,
+    :map_icon
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -40,12 +44,14 @@ class VenueDashboard < Administrate::BaseDashboard
     :id,
     :name,
     :address,
+    :website,
     :info,
     :img,
+    :map_icon,
+    :latitude,
+    :longitude,
     :created_at,
     :updated_at,
-    :coordinates_latitude,
-    :coordinates_longitude,
   ]
 
   # FORM_ATTRIBUTES
@@ -55,10 +61,10 @@ class VenueDashboard < Administrate::BaseDashboard
     :events,
     :name,
     :address,
+    :website,
     :info,
     :img,
-    :coordinates_latitude,
-    :coordinates_longitude,
+    :map_icon,
   ]
 
   # Overwrite this method to customize how venues are displayed

@@ -8,6 +8,7 @@ class ArtistsController < ApplicationController
 
   def search
     @artist_search_results = Artist.search_by_name(params[:search_input])
+    @search = params[:search_input]
   end
   
 end

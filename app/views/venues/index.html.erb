@@ -12,12 +12,14 @@
 </div> 
 
   <!-- Show Map -->
-<div class="clear"></div>
-<div class="container__map_and_venue">
-  <div class="col-8-tablet no_padding">
+
+<div class="clear">
+  <div class="col-8-tablet venue_list">
     <div class="container__map_and_venue map__image">
-      <div id="sidebar_builder" class="container__map_and_venue map__image" style='width: 800px; height: 400px;'></div>
-    </div>    
+      <div class="map__image">
+        <div id="sidebar_builder" style='width: 100%; height: 400px;'></div>
+      </div>    
+    </div>
   </div>
 
   <!-- Venue Profile Sidebar -->
@@ -26,8 +28,8 @@
       <div class="extra_gutter">
           <div class="venue_info" id="venueInfo">
             <div class="venue_info__name" id="venueName">Check Out Venues</div>
-            <div class="venue_info__link" id="venueWebsite"></div>
-            <div class="venue_info__address" id="venueAddress"></div>
+            <a href="#" class="venue_info__link" id="venueWebsite"></a>
+            <div class="venue_info__address" id="venueAddress">select a venue from the legend for more information</div>
           </div>
           <img class="venue_profile__image" id="venueImage" src="http://i1125.photobucket.com/albums/l589/michaelbobcat/hearnebraskalogoorangetransparent-1.png">
           <div class="venue_bio" id="venueBio"></div>
@@ -40,17 +42,15 @@
 <!-- Venues -->
 <div class="clear">
   <div class="col-8-tablet no_padding">
-      <div class="col-10 no_padding">
         <!-- The text that follows is how the HTML will likely have to look to allow for adding the selected effect to venue locations when selected.  Or rather, the "venues__text--selected" class modifier needs to be added to make that happen via JavaScript. -->
         <!-- <div class="venues__text venues__text--selected">Bourbon Theater</div> -->
-      <div class="venues container__map_and_venue">
-      <div id='sidebar_container'>
-      </div>
+    <div class="venue_list">
+      <div id='sidebar_container'></div> 
     </div>
- </div>
   </div>
+
     <!-- Show Sidebar -->
-  <div class="col-4-tablet">
+  <div class="col-4-tablet ">
     <div class="side_bar">
       <div class="side_bar__title">
       Festival Schedule/ Lincoln Calling 2016
@@ -81,7 +81,7 @@
         <div class="concert__time">to view events & times</div>
 
       </div>
-      <a href="#" class="full_schedule">see full schedule</a>
+      <a href="/events/list" class="full_schedule">see full schedule</a>
     </div>
      </div>
   </div>

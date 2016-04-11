@@ -26,6 +26,8 @@ class EventDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :venue,
     :artist,
+    :start_date_time,
+    :end_date_time,
     :id,
     :minimum_age,
   ]
@@ -57,7 +59,7 @@ class EventDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how events are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(event)
-  #   "Event ##{event.id}"
-  # end
+  def display_resource(event)
+    "#{event.artist.name} @ #{event.venue.name} on #{event.monthday}: #{event.starttime}"
+  end
 end
