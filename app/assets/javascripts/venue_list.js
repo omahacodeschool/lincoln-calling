@@ -26,7 +26,7 @@ if ( document.getElementsByClassName("map__image").length !== 0){
   }
     document.getElementById("venueName").innerHTML = name;
     document.getElementById("venueWebsite").innerHTML = website;
-    document.getElementById("venueWebsite").src = website;
+    document.getElementById("venueWebsite").href = website;
     document.getElementById("venueAddress").innerHTML = address;
     document.getElementById("venueImage").src = image;
     document.getElementById("venueBio").innerHTML = info;
@@ -83,11 +83,11 @@ if ( document.getElementsByClassName("map__image").length !== 0){
 
   function bindLiToMarker($li, marker){
     $li.on('click', function(){
-      handler.getMap().setZoom(14);
+      handler.getMap().setZoom(18);
       marker.setMap(handler.getMap()); //because clusterer removes map property from marker
       marker.panTo();
       google.maps.event.trigger(marker.getServiceObject(), 'click');
-    })
+    });
   };
 
   //creates interactive sidebar for each venue marker on the map
@@ -99,19 +99,37 @@ if ( document.getElementsByClassName("map__image").length !== 0){
     });
   };
 
+  function create_markers(json_array){
+    var markers = [];
+      for (i = 0; i < json_array.length; i++){
+        var marker = handler.addMarker(json_array[i]);
+        marker.serviceObject.set('class', 'venueMarker');
+        marker.serviceObject.set('value', json_array[i].id);
+        google.maps.event.addListener(marker.serviceObject, "click", function(){
+          $( ".concert" ).empty();
+          clicking_sidebar_triggers_request(marker.serviceObject.value);
+        });
+      markers.push(marker)
+      };
+    return markers
+  };
+
   //creates google map with a marker for each venue in the variable json_array (passed from the server over the html page)
   handler = Gmaps.build('Google');
   handler.buildMap({ internal: {id: 'sidebar_builder'}}, function(){
+
+    // var markers = create_markers(json_array);
+
+ 
     var markers = handler.addMarkers(json_array);
     _.each(json_array, function(json, index){
       json.marker = markers[index];
     });
 
-
-
     createSidebar(json_array);
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
+
 
     $(".venueMarker").on('click', function(){
       $( ".concert" ).empty();

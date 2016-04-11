@@ -45,14 +45,20 @@
         </div>
       </div>
       <div class="concert">
-        <% day = "Thursday" %>
-        <% daysevents = @events.byday(day) %>
-        <% if daysevents %>
-          <% daysevents.each do |event| %>
-            <div class="concert__name"><%= event.artist.name%> at <%= event.venue.    name %></div>
-            <div class="concert__time"><%= event.starttime %></div>
+         <% @day1.each do |event| %>
+            <div class="concert__name day1 shows" style="display: block;"><%= event[:venue_and_artist] %></div>
+            <div class="concert__time day1 shows" style="display: block;"><%= event[:start_time] %></div>
           <%end%>
-        <%end%>
+
+          <% @day2.each do |event| %>
+            <div class="concert__name day2 shows" style="display: none;"><%= event[:venue_and_artist] %></div>
+            <div class="concert__time day2 shows" style="display: none;"><%= event[:start_time] %></div>
+          <%end%>
+
+          <% @day3.each do |event| %>
+            <div class="concert__name day3 shows" style="display: none;"><%= event[:venue_and_artist] %></div>
+            <div class="concert__time day3 shows" style="display: none;"><%= event[:start_time] %></div>
+          <%end%>
       </div>
       <a href="/events/list" class="full_schedule">see full schedule</a>
     </div>

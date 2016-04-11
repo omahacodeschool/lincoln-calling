@@ -1,3 +1,7 @@
+.visible{
+  display: none;
+}
+
 .overlay{
   position: fixed;
   bottom: 0;
@@ -13,7 +17,7 @@
   overflow: hidden;
   position: relative;
   padding-bottom: 10px;
-  max-height: 75%;
+  max-height: 100%;
 }
 
 .artist_profile__image {
@@ -66,10 +70,6 @@
   overflow: scroll;
 }
 
-.close_button {
-  display: none;
-}
-
 @media (min-width: $breakpoint-tablet) {
 
   .artist_profile {
@@ -98,11 +98,9 @@
     position: absolute;
     top: 0px;
     right: -10px;
-    color: white;
+    color: #ff8110;
     background-color: #dddddd;
     font-size: 30px; 
     text-align: center;
   }
-
-
 }
