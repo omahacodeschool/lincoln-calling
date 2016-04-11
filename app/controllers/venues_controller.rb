@@ -9,7 +9,7 @@ class VenuesController < ApplicationController
       marker.title venue.name
       marker.lat venue.latitude
       marker.lng venue.longitude
-      marker.infowindow "#{venue.name}:\n #{venue.address}"
+      marker.infowindow "<p class='venueMarker' value=#{venue.id}>#{venue.name}<br> #{venue.address}</p>"
       marker.picture({:url => venue.map_icon.url, :width => 59, :height => 83, :class => "venueMarker", :value => venue.id})
       marker.json({:id => venue.id, :icon => venue.map_icon.url})
     end

@@ -99,19 +99,20 @@ if ( document.getElementsByClassName("map__image").length !== 0){
     });
   };
 
-  // function create_markers(json_array){
-  //   var markers = [];
-  //     for (i = 0; i < json_array.length; i++){
-  //       var marker = handler.addMarker(json_array[i]);
-  //       marker.serviceObject.set('id', json_array[i].id);
-  //       google.maps.event.addListener(marker.serviceObject, "click", function(){
-  //         $( ".concert" ).empty();
-  //         clicking_sidebar_triggers_request(marker.serviceObject.id);
-  //       });
-  //     markers.push(marker)
-  //     };
-  //   return markers
-  // };
+  function create_markers(json_array){
+    var markers = [];
+      for (i = 0; i < json_array.length; i++){
+        var marker = handler.addMarker(json_array[i]);
+        marker.serviceObject.set('class', 'venueMarker');
+        marker.serviceObject.set('value', json_array[i].id);
+        google.maps.event.addListener(marker.serviceObject, "click", function(){
+          $( ".concert" ).empty();
+          clicking_sidebar_triggers_request(marker.serviceObject.value);
+        });
+      markers.push(marker)
+      };
+    return markers
+  };
 
   //creates google map with a marker for each venue in the variable json_array (passed from the server over the html page)
   handler = Gmaps.build('Google');
