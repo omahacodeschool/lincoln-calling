@@ -8,16 +8,14 @@
       <div class="day_picker" id="day_picker_box">
         <div class="day_picker__triangle_down"></div>
         <div class="day_picker__text" id="current_day">Thursday Oct. 6</div>
-
-
       </div>
 
-        <div id="other_days">
-          <div class="other_days__triangle_up"></div>
-          <div class="other_days__text" id="thurs">Thursday Oct. 6</div>
-          <div class="other_days__text" id="fri">Friday Oct. 7</div>
-          <div class="other_days__text" id="sat">Saturday Oct. 8</div>
-        </div>
+      <div id="other_days">
+        <div class="other_days__triangle_up"></div>
+        <div class="other_days__text" id="thurs">Thursday Oct. 6</div>
+        <div class="other_days__text" id="fri">Friday Oct. 7</div>
+        <div class="other_days__text" id="sat">Saturday Oct. 8</div>
+      </div>
 
       <div class="plan_festival_button plan_festival_button--hide">
         PLAN YOUR FESTIVAL
@@ -49,15 +47,15 @@
 
     <div class="schedule_lineup">
       <ul class="schedule_times">
-        <li class="schedule_times__item" id="500pm">5 p.m.</li>
-        <li class="schedule_times__item" id="6pm">6 p.m.</li>
-        <li class="schedule_times__item" id="7pm">7 p.m.</li>
-        <li class="schedule_times__item" id="8pm">8 p.m.</li>
-        <li class="schedule_times__item" id="9pm">9 p.m.</li>
-        <li class="schedule_times__item" id="10pm">10 p.m.</li>
-        <li class="schedule_times__item" id="11pm">11 p.m.</li>
-        <li class="schedule_times__item" id="12am">12 a.m.</li>
-        <li class="schedule_times__item" id="1am">1 a.m.</li>
+        <li class="schedule_times__item">5 p.m.</li>
+        <li class="schedule_times__item">6 p.m.</li>
+        <li class="schedule_times__item">7 p.m.</li>
+        <li class="schedule_times__item">8 p.m.</li>
+        <li class="schedule_times__item">9 p.m.</li>
+        <li class="schedule_times__item">10 p.m.</li>
+        <li class="schedule_times__item">11 p.m.</li>
+        <li class="schedule_times__item">12 a.m.</li>
+        <li class="schedule_times__item">1 a.m.</li>
       </ul>
 
 <!-- _____________________________________________________________________ -->
@@ -67,10 +65,10 @@
         <div class="venue_shows">
           <% schedule_presenter = SchedulePresenter.new(venue) %>
           <% venues_events = schedule_presenter.shows_at_venue_per_day("Thursday") %>
-          <% puts "venues_events is #{venues_events}" %>
 
           <!-- cycles through loop once for each day -->
         <% if venues_events != nil %>
+        <% puts "back on view page now--venues_events is #{venues_events}" %>
           <% venues_events.each do |event| %> 
             <%if event.minimum_age == nil %>
               <div class="show show--empty show--empty-<%= event.event_length %>"></div>

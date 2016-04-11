@@ -13,6 +13,7 @@ gem "honeybadger"
 gem "jquery-rails"
 gem "newrelic_rpm", ">= 3.9.8"
 gem "pg"
+gem 'time_difference', '~> 0.4.2'
 #gem "puma"
 gem "rack-canonical-host"
 gem "rails", "~> 4.2.0"

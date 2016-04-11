@@ -15,7 +15,8 @@ class SchedulePresenter
       end
     end
     @shows_at_venue_per_day.sort_by! { |obj| obj.start_date_time}
-    @shows_with_blanks = shows_with_blanks
+    shows_with_blanks
+    fill_out_final_blanks
     return @shows_with_blanks
   end
 
@@ -23,7 +24,7 @@ class SchedulePresenter
     @shows_with_blanks = []
     @current_time_check = DateTime.new(2016,10,06,17,00,00, '+0')
     i = 0
-    until i == @shows_at_venue_per_day.length
+    until i >= @shows_at_venue_per_day.length
       start_of_show = @shows_at_venue_per_day[i].start_date_time
       find_show_start_time(start_of_show)
       @shows_with_blanks << @shows_at_venue_per_day[i]
@@ -51,17 +52,14 @@ class SchedulePresenter
   end
 
   def check_if_show_within_hour(start_of_show)
-    puts "@current_time_check is #{@current_time_check}"
-    puts "start_of_show is #{start_of_show}"
     if start_of_show == @current_time_check + 45.minutes
       @shows_with_blanks << Event.new(start_date_time: @current_time_check, end_date_time: @current_time_check + 45.minutes)
     elsif start_of_show == @current_time_check + 30.minutes
-      puts "CAUGHT IT"
       @shows_with_blanks << Event.new(start_date_time: @current_time_check, end_date_time: @current_time_check + 30.minutes)
     elsif start_of_show == @current_time_check + 15.minutes
       @shows_with_blanks << Event.new(start_date_time: @current_time_check, end_date_time: @current_time_check + 15.minutes)
     end
-    puts "@shows_with_blanks is #{@shows_with_blanks}"
+
     if @shows_with_blanks.empty? == false
       @current_time_check = @shows_with_blanks.last.end_date_time
     end
@@ -99,15 +97,20 @@ class SchedulePresenter
     return @shows_with_blanks
   end
 
-  # returns [#<Event:0x007fcf920a1f90
-  # id: 1,
-  # artist_id: 1,
-  # venue_id: 1,
-  # minimum_age: "21",
-  # start_date_time: Thu, 06 Oct 2016 19:00:00 UTC +00:00,
-  # end_date_time: Thu, 06 Oct 2016 19:30:00 UTC +00:00,
-  # created_at: Mon, 04 Apr 2016 14:56:38 UTC +00:00,
-  # updated_at: Mon, 04 Apr 2016 14:56:38 UTC +00:00>]
-  # (array of events for each venue on this day--this is Thursday @ venue 1)
+  def fill_out_final_blanks
+    @current_time_check = end_time_of_previous_show
+    puts "end time of prev show is #{end_time_of_previous_show}"
+    festival_end = DateTime.new(2016,10,07,02,00,00, '+0')
+    remaining_hours = TimeDifference.between(end_time_of_previous_show, festival_end).in_hours.to_i
+    puts "remaining_hours is #{remaining_hours}"
+
+    remaining_hours.times do
+      @current_time_check += 1.hour
+      puts "time check is #{@current_time_check}"
+      puts "blank show being created ^^"
+      @shows_with_blanks << Event.new(start_date_time: @current_time_check-1.hour, end_date_time: @current_time_check)
+    end
+    return @shows_with_blanks
+  end
 
 end

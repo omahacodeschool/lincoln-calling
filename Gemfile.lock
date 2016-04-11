@@ -340,6 +340,8 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
+    time_difference (0.4.2)
+      activesupport
     timecop (0.8.0)
     title (0.0.5)
       i18n
@@ -417,6 +419,7 @@ DEPENDENCIES
   spring-commands-rspec
   sprockets (>= 3.0.0)
   sprockets-es6
+  time_difference (~> 0.4.2)
   timecop
   title
   uglifier
