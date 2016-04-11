@@ -19,7 +19,7 @@
 
 
   <% @comedians.order(:headline_order).each do |comedian| %>
-    <div class="comedians" id="<%= comedian.id %>">
+    <div class="artists" value="<%= comedian.id %>">
       <div class="no_padding col-6 col-4-tablet">
         <div class="artist_module">
           <img class="artist_module__image" src="<%= comedian.image %>"></img>
@@ -30,8 +30,9 @@
       </div>
   <% end %>
 </div>
+
   <% @comedians.order(:headline_order).each do |comedian| %>
-  <div class=" <%= comedian.id %> comedianInfo visible artist_module">
+  <div id="<%= comedian.id %>" class="artistInfo visible artist_module">
     <div class="clear"></div>
       <div class="artist_profile container container-tablet">
 
@@ -43,7 +44,7 @@
 
           <div class="artist_info col-4-tablet">
             <div class="artist_info__name"><%= comedian.name %></div>
-            <div class="artist_info__link"><%= comedian.website %></div>
+            <div class="artist_info__link"><%=link_to(comedian.website, comedian.website)%></div>
             <div class="artist_info__origin"><%= comedian.origin %></div>
           </div>
           <% comedian.events.order(:start_date_time).each do |event| %>
@@ -56,5 +57,5 @@
            <div class="artist_bio"><%= comedian.bio %></div>
           </div>
       </div>
-    <div>
+    </div>
   <% end %>
