@@ -2,14 +2,16 @@
 
     $(".comedians").on('click', function(){
       var selectedComedian = $(this).attr('value');
+      $('.comedianInfo').removeClass('overlay');
       $('.comedianInfo').addClass('visible');
+      $(`.${selectedComedian}`).addClass('overlay');
       $(`.${selectedComedian}`).removeClass('visible');
-      debugger
       // $('.close_button').show()
     });
 
-    $('.comedianInfo').on( "click", function( event ) {
-      $(this).addClass( "visible");
+    $('.close_button').on( "click", function( event ) {
+      $('.comedianInfo').removeClass( "overlay");
+       $('.comedianInfo').addClass( "visible");
     });
 
 // $('.comedianInfo').bind('clickoutside',function(){
