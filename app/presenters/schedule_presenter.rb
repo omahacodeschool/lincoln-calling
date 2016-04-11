@@ -14,9 +14,11 @@ class SchedulePresenter
         @shows_at_venue_per_day << show
       end
     end
-    @shows_at_venue_per_day.sort_by! { |obj| obj.start_date_time}
-    shows_with_blanks
-    fill_out_final_blanks
+    if @shows_at_venue_per_day != []
+      @shows_at_venue_per_day.sort_by! { |obj| obj.start_date_time}
+      shows_with_blanks
+      fill_out_final_blanks
+    end
     return @shows_with_blanks
   end
 
@@ -99,15 +101,10 @@ class SchedulePresenter
 
   def fill_out_final_blanks
     @current_time_check = end_time_of_previous_show
-    puts "end time of prev show is #{end_time_of_previous_show}"
     festival_end = DateTime.new(2016,10,07,02,00,00, '+0')
     remaining_hours = TimeDifference.between(end_time_of_previous_show, festival_end).in_hours.to_i
-    puts "remaining_hours is #{remaining_hours}"
-
     remaining_hours.times do
       @current_time_check += 1.hour
-      puts "time check is #{@current_time_check}"
-      puts "blank show being created ^^"
       @shows_with_blanks << Event.new(start_date_time: @current_time_check-1.hour, end_date_time: @current_time_check)
     end
     return @shows_with_blanks

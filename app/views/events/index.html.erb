@@ -68,7 +68,6 @@
 
           <!-- cycles through loop once for each day -->
         <% if venues_events != nil %>
-        <% puts "back on view page now--venues_events is #{venues_events}" %>
           <% venues_events.each do |event| %> 
             <%if event.minimum_age == nil %>
               <div class="show show--empty show--empty-<%= event.event_length %>"></div>
