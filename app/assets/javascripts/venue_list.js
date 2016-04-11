@@ -26,7 +26,7 @@ if ( document.getElementsByClassName("map__image").length !== 0){
   }
     document.getElementById("venueName").innerHTML = name;
     document.getElementById("venueWebsite").innerHTML = website;
-    document.getElementById("venueWebsite").src = website;
+    document.getElementById("venueWebsite").href = website;
     document.getElementById("venueAddress").innerHTML = address;
     document.getElementById("venueImage").src = image;
     document.getElementById("venueBio").innerHTML = info;
