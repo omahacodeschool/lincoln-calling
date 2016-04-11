@@ -4,7 +4,7 @@ class Venue < ActiveRecord::Base
   has_many(:events)
   #mount_uploader enables Carrierwave   
   mount_uploader :img, VenueImageUploader
-  mount_uploader :map_icon, VenueImageUploader
+  mount_uploader :map_icon, MapIconUploader
   geocoded_by :address   # can also be an IP address
   after_validation :geocode          # auto-fetch coordinates
 

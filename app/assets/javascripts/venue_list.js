@@ -102,15 +102,16 @@ if ( document.getElementsByClassName("map__image").length !== 0){
   //creates google map with a marker for each venue in the variable json_array (passed from the server over the html page)
   handler = Gmaps.build('Google');
   handler.buildMap({ internal: {id: 'sidebar_builder'}}, function(){
+
     var markers = handler.addMarkers(json_array);
     _.each(json_array, function(json, index){
       json.marker = markers[index];
     });
 
-
     createSidebar(json_array);
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
+
 
     $(".venueMarker").on('click', function(){
       $( ".concert" ).empty();

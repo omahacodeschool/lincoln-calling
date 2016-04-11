@@ -35,8 +35,8 @@ venue_list = [
   [ 2,"Duffy's Tavern", "125 N Second Street", "bio bio bio bio bio bio bio bio", "http://inflatableferret.com/wp-content/uploads/2010/04/bourbon1.jpg", 40.8138, 96.7007],
   [ 3,"Yia Yia's Pizza", "125 N Third Street", "bio bio bio bio bio bio bio bio", "http://inflatableferret.com/wp-content/uploads/2010/04/bourbon1.jpg", 40.8140, 96.7008]
 ]
-venue_list.each do |id, name, address, info, img, coordinates_latitude, coordinates_longitude|
-  Venue.create(id: id, name: name, address: address, info: info, remote_img_url: img, coordinates_latitude: coordinates_latitude, coordinates_longitude: coordinates_longitude)
+venue_list.each do |id, name, address, info, img, latitude, longitude|
+  Venue.create(id: id, name: name, address: address, info: info, remote_img_url: img, latitude: latitude, longitude: longitude)
 end
 
 feature_list = [
