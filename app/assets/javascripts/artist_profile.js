@@ -10,11 +10,14 @@ if(document.getElementsByClassName("artistInfo").length !== 0){
     var selectedArtist = $(this).attr('value');
     $(`#${selectedArtist}`).removeClass('visible');
     $(`#${selectedArtist}`).addClass('overlay');
-    console.log($(`#${selectedArtist}`));
+    var imageSize = $(`#artistPicture${selectedArtist}`).height();
+    console.log(imageSize);
+    $('.artist_profile__scroll_bar').height(imageSize);
   });
   // removes the artist profile overlay popup window and sets the information to a hidden state.
   $('.close_button').on( "click", function(){
     $('.artistInfo').removeClass( "overlay");
      $('.artistInfo').addClass( "visible");
   });
+
 };

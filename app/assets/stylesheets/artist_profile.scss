@@ -1,3 +1,13 @@
+::-webkit-scrollbar
+{
+    width: 0px;
+}
+::-webkit-scrollbar-track-piece
+{
+    background-color: transparent;
+    -webkit-border-radius: 6px;
+}
+
 .visible{
   display: none;
 }
@@ -18,10 +28,10 @@
   position: relative;
   padding-bottom: 10px;
   max-height: 100%;
+  display:inline-block;
 }
 
 .artist_profile__image {
-  display: block;
   width: 100%;
   margin-top: 30px;
   border-top: solid 15px;
@@ -66,9 +76,27 @@
   color: white;
   text-align: left;
   padding: 25px 15px 0 0;
-  max-height: 150px;
-  overflow: scroll;
 }
+
+.artist_profile__scroll_bar{
+  background:transparent;
+  overflow: scroll;
+  height: 100%;
+  padding-top: 10px;
+  float: left;
+}
+
+.close_button {
+  display: block;
+  position: absolute;
+  top: px;
+  right: 40px;
+  color: #ff8110;
+  background-color: #dddddd;
+  font-size: 25px; 
+
+}
+
 
 @media (min-width: $breakpoint-tablet) {
 
@@ -88,6 +116,14 @@
     border-color: none;
     float: left;
   }
+  .artist_profile__scroll_bar {
+    overflow: scroll;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 25px;
+    border-top: 0px;
+    max-width: 41%;
+  }
 
   .artist_bio {
     padding-top: 10px;
@@ -96,11 +132,11 @@
   .close_button {
     display: block;
     position: absolute;
-    top: 0px;
-    right: -10px;
+    top: px;
+    right: 10px;
     color: #ff8110;
     background-color: #dddddd;
-    font-size: 30px; 
+    font-size: 25px; 
     text-align: center;
   }
 }
