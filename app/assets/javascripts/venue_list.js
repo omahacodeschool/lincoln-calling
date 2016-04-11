@@ -99,10 +99,27 @@ if ( document.getElementsByClassName("map__image").length !== 0){
     });
   };
 
+  // function create_markers(json_array){
+  //   var markers = [];
+  //     for (i = 0; i < json_array.length; i++){
+  //       var marker = handler.addMarker(json_array[i]);
+  //       marker.serviceObject.set('id', json_array[i].id);
+  //       google.maps.event.addListener(marker.serviceObject, "click", function(){
+  //         $( ".concert" ).empty();
+  //         clicking_sidebar_triggers_request(marker.serviceObject.id);
+  //       });
+  //     markers.push(marker)
+  //     };
+  //   return markers
+  // };
+
   //creates google map with a marker for each venue in the variable json_array (passed from the server over the html page)
   handler = Gmaps.build('Google');
   handler.buildMap({ internal: {id: 'sidebar_builder'}}, function(){
 
+    // var markers = create_markers(json_array);
+
+ 
     var markers = handler.addMarkers(json_array);
     _.each(json_array, function(json, index){
       json.marker = markers[index];
@@ -116,13 +133,6 @@ if ( document.getElementsByClassName("map__image").length !== 0){
     $(".venueMarker").on('click', function(){
       $( ".concert" ).empty();
       var venueID = $(this).attr("value");
-      clicking_sidebar_triggers_request(venueID)
-      event.preventDefault();
-    });
-
-
-      $(".marker").on('click', function(){
-      var venueID = $(this).children('img').attr("value");
       clicking_sidebar_triggers_request(venueID)
       event.preventDefault();
     });

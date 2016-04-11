@@ -5,7 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
 user = User.create! :id => 1, :first_name => 'John', :last_name => 'Testuser', :email => 'testuser@testuser.com', blurb: 'blurb blurb blurb blurb blurb', remote_profile_pic_url: "http://bloximages.chicago2.vip.townnews.com/journalstar.com/content/tncms/assets/v3/editorial/e/85/e8588925-93ad-5923-ad37-7b1fbc25d5e4/5022d8cf9445e.preview-620.jpg",:password => 'topsecret', :password_confirmation => 'topsecret'
 
 band_list = [
@@ -31,12 +30,12 @@ comedian_list.each do |id, name, origin, website, bio, image, headline_order|
 end
 
 venue_list = [
-  [ 1,"The Bourbon", "125 N First Street", "bio bio bio bio bio bio bio bio", "http://inflatableferret.com/wp-content/uploads/2010/04/bourbon1.jpg", 40.8134, 96.7006],
-  [ 2,"Duffy's Tavern", "125 N Second Street", "bio bio bio bio bio bio bio bio", "http://inflatableferret.com/wp-content/uploads/2010/04/bourbon1.jpg", 40.8138, 96.7007],
-  [ 3,"Yia Yia's Pizza", "125 N Third Street", "bio bio bio bio bio bio bio bio", "http://inflatableferret.com/wp-content/uploads/2010/04/bourbon1.jpg", 40.8140, 96.7008]
+  [ 1,"The Bourbon", "1415 O St, Lincoln, NE", "bio bio bio bio bio bio bio bio", "http://inflatableferret.com/wp-content/uploads/2010/04/bourbon1.jpg", 40.813354, -96.700616, "http://bourbontheatre.com/", "http://i.imgur.com/Fxf20Oy.png"],
+  [ 2,"Duffy's Tavern", "1412 E O St, Lincoln, NE", "bio bio bio bio bio bio bio bio", "http://inflatableferret.com/wp-content/uploads/2010/04/bourbon1.jpg", 40.813794, -96.7007465, "http://duffyslincoln.com/", "http://i.imgur.com/jTQ0goI.png"],
+  [ 3,"Yia Yia's Pizza", "1423 O St, Lincoln, NE", "bio bio bio bio bio bio bio bio", "http://inflatableferret.com/wp-content/uploads/2010/04/bourbon1.jpg", 40.813265, -96.7004825, "https://www.facebook.com/yiayias/", "http://i.imgur.com/Pj3KcRP.png"]
 ]
-venue_list.each do |id, name, address, info, img, latitude, longitude|
-  Venue.create(id: id, name: name, address: address, info: info, remote_img_url: img, latitude: latitude, longitude: longitude)
+venue_list.each do |id, name, address, info, img, latitude, longitude, website, map_icon|
+  Venue.create(id: id, name: name, address: address, info: info, remote_img_url: img, website: website, latitude: latitude, longitude: longitude, remote_map_icon_url: map_icon)
 end
 
 feature_list = [

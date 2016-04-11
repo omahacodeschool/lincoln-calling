@@ -1,9 +1,9 @@
 <%#
-# New
+# Edit
 
-This view is the template for the "new resource" page.
-It displays a header, and then renders the `_form` partial
-to do the heavy lifting.
+This view is the template for the edit page.
+
+It displays a header, and renders the `_form` partial to do the heavy lifting.
 
 ## Local variables:
 
@@ -15,12 +15,16 @@ to do the heavy lifting.
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Page/Form
 %>
 
-<% content_for(:title) { "New #{page.resource_name.titleize}" } %>
+<% content_for(:title) { "Edit #{page.page_title}" } %>
 
 <header class="header">
   <h1 class="header__heading"><%= content_for(:title) %></h1>
   <div class="header__actions">
-    <%= link_to 'Back', :back, class: "button" %>
+    <%= link_to(
+      "Show #{page.page_title}",
+      [namespace, page.resource],
+      class: "button",
+    ) %>
   </div>
 </header>
 <div class="instructions"><p>Please include a complete address.<br>
@@ -29,4 +33,5 @@ to do the heavy lifting.
    Make sure to include one when adding a Venue.<br>
   /lincoln-calling/app/assets/images/map_icons</p></div>
 
-<%= render 'form', page: page %>
+
+<%= render "form", page: page %>
