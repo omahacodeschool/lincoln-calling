@@ -18,45 +18,17 @@
   </div>
 
 
-  <% @comedians.order(:headline_order).each do |comedian| %>
-    <div class="artists" value="<%= comedian.id %>">
+  <% @artists.order(:headline_order).each do |artist| %>
+    <div class="artists" value="<%= artist.id %>">
       <div class="no_padding col-6 col-4-tablet">
         <div class="artist_module">
-          <img class="artist_module__image" src="<%= comedian.image %>"></img>
-          <div class="artist_module__name"><%= comedian.name %></div>
-          <div class="artist_module__origin"><%= comedian.origin %></div>
+          <img class="artist_module__image" src="<%= artist.image %>"></img>
+          <div class="artist_module__name"><%= artist.name %></div>
+          <div class="artist_module__origin"><%= artist.origin %></div>
         </div>
       </div>
       </div>
   <% end %>
 </div>
 
-  <% @comedians.order(:headline_order).each do |comedian| %>
-  <div id="<%= comedian.id %>" class="artistInfo visible artist_module">
-    <div class="clear"></div>
-      <div class="artist_profile container container-tablet">
-
-        <label class="close_button col-1-tablet">X</label>
-
-          <div class="col-7-tablet">
-            <img class="artist_profile__image" id="<%= "artistPicture#{comedian.id}" %>" src="<%= comedian.image %>"></img>
-          </div>
-          <div class="artist_profile__scroll_bar">
-          <div class="artist_info">
-            <div class="artist_info__name"><%= comedian.name %></div>
-            <div class="artist_info__link"><%=link_to(comedian.website, comedian.website)%></div>
-            <div class="artist_info__origin"><%= comedian.origin %></div>
-          </div>
-          <% comedian.events.order(:start_date_time).each do |event| %>
-          <div class="artist_performance_info">
-            <div class="artist_performance_info__date_time"><%= event.weekday%>, <%= event.monthday %> @ <%= event.starttime %></div>
-            <div class="artist_performance_info__venue"><%= event.venue.name %></div>
-          </div>
-          <% end %>
-          <div class="no_padding">  
-           <div class="artist_bio"><%= comedian.bio %></div>
-          </div>
-          </div>
-      </div>
-    </div>
-  <% end %>
+ <%= render "sidebars/artists" %>

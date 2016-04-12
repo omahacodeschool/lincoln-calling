@@ -3,11 +3,11 @@ class ArtistsController < ApplicationController
     @artists = Band.all
   end
   def index_comedians
-    @comedians = Comedian.all
+    @artists = Comedian.all
   end
 
   def search
-    @artist_search_results = Artist.search_by_name(params[:search_input])
+    @artists = Artist.search_by_name(params[:search_input])
     @search = params[:search_input]
   end
   

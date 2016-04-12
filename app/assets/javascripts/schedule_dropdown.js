@@ -1,3 +1,4 @@
+ if(document.getElementById("day_picker_box") != null || document.getElementById("day_picker_box") != undefined){
   //a drop down of the festival days on the schedule view
   var day_picker_box = document.getElementById("day_picker_box");
   var thurs = document.getElementById("thurs");
@@ -36,4 +37,4 @@
     friday_shows.style.display = "none";
     saturday_shows.style.display = "block";
   });
-       
+};
