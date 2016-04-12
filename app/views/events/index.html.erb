@@ -71,9 +71,11 @@
             <%if event.minimum_age == nil %>
               <div class="show show--empty show--empty-<%= event.event_length %>"></div>
             <% else %>
+            <label class="artists" value="<%= event.artist_id %>"> 
               <div class="show show--<%= event.event_length %> show--<%= event.minimum_age %>-plus">
-                <%= event.artist.name %>
+               <%= event.artist.name %>
               </div>
+              </label>
             <% end %>
           <% end %>
         <% else %>
@@ -98,9 +100,11 @@
             <%if event.minimum_age == nil %>
               <div class="show show--empty show--empty-<%= event.event_length %>"></div>
             <% else %>
+            <label class="artists" value="<%= event.artist_id %>"> 
               <div class="show show--<%= event.event_length %> show--<%= event.minimum_age %>-plus">
                 <%= event.artist.name %>
               </div>
+            </label>
             <% end %>
           <% end %>
         <% else %>
@@ -125,9 +129,11 @@
             <%if event.minimum_age == nil %>
               <div class="show show--empty show--empty-<%= event.event_length %>"></div>
             <% else %>
+            <label class="artists" value="<%= event.artist_id %>"> 
               <div class="show show--<%= event.event_length %> show--<%= event.minimum_age %>-plus">
                 <%= event.artist.name %>
               </div>
+            </label>
             <% end %>
           <% end %>
         <% else %>
@@ -144,4 +150,5 @@
       <div style="clear: both"></div>
     </div>
   </div>
+ <%= render "sidebars/artists" %>
 
