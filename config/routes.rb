@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :features
     resources :faqs
     resources :abouts
+    resources :sidebars
     root to: "users#index"
   end
 
@@ -35,5 +36,4 @@ Rails.application.routes.draw do
   get "sponsors/list" => "sponsors#index"
   get "venues/list" => "venues#index"
   get "venues/:venue_id" => "venues#view"
-
 end
