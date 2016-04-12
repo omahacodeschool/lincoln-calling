@@ -60,35 +60,30 @@
 
 <!-- _____________________________________________________________________ -->
 
-    <% ["Thursday"].each do |week_day| %>
-      <% puts "week_day is #{week_day}" %>
+      <div class="venue_shows_container" id="Thursday_shows">
+      <% @venues.each do |venue| %>
+        <div class="venue_shows">
+          <% schedule_presenter = SchedulePresenter.new(venue) %>
+          <% venues_events = schedule_presenter.shows_at_venue_per_day("Thursday") %>
 
-        <div class="venue_shows_container" id="<%=week_day%>_shows">
-        <% @venues.each do |venue| %>
-          <div class="venue_shows">
-            <% schedule_presenter = SchedulePresenter.new(venue) %>
-            <% venues_events = schedule_presenter.shows_at_venue_per_day(week_day) %>
-
-          <% if venues_events != nil %>
-            <% venues_events.each do |event| %> 
-              <%if event.minimum_age == nil %>
-                <div class="show show--empty show--empty-<%= event.event_length %>"></div>
-              <% else %>
-                <div class="show show--<%= event.event_length %> show--<%= event.minimum_age %>-plus">
-                  <%= event.artist.name %>
-                </div>
-              <% end %>
-            <% end %>
-          <% else %>
-            <% 9.times do %>
-              <div class="show show--empty show--empty-60"></div>
+        <% if venues_events != nil %>
+          <% venues_events.each do |event| %> 
+            <%if event.minimum_age == nil %>
+              <div class="show show--empty show--empty-<%= event.event_length %>"></div>
+            <% else %>
+              <div class="show show--<%= event.event_length %> show--<%= event.minimum_age %>-plus">
+                <%= event.artist.name %>
+              </div>
             <% end %>
           <% end %>
-          </div>
+        <% else %>
+          <% 9.times do %>
+            <div class="show show--empty show--empty-60"></div>
+          <% end %>
         <% end %>
         </div>
-
       <% end %>
+      </div>
 
 <!-- ______________________________________________________________________ -->
 
