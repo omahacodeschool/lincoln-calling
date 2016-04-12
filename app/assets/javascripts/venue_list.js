@@ -71,11 +71,13 @@ if ( document.getElementsByClassName("map__image").length !== 0){
       event.preventDefault();
     });
 
-    //shows or displays event data if instance of element's class is clicked.
-    $(".day_link").on('click', function(){
-      dayDisplay = $(this).attr("value");
-      $('.shows').hide();
-      $(`.${venueID}`).filter(`.${dayDisplay}`).show()
-    });
+    if (venueID != null || venueID != undefined){
+      //shows or displays event data if instance of element's class is clicked.
+      $(".day_link").on('click', function(){
+        dayDisplay = $(this).attr("value");
+        $('.shows').hide();
+        $(`.${venueID}`).filter(`.${dayDisplay}`).show()
+      });
+    };
   });
 };
