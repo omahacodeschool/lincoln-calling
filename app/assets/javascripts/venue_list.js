@@ -60,6 +60,7 @@ if ( document.getElementsByClassName("map__image").length !== 0){
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
 
+
     $(".venueMarker").on('click', function(){
       venueID = $(this).attr("value");
       $(".venueMarker").children().removeClass("venues__text--selected")
@@ -70,14 +71,16 @@ if ( document.getElementsByClassName("map__image").length !== 0){
       $(`.${venueID}`).filter(`.${dayDisplay}`).show();
       event.preventDefault();
     });
-
-    if (venueID != null || venueID != undefined){
-      //shows or displays event data if instance of element's class is clicked.
-      $(".day_link").on('click', function(){
-        dayDisplay = $(this).attr("value");
-        $('.shows').hide();
-        $(`.${venueID}`).filter(`.${dayDisplay}`).show()
-      });
-    };
   });
+
+
+    //shows or displays event data if instance of element's class is clicked.
+    $(".day_link").on('click', function(){
+      if (venueID != undefined){
+        dayDisplay = $(this).attr("value");
+        console.log(dayDisplay)
+        $('.shows').hide();
+        $(`.${venueID}`).filter(`.${dayDisplay}`).show();
+      };
+    });
 };
