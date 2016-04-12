@@ -4,8 +4,20 @@ class SchedulePresenter
     @venue = venue_object
   end
 
+  def find_days_start_time(weekday)
+    if weekday == "Thursday"
+      festival_start = DateTime.new(2016,10,6,17,00,00, '+0')
+    elsif weekday == "Friday"
+      festival_start = DateTime.new(2016,10,7,17,00,00, '+0')
+    elsif weekday == "Saturday"
+      festival_start = DateTime.new(2016,10,8,17,00,00, '+0')
+    end
+    return festival_start
+  end
+
   #this is the method actually being called in the view.
   def shows_at_venue_per_day(week_day)
+    festival_start = find_days_start_time(week_day)
     shows_at_venue = Event.where("venue_id" => @venue.id)
     @shows_at_venue_per_day = []
     shows_at_venue.each do |show|
@@ -15,7 +27,6 @@ class SchedulePresenter
     end
     if @shows_at_venue_per_day != []
       @shows_at_venue_per_day.sort_by! { |obj| obj.start_date_time}
-      festival_start = DateTime.new(2016,10,06,17,00,00, '+0')
       shows_with_blanks(festival_start)
       fill_out_final_blanks(festival_start)
     end
