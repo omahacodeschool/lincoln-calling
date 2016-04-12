@@ -10,7 +10,11 @@
   var saturday_shows = document.getElementById("Saturday_shows");
 
   day_picker_box.addEventListener("click", function(){
-    other_days.style.display = "block";
+    if (other_days.style.display == "none") {
+      other_days.style.display = "block";
+    } else {
+      other_days.style.display = "none";
+    }
   });
 
   thurs.addEventListener("click", function(){
