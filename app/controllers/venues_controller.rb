@@ -1,6 +1,7 @@
-
 require 'json'
 require 'venue_presenter'
+require 'schedule_presenter'
+
 class VenuesController < ApplicationController
   def index
     @venues = Venue.all
@@ -36,5 +37,4 @@ class VenuesController < ApplicationController
 
     render :layout => false
   end
-
 end

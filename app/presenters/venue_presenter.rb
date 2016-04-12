@@ -1,4 +1,5 @@
 class VenuePresenter
+
   def initialize(event_object_array)
     @event_array = event_object_array
   end
