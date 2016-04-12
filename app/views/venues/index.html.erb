@@ -18,73 +18,42 @@
     <div class="container__map_and_venue map__image">
       <div class="map__image">
         <div id="sidebar_builder" style='width: 100%; height: 400px;'></div>
-      </div>    
+      </div> 
+        </div>
     </div>
-  </div>
+ </div>
 
-  <!-- Venue Profile Sidebar -->
-  <div class="col-4-tablet no_padding">
-    <div class="venue_profile">
-      <div class="extra_gutter">
-          <div class="venue_info" id="venueInfo">
-            <div class="venue_info__name" id="venueName">Check Out Venues</div>
-            <a href="#" class="venue_info__link" id="venueWebsite"></a>
-            <div class="venue_info__address" id="venueAddress">select a venue from the legend for more information</div>
+    
+
+      <!-- Venue Profile Sidebar -->
+
+      <div class="col-4-tablet no_padding">
+        <div class="venue_profile">
+        <% @venues.each do |venue| %>
+          <div class="extra_gutter venueInfo <%= venue.id %>">
+              <div class="venue_info venueInfo <%= venue.id %>">
+                <div class="venue_info__name venueInfo <%= venue.id %>"><%= venue.name %></div>
+                <a href="<%= venue.website %>" class="venue_info__link venueInfo <%= venue.id %>"><%= venue.website %></a>
+                <div class="venue_info__address venueInfo <%= venue.id %>"><%= venue.address %></div>
+              </div>
+              <img class="venue_profile__image venueInfo <%= venue.id %>" src="<%= venue.img.url %>"></img>
+              <div class="venue_bio venueInfo <%= venue.id %>"><%= venue.info %></div>
           </div>
-          <img class="venue_profile__image" id="venueImage" src="http://i1125.photobucket.com/albums/l589/michaelbobcat/hearnebraskalogoorangetransparent-1.png">
-          <div class="venue_bio" id="venueBio"></div>
+        <% end %>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
+  
+
 
 
 <!-- Venues -->
 <div class="clear">
   <div class="col-8-tablet no_padding">
         <!-- The text that follows is how the HTML will likely have to look to allow for adding the selected effect to venue locations when selected.  Or rather, the "venues__text--selected" class modifier needs to be added to make that happen via JavaScript. -->
-        <!-- <div class="venues__text venues__text--selected">Bourbon Theater</div> -->
     <div class="venue_list">
       <div id='sidebar_container'></div> 
     </div>
   </div>
 
-    <!-- Show Sidebar -->
-  <div class="col-4-tablet ">
-    <div class="side_bar">
-      <div class="side_bar__title">
-      Festival Schedule/ Lincoln Calling 2016
-      </div>
-      <div class="clear dates">
-        <div class="col-4 no_padding">
-          <a href="#" class="day_link day_link--left day_link--selected" value="day1Shows">
-            <span href="#" class="day_link__day">Thursday</span>
-            <span href="#" class="day_link__date">6</span>
-          </a>  
-
-        </div>
-        <div class="col-4 no_padding">
-          <a href="#" class="day_link day_link--mid" value="day2Shows">
-            <span href="#" class="day_link__day">Friday</span>
-            <span href="#" class="day_link__date">7</span>
-          </a> 
-        </div>
-        <div class="col-4 no_padding">
-          <a href="#" class="day_link day_link--right" value="day3Shows">
-            <span href="#" class="day_link__day">Saturday</span>
-            <span href="#" class="day_link__date">8</span>
-          </a>
-        </div>
-      </div>
-      <div class="concert">
-        <div class="concert__name">Select a Venue</div>
-        <div class="concert__time">to view events & times</div>
-
-      </div>
-      <a href="/events/list" class="full_schedule">see full schedule</a>
-    </div>
-     </div>
-  </div>
- </div>
-
+ <%= render "sidebars/events" %>
 

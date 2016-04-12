@@ -18,7 +18,7 @@
   </div>
 
 
-  <% @artist_search_results.each.each do |artist| %>
+  <% @artists.each do |artist| %>
     <div class="artists" value="<%= artist.id %>">
       <div class="no_padding col-6 col-4-tablet">
         <div class="artist_module">
@@ -31,32 +31,5 @@
   <% end %>
 </div>
 
-  <% @artist_search_results.each do |artist| %>
-  <div id="<%= artist.id %>" class="artistInfo visible artist_module">
-    <div class="clear"></div>
-      <div class="artist_profile container container-tablet">
 
-        <label class="close_button col-1-tablet">X</label>
-
-          <div class="col-7-tablet">
-            <img class="artist_profile__image" id="<%= "artistPicture#{artist.id}" %>" src="<%= artist.image %>"></img>
-          </div>
-          <div class="artist_profile__scroll_bar">
-          <div class="artist_info">
-            <div class="artist_info__name"><%= artist.name %></div>
-            <div class="artist_info__link"><%=link_to(artist.website, artist.website)%></div>
-            <div class="artist_info__origin"><%= artist.origin %></div>
-          </div>
-          <% artist.events.order(:start_date_time).each do |event| %>
-          <div class="artist_performance_info">
-            <div class="artist_performance_info__date_time"><%= event.weekday%>, <%= event.monthday %> @ <%= event.starttime %></div>
-            <div class="artist_performance_info__venue"><%= event.venue.name %></div>
-          </div>
-          <% end %>
-          <div class="no_padding">  
-           <div class="artist_bio"><%= artist.bio %></div>
-           </div>
-          </div>
-      </div>
-    </div>
-  <% end %>
+ <%= render "sidebars/artists" %>

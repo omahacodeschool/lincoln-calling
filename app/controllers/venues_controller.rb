@@ -4,6 +4,10 @@ require 'schedule_presenter'
 
 class VenuesController < ApplicationController
   def index
+    @events = Event.all
+    @day1 = VenuePresenter.new(@events.byday("Thursday")).events_with_venue_and_artist_info
+    @day2 = VenuePresenter.new(@events.byday("Friday")).events_with_venue_and_artist_info
+    @day3 = VenuePresenter.new(@events.byday("Saturday")).events_with_venue_and_artist_info
     @venues = Venue.all
     counter = 0
     @hash = Gmaps4rails.build_markers(@venues) do |venue, marker|
@@ -16,25 +20,4 @@ class VenuesController < ApplicationController
     end
   end
 
-  def view
-    @venue = Venue.find_by_id(params[:venue_id])
-    @venue_data = {}
-    @venue_data[@venue.name] = {address: @venue.address, image: @venue.img, info: @venue.info, website: @venue.website}
-    
-    th_shows = @venue.venue_events_by_day("Thursday")
-    fri_shows = @venue.venue_events_by_day("Friday")
-    sat_shows = @venue.venue_events_by_day("Saturday")
-
-    @day1 = VenuePresenter.new(th_shows)
-    @day2 = VenuePresenter.new(fri_shows)
-    @day3 = VenuePresenter.new(sat_shows)
-
-    @info_hash ={}
-    @info_hash["day1Shows"] = @day1.venue_events_with_artist_info.to_json
-    @info_hash["day2Shows"] = @day2.venue_events_with_artist_info.to_json
-    @info_hash["day3Shows"] = @day3.venue_events_with_artist_info.to_json
-    @info_hash["venueData"] = @venue_data.to_json
-
-    render :layout => false
-  end
 end
