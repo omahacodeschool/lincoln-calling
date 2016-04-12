@@ -4,6 +4,11 @@ class SchedulePresenter
     @venue = venue_object
   end
 
+  def days_of_festival
+    days_of_festival = ["Thursday", "Friday", "Saturday"]
+    return days_of_festival
+  end
+
   def find_days_start_time(weekday)
     if weekday == "Thursday"
       festival_start = DateTime.new(2016,10,6,17,00,00, '+0')
