@@ -6,8 +6,9 @@ if( document.getElementById("fri") != null || document.getElementById("fri") != 
   var sat = document.getElementById("sat");
   var other_days = document.getElementById("other_days");
   var current_day = document.getElementById("current_day");
-  var thursday_shows = document.getElementById("thursday_shows");
-  var friday_shows = document.getElementById("friday_shows");
+  var thursday_shows = document.getElementById("Thursday_shows");
+  var friday_shows = document.getElementById("Friday_shows");
+  var saturday_shows = document.getElementById("Saturday_shows");
   
   day_picker_box.addEventListener("click", function(){
     other_days.style.display = "block";
