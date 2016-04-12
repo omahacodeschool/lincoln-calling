@@ -4,11 +4,22 @@ class SchedulePresenter
     @venue = venue_object
   end
 
+  def find_days_start_time(weekday)
+    if weekday == "Thursday"
+      festival_start = DateTime.new(2016,10,6,17,00,00, '+0')
+    elsif weekday == "Friday"
+      festival_start = DateTime.new(2016,10,7,17,00,00, '+0')
+    elsif weekday == "Saturday"
+      festival_start = DateTime.new(2016,10,8,17,00,00, '+0')
+    end
+    return festival_start
+  end
+
   #this is the method actually being called in the view.
   def shows_at_venue_per_day(week_day)
+    festival_start = find_days_start_time(week_day)
     shows_at_venue = Event.where("venue_id" => @venue.id)
     @shows_at_venue_per_day = []
-    @shows_with_open_time_slots = []
     shows_at_venue.each do |show|
       if show.weekday == week_day
         @shows_at_venue_per_day << show
@@ -16,15 +27,15 @@ class SchedulePresenter
     end
     if @shows_at_venue_per_day != []
       @shows_at_venue_per_day.sort_by! { |obj| obj.start_date_time}
-      shows_with_blanks
-      fill_out_final_blanks
+      shows_with_blanks(festival_start)
+      fill_out_final_blanks(festival_start)
     end
     return @shows_with_blanks
   end
 
-  def shows_with_blanks
+  def shows_with_blanks(festival_start)
     @shows_with_blanks = []
-    @current_time_check = DateTime.new(2016,10,06,17,00,00, '+0')
+    @current_time_check = festival_start
     i = 0
     until i >= @shows_at_venue_per_day.length
       start_of_show = @shows_at_venue_per_day[i].start_date_time
@@ -99,9 +110,9 @@ class SchedulePresenter
     return @shows_with_blanks
   end
 
-  def fill_out_final_blanks
+  def fill_out_final_blanks(festival_start)
     @current_time_check = end_time_of_previous_show
-    festival_end = DateTime.new(2016,10,07,02,00,00, '+0')
+    festival_end = festival_start + 9.hours
     remaining_hours = TimeDifference.between(end_time_of_previous_show, festival_end).in_hours.to_i
     remaining_hours.times do
       @current_time_check += 1.hour
