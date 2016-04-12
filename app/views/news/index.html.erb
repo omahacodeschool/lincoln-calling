@@ -1,10 +1,70 @@
-<h1>News</h1>
-<body>
+<div class="page_header">
+  <div class="header_divider_top"></div>
+  <div class="page_header__left page_header__left--full">NEWS</div>
+  <div class="header_divider_bottom"></div>
+</div>
+
+
+<div class="clear">
+  <div class="col-8-tablet no_padding">
   <% @articles.each do |article| %>
-    <a href="/news/<%= article.id %>">
-      <img src="<%= article.image %>" alt="Article Pic">
-      <h3><%= article.title %> </h3>
-    </a>
-  <% end %>
-  <a href="/news/#more">More Stories</a>
-</body> 
+    <div class="news col-4-tablet">
+      <img class="news__image" src=" <%= article.image %>">
+      <div class="news__title"><%= article.title %></div>
+    </div>
+    <% end %>
+  </div>
+
+
+  <!-- Email Bar -->
+  <div class="col-4-tablet">
+    <div class="home_emails">
+      <div id="home_computer_icon" class="icon"></div>
+      <div id="home_email_text">SIGN UP FOR EMAIL UPDATES</div>
+    </div>
+
+          <!-- Show Sidebar -->  
+    <div class="side_bar">
+      <div class="side_bar__title">
+        Festival Schedule/ Lincoln Calling 2016
+      </div>
+      <div class="clear dates">
+        <div class="col-4 no_padding">
+          <a href="#" value="day1" class="day_link day_link--left day_link--selected">
+            <span href="#" class="day_link__day">Thursday</span>
+            <span href="#" class="day_link__date">6</span>
+          </a>  
+        </div>
+        <div class="col-4 no_padding">
+          <a href="#" value="day2" class="day_link day_link--mid">
+            <span href="#" class="day_link__day">Friday</span>
+            <span href="#" class="day_link__date">7</span>
+          </a> 
+        </div>
+        <div class="col-4 no_padding">
+          <a href="#" value="day3" class="day_link day_link--right">
+            <span href="#" class="day_link__day">Saturday</span>
+            <span href="#" class="day_link__date">8</span>
+          </a>
+        </div>
+      </div>
+      <div class="concert">
+         <% @day1.each do |event| %>
+            <div class="concert__name day1 shows" style="display: block;"><%= event[:venue_and_artist] %></div>
+            <div class="concert__time day1 shows" style="display: block;"><%= event[:start_time] %></div>
+          <%end%>
+
+          <% @day2.each do |event| %>
+            <div class="concert__name day2 shows" style="display: none;"><%= event[:venue_and_artist] %></div>
+            <div class="concert__time day2 shows" style="display: none;"><%= event[:start_time] %></div>
+          <%end%>
+
+          <% @day3.each do |event| %>
+            <div class="concert__name day3 shows" style="display: none;"><%= event[:venue_and_artist] %></div>
+            <div class="concert__time day3 shows" style="display: none;"><%= event[:start_time] %></div>
+          <%end%>
+      </div>
+      <a href="/events/list" class="full_schedule">see full schedule</a>
+    </div>
+  </div>
+</div>
