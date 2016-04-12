@@ -51,8 +51,6 @@ if ( document.getElementsByClassName("map__image").length !== 0){
   handler.buildMap({ internal: {id: 'sidebar_builder'}}, function(){
 
     // var markers = create_markers(json_array);
-
- 
     var markers = handler.addMarkers(json_array);
     _.each(json_array, function(json, index){
       json.marker = markers[index];
@@ -61,7 +59,6 @@ if ( document.getElementsByClassName("map__image").length !== 0){
     createSidebar(json_array);
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
-
 
     $(".venueMarker").on('click', function(){
       venueID = $(this).attr("value");
