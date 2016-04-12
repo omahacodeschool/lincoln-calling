@@ -9,7 +9,7 @@
   <div class="col-8-tablet no_padding">
   <% @articles.each do |article| %>
     <div class="news col-4-tablet">
-      <img class="news__image" src=" <%= article.image %>">
+      <a href="/news/<%=article.id %>"><img class="news__image" src=" <%= article.image %>"></a>
       <div class="news__title"><%= article.title %></div>
     </div>
     <% end %>
