@@ -1,3 +1,13 @@
+.artist_profile__scroll_bar::-webkit-scrollbar
+{
+    width: 0px;
+}
+.artist_profile__scroll_bar::-webkit-scrollbar-track-piece
+{
+    background-color: transparent;
+    -webkit-border-radius: 6px;
+}
+
 .visible{
   display: none;
 }
@@ -18,10 +28,11 @@
   position: relative;
   padding-bottom: 10px;
   max-height: 100%;
+  display:inline-block;
+  margin: 3%;
 }
 
 .artist_profile__image {
-  display: block;
   width: 100%;
   margin-top: 30px;
   border-top: solid 15px;
@@ -66,9 +77,27 @@
   color: white;
   text-align: left;
   padding: 25px 15px 0 0;
-  max-height: 150px;
-  overflow: scroll;
 }
+
+.artist_profile__scroll_bar{
+  background:transparent;
+  overflow: scroll;
+  height: 100%;
+  margin-top: 20px;
+  float: left;
+}
+
+.close_button {
+  display: block;
+  position: absolute;
+  top: px;
+  color: #ff8110;
+  background-color: #dddddd;
+  font-size: 25px;
+  right: 0px; 
+
+}
+
 
 @media (min-width: $breakpoint-tablet) {
 
@@ -77,7 +106,7 @@
     overflow: hidden;
     border-top: solid 15px;
     border-color: #565351;
-    margin-top: 10%;
+    margin: 8%;
   }
 
   .artist_profile__image {
@@ -88,6 +117,14 @@
     border-color: none;
     float: left;
   }
+  .artist_profile__scroll_bar {
+    overflow: scroll;
+    height: 100%;
+    width: 100%;
+    border-top: 0px;
+    max-width: 41%;
+    margin-top: 20px;
+  }
 
   .artist_bio {
     padding-top: 10px;
@@ -96,11 +133,11 @@
   .close_button {
     display: block;
     position: absolute;
-    top: 0px;
-    right: -10px;
+    top: px;
+    right: 0px;
     color: #ff8110;
     background-color: #dddddd;
-    font-size: 30px; 
+    font-size: 25px; 
     text-align: center;
   }
 }

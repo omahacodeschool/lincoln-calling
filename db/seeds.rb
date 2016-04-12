@@ -95,10 +95,10 @@ sponsors_list.each do |name, website, premier, description, sponsor_order, logo|
 end
 
 tickets_list = [
-  ["Three Day Pass", "eventbrite.com", 3000, true],
-  ["Thursday", "eventbrite.com", 1500, false],
-  ["Friday", "eventbrite.com", 1500, false],
-  ["Saturday", "eventbrite.com", 1500, false]
+  ["Three Day Pass", "http://wwww.eventbrite.com", 3000, true],
+  ["Thursday", "http://wwww.eventbrite.com", 1500, false],
+  ["Friday", "http://wwww.eventbrite.com", 1500, false],
+  ["Saturday", "http://wwww.eventbrite.com", 1500, false]
 ]
 tickets_list.each do |name, link, price_in_cents, sold_out|
   Ticket.create(name: name, link: link, price_in_cents: price_in_cents, sold_out: sold_out)
