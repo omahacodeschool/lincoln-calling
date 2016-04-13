@@ -15,7 +15,6 @@ Rails.application.routes.draw do
     resources :features
     resources :faqs
     resources :abouts
-    resources :sidebars
     root to: "users#index"
   end
 

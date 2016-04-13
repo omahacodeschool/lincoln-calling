@@ -397,6 +397,7 @@ DEPENDENCIES
   high_voltage
   honeybadger
   jquery-rails
+  kaminari
   launchy
   newrelic_rpm (>= 3.9.8)
   pg
