@@ -10,4 +10,5 @@ class User < ActiveRecord::Base
   end
   #mount_uploader enables Carrierwave 
   mount_uploader :profile_pic, ProfilePicUploader
+  has_many :articles
 end

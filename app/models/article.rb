@@ -14,4 +14,5 @@ class Article < ActiveRecord::Base
   end
   #mount_uploader enables Carrierwave  
   mount_uploader :image, ArticleImageUploader
+  belongs_to :user
 end
