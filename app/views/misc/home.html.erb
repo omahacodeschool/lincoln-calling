@@ -40,7 +40,7 @@
   </div>
 </div>
 
-<div class="clear">
+<div class="clear margin_right">
   <div class="col-8-tablet">
     <div class="clear home_news">
       <% @articles.each do |image| %>
@@ -51,16 +51,16 @@
         <% end %>
       <% end %>
       <div class="col-6 no_padding"> 
-      <div class="home_news__headlines">
-        <% @articles.each do |headline| %>
-          <%if headline == @articles[0] %>
-            <a href="/news/<%=headline.id%>" class="home_link">
-            <div id ="<%=headline.id%>" class="home_news__headlines home_news__headlines--headline home_news__headlines--selected"><%= headline.title%></div></a>
-          <% else %>
-            <a href="/news/<%=headline.id%>"class="home_link"><div id ="<%=headline.id%>" class="home_news__headlines home_news__headlines--headline headline_for_<%=headline.id%> home_news__headlines--tablet"><%= headline.title %></div></a>  
+        <div class="home_news__headlines">
+          <% @articles.each do |headline| %>
+            <%if headline == @articles[0] %>
+              <a href="/news/<%=headline.id%>" class="home_link">
+              <div id ="<%=headline.id%>" class="home_news__headlines home_news__headlines--headline home_news__headlines--selected"><%= headline.title%></div></a>
+            <% else %>
+              <a href="/news/<%=headline.id%>"class="home_link"><div id ="<%=headline.id%>" class="home_news__headlines home_news__headlines--headline headline_for_<%=headline.id%> home_news__headlines--tablet"><%= headline.title %></div></a>  
+            <% end %>
           <% end %>
-        <% end %>
-      </div>
+        </div>
       </div>
       <div class="home_news__more">
         <a href="/news" class="home_news__more__text">see more news</a>

@@ -77,8 +77,6 @@
 .home_news__img.is_hidden{
   display: none;
 }
-
-
 .home_news__more__text{
   display: block;
   color: #c9c9c9;
@@ -102,6 +100,9 @@
 }
 
 @media (min-width: $breakpoint-tablet){
+  .margin_right{
+    margin-right: 15px;
+  }
   .bands__others{
     display: inline;
   }
