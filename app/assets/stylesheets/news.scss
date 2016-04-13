@@ -3,7 +3,6 @@
 }
 
 .news {
-  float: left;
   // margin: 25px 25px 0 25px; 
 }
 
@@ -39,18 +38,25 @@
   
   .news {
   float: left;
-  width: 50%;
   margin-bottom: 50px; 
   }
-
   .home_emails {
     display: block;
     font-size: 16px;
     padding: 1px;
     margin: 0px 25px 0px;
   }
-
   .side_bar {
     display: block;
   }
+  .news__image{
+    border-right: solid 15px;
+    border-color: #ff8110;
+  } 
 }
+
+
+
+
+
+
