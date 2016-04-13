@@ -1,23 +1,33 @@
-<div class="clear">
-  <div class="page_header__left">SPONSORS</div>
+ <div class="page_header">
+  <div class="header_divider_top"></div>
+  <div class="page_header__left page_header__left--full">SPONSORS</div>
+  <div class="header_divider_bottom"></div>
 </div>
-<!-- Sponsor module -->
-<div class="col-3-tablet">
-  <% @sponsors.order(:sponsor_order).each do |sponsor| %>
-    <% if sponsor.premier == true %>
-      <a href="<%=sponsor.website%>" class="primary_sponsor">
-        <img src="<%=sponsor.logo%>" class="primary_sponsor__logo">
-        <span class="primary_sponsor__name"><%=sponsor.name%></span>
-        <span class="primary_sponsor__description"><%=sponsor.description%></span>
-      </a>
-    <% end %>
-  <% end %>  
-</div>   
-<!-- This is the code for displaying the non-premier sponsors when we figure out how we're displaying them. -->
 
-<!-- # <% @sponsors.order(:sponsor_order).each do |sponsor| %>
-#   <% if sponsor.premier == false %>
-#     <%= sponsor.logo %><br>
-#   <% end %>
-# <% end %>
- -->
+<div class="clear">
+
+  <div class="sponsor_container container col-8-tablet">
+    <% @premier_sponsors.each do |sponsor| %>
+    <div>
+      <a href="<%= sponsor.website %>" class="primary_sponsor">
+        <img src="<%= sponsor.logo %>" class="primary_sponsor__logo">
+        <span class="primary_sponsor__name"><%= sponsor.name %></span>
+        <span class="primary_sponsor__description"><%= sponsor. description %></span>
+      </a>
+    </div>
+    <% end %>
+
+  <% @sponsors.each do |sponsor| %>
+      <div class="no_padding col-6 col-4-tablet">
+        <div class="artist_module">
+        <a href="<%= sponsor.website %>" class="primary_sponsor">
+          <img class="artist_module__image" src="<%= sponsor.logo %>"></img>
+          <div class="artist_module__name"><%= sponsor.name %></div>
+        </a>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+ <%= render "sidebars/events" %>
+ </div>
