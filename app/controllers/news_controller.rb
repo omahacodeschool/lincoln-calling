@@ -14,4 +14,9 @@ class NewsController < ApplicationController
     @day2 = VenuePresenter.new(@events.byday("Friday")).events_with_venue_and_artist_info
     @day3 = VenuePresenter.new(@events.byday("Saturday")).events_with_venue_and_artist_info
   end
+
+  def show_image
+    @article = Feature.find_by_id(params[:id])
+    @image = @article.image
+  end
 end

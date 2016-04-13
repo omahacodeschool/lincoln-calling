@@ -1,3 +1,12 @@
+
+<head>
+  <meta property="og:url"           content="<%= news_article_url(:id => @article.id) %>"/>
+  <meta property="og:type"          content="article" />
+  <meta property="og:title"         content="<%= @article.title %>" />
+  <meta property="og:description"   content="<%= truncate(@article.article_content, length: 120) %>" />
+</head>
+
+
 <div class="page_header">
   <div class="header_divider_top"></div>
   <div class="page_header__right"><%= @article.title %></div>
@@ -25,7 +34,12 @@
     </div>
 
     <div class="social_footer__top"></div>
-    <div class="social_footer__right icon"> </div>
+    <div class="social_footer__right icon">
+      <div class="social_footer__icon icon">
+        <div class="fb-share-button" data-href="<%= news_article_url(:id => @article.id) %>" data-layout="button" data-mobile-iframe="false"></div>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="LincolnCalling,HearNebraska">Tweet</a>
+      </div>
+    </div>
     <div class="social_footer__left">SHARE</div>
     <div class="social_footer__bottom"></div>
   </div>
