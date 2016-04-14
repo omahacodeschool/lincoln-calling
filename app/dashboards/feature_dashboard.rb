@@ -10,7 +10,7 @@ class FeatureDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     title: Field::String,
-    user_id: Field::BelongsTo,
+    user: Field::BelongsTo,
     article_content: Field::Text,
     image: CarrierwaveField,
     created_at: Field::DateTime,
@@ -27,7 +27,7 @@ class FeatureDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :title,
-    :user_id,
+    :user,
     :article_content,
     :image, 
   ]
@@ -37,7 +37,7 @@ class FeatureDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :id,
     :title,
-    :user_id,
+    :user,
     :article_content,
     :image,
     :created_at,

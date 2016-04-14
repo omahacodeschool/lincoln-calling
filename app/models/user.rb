@@ -11,5 +11,4 @@ class User < ActiveRecord::Base
   #mount_uploader enables Carrierwave 
   mount_uploader :profile_pic, ProfilePicUploader
   has_many :articles
-  validates :first_name, :last_name, presence: true
 end
