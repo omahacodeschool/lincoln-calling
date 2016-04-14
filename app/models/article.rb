@@ -16,4 +16,5 @@ class Article < ActiveRecord::Base
   mount_uploader :image, ArticleImageUploader
   belongs_to :user
   paginates_per 6
+  validates :title, :article_content, :publish_date_time, :type, :user_id, presence: true
 end

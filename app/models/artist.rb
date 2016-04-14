@@ -7,5 +7,5 @@ class Artist < ActiveRecord::Base
 
   include PgSearch
   pg_search_scope :search_by_name, :against => :name
-
+  validates :name, presence: true
 end
