@@ -21,6 +21,7 @@ class NotificationsController < ApplicationController
     redirect_to "/events/list"
   end
 
+
  def send_sms
   #I think these numbers need to go in the .env.local file
   # TWILIO_ACCOUNT_ID='AC92417814cb1961be7a4360be84d3d035' 
@@ -29,9 +30,26 @@ class NotificationsController < ApplicationController
   # auth_token = ENV["TWILIO_AUTH_TOKEN"] 
   account_sid = "AC92417814cb1961be7a4360be84d3d035"
   auth_token = "[459ec66ebb1b3c1a9899d9d9c1102612]"
+  twilio_phone_number = "4027693024"
 
-  twilio = Twilio::REST::Client.new account_sid, auth_token 
+  notification_list = Notification.all
+
+    notification_list.each do |notification|
+
+      number_to_send_to = notification.phone_number
+      message = event_message
+      @twilio_client = Twilio::REST::Client.new account_sid, auth_token 
+      @twilio_client.account.sms.messages.create(
+        :from => "+1#{twilio_phone_number}",
+        :to => number_to_send_to,
+        :body => "#{message}"
+      )
+    end
  end
+
+def event_message
+  return "there is a concert soon"
+end
 
 #EXAMPLE FROM SMS-CRM
   # Method takes a Touch object IF it is the most recent OUTGOING touch... and creates a text message from the data saved in the DB.
@@ -57,22 +75,6 @@ class NotificationsController < ApplicationController
   
   # end
 
-
-#EXAMPLE FROM TWILIO WEBSITE
-  # require 'twilio-ruby' 
-   
-  # # put your own credentials here 
-  # account_sid = 'AC92417814cb1961be7a4360be84d3d035' 
-  # auth_token = '[AuthToken]' 
-   
-  # # set up a client to talk to the Twilio REST API 
-  # @client = Twilio::REST::Client.new account_sid, auth_token 
-   
-  # @client.account.messages.create({
-  #   :from => '+14027693024', 
-  #   :to => '4022186812',   
-  # })
-  # end
 end
 
 
