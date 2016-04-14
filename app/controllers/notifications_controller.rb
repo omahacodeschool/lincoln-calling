@@ -1,4 +1,4 @@
-  class NotificationsController < ApplicationController
+class NotificationsController < ApplicationController
   require 'json'
 
   def plan_my_festival
@@ -11,3 +11,4 @@
     end
     redirect_to "events/list"
   end
+end

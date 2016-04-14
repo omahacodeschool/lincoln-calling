@@ -72,7 +72,7 @@
               <div class="show show--empty show--empty-<%= event.event_length %>"></div>
             <% else %>
             <label class="artists" value="<%= event.artist_id %>"> 
-              <div class="show show--<%= event.event_length %> show--<%= event.minimum_age %>-plus">
+              <div data-event-id="<%= event.id %>" data-added-to-plan="false" class="show show--<%= event.event_length %> show--<%= event.minimum_age %>-plus notify">
                <%= event.artist.name %>
               </div>
               </label>
@@ -101,7 +101,7 @@
               <div class="show show--empty show--empty-<%= event.event_length %>"></div>
             <% else %>
             <label class="artists" value="<%= event.artist_id %>"> 
-              <div class="show show--<%= event.event_length %> show--<%= event.minimum_age %>-plus">
+              <div data-event-id="<%= event.id %>" data-added-to-plan="false" class="show show--<%= event.event_length %> show--<%= event.minimum_age %>-plus notify">
                 <%= event.artist.name %>
               </div>
             </label>
@@ -130,7 +130,7 @@
               <div class="show show--empty show--empty-<%= event.event_length %>"></div>
             <% else %>
             <label class="artists" value="<%= event.artist_id %>"> 
-              <div class="show show--<%= event.event_length %> show--<%= event.minimum_age %>-plus">
+              <div data-event-id="<%= event.id %>" data-added-to-plan="false" class="show show--<%= event.event_length %> show--<%= event.minimum_age %>-plus notify">
                 <%= event.artist.name %>
               </div>
             </label>
@@ -151,5 +151,29 @@
     </div>
   </div>
 
- <%= render "sidebars/plan_festival" %>
+<div class="visible plan_my_festival_module">
 
+  <div>
+    <%= form_tag(:controller => "notifications", :action => "plan_my_festival", :method => "post") do %>
+
+      <div class="visible">
+        <% @events.each do |event|%>
+        <input class="festival_checkbox" data-event-id="<%= event.id %>" type="checkbox" name="set_events[]" value="<%= event.id %>">
+        <% end %>
+      </div>
+
+      <div id="shows_selected">
+      0 shows selected
+      </div>
+
+      <div class="plan_my_festival_text_box icon">
+       <%= telephone_field(:user, :phone) %>
+      </div>
+
+      <div class="artist_search_box__text">
+        <input class="artist_search_box__text" style="border-width:0px; font-size:30px" type="submit" name="search_input" placeholder="save your festivals">
+      </div>
+    <% end %>
+
+  </div>
+</div>
