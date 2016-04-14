@@ -1,5 +1,13 @@
 class NotificationsController < ApplicationController
   require 'json'
+  require 'twilio-ruby'
+  include Webhookable
+
+  after_filter :set_header
+
+  skip_before_action :verify_authenticity_token
+
+
 
 #does the phone number field get verified automatically (i.e. will it throw an error if a user does not enter a phone number?)
   def plan_my_festival
@@ -12,4 +20,59 @@ class NotificationsController < ApplicationController
     end
     redirect_to "/events/list"
   end
+
+ def send_sms
+  #I think these numbers need to go in the .env.local file
+  # TWILIO_ACCOUNT_ID='AC92417814cb1961be7a4360be84d3d035' 
+  # TWILIO_AUTH_TOKEN='459ec66ebb1b3c1a9899d9d9c1102612'
+  # account_sid = ENV["TWILIO_ACCOUNT_ID"]
+  # auth_token = ENV["TWILIO_AUTH_TOKEN"] 
+  account_sid = "AC92417814cb1961be7a4360be84d3d035"
+  auth_token = "[459ec66ebb1b3c1a9899d9d9c1102612]"
+
+  twilio = Twilio::REST::Client.new account_sid, auth_token 
+ end
+
+#EXAMPLE FROM SMS-CRM
+  # Method takes a Touch object IF it is the most recent OUTGOING touch... and creates a text message from the data saved in the DB.
+  #returns nil.
+  #Also adds country code to phone number. Default is US ("+1")
+  # def send_sms
+  #   client = Client.find_by_id(params[:client_id])
+  #   touch = client.touches.create({message: params[:message_content], outgoing: true, read: true})
+
+  #   # Twilio credentials:
+  #   account_sid = ENV["TWILIO_ACCOUNT_ID"]
+  #   auth_token = ENV["TWILIO_AUTH_TOKEN"] 
+
+  #   # set up a client to talk to the Twilio REST API 
+  #   @twilio = Twilio::REST::Client.new(account_sid, auth_token) 
+     
+  #   # Sending an SMS:
+  #   @twilio.account.messages.create(
+  #     :from => client.business.business_phone, 
+  #     :to => client.phone_number, 
+  #     :body => touch.message
+  #   )
+  
+  # end
+
+
+#EXAMPLE FROM TWILIO WEBSITE
+  # require 'twilio-ruby' 
+   
+  # # put your own credentials here 
+  # account_sid = 'AC92417814cb1961be7a4360be84d3d035' 
+  # auth_token = '[AuthToken]' 
+   
+  # # set up a client to talk to the Twilio REST API 
+  # @client = Twilio::REST::Client.new account_sid, auth_token 
+   
+  # @client.account.messages.create({
+  #   :from => '+14027693024', 
+  #   :to => '4022186812',   
+  # })
+  # end
 end
+
+
