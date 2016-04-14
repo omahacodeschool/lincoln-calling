@@ -47,9 +47,7 @@ class NotificationsController < ApplicationController
     end
  end
 
-def event_message
-  return "there is a concert soon"
-end
+
 
 #EXAMPLE FROM SMS-CRM
   # Method takes a Touch object IF it is the most recent OUTGOING touch... and creates a text message from the data saved in the DB.
