@@ -23,13 +23,11 @@
       <div class="venue_profile">
         <div class="extra_gutter">
           <% @venues.each do |venue| %>
-            <div class="venue_info">
-              <div class="venue_info venueInfo <%=venue.id%>">
-                <div class="venue_info__name venueInfo <%= venue.id %>"><%=venue.name%></div>
-                <div class="venue_info__link venueInfo <%= venue.id %>"><%=venue.website%></div>
-                <div class="venue_info__address venueInfo <%= venue.id %>"><%venue.address%></div>
+              <div class="venue_info venueInfo <%=venue.id%>" value="<%=venue.id %>">
+                <div class="venue_info__name venueInfo <%= venue.id %>"><%= venue.name%></div>
+                <div class="venue_info__link venueInfo <%= venue.id %>"><%= venue.website%></div>
+                <div class="venue_info__address venueInfo <%= venue.id %>"><%= venue.address%></div>
               </div>
-            </div>
             <img class="venue_profile__image venueInfo <%= venue.id %>" src="<%= venue.img.url %>"></img>
             <div class="venue_bio venueInfo <%= venue.id %>"><%=venue.info%></div>
           <%end %>

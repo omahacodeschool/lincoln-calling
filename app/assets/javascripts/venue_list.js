@@ -69,8 +69,10 @@ if ( document.getElementsByClassName("map__image").length !== 0){
       $('.shows').hide();
       $(".venueInfo").filter(`.${venueID}`).show();
       $(`.${venueID}`).filter(`.${dayDisplay}`).show();
-      event.preventDefault();
-    });
+      $('.venue_profile').animate({
+        scrollTop: $(`.venueInfo`)
+      }, 50);
+      });
   });
 
 
