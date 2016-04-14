@@ -1,0 +1,55 @@
+ 
+<div class="col-4-tablet no_padding side_bar_container">
+  <a href="http://hearnebraska.us1.list-manage1.com/subscribe?u=8a195706cf10047ecb6091c5e&id=e8436333d5" class="mailchimp_link">
+    <div class="home_emails">
+      <div id="home_computer_icon" class="icon"></div>
+      <div id="home_email_text">SIGN UP FOR EMAIL UPDATES</div>
+    </div>
+  </a>
+  <div class="side_bar">
+    <div class="side_bar__title">
+    Festival Schedule/ Lincoln Calling 2016
+    </div>
+    <div class="clear dates">
+      <div class="col-4 no_padding">
+        <a href="#" class="day_link day_link--left day_link--selected" value="day1">
+          <span href="#" class="day_link__day">Thursday</span>
+          <span href="#" class="day_link__date">6</span>
+        </a>  
+      </div>
+      <div class="col-4 no_padding">
+        <a href="#" class="day_link day_link--mid" value="day2">
+          <span href="#" class="day_link__day">Friday</span>
+          <span href="#" class="day_link__date">7</span>
+        </a> 
+      </div>
+      <div class="col-4 no_padding">
+        <a href="#" class="day_link day_link--right" value="day3">
+          <span href="#" class="day_link__day">Saturday</span>
+          <span href="#" class="day_link__date">8</span>
+        </a>
+      </div>
+    </div>
+    <div class="concert">
+     <% @day1.each do |event| %>
+        <div class="concert__name shows <%= event[:venue_id] %> day1" style="display: block;"><%= event[:venue_and_artist] %></div>
+        <div class="concert__time shows <%= event[:venue_id] %> day1" style="display: block;"><%= event[:start_time] %></div>
+      <%end%>
+
+      <% @day2.each do |event| %>
+        <div class="concert__name shows <%= event[:venue_id] %> day2" style="display: none;"><%= event[:venue_and_artist] %></div>
+        <div class="concert__time shows <%= event[:venue_id] %> day2" style="display: none;"><%= event[:start_time] %></div>
+      <%end%>
+
+      <% @day3.each do |event| %>
+        <div class="concert__name shows <%= event[:venue_id] %> day3" style="display: none;"><%= event[:venue_and_artist] %></div>
+        <div class="concert__time shows <%= event[:venue_id] %> day3" style="display: none;"><%= event[:start_time] %></div>
+      <%end%>
+    </div>
+    <a href="/events/list" class="full_schedule">see full schedule</a>
+  </div>
+</div>
+
+
+
+

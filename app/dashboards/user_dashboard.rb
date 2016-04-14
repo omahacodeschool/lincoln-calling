@@ -18,6 +18,7 @@ class UserDashboard < Administrate::BaseDashboard
     admin: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    articles: Field::HasMany,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -64,7 +65,7 @@ class UserDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(user)
-    "User #{user.first_name} #{user.last_name}"
+    "#{user.first_name} #{user.last_name}"
   end
 
 end

@@ -61,7 +61,7 @@ class SponsorDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how sponsors are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(sponsor)
-  #   "Sponsor ##{sponsor.id}"
-  # end
+  def display_resource(sponsor)
+    "#{sponsor.name}"
+  end
 end

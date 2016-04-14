@@ -25,15 +25,13 @@ Rails.application.routes.draw do
   post "artists/search" => "artists#search"
   get "events/list" => 'events#index'
   get "info/visitors" => 'visitors#index'
-  get "info/visitors/:id" => 'visitors#show'
+  get "info/visitors/:id" => 'visitors#show', as: :visitors_article
   get "info/faq" => 'info#faq'
   get "info/about" => 'info#about'
   get "news" => 'news#index'
-  get "news/:id" => "news#show"
+  get "news/:id" => "news#show", as: :news_article
   get "sidebar/events" => 'sidebars#events'
-  get "sidebar/artists/:id" => "sidebars#artists"
+  get "sidebar/artists" => "sidebars#artists"
   get "sponsors/list" => "sponsors#index"
   get "venues/list" => "venues#index"
-  get "venues/:venue_id" => "venues#view"
-
 end

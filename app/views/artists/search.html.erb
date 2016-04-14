@@ -1,20 +1,35 @@
-<div class="header_divider_top"></div>
+ <div class="page_header">
+  <div class="header_divider_top"></div>
+  <div class="page_header__right">Search Results: <%= @search %></div>
+  <div class="page_header__left">LINEUP</div>
+  <div class="header_divider_bottom"></div>
+</div> 
 
-<div class="clear">
-  <div class="page_header_left col-3">LINEUP</div>
-  <div class="page_header_right col-9">Search Results</div>
-</div>
-<div class="header_divider_bottom"></div>
-
-<div class="artist_white_background">
-
-  <div class="clear">
-    <% @artist_search_results.each do |artist| %>
-      <div class="artist_module col-6">
-        <img class="artist_module__image" src="<%= artist.image %>">
-        <div class="artist_module__name"><%= artist.name %></div>
-        <div class="artist_module__origin"><%= artist.origin %></div>
+<div class="artist_white_background container">
+  <div class="clear artist_search_box">
+    <%= form_tag(:controller => "artists", :action => "search", :id => "searchartists", :method => "post") do %>
+      <div class="artist_search_box__icon icon">
+        <input type="submit" value="" class="icon" style="font-family: HN-icons; font-size: 25px; background: none; border: 0px; margin-top:-10px;">
+      </div>
+      <div class="artist_search_box__text">
+        <input class="artist_search_box__text" style="border-width:0px; font-size:30px" type="string" name="search_input" placeholder="<%= @search %>">
       </div>
     <% end %>
   </div>
+
+
+  <% @artists.each do |artist| %>
+    <div class="artists" value="<%= artist.id %>">
+      <div class="no_padding col-6 col-4-tablet">
+        <div class="artist_module">
+          <img class="artist_module__image" src="<%= artist.image %>"></img>
+          <div class="artist_module__name"><%= artist.name %></div>
+          <div class="artist_module__origin"><%= artist.origin %></div>
+        </div>
+      </div>
+      </div>
+  <% end %>
 </div>
+
+
+ <%= render "sidebars/artists" %>

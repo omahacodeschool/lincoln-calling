@@ -1,10 +1,20 @@
-<h1>News</h1>
-<body>
+<div class="page_header">
+  <div class="header_divider_top"></div>
+  <div class="page_header__left page_header__left--full">NEWS</div>
+  <div class="header_divider_bottom"></div>
+</div>
+
+
+<div class="clear white_background">
+  <div class="col-8-tablet no_padding">
+<%= paginate @articles, :theme => 'lincoln_calling_pagination' %>
   <% @articles.each do |article| %>
-    <a href="/news/<%= article.id %>">
-      <img src="<%= article.image %>" alt="Article Pic">
-      <h3><%= article.title %> </h3>
-    </a>
-  <% end %>
-  <a href="/news/#more">More Stories</a>
-</body> 
+    <div class="news col-4-tablet">
+      <a href="/news/<%=article.id %>"><img class="news__image" src=" <%= article.image %>"></a>
+      <div class="news__title"><%= truncate(article.title, length: 70) %></div>
+    </div>
+    <% end %>
+  </div>
+
+ <%= render "sidebars/events" %>
+ </div>

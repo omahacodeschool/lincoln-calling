@@ -1,14 +1,155 @@
-<h1>Lineup</h1>
-<h2>Schedule</h2>
-<% @venues.each do |venue| %>
-  <h3><%= venue.name %></h3>
-  <% venue.events.each do |event| %>
-    <p><%= event.weekday%>, <%= event.monthday%>
-    <p><%= event.starttime %> to <%=event.endtime%></p>
-    <p><%= event.artist.name%> 
-    <p> minimum age: <%= event.minimum_age %></p>
-  <%end%>
-<%end%>
+  <div class="page_header">
+    <div class="page_header__right">Schedule</div>
+    <div class="page_header__left">Lineup</div>
+  </div>
 
+  <div class="white_panel">
+    <div class="schedule_header">
+      <div class="day_picker" id="day_picker_box">
+        <div class="day_picker__triangle_down"></div>
+        <div class="day_picker__text" id="current_day">Thursday Oct. 6</div>
+      </div>
 
+      <div id="other_days">
+        <div class="other_days__triangle_up"></div>
+        <div class="other_days__text" id="thurs">Thursday Oct. 6</div>
+        <div class="other_days__text" id="fri">Friday Oct. 7</div>
+        <div class="other_days__text" id="sat">Saturday Oct. 8</div>
+      </div>
+
+      <div class="plan_festival_button plan_festival_button--hide">
+        PLAN YOUR FESTIVAL
+      </div>
+      <div style="clear: both"></div>
+    </div>
+
+    <div class="venue_picker">
+      <div class="triangle_box float_left">
+        <div class="triangle_box__triangle-left"></div>
+      </div>
+      <div class="venue_box float_left">  
+        <% @venues.each do |venue| %>
+          <div class="venue_box__text venue_box__text--<%= venue.id %>"><%= venue.name %></div>
+        <% end %>
+      </div>
+      <div class="triangle_box float_left">
+        <div class="triangle_box__triangle-right"></div>
+      </div>
+      <div style="clear: both"></div>
+    </div>
+
+    <div class="ages">
+      <div class="all_ages">All Ages</div>
+      <div class="eighteen_plus">18 and older</div>
+      <div class="twentyone_plus">21 and older</div>
+      <div style="clear: both"></div>
+    </div>
+
+    <div class="schedule_lineup">
+      <ul class="schedule_times">
+        <li class="schedule_times__item">5 p.m.</li>
+        <li class="schedule_times__item">6 p.m.</li>
+        <li class="schedule_times__item">7 p.m.</li>
+        <li class="schedule_times__item">8 p.m.</li>
+        <li class="schedule_times__item">9 p.m.</li>
+        <li class="schedule_times__item">10 p.m.</li>
+        <li class="schedule_times__item">11 p.m.</li>
+        <li class="schedule_times__item">12 a.m.</li>
+        <li class="schedule_times__item">1 a.m.</li>
+      </ul>
+
+<!-- ______________________________Thursday_______________________________ -->
+
+      <div class="venue_shows_container" id="Thursday_shows" style="display: block">
+      <% @venues.each do |venue| %>
+        <div class="venue_shows venue_shows--hide-<%=venue.id%>">
+          <% schedule_presenter = SchedulePresenter.new(venue) %>
+          <% venues_events = schedule_presenter.shows_at_venue_per_day("Thursday") %>
+
+        <% if venues_events != nil %>
+          <% venues_events.each do |event| %> 
+            <% puts "current event is #{event.event_length}" %>
+            <%if event.minimum_age == nil %>
+              <div class="show show--empty show--empty-<%= event.event_length %>"></div>
+            <% else %>
+            <label class="artists" value="<%= event.artist_id %>"> 
+              <div class="show show--<%= event.event_length %> show--<%= event.minimum_age %>-plus">
+               <%= event.artist.name %>
+              </div>
+              </label>
+            <% end %>
+          <% end %>
+        <% else %>
+          <% 9.times do %>
+            <div class="show show--empty show--empty-60"></div>
+          <% end %>
+        <% end %>
+        </div>
+      <% end %>
+      </div>
+
+<!-- ____________________________Friday___________________________________ -->
+
+      <div class="venue_shows_container" id="Friday_shows" style="display: none">
+      <% @venues.each do |venue| %>
+        <div class="venue_shows venue_shows--hide-<%=venue.id%>">
+          <% schedule_presenter = SchedulePresenter.new(venue) %>
+          <% venues_events = schedule_presenter.shows_at_venue_per_day("Friday") %>
+
+        <% if venues_events != nil %>
+          <% venues_events.each do |event| %> 
+            <%if event.minimum_age == nil %>
+              <div class="show show--empty show--empty-<%= event.event_length %>"></div>
+            <% else %>
+            <label class="artists" value="<%= event.artist_id %>"> 
+              <div class="show show--<%= event.event_length %> show--<%= event.minimum_age %>-plus">
+                <%= event.artist.name %>
+              </div>
+            </label>
+            <% end %>
+          <% end %>
+        <% else %>
+          <% 9.times do %>
+            <div class="show show--empty show--empty-60"></div>
+          <% end %>
+        <% end %>
+        </div>
+      <% end %>
+      </div>
+
+<!-- _________________________Saturday____________________________________ -->
+
+      <div class="venue_shows_container" id="Saturday_shows" style="display: none">
+      <% @venues.each do |venue| %>
+        <div class="venue_shows venue_shows--hide-<%=venue.id%>">
+          <% schedule_presenter = SchedulePresenter.new(venue) %>
+          <% venues_events = schedule_presenter.shows_at_venue_per_day("Saturday") %>
+
+        <% if venues_events != nil %>
+          <% venues_events.each do |event| %> 
+            <%if event.minimum_age == nil %>
+              <div class="show show--empty show--empty-<%= event.event_length %>"></div>
+            <% else %>
+            <label class="artists" value="<%= event.artist_id %>"> 
+              <div class="show show--<%= event.event_length %> show--<%= event.minimum_age %>-plus">
+                <%= event.artist.name %>
+              </div>
+            </label>
+            <% end %>
+          <% end %>
+        <% else %>
+          <% 9.times do %>
+            <div class="show show--empty show--empty-60"></div>
+          <% end %>
+        <% end %>
+        </div>
+      <% end %>
+      </div>
+
+<!-- ______________________________________________________________________ -->
+
+      <div style="clear: both"></div>
+    </div>
+  </div>
+ <%= render "sidebars/artists" %>
 

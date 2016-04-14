@@ -40,7 +40,7 @@
   </div>
 </div>
 
-<div class="clear">
+<div class="clear margin_right">
   <div class="col-8-tablet">
     <div class="clear home_news">
       <% @articles.each do |image| %>
@@ -51,71 +51,29 @@
         <% end %>
       <% end %>
       <div class="col-6 no_padding"> 
-      <div class="home_news__headlines">
-        <% @articles.each do |headline| %>
-          <%if headline == @articles[0] %>
-            <a href="/news/<%=headline.id%>" class="home_link">
-            <div id ="<%=headline.id%>" class="home_news__headlines home_news__headlines--headline home_news__headlines--selected"><%= headline.title%></div></a>
-          <% else %>
-            <a href="/news/<%=headline.id%>"class="home_link"><div id ="<%=headline.id%>" class="home_news__headlines home_news__headlines--headline headline_for_<%=headline.id%> home_news__headlines--tablet"><%= headline.title %></div></a>  
+        <div class="home_news__headlines">
+          <% @articles.each do |headline| %>
+            <%if headline == @articles[0] %>
+              <a href="/news/<%=headline.id%>" class="home_link">
+              <div id ="<%=headline.id%>" class="home_news__headlines home_news__headlines--headline home_news__headlines--selected"><%= headline.title%></div></a>
+            <% else %>
+              <a href="/news/<%=headline.id%>"class="home_link"><div id ="<%=headline.id%>" class="home_news__headlines home_news__headlines--headline headline_for_<%=headline.id%> home_news__headlines--tablet"><%= headline.title %></div></a>  
+            <% end %>
           <% end %>
-        <% end %>
-      </div>
+        </div>
       </div>
       <div class="home_news__more">
         <a href="/news" class="home_news__more__text">see more news</a>
       </div>
     </div>
   </div>
-  <div class="col-4-tablet no_padding">
-    <a href="http://hearnebraska.us1.list-manage1.com/subscribe?u=8a195706cf10047ecb6091c5e&id=e8436333d5" class="mailchimp_link">
-      <div class="home_emails">
-        <div id="home_computer_icon" class="icon"></div>
-        <div id="home_email_text">SIGN UP FOR EMAIL UPDATES</div>
-      </div>
-    </a>
-
-    <div class="side_bar">
-      <div class="side_bar__title">
-      Festival Schedule/ Lincoln Calling 2016
-      </div>
-      <div class="clear dates">
-        <div class="col-4 no_padding">
-          <a href="#" class="day_link day_link--left day_link--selected" value="day1">
-            <span href="#" class="day_link__day">Thursday</span>
-            <span href="#" class="day_link__date">6</span>
-          </a>  
-        </div>
-        <div class="col-4 no_padding">
-          <a href="#" class="day_link day_link--mid" value="day2">
-            <span href="#" class="day_link__day">Friday</span>
-            <span href="#" class="day_link__date">7</span>
-          </a> 
-        </div>
-        <div class="col-4 no_padding">
-          <a href="#" class="day_link day_link--right" value="day3">
-            <span href="#" class="day_link__day">Saturday</span>
-            <span href="#" class="day_link__date">8</span>
-          </a>
-        </div>
-      </div>
-      <div class="concert">
-         <% @day1.each do |event| %>
-            <div class="concert__name day1 shows" style="display: block;"><%= event[:venue_and_artist] %></div>
-            <div class="concert__time day1 shows" style="display: block;"><%= event[:start_time] %></div>
-          <%end%>
-
-          <% @day2.each do |event| %>
-            <div class="concert__name day2 shows" style="display: none;"><%= event[:venue_and_artist] %></div>
-            <div class="concert__time day2 shows" style="display: none;"><%= event[:start_time] %></div>
-          <%end%>
-
-          <% @day3.each do |event| %>
-            <div class="concert__name day3 shows" style="display: none;"><%= event[:venue_and_artist] %></div>
-            <div class="concert__time day3 shows" style="display: none;"><%= event[:start_time] %></div>
-          <%end%>
-      </div>
-      <a href="/events/list" class="full_schedule">see full schedule</a>
-    </div>
-  </div>
+  <%= render "sidebars/events" %>
 </div>
+
+
+
+
+
+
+
+

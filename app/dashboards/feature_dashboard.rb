@@ -10,7 +10,7 @@ class FeatureDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     title: Field::String,
-    user_id: Field::Number,
+    user: Field::BelongsTo,
     article_content: Field::Text,
     image: CarrierwaveField,
     created_at: Field::DateTime,
@@ -27,7 +27,7 @@ class FeatureDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :title,
-    :user_id,
+    :user,
     :article_content,
     :image, 
   ]
@@ -37,7 +37,7 @@ class FeatureDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :id,
     :title,
-    :user_id,
+    :user,
     :article_content,
     :image,
     :created_at,
@@ -51,7 +51,7 @@ class FeatureDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :title,
-    :user_id,
+    :user,
     :article_content,
     :image,
     :publish_date_time,
@@ -61,7 +61,7 @@ class FeatureDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how features are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(feature)
-  #   "Feature ##{feature.id}"
-  # end
+  def display_resource(feature)
+    "Feature Article: #{feature.title}"
+  end
 end

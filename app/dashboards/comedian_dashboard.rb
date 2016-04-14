@@ -70,7 +70,7 @@ class ComedianDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how comedians are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(comedian)
-  #   "Comedian ##{comedian.id}"
-  # end
+  def display_resource(comedian)
+    "#{comedian.name}"
+  end
 end

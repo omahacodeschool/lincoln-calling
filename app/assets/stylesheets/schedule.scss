@@ -209,7 +209,7 @@ $twentyone-plus-color: #CC4723;
   .ages{
     margin-left: $schedule-left-column-width;
   }
-  .all_ages{
+  .zero_plus{
     padding-right: 24px;
     padding-left: 10px
   }
@@ -324,7 +324,7 @@ $twentyone-plus-color: #CC4723;
   border-bottom: 1px solid #8f8f8f;
 }
 
-.show.show--all_ages{
+.show.show--0-plus{
   border-left-color: $all-ages-color;
 }
 .show.show--18-plus{
@@ -353,12 +353,21 @@ $twentyone-plus-color: #CC4723;
   height: $pixels-per-fifteen-minutes * 4;
   line-height: $pixels-per-fifteen-minutes * 4;
   white-space: nowrap;
+  }
+.show--75, .show--empty-75{
+  height: $pixels-per-fifteen-minutes * 5;
+  line-height: $pixels-per-fifteen-minutes * 5;
+  white-space: nowrap;
+  }
+.show--90, .show--empty-90{
+  height: $pixels-per-fifteen-minutes * 6;
+  line-height: $pixels-per-fifteen-minutes * 6;
+  white-space: nowrap;
 }
-#thursday_shows{
+#Thursday_shows{
   display: block;
 }
-
-#friday_shows{
+#Friday_shows{
   display: none;
 }
 #saturday_shows{

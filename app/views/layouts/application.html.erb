@@ -14,6 +14,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= body_class %>">
+
+
+<!-- facebook sharing  -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- twitter sharing  -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
   <%= render "flashes" -%>
   <div class="clear">
     <div class="col-12-tablet">
@@ -47,11 +62,12 @@
         <div class="col-6 nav_bar__menu_left">
           <a href="https://www.eventbrite.com/" class="nav_bar_menu__link">TICKETS</a>
           <a href="/artists/list" class="nav_bar_menu__link">ARTISTS</a>
+          <a href="/artists/list/comedians" class="nav_bar_menu__link">COMEDIANS</a>
           <a href="/events/list" class="nav_bar_menu__link">SCHEDULE</a>
           <a href="/venues/list" class="nav_bar_menu__link">VENUE MAP</a>
-          <a href="/info/visitors" class="nav_bar_menu__link">VISITORS GUIDE</a>
         </div>
         <div class="col-6 nav_bar__menu_right">
+          <a href="/info/visitors" class="nav_bar_menu__link">VISITORS GUIDE</a>
           <a href="/info/faq" class="nav_bar_menu__link">FAQ</a>
           <a href="/info/about" class="nav_bar_menu__link">ABOUT</a>
           <a href="/news" class="nav_bar_menu__link">NEWS</a>

@@ -70,7 +70,7 @@ class BandDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how bands are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(band)
-  #   "Band ##{band.id}"
-  # end
+  def display_resource(band)
+    "#{band.name}"
+  end
 end
