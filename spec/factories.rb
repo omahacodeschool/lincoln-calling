@@ -1,4 +1,8 @@
 FactoryGirl.define do
+  factory :notification do
+    phone_number "MyString"
+    event_id 1
+  end
   factory :sponsor do
     name "MyString"
     website "MyString"

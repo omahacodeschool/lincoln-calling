@@ -4,7 +4,8 @@
       <%= form_tag(:controller => "misc", :action => "plan_my_festival", :method => "post") do %>
 
         <div>
-        <%= hidden_field_tag :events %>
+          <%= hidden_field_tag :set_events[] %>
+          <input type="checkbox" name="set_events[]" value="<%= event.id %>">
         </div>
 
         <div id="shows_selected">
