@@ -1,6 +1,7 @@
 class NotificationsController < ApplicationController
   require 'json'
 
+#does the phone number field get verified automatically (i.e. will it throw an error if a user does not enter a phone number?)
   def plan_my_festival
     event_list = params[:set_events]
     event_list.each do |event_id|
@@ -9,6 +10,6 @@ class NotificationsController < ApplicationController
       @notification.event_id = event_id
       @notification.save
     end
-    redirect_to "events/list"
+    redirect_to "/events/list"
   end
 end
