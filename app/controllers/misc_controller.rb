@@ -9,4 +9,12 @@ class MiscController < ApplicationController
     @day2 = VenuePresenter.new(@events.byday("Friday")).events_with_venue_and_artist_info
     @day3 = VenuePresenter.new(@events.byday("Saturday")).events_with_venue_and_artist_info
  end
+
+  def plan_my_festival
+    @attendee = Attendee.new
+    @attendee.phone_number = params[:phone]
+    @attendee.events = params[:set_events]
+    @attendee.save
+  end
+
 end

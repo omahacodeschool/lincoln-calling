@@ -1,0 +1,23 @@
+<div class="visible plan_my_festival_module">
+
+  <div>
+      <%= form_tag(:controller => "misc", :action => "plan_my_festival", :method => "post") do %>
+
+        <div>
+        <%= hidden_field_tag :events %>
+        </div>
+
+        <div id="shows_selected">
+        0 shows selected
+        </div>
+
+        <div class="plan_my_festival_text_box icon">
+         <%= telephone_field(:user, :phone) %>
+        </div>
+
+        <div class="artist_search_box__text">
+          <input class="artist_search_box__text" style="border-width:0px; font-size:30px" type="string" name="search_input" placeholder="save your festivals">
+        </div>
+      <% end %>
+
+  </div>
