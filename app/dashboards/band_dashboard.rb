@@ -11,7 +11,7 @@ class BandDashboard < Administrate::BaseDashboard
     events: Field::HasMany,
     id: Field::Number,
     name: Field::String,
-    genre: Field::String,
+    genres: Field::HasMany,
     origin: Field::String,
     website: Field::String,
     bio: Field::Text,
@@ -31,7 +31,7 @@ class BandDashboard < Administrate::BaseDashboard
     :events,
     :id,
     :name,
-    :genre,
+    :genres,
     :image,
   ]
 
@@ -41,7 +41,7 @@ class BandDashboard < Administrate::BaseDashboard
     :events,
     :id,
     :name,
-    :genre,
+    :genres,
     :origin,
     :website,
     :bio,
@@ -58,7 +58,7 @@ class BandDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :events,
     :name,
-    :genre,
+    :genres,
     :origin,
     :website,
     :bio,

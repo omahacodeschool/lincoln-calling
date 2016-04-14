@@ -314,6 +314,9 @@ GEM
     sawyer (0.7.0)
       addressable (>= 2.3.5, < 2.5)
       faraday (~> 0.8, < 0.10)
+    seed_dump (3.2.4)
+      activerecord (>= 4)
+      activesupport (>= 4)
     selectize-rails (0.12.1)
     sexp_processor (4.7.0)
     shoulda-matchers (3.1.1)
@@ -418,6 +421,7 @@ DEPENDENCIES
   rmagick
   rspec-rails (~> 3.4.0)
   sass-rails (~> 5.0)
+  seed_dump
   shoulda-matchers
   simplecov
   spring
