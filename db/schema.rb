@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160410235724) do
+ActiveRecord::Schema.define(version: 20160414210149) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,11 @@ ActiveRecord::Schema.define(version: 20160410235724) do
     t.string   "type"
   end
 
+  create_table "artists_genres", id: false, force: :cascade do |t|
+    t.integer "artist_id", null: false
+    t.integer "genre_id",  null: false
+  end
+
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
     t.integer  "attempts",   default: 0, null: false
@@ -64,6 +69,13 @@ ActiveRecord::Schema.define(version: 20160410235724) do
     t.datetime "end_date_time"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string   "name"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "plans", force: :cascade do |t|

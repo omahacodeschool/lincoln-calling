@@ -1,4 +1,8 @@
 FactoryGirl.define do
+  factory :genre do
+    type ""
+    image "MyString"
+  end
   factory :sponsor do
     name "MyString"
     website "MyString"
