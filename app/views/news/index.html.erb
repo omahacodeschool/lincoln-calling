@@ -7,12 +7,14 @@
 
 <div class="clear white_background">
   <div class="col-8-tablet no_padding">
+  <div class="pagination"><%= paginate @articles%></div>
   <% @articles.each do |article| %>
     <div class="news col-4-tablet">
       <a href="/news/<%=article.id %>"><img class="news__image" src=" <%= article.image %>"></a>
-      <div class="news__title"><%= article.title %></div>
+      <div class="news__title"><%= truncate(article.title, length: 70) %></div>
     </div>
     <% end %>
+    <div class="pagination"><%= paginate @articles%></div>
   </div>
 
  <%= render "sidebars/events" %>

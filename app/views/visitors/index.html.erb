@@ -8,14 +8,16 @@
 <div class="clear">
   
   <div class="col-8-tablet no_padding">
+    <div class="pagination"><%= paginate @articles, :window => 2 %></div>
     <% @articles.each do |article| %>
       <a href="/info/visitors/<%= article.id %>">
         <div class="visitor_guide col-4-tablet">
           <img class="visitor_guide__image" src="<%= article.image %>"></img>
       </a>
-          <div class="visitor_guide__title"><%= article.title %></div>
+          <div class="visitor_guide__title"><%= truncate(article.title, length: 70) %></div>
         </div>
     <% end %>
+    <div class="pagination"><%= paginate @articles, :window => 2 %></div>
   </div>
   
  <%= render "sidebars/events" %>

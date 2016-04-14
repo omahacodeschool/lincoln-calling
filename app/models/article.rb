@@ -15,4 +15,5 @@ class Article < ActiveRecord::Base
   #mount_uploader enables Carrierwave  
   mount_uploader :image, ArticleImageUploader
   belongs_to :user
+  paginates_per 6
 end
