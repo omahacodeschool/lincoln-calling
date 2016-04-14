@@ -1,6 +1,6 @@
  <div class="page_header">
   <div class="header_divider_top"></div>
-  <div class="page_header__right">Bands</div>
+  <div class="page_header__right"><%= @genre.name %></div>
   <div class="page_header__left">LINEUP</div>
   <div class="header_divider_bottom"></div>
 </div> 
@@ -15,8 +15,7 @@
         <input class="artist_search_box__text" style="border-width:0px; font-size:30px" type="string" name="search_input" placeholder="Search Lineup">
       </div>
     <% end %>
-</div>
-
+  </div>
 
 
   <% @artists.order(:headline_order).each do |artist| %>

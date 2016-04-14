@@ -1,7 +1,23 @@
+.genre_module {
+  float: left;
+  margin: 7.5px;
+}
+
+.genre_module__image{
+  width: 100%;
+  display: block;
+}
+
+.genre_module__name{
+  background-color: #8f8f8f;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
 .artist_module {
   float: left;
   margin: 7.5px;
-
 }
 
 .artist_module__image{

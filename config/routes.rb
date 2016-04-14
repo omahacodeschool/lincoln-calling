@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get "artists/list/comedians" => "artists#index_comedians"
   post "artists/search" => "artists#search"
   get "events/list" => 'events#index'
+  get "genres/:id" => 'genres#view'
   get "info/visitors" => 'visitors#index'
   get "info/visitors/:id" => 'visitors#show', as: :visitors_article
   get "info/faq" => 'info#faq'
