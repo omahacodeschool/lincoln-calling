@@ -10,21 +10,30 @@
   <div class="page_header__left">INFO</div>
   <div class="header_divider_bottom"></div>
 </div> 
-
-  
-
 <div class="clear"></div>
+
 <div class="container__map_and_venue map__image">
   <!-- Show Map -->
   <div class="col-8-tablet venue_list no_padding">
     <div class="map">
-      <div id="sidebar_builder" style='width: 100%; height: 400px;'></div>
+      <div id="sidebar_builder"class= "map__image" style='width: 100%; height: 400px;'></div>
     </div> 
   </div>
   <!-- Venue Profile Sidebar -->
   <div class="col-4-tablet no_padding">
     <div class="venue_profile">
-      <% @venues.each do |venue| %>
+      <div class="extra_gutter">
+        <div class="venue_info">
+          <% @venues.each do |venue| %>
+            <div class="venue_info venueInfo <%=venue.id%>">
+              <div class="venue_info__name venueInfo <%= venue.id %>"><%=venue.name%></div>
+              <div class="venue_info__link venueInfo <%= venue.id %>"><%=venue.website%></div>
+              <div class="venue_info__address venueInfo <%= venue.id %>"><%venue.address%></div>
+            </div>
+          <%end %>
+        </div>
+      </div>
+      
         <div class="extra_gutter venueInfo <%= venue.id %>">
           <div class="venue_info venueInfo <%= venue.id %>">
             <div class="venue_info__name venueInfo <%= venue.id %>"><%= venue.name %></div>
@@ -34,7 +43,7 @@
           <img class="venue_profile__image venueInfo <%= venue.id %>" src="<%= venue.img.url %>"></img>
           <div class="venue_bio venueInfo <%= venue.id %>"><%= venue.info %></div>
         </div>
-    <% end %>
+    
     </div>
   </div>
 </div>
