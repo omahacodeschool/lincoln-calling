@@ -1,5 +1,4 @@
 class SchedulePresenter
-
   def initialize(venue_object)
     @venue = venue_object
   end
@@ -37,7 +36,6 @@ class SchedulePresenter
       shows_with_blanks(festival_start)
       fill_out_final_blanks(festival_start)
     end
-    puts "shows_with_blanks is #{@shows_with_blanks}"
     return @shows_with_blanks
   end
 
