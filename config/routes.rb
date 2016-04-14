@@ -1,20 +1,21 @@
 Rails.application.routes.draw do
   
   namespace :admin do
-    resources :users
+    resources :abouts
     resources :articles
     resources :artists
-    resources :events
-    resources :plans
-    resources :tickets
-    resources :venues
-    resources :sponsors
     resources :bands
     resources :comedians
-    resources :visitors
-    resources :features
+    resources :events
     resources :faqs
-    resources :abouts
+    resources :features
+    resources :genres
+    resources :plans
+    resources :sponsors
+    resources :tickets
+    resources :users
+    resources :venues
+    resources :visitors
     root to: "users#index"
   end
 

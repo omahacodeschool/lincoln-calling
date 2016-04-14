@@ -3,7 +3,7 @@
 @import "_grid";
 @import "_fonts";
 @import "_icons";
-
+@import "pagination";
 
 a:hover {
   color: #cc5f00;
@@ -88,6 +88,10 @@ a:hover {
   }
 
 @media (min-width: $breakpoint-tablet){
+  .white_background{
+    margin-right: 15px;
+    margin-left: 15px;
+  }
   .page_header{
     margin-left: 15px;
     margin-right: 15px;

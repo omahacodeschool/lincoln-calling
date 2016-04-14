@@ -22,7 +22,6 @@
     </div>
   </div>
 
-
     <!-- Venues -->
     <div class="col-8-tablet no_padding">
           <!-- The text that follows is how the HTML will likely have to look to allow for adding the selected effect to venue locations when selected.  Or rather, the "venues__text--selected" class modifier needs to be added to make that happen via JavaScript. -->
@@ -39,13 +38,13 @@
     <div class="venue_profile">
     <% @venues.each do |venue| %>
       <div class="extra_gutter venueInfo <%= venue.id %>">
-          <div class="venue_info venueInfo <%= venue.id %>">
-            <div class="venue_info__name venueInfo <%= venue.id %>"><%= venue.name %></div>
-            <a href="<%= venue.website %>" class="venue_info__link venueInfo <%= venue.id %>"><%= venue.website %></a>
-            <div class="venue_info__address venueInfo <%= venue.id %>"><%= venue.address %></div>
-          </div>
-          <img class="venue_profile__image venueInfo <%= venue.id %>" src="<%= venue.img.url %>"></img>
-          <div class="venue_bio venueInfo <%= venue.id %>"><%= venue.info %></div>
+        <div class="venue_info venueInfo <%= venue.id %>">
+          <div class="venue_info__name venueInfo <%= venue.id %>"><%= venue.name %></div>
+          <a href="<%= venue.website %>" class="venue_info__link venueInfo <%= venue.id %>"><%= venue.website %></a>
+          <div class="venue_info__address venueInfo <%= venue.id %>"><%= venue.address %></div>
+        </div>
+        <img class="venue_profile__image venueInfo <%= venue.id %>" src="<%= venue.img.url %>"></img>
+        <div class="venue_bio venueInfo <%= venue.id %>"><%= venue.info %></div>
       </div>
     <% end %>
     </div>

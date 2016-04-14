@@ -6,6 +6,7 @@ class Venue < ActiveRecord::Base
   mount_uploader :img, VenueImageUploader
   mount_uploader :map_icon, MapIconUploader
   geocoded_by :address   # can also be an IP address
+  validates :name, :address, :map_icon, presence: true
   after_validation :geocode # auto-fetch coordinates
 
 

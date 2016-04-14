@@ -10,7 +10,7 @@ class AboutDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     title: Field::String,
-    user_id: Field::Number,
+    user: Field::BelongsTo,
     article_content: Field::Text,
     image: Field::String,
     created_at: Field::DateTime,
@@ -27,7 +27,7 @@ class AboutDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :title,
-    :user_id,
+    :user,
     :article_content,
   ]
 
@@ -36,7 +36,7 @@ class AboutDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :id,
     :title,
-    :user_id,
+    :user,
     :article_content,
     :image,
     :created_at,
@@ -50,7 +50,7 @@ class AboutDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :title,
-    :user_id,
+    :user,
     :article_content,
     :image,
     :publish_date_time,

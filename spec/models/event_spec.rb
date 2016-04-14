@@ -25,8 +25,16 @@ RSpec.describe Event, type: :model do
       assert_equal(" 2:00pm", event.endtime)
     end
   end
+  
   # it "returns array of day's events" do
   #   eventone = Event.new(start_date_time: "2016-10-06 12:00:00")
   #   assert_equal([eventone], Event.byday("Thursday"))
   # end
+
+  describe "#event_length" do
+    it "returns length in minutes of event" do
+      event = Event.new(end_date_time: "2016-10-06 22:00:00", start_date_time: "2016-10-06 21:00:00")
+      assert_equal(60, event.event_length)
+    end
+  end
 end
