@@ -10,7 +10,7 @@ class AboutDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     title: Field::String,
-    user_id: Field::Number,
+    user_id: Field::BelongsTo,
     article_content: Field::Text,
     image: Field::String,
     created_at: Field::DateTime,

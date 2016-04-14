@@ -10,7 +10,7 @@ class FeatureDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     title: Field::String,
-    user_id: Field::Number,
+    user_id: Field::BelongsTo,
     article_content: Field::Text,
     image: CarrierwaveField,
     created_at: Field::DateTime,
@@ -61,7 +61,7 @@ class FeatureDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how features are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(feature)
-  #   "Feature ##{feature.id}"
-  # end
+  def display_resource(feature)
+    "Feature Article: #{feature.title}"
+  end
 end
