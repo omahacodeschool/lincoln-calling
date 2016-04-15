@@ -41,6 +41,11 @@ group :development, :test do
   gem "pry-byebug"
   gem "pry-rails"
   gem "rspec-rails", "~> 3.4.0"
+  gem 'pronto'
+  gem 'pronto-rubocop'
+  gem 'pronto-reek'
+  gem 'pronto-rails_best_practices'
+  gem 'seed_dump'
 end
 
 group :development, :staging do
@@ -63,13 +68,8 @@ group :staging, :production do
   gem "rack-timeout"
 end
 
-gem 'pronto'
-gem 'pronto-rubocop'
-gem 'pronto-reek'
-gem 'pronto-rails_best_practices'
 gem 'carrierwave'
 gem 'gmaps4rails'
 gem 'geocoder'
 gem 'rmagick'
 gem 'kaminari'
-gem 'seed_dump'
