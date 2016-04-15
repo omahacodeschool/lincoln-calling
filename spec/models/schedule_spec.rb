@@ -86,7 +86,7 @@ RSpec.describe SchedulePresenter, type: :model do
     end
   end
 
-  describe "#fill_out_final_blank" do
+  describe "#fill_out_final_blanks" do
     it "returns Array of shows and blanks" do
       venue_object = Venue.new
       venue_object.save
