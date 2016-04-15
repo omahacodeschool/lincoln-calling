@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class UserDashboard < Administrate::BaseDashboard
+class GenreDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -9,16 +9,11 @@ class UserDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    email: Field::String,
-    password: Field::String,
-    blurb: Field::Text,
-    profile_pic: CarrierwaveField,
-    first_name: Field::String,
-    last_name: Field::String,
-    admin: Field::Boolean,
+    name: Field::String,
+    image: CarrierwaveField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    articles: Field::HasMany,
+    artists: Field::HasMany,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -28,44 +23,36 @@ class UserDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
-    :email,
-    :first_name,
-    :last_name,
-    :profile_pic,
+    :name,
+    :image,
+    :created_at,
+    :artists,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :id,
-    :email,
-    :blurb,
-    :profile_pic,
-    :first_name,
-    :last_name,
-    :admin,
+    :name,
+    :image,
     :created_at,
     :updated_at,
+    :artists,
   ]
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :email,
-    :password,
-    :admin,
-    :blurb,
-    :profile_pic,
-    :first_name,
-    :last_name,
+    :name,
+    :image,
+    :artists,
   ]
 
-  # Overwrite this method to customize how users are displayed
+  # Overwrite this method to customize how genres are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(user)
-    "#{user.first_name} #{user.last_name}"
+  def display_resource(genre)
+    "#{genre.name}"
   end
-
 end

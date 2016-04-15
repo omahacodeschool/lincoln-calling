@@ -11,7 +11,7 @@ class ComedianDashboard < Administrate::BaseDashboard
     events: Field::HasMany,
     id: Field::Number,
     name: Field::String,
-    genre: Field::String,
+    genres: Field::HasMany,
     origin: Field::String,
     website: Field::String,
     bio: Field::Text,
@@ -31,7 +31,7 @@ class ComedianDashboard < Administrate::BaseDashboard
     :events,
     :id,
     :name,
-    :genre,
+    :genres,
     :image,
   ]
 
@@ -41,7 +41,7 @@ class ComedianDashboard < Administrate::BaseDashboard
     :events,
     :id,
     :name,
-    :genre,
+    :genres,
     :origin,
     :website,
     :bio,
@@ -58,7 +58,7 @@ class ComedianDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :events,
     :name,
-    :genre,
+    :genres,
     :origin,
     :website,
     :bio,
@@ -70,7 +70,7 @@ class ComedianDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how comedians are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(comedian)
-  #   "Comedian ##{comedian.id}"
-  # end
+  def display_resource(comedian)
+    "#{comedian.name}"
+  end
 end

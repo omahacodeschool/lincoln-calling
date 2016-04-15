@@ -9,7 +9,7 @@ if ( document.getElementsByClassName("map__image").length !== 0){
 
   //function used to create list element and icon element for every google maps location marker. Also sets the value of the a tag to each venue's id for later use.
   function createSidebarLi(json){
-    return ("<label value=" + `${json.id}` + " class='venueMarker'><li style='list-style: none;' class='venues__text'>" + json.marker_title + "<div class='teardrop__color teardrop col-2 no_padding'><img class='map__markers' src=" + json.icon + "></img></div></li></label>");
+    return ("<label value=" + json.id + " class='venueMarker'><li style='list-style: none;' class='venues__text'>" + json.marker_title + "<div class='teardrop__color teardrop col-2 no_padding'><img class='map__markers' src=" + json.icon + "></img></div></li></label>");
   };
 
 
@@ -67,20 +67,22 @@ if ( document.getElementsByClassName("map__image").length !== 0){
       $(this).children().addClass("venues__text--selected")
       $('.venueInfo').hide()
       $('.shows').hide();
-      $(".venueInfo").filter(`.${venueID}`).show();
-      $(`.${venueID}`).filter(`.${dayDisplay}`).show();
-      event.preventDefault();
-    });
+      $(".venueInfo").filter('.' + venueID ).show();
+      $('.' + venueID ).filter('.' + dayDisplay ).show();
+      $('.venue_profile').animate({
+        scrollTop: $('.venueInfo')
+      }, 50);
+      });
   });
 
 
     //shows or displays event data if instance of element's class is clicked.
-    $(".day_link").on('click', function(){
+    $('.day_link').on('click', function(){
       if (venueID != undefined){
         dayDisplay = $(this).attr("value");
         console.log(dayDisplay)
         $('.shows').hide();
-        $(`.${venueID}`).filter(`.${dayDisplay}`).show();
+        $('.' + venueID ).filter('.' + dayDisplay ).show();
       };
     });
 };

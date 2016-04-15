@@ -3,6 +3,7 @@
 class Event < ActiveRecord::Base
   belongs_to(:venue)
   belongs_to(:artist)
+  validates :artist_id, :venue_id, :start_date_time, :end_date_time, presence: true
   #returns the full word for day of week of event
   #example: Thursday
   def weekday

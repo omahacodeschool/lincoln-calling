@@ -1,20 +1,19 @@
 Rails.application.routes.draw do
   
   namespace :admin do
-    resources :users
-    resources :articles
-    resources :artists
-    resources :events
-    resources :plans
-    resources :tickets
-    resources :venues
-    resources :sponsors
+    resources :abouts
     resources :bands
     resources :comedians
-    resources :visitors
-    resources :features
+    resources :events
     resources :faqs
-    resources :abouts
+    resources :features
+    resources :genres
+    resources :plans
+    resources :sponsors
+    resources :tickets
+    resources :users
+    resources :venues
+    resources :visitors
     root to: "users#index"
   end
 
@@ -24,6 +23,7 @@ Rails.application.routes.draw do
   get "artists/list/comedians" => "artists#index_comedians"
   post "artists/search" => "artists#search"
   get "events/list" => 'events#index'
+  get "genres/:id" => 'genres#view'
   get "info/visitors" => 'visitors#index'
   get "info/visitors/:id" => 'visitors#show', as: :visitors_article
   get "info/faq" => 'info#faq'
