@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.describe SchedulePresenter, type: :model do
 
-  # fixtures, factories FactoryGirl
+  # fixtures, factories (FactoryGirl)
 
   describe "#find_days_start_time" do
     it "returns DateTime object for 5pm on day called" do
@@ -86,5 +86,18 @@ RSpec.describe SchedulePresenter, type: :model do
     end
   end
 
+  describe "#fill_out_final_blank" do
+    it "returns Array of shows and blanks" do
+      venue_object = Venue.new
+      venue_object.save
+      schedule_presenter = SchedulePresenter.new(venue_object)
+      a1 = Artist.new(name: "Hot Chip")
+      e1 = Event.new(venue_id: venue_object.id, artist_id: a1.id, start_date_time: "2016-10-06 21:00:00", end_date_time: "2016-10-06 21:30:00")
+      e1.save
+      schedule_presenter.shows_at_venue_per_day("Thursday")
+      schedule_presenter.shows_with_blanks(DateTime.new(2016,10,6,17,00,00, '+0'))
+      assert_equal(10, schedule_presenter.fill_out_final_blanks(DateTime.new(2016,10,6,17,00,00, '+0')).length)
+    end
+  end
 
 end
