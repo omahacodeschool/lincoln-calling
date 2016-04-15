@@ -70,5 +70,21 @@ RSpec.describe SchedulePresenter, type: :model do
     end
   end
 
+  describe "#check_previous_end_time" do
+    it "returns DateTime object for end of last show in Array" do
+      venue_object = Venue.new
+      venue_object.save
+      schedule_presenter = SchedulePresenter.new(venue_object)
+      a1 = Artist.new(name: "Hot Chip")
+      e1 = Event.new(venue_id: venue_object.id, artist_id: a1.id, start_date_time: "2016-10-06 19:00:00", end_date_time: "2016-10-06 19:30:00")
+      e1.save
+      e2 = Event.new(venue_id: venue_object.id, artist_id: a1.id, start_date_time: "2016-10-06 21:00:00", end_date_time: "2016-10-06 21:30:00")
+      e2.save
+      schedule_presenter.shows_at_venue_per_day("Thursday")
+      schedule_presenter.shows_with_blanks(DateTime.new(2016,10,6,17,00,00, '+0'))
+      assert_equal(7, schedule_presenter.check_previous_end_time(e1.end_date_time, schedule_presenter.end_time_of_previous_show).length)
+    end
+  end
+
 
 end
