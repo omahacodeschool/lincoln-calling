@@ -19,11 +19,11 @@ for (var i = homepage_headline.length - 1; i >= 0; i--) {
   var headline = homepage_headline[i];
   headline.addEventListener("mouseover",function(event){
     var headline_image = document.getElementById("image_"+(event.target.id));
-    hide_old_image("feature_image")
-    remove_featured_class("home_news__headlines--selected")
-    headline_image.classList.remove("is_hidden");
-    headline_image.classList.add("feature_image")
-    event.target.classList.add("home_news__headlines--selected")    
+    hide_old_image('feature_image')
+    remove_featured_class('home_news__headlines--selected')
+    headline_image.classList.remove('is_hidden');
+    headline_image.classList.add('feature_image')
+    event.target.classList.add('home_news__headlines--selected')    
   })
 };
 

@@ -7,9 +7,9 @@
 $('.artists').on('click', function(){
   console.log(this);
   var selectedArtist = $(this).attr('value');
-  $(`#${selectedArtist}`).removeClass('visible');
-  $(`#${selectedArtist}`).addClass('overlay');
-  var imageSize = $(`#artistPicture${selectedArtist}`).height();
+  $('#' + selectedArtist ).removeClass('visible');
+  $('#' + selectedArtist ).addClass('overlay');
+  var imageSize = $( '#artistPicture' + selectedArtist ).height();
   console.log(imageSize);
   $('.artist_profile__scroll_bar').height(imageSize);
 });
