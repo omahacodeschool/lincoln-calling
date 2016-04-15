@@ -6,15 +6,17 @@
 </div> 
 
 <div class="artist_white_background container">
-  <div class="clear artist_search_box">
+  <div class="artist_search_box">
     <%= form_tag(:controller => "artists", :action => "search", :id => "searchartists", :method => "post") do %>
       <div class="artist_search_box__icon icon">
         <input type="submit" value="" class="icon" style="font-family: HN-icons; font-size: 25px; background: none; border: 0px; margin-top:-10px;">
       </div>
       <div class="artist_search_box__text">
         <input class="artist_search_box__text" style="border-width:0px; font-size:30px" type="string" name="search_input" placeholder="Search Lineup">
+        <% end %>
+
+        <div class="artist_search_box__genre"></div>
       </div>
-    <% end %>
 </div>
 
 
