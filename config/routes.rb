@@ -2,8 +2,6 @@ Rails.application.routes.draw do
   
   namespace :admin do
     resources :abouts
-    resources :articles
-    resources :artists
     resources :bands
     resources :comedians
     resources :events

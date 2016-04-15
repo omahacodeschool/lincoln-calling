@@ -64,4 +64,5 @@ class VisitorDashboard < Administrate::BaseDashboard
   def display_resource(visitor)
     "Visitor Article: #{visitor.title}"
   end
+
 end
