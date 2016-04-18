@@ -25,7 +25,7 @@
 
     <div class="venue_picker">
       <div class="triangle_box float_left">
-        <div class="triangle_box__triangle-left"></div>
+        <div class="triangle_box__triangle-left" id="left_tri_box"></div>
       </div>
       <table><div class="venue_box float_left">
         <% @venues.each do |venue| %>
@@ -37,7 +37,7 @@
           </div>
         <% end %>
       </div></table>
-      <div class="triangle_box float_left">
+      <div class="triangle_box float_left" id="right_tri_box">
         <div class="triangle_box__triangle-right"></div>
       </div>
       <div style="clear: both"></div>
