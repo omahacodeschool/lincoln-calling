@@ -27,11 +27,11 @@
       <div class="triangle_box float_left">
         <div class="triangle_box__triangle-left"></div>
       </div>
-      <div class="venue_box float_left">  
+      <table><div class="venue_box float_left">
         <% @venues.each do |venue| %>
           <div class="venue_box__text venue_box__text--<%= venue.id %>"><%= venue.name %></div>
         <% end %>
-      </div>
+      </div></table>
       <div class="triangle_box float_left">
         <div class="triangle_box__triangle-right"></div>
       </div>
@@ -68,7 +68,6 @@
 
         <% if venues_events != nil %>
           <% venues_events.each do |event| %> 
-            <% puts "current event is #{event.event_length}" %>
             <%if event.minimum_age == nil %>
               <div class="show show--empty show--empty-<%= event.event_length %>"></div>
             <% else %>
