@@ -99,10 +99,12 @@
 
       <div class="venue_shows_container" id="Friday_shows" style="display: none">
       <% @venues.each do |venue| %>
-        <div class="venue_shows venue_shows--hide-<%=venue.id%>">
+        <div class="venue_shows venue_shows--hide-<%=venue.id%>"
+          <% if venue.id <= 5 %> style="display: block"
+          <% else %> style="display: none"
+          <% end %>>
           <% schedule_presenter = SchedulePresenter.new(venue) %>
           <% venues_events = schedule_presenter.shows_at_venue_per_day("Friday") %>
-
           <% if venues_events != nil %>
             <% venues_events.each do |event| %> 
               <%if event.minimum_age == nil %>
@@ -128,10 +130,12 @@
 
       <div class="venue_shows_container" id="Saturday_shows" style="display: none">
       <% @venues.each do |venue| %>
-        <div class="venue_shows venue_shows--hide-<%=venue.id%>">
+        <div class="venue_shows venue_shows--hide-<%=venue.id%>"
+          <% if venue.id <= 5 %> style="display: block"
+          <% else %> style="display: none"
+          <% end %>>
           <% schedule_presenter = SchedulePresenter.new(venue) %>
           <% venues_events = schedule_presenter.shows_at_venue_per_day("Saturday") %>
-
           <% if venues_events != nil %>
             <% venues_events.each do |event| %> 
               <%if event.minimum_age == nil %>
