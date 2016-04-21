@@ -81,13 +81,19 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
       class_name = "hide-" + venue_split;
       console.log("class_name is " + class_name);
 
-      // check if this is in the class name of div below 
+      console.log("thursday shows is .....");
+      console.log(thursday_shows);
 
-
-      var div = document.getElementById("Thursday_shows").getElementsByClassName("venue_shows");
-      console.log("div is");
-      console.log(div);
-      // div.style.display="none";
+      i = 0
+      while (i < thursday_shows.length){
+        var class_in_loop = thursday_shows[i].className;
+        if (class_in_loop.indexOf(class_name) != -1){
+          console.log("HIDE");
+          // display style hide
+          thursday_shows[i].style.display = "hide";
+        };
+        i++;
+      };
       x++;
     };
 
