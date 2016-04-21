@@ -62,7 +62,7 @@
 
 <!-- ______________________________Thursday_______________________________ -->
 
-      <div class="venue_shows_container" id="Thursday_shows">
+      <div class="venue_shows_container" id="Thursday_shows" style="display: block">
       <% @venues.each do |venue| %>
 
           <div class="venue_shows venue_shows--hide-<%=venue.id%>">
@@ -91,7 +91,7 @@
 
 <!-- ____________________________Friday___________________________________ -->
 
-      <div class="venue_shows_container" id="Friday_shows">
+      <div class="venue_shows_container" id="Friday_shows" style="display: none">
       <% @venues.each do |venue| %>
         <div class="venue_shows venue_shows--hide-<%=venue.id%>">
           <% schedule_presenter = SchedulePresenter.new(venue) %>
@@ -119,7 +119,7 @@
 
 <!-- _________________________Saturday____________________________________ -->
 
-      <div class="venue_shows_container" id="Saturday_shows">
+      <div class="venue_shows_container" id="Saturday_shows" style="display: none">
       <% @venues.each do |venue| %>
         <div class="venue_shows venue_shows--hide-<%=venue.id%>">
           <% schedule_presenter = SchedulePresenter.new(venue) %>

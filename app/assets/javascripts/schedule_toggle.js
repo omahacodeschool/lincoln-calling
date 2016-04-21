@@ -50,16 +50,60 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
   console.log(thursday_hidden_right);
   console.log("thursday display is ");
   console.log(thursday_display);
+  console.log("thursday_hidden_left is");
+  console.log(thursday_hidden_left);
 
   left_tri_box.addEventListener("click", function(){
     console.log("LEFT CLICK DETECTED");
 
+    if (thursday_hidden_right != null || thursday_hidden_right != []){
+      thursday_hidden_left.push(thursday_display[0]);
+      thursday_display.shift();
+      thursday_display.push(thursday_hidden_right[0]);
+      thursday_hidden_right.shift();
+    };
 
-// for each click shift X amount of venues from hidden array and push into display array
 
-
+    console.log("thursday_hidden_right is");
+    console.log(thursday_hidden_right);
+    console.log("thursday display is ");
+    console.log(thursday_display);
+    console.log("thursday_hidden_left is");
+    console.log(thursday_hidden_left);
   });
 
+    x = 0
+    while (x < thursday_hidden_right.length) {
+      console.log("thursday_hidden_right[x] is ");
+      console.log(thursday_hidden_right[x]);
+
+      var venue_split = thursday_hidden_right[x].className.split("").slice(-1);
+      class_name = "hide-" + venue_split;
+      console.log("class_name is " + class_name);
+
+      // check if this is in the class name of div below 
+
+
+      var div = document.getElementById("Thursday_shows").getElementsByClassName("venue_shows");
+      console.log("div is");
+      console.log(div);
+      // div.style.display="none";
+      x++;
+    };
+
+    // while (x < thursday_hidden_left.length) {
+    //   console.log("in hidden left loop");
+    //   var div = document.getElementById("Thursday_shows").getElementsByClassName("venue_shows");
+    //   div.style.display="none";
+    //   x++;
+    // };
+
+    // while (x < thursday_display.length) {
+    //   console.log("in display loop");
+    //   var div = document.getElementById("Thursday_shows").getElementsByClassName("venue_shows");
+    //   div.style.display="block";
+    //   x++;
+    // };
 
 
 
