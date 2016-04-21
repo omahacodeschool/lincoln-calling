@@ -29,7 +29,7 @@
       </div>
       <table><div class="venue_box float_left">
         <% @venues.each do |venue| %>
-          <div class="venue_box__text venue_box__text--<%= venue.id %>" style="display: none">
+          <div class="venue_box__text venue_box__text--<%= venue.id %>">
             <%= venue.name %>
           </div>
         <% end %>
@@ -62,10 +62,10 @@
 
 <!-- ______________________________Thursday_______________________________ -->
 
-      <div class="venue_shows_container" id="Thursday_shows" style="display: block">
+      <div class="venue_shows_container" id="Thursday_shows">
       <% @venues.each do |venue| %>
 
-          <div class="venue_shows venue_shows--hide-<%=venue.id%>" style="display:none">
+          <div class="venue_shows venue_shows--hide-<%=venue.id%>">
             <% schedule_presenter = SchedulePresenter.new(venue) %>
             <% venues_events = schedule_presenter.shows_at_venue_per_day("Thursday") %>
             <% if venues_events != nil %>
@@ -91,9 +91,9 @@
 
 <!-- ____________________________Friday___________________________________ -->
 
-      <div class="venue_shows_container" id="Friday_shows" style="display: none">
+      <div class="venue_shows_container" id="Friday_shows">
       <% @venues.each do |venue| %>
-        <div class="venue_shows venue_shows--hide-<%=venue.id%>" style="display:none">
+        <div class="venue_shows venue_shows--hide-<%=venue.id%>">
           <% schedule_presenter = SchedulePresenter.new(venue) %>
           <% venues_events = schedule_presenter.shows_at_venue_per_day("Friday") %>
           <% if venues_events != nil %>
@@ -119,9 +119,9 @@
 
 <!-- _________________________Saturday____________________________________ -->
 
-      <div class="venue_shows_container" id="Saturday_shows" style="display: none">
+      <div class="venue_shows_container" id="Saturday_shows">
       <% @venues.each do |venue| %>
-        <div class="venue_shows venue_shows--hide-<%=venue.id%>" style="display:none">
+        <div class="venue_shows venue_shows--hide-<%=venue.id%>">
           <% schedule_presenter = SchedulePresenter.new(venue) %>
           <% venues_events = schedule_presenter.shows_at_venue_per_day("Saturday") %>
           <% if venues_events != nil %>
