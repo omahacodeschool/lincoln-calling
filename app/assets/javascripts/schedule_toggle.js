@@ -23,22 +23,33 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
       thursday_hidden_right.shift();
       i++;
     };
-    console.log("thursday_shows is")
-    console.log(thursday_shows);
-    console.log("thursday_shows length is")
-    console.log(thursday_shows.length);
-    console.log("thursday_hidden_right is")
-    console.log(thursday_hidden_right)
-    console.log("thursday_display is")
-    console.log(thursday_display);
-  // } elsif (screen_width > show_four){
-
+  } else if (screen_width > show_four){
+    var i = 1
+    while (i <= 4){
+      thursday_display.push(thursday_hidden_right[0]);
+      thursday_hidden_right.shift();
+      i++;
+    };
+  } else if (screen_width > show_three){
+    var i = 1
+    while (i <= 3){
+      thursday_display.push(thursday_hidden_right[0]);
+      thursday_hidden_right.shift();
+      i++;
+    };
+  } else if (screen_width > show_two){
+    var i = 1
+    while (i <= 2){
+      thursday_display.push(thursday_hidden_right[0]);
+      thursday_hidden_right.shift();
+      i++;
+    };
   };
 
-// if statement for each screen size
-// push amount of objects to be shown into display array and shift from other
-
-
+  console.log("thursday_hidden_right is");
+  console.log(thursday_hidden_right);
+  console.log("thursday display is ");
+  console.log(thursday_display);
 
   left_tri_box.addEventListener("click", function(){
     console.log("LEFT CLICK DETECTED");
