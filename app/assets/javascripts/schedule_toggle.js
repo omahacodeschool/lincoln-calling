@@ -56,11 +56,11 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
   left_tri_box.addEventListener("click", function(){
     console.log("LEFT CLICK DETECTED");
 
-    if (thursday_hidden_right != null || thursday_hidden_right != []){
-      thursday_hidden_left.push(thursday_display[0]);
-      thursday_display.shift();
-      thursday_display.push(thursday_hidden_right[0]);
-      thursday_hidden_right.shift();
+    if (thursday_hidden_left[0] != undefined){
+      var move_one = thursday_display.slice(-1).pop();
+      thursday_hidden_right.unshift(move_one);
+      var move_two = thursday_hidden_left.slice(-1).pop();
+      thursday_display.unshift(move_two);
     };
 
 
