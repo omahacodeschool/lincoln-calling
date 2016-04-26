@@ -50,9 +50,9 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
     console.log("LEFT CLICK DETECTED");
 
     if (thursday_hidden_left[0] != undefined){
-      var move_one = thursday_display.slice(-1).pop();
+      var move_one = thursday_display.pop();
       thursday_hidden_right.unshift(move_one);
-      var move_two = thursday_hidden_left.slice(-1).pop();
+      var move_two = thursday_hidden_left.pop();
       thursday_display.unshift(move_two);
     };
 
