@@ -70,10 +70,7 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
       var i = 0
       while (i < thursday_shows.length){
         var class_in_loop = thursday_shows[i].className;
-        console.log("thursdayshowsiclassname is ");
-        console.log(thursday_shows[i].className);
         if (class_in_loop.indexOf(right_class_name) != -1){
-          console.log("CAUGHT ZE RIGHT");
           thursday_shows[i].style.display = "hide";
         };
         i++;
@@ -88,10 +85,7 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
       var i = 0
       while (i < thursday_shows.length){
         var class_in_loop = thursday_shows[i].className;
-        console.log("thursdayshowsiclassname is ");
-        console.log(thursday_shows[i].className);
         if (class_in_loop.indexOf(left_class_name) != -1){
-          console.log("CAUGHT ZE LEFT");
           thursday_shows[i].style.display = "hide";
         };
         i++;
@@ -106,10 +100,7 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
       var i = 0
       while (i < thursday_shows.length){
         var class_in_loop = thursday_shows[i].className;
-        console.log("thursdayshowsiclassname is ");
-        console.log(thursday_shows[i].className);
         if (class_in_loop.indexOf(display_class_name) != -1){
-          console.log("CAUGHT ZE DISPLAY");
           thursday_shows[i].style.display = "block";
         };
         i++;
