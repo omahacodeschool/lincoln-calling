@@ -49,19 +49,19 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
   left_tri_box.addEventListener("click", function(){
     console.log("LEFT CLICK DETECTED");
 
-    console.log("thursday_hidden_right is");
-    console.log(thursday_hidden_right);
-    console.log("thursday display is ");
-    console.log(thursday_display);
-    console.log("thursday_hidden_left is");
-    console.log(thursday_hidden_left);
-
     if (thursday_hidden_left[0] != undefined){
       var move_one = thursday_display.slice(-1).pop();
       thursday_hidden_right.unshift(move_one);
       var move_two = thursday_hidden_left.slice(-1).pop();
       thursday_display.unshift(move_two);
     };
+
+    console.log("thursday_hidden_right is");
+    console.log(thursday_hidden_right);
+    console.log("thursday display is ");
+    console.log(thursday_display);
+    console.log("thursday_hidden_left is");
+    console.log(thursday_hidden_left);
 
     var x = 0;
     while (x < thursday_hidden_right.length) {
@@ -123,10 +123,23 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
   right_tri_box.addEventListener("click", function(){
     console.log("RIGHT CLICK DETECTED");
 
+    if (thursday_hidden_right[0] != undefined){
+      var move_one = thursday_display.shift();
+      thursday_hidden_left.push(move_one);
+      var move_two = thursday_hidden_right.shift();
+      thursday_display.push(move_two);
+    };
+
+    console.log("thursday_hidden_right is");
+    console.log(thursday_hidden_right);
+    console.log("thursday display is ");
+    console.log(thursday_display);
+    console.log("thursday_hidden_left is");
+    console.log(thursday_hidden_left);
+
+
 
 
   });
-
-
 
 };
