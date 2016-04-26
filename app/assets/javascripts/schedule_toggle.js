@@ -77,7 +77,6 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
       };
       x++;
     };
-
     var x = 0;
     while (x < thursday_hidden_left.length) {
       var left_venue_split = thursday_hidden_left[x].className.split("").slice(-1);
@@ -92,7 +91,6 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
       };
       x++;
     };
-
     var x = 0;
     while (x < thursday_display.length) {
       var display_venue_split = thursday_display[x].className.split("").slice(-1);
@@ -128,7 +126,48 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
     console.log("thursday_hidden_left is");
     console.log(thursday_hidden_left);
 
-
+    var x = 0;
+    while (x < thursday_hidden_right.length) {
+      var right_venue_split = thursday_hidden_right[x].className.split("").slice(-1);
+      var right_class_name = "hide-" + right_venue_split;
+      var i = 0
+      while (i < thursday_shows.length){
+        var class_in_loop = thursday_shows[i].className;
+        if (class_in_loop.indexOf(right_class_name) != -1){
+          thursday_shows[i].style.display = "hide";
+        };
+        i++;
+      };
+      x++;
+    };
+    var x = 0;
+    while (x < thursday_hidden_left.length) {
+      var left_venue_split = thursday_hidden_left[x].className.split("").slice(-1);
+      var left_class_name = "hide-" + left_venue_split;
+      var i = 0
+      while (i < thursday_shows.length){
+        var class_in_loop = thursday_shows[i].className;
+        if (class_in_loop.indexOf(left_class_name) != -1){
+          thursday_shows[i].style.display = "hide";
+        };
+        i++;
+      };
+      x++;
+    };
+    var x = 0;
+    while (x < thursday_display.length) {
+      var display_venue_split = thursday_display[x].className.split("").slice(-1);
+      var display_class_name = "hide-" + display_venue_split;
+      var i = 0
+      while (i < thursday_shows.length){
+        var class_in_loop = thursday_shows[i].className;
+        if (class_in_loop.indexOf(display_class_name) != -1){
+          thursday_shows[i].style.display = "block";
+        };
+        i++;
+      };
+      x++;
+    };
 
 
   });
