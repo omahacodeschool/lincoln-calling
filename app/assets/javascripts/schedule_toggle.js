@@ -134,7 +134,9 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
       while (i < thursday_shows.length){
         var class_in_loop = thursday_shows[i].className;
         if (class_in_loop.indexOf(right_class_name) != -1){
-          thursday_shows[i].style.display = "hide";
+          console.log("show caught in hidden right array. it's");
+          console.log(thursday_shows[i]);
+          thursday_shows[i].style.display = "none";
         };
         i++;
       };
@@ -148,7 +150,9 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
       while (i < thursday_shows.length){
         var class_in_loop = thursday_shows[i].className;
         if (class_in_loop.indexOf(left_class_name) != -1){
-          thursday_shows[i].style.display = "hide";
+          console.log("show caught in hidden left array. it's");
+          console.log(thursday_shows[i]);
+          thursday_shows[i].style.display = "none";
         };
         i++;
       };
@@ -162,6 +166,8 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
       while (i < thursday_shows.length){
         var class_in_loop = thursday_shows[i].className;
         if (class_in_loop.indexOf(display_class_name) != -1){
+          console.log("show caught in display array. it's");
+          console.log(thursday_shows[i]);
           thursday_shows[i].style.display = "block";
         };
         i++;
