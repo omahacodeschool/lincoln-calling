@@ -46,15 +46,15 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
     };
   };
 
-  console.log("thursday_hidden_right is");
-  console.log(thursday_hidden_right);
-  console.log("thursday display is ");
-  console.log(thursday_display);
-  console.log("thursday_hidden_left is");
-  console.log(thursday_hidden_left);
-
   left_tri_box.addEventListener("click", function(){
     console.log("LEFT CLICK DETECTED");
+
+    console.log("thursday_hidden_right is");
+    console.log(thursday_hidden_right);
+    console.log("thursday display is ");
+    console.log(thursday_display);
+    console.log("thursday_hidden_left is");
+    console.log(thursday_hidden_left);
 
     if (thursday_hidden_left[0] != undefined){
       var move_one = thursday_display.slice(-1).pop();
@@ -63,33 +63,17 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
       thursday_display.unshift(move_two);
     };
 
-
-    console.log("thursday_hidden_right is");
-    console.log(thursday_hidden_right);
-    console.log("thursday display is ");
-    console.log(thursday_display);
-    console.log("thursday_hidden_left is");
-    console.log(thursday_hidden_left);
-  });
-
-    x = 0
+    var x = 0;
     while (x < thursday_hidden_right.length) {
-      console.log("thursday_hidden_right[x] is ");
-      console.log(thursday_hidden_right[x]);
-
-      var venue_split = thursday_hidden_right[x].className.split("").slice(-1);
-      class_name = "hide-" + venue_split;
-      console.log("class_name is " + class_name);
-
-      console.log("thursday shows is .....");
-      console.log(thursday_shows);
-
-      i = 0
+      var right_venue_split = thursday_hidden_right[x].className.split("").slice(-1);
+      var right_class_name = "hide-" + right_venue_split;
+      var i = 0
       while (i < thursday_shows.length){
         var class_in_loop = thursday_shows[i].className;
-        if (class_in_loop.indexOf(class_name) != -1){
-          console.log("HIDE");
-          // display style hide
+        console.log("thursdayshowsiclassname is ");
+        console.log(thursday_shows[i].className);
+        if (class_in_loop.indexOf(right_class_name) != -1){
+          console.log("CAUGHT ZE RIGHT");
           thursday_shows[i].style.display = "hide";
         };
         i++;
@@ -97,21 +81,43 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
       x++;
     };
 
-    // while (x < thursday_hidden_left.length) {
-    //   console.log("in hidden left loop");
-    //   var div = document.getElementById("Thursday_shows").getElementsByClassName("venue_shows");
-    //   div.style.display="none";
-    //   x++;
-    // };
+    var x = 0;
+    while (x < thursday_hidden_left.length) {
+      var left_venue_split = thursday_hidden_left[x].className.split("").slice(-1);
+      var left_class_name = "hide-" + left_venue_split;
+      var i = 0
+      while (i < thursday_shows.length){
+        var class_in_loop = thursday_shows[i].className;
+        console.log("thursdayshowsiclassname is ");
+        console.log(thursday_shows[i].className);
+        if (class_in_loop.indexOf(left_class_name) != -1){
+          console.log("CAUGHT ZE LEFT");
+          thursday_shows[i].style.display = "hide";
+        };
+        i++;
+      };
+      x++;
+    };
 
-    // while (x < thursday_display.length) {
-    //   console.log("in display loop");
-    //   var div = document.getElementById("Thursday_shows").getElementsByClassName("venue_shows");
-    //   div.style.display="block";
-    //   x++;
-    // };
+    var x = 0;
+    while (x < thursday_display.length) {
+      var display_venue_split = thursday_display[x].className.split("").slice(-1);
+      var display_class_name = "hide-" + display_venue_split;
+      var i = 0
+      while (i < thursday_shows.length){
+        var class_in_loop = thursday_shows[i].className;
+        console.log("thursdayshowsiclassname is ");
+        console.log(thursday_shows[i].className);
+        if (class_in_loop.indexOf(display_class_name) != -1){
+          console.log("CAUGHT ZE DISPLAY");
+          thursday_shows[i].style.display = "block";
+        };
+        i++;
+      };
+      x++;
+    };
 
-
+  });
 
 
   right_tri_box.addEventListener("click", function(){
