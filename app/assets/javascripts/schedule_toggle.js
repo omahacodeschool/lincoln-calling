@@ -8,9 +8,28 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
 
   var left_tri_box = document.getElementById("left_tri_box");
   var right_tri_box = document.getElementById("right_tri_box");
-  var all_shows = document.getElementById("Thursday_shows").getElementsByClassName("venue_shows");
-  // var friday_shows = document.getElementById("Friday_shows").getElementsByClassName("venue_shows");
-  // var saturday_shows = document.getElementById("Saturday_shows").getElementsByClassName("venue_shows");
+  var thursday_button = document.getElementById("thurs");
+  var friday_button = document.getElementById("fri");
+  var saturday_button = document.getElementById("sat");
+
+  thursday_button.addEventListener("click", function(){
+    console.log("THURSDAY CLICK DETECTED");
+    var all_shows = document.getElementById("Thursday_shows").getElementsByClassName("venue_shows");
+  });
+
+  friday_button.addEventListener("click", function(){
+    console.log("FRIDAY CLICK DETECTED");
+    var all_shows = document.getElementById("Friday_shows").getElementsByClassName("venue_shows");
+  });
+
+  saturday_button.addEventListener("click", function(){
+    console.log("SATURDAY CLICK DETECTED");
+    var all_shows = document.getElementById("Saturday_shows").getElementsByClassName("venue_shows");
+  });
+
+  if (all_shows == undefined){
+    var all_shows = document.getElementById("Thursday_shows").getElementsByClassName("venue_shows");
+  };
   var all_venues = document.getElementsByClassName("venue_box__text");
   var events_hidden_right = Array.prototype.slice.call(all_shows);
   var venues_hidden_right = Array.prototype.slice.call(all_venues);
@@ -218,7 +237,5 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
       };
       x++;
     };
-
   });
-
 };
