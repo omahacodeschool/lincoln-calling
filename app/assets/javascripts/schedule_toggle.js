@@ -9,13 +9,13 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
   var left_tri_box = document.getElementById("left_tri_box");
   var right_tri_box = document.getElementById("right_tri_box");
   var all_shows = document.getElementById("Thursday_shows").getElementsByClassName("venue_shows");
+  // var friday_shows = document.getElementById("Friday_shows").getElementsByClassName("venue_shows");
+  // var saturday_shows = document.getElementById("Saturday_shows").getElementsByClassName("venue_shows");
   var all_venues = document.getElementsByClassName("venue_box__text");
   var thursday_hidden_right = Array.prototype.slice.call(all_shows);
   var venues_hidden_right = Array.prototype.slice.call(all_venues);
   var venues_display = [];
   var venues_hidden_left = [];
-  // var friday_shows = document.getElementById("Friday_shows").getElementsByClassName("venue_shows");
-  // var saturday_shows = document.getElementById("Saturday_shows").getElementsByClassName("venue_shows");
   var thursday_display = [];
   var thursday_hidden_left = [];
 
@@ -57,6 +57,8 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
     };
   };
 
+  // ____________________left click_________________________________
+
   left_tri_box.addEventListener("click", function(){
     console.log("LEFT CLICK DETECTED");
 
@@ -68,19 +70,25 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
       var move_three = venues_display.pop();
       venues_hidden_right.unshift(move_three);
       var move_four = venues_hidden_left.pop();
-      thursday_display.unshift(move_four);
-
+      venues_display.unshift(move_four);
     };
 
     var x = 0;
     while (x < thursday_hidden_right.length) {
       var right_venue_split = thursday_hidden_right[x].className.split("").slice(-1);
       var right_class_name = "hide-" + right_venue_split;
+      var right_venue_name_split = venues_hidden_right[x].className.split("").slice(-1);
+      var right_venue_name = "text--" + right_venue_name_split;      
+
       var i = 0
-      while (i < thursday_shows.length){
-        var class_in_loop = thursday_shows[i].className;
+      while (i < all_shows.length){
+        var class_in_loop = all_shows[i].className;
+        var venue_in_loop = all_venues[i].className;
         if (class_in_loop.indexOf(right_class_name) != -1){
-          thursday_shows[i].style.display = "none";
+          all_shows[i].style.display = "none";
+        };
+        if (venue_in_loop.indexOf(right_venue_name) != -1){
+          all_venues[i].style.display = "none";
         };
         i++;
       };
@@ -90,11 +98,18 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
     while (x < thursday_hidden_left.length) {
       var left_venue_split = thursday_hidden_left[x].className.split("").slice(-1);
       var left_class_name = "hide-" + left_venue_split;
+      var left_venue_name_split = venues_hidden_left[x].className.split("").slice(-1);
+      var left_venue_name = "text--" + left_venue_name_split;
+
       var i = 0
-      while (i < thursday_shows.length){
-        var class_in_loop = thursday_shows[i].className;
+      while (i < all_shows.length){
+        var class_in_loop = all_shows[i].className;
+        var venue_in_loop = all_venues[i].className;
         if (class_in_loop.indexOf(left_class_name) != -1){
-          thursday_shows[i].style.display = "none";
+          all_shows[i].style.display = "none";
+        };
+        if (venue_in_loop.indexOf(left_venue_name) != -1){
+          all_venues[i].style.display = "none";
         };
         i++;
       };
@@ -104,12 +119,19 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
     while (x < thursday_display.length) {
       var display_venue_split = thursday_display[x].className.split("").slice(-1);
       var display_class_name = "hide-" + display_venue_split;
+      var display_venue_name_split = venues_display[x].className.split("").slice(-1);
+      var display_venue_name = "text--" + display_venue_name_split;
+
       var i = 0
-      while (i < thursday_shows.length){
-        var class_in_loop = thursday_shows[i].className;
+      while (i < all_shows.length){
+        var class_in_loop = all_shows[i].className;
+        var venue_in_loop = all_venues[i].className;
         if (class_in_loop.indexOf(display_class_name) != -1){
-          thursday_shows[i].style.display = "block";
+          all_shows[i].style.display = "block";
         };
+        if (venue_in_loop.indexOf(display_venue_name) != -1){
+          all_venues[i].style.display = "block";
+        }; 
         i++;
       };
       x++;
@@ -117,6 +139,7 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
 
   });
 
+// _____________________right click________________________________
 
   right_tri_box.addEventListener("click", function(){
     console.log("RIGHT CLICK DETECTED");
@@ -136,7 +159,7 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
     while (x < thursday_hidden_right.length) {
       var right_venue_split = thursday_hidden_right[x].className.split("").slice(-1);
       var right_class_name = "hide-" + right_venue_split;
-      var right_venue_name_split = venues_hidden_right[x].className;
+      var right_venue_name_split = venues_hidden_right[x].className.split("").slice(-1);
       var right_venue_name = "text--" + right_venue_name_split;
 
       var i = 0
@@ -179,9 +202,8 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
       var display_venue_split = thursday_display[x].className.split("").slice(-1);
       var display_class_name = "hide-" + display_venue_split;
       var display_venue_name_split = venues_display[x].className.split("").slice(-1);
-      console.log("className is " + display_venue_name_split);
-      console.log("display_venue_name_split is " + display_venue_name_split);
       var display_venue_name = "text--" + display_venue_name_split;
+
       var i = 0
       while (i < all_shows.length){
         var class_in_loop = all_shows[i].className;
@@ -189,10 +211,6 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
         if (class_in_loop.indexOf(display_class_name) != -1){
           all_shows[i].style.display = "block";
         };
-        console.log("venue_in_loop is " + venue_in_loop);
-        console.log("display_venue_name is " + display_venue_name);
-        console.log("THE NEXT LINE SAYS THIS");
-        console.log(venue_in_loop.indexOf(display_venue_name));
         if (venue_in_loop.indexOf(display_venue_name) != -1){
           all_venues[i].style.display = "block";
         }; 
@@ -200,7 +218,6 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
       };
       x++;
     };
-
 
   });
 
