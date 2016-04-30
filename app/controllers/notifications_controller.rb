@@ -1,15 +1,11 @@
 class NotificationsController < ApplicationController
   require 'json'
   require 'twilio-ruby'
-  include Webhookable
-
-  after_filter :set_header
 
   skip_before_action :verify_authenticity_token
 
-
-
-#does the phone number field get verified automatically (i.e. will it throw an error if a user does not enter a phone number?)
+  
+#TODO: ensure the phone number field get verified automatically (i.e. will it throw an error if a user does not enter a phone number?)
   def plan_my_festival
     event_list = params[:set_events]
     event_list.each do |event_id|
