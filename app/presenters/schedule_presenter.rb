@@ -1,5 +1,4 @@
 class SchedulePresenter
-
   def initialize(venue_object)
     @venue = venue_object
   end
