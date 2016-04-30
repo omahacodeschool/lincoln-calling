@@ -4,7 +4,7 @@ class NotificationsController < ApplicationController
 
   skip_before_action :verify_authenticity_token
 
-  
+
 #TODO: ensure the phone number field get verified automatically (i.e. will it throw an error if a user does not enter a phone number?)
   def plan_my_festival
     event_list = params[:set_events]
@@ -19,13 +19,8 @@ class NotificationsController < ApplicationController
 
 
  def send_sms
-  #I think these numbers need to go in the .env.local file
-  # TWILIO_ACCOUNT_ID='AC92417814cb1961be7a4360be84d3d035' 
-  # TWILIO_AUTH_TOKEN='459ec66ebb1b3c1a9899d9d9c1102612'
-  # account_sid = ENV["TWILIO_ACCOUNT_ID"]
-  # auth_token = ENV["TWILIO_AUTH_TOKEN"] 
-  account_sid = "AC92417814cb1961be7a4360be84d3d035"
-  auth_token = "[459ec66ebb1b3c1a9899d9d9c1102612]"
+  account_sid = ENV["TWILIO_ACCOUNT_ID"]
+  auth_token = ENV["TWILIO_AUTH_TOKEN"] 
   twilio_phone_number = "4027693024"
 
   notification_list = Notification.all
