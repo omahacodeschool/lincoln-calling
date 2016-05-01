@@ -8,7 +8,7 @@ class Notification < ActiveRecord::Base
   #
   # TODO: Add customized messages
   def event_message
-    return "there is a concert soon"
+    "#{self.event.artist.name} is playing at #{self.event.venue.name} in one hour."
   end
 
   def send_sms
