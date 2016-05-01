@@ -25,10 +25,10 @@ class Notification < ActiveRecord::Base
  end
 
  def Notification.time_to_send_sms
-  events = Event.where(:start_date_time => Time.current + 1.hour)
-  events.each do |event|
+  events = Event.where("start_date_time < ?", Time.current + 1.hour)
+  events.each do |event| 
     event.notifications.each do |notification|
-      notification.send_sms
+      SendShowSmsJob.perform_later(notification)
     end
   end
  end

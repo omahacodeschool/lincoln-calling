@@ -105,6 +105,7 @@ GEM
     concurrent-ruby (1.0.1)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
+    daemons (1.2.3)
     database_cleaner (1.5.1)
     datetime_picker_rails (0.0.7)
       momentjs-rails (>= 2.8.1)
@@ -395,6 +396,7 @@ DEPENDENCIES
   capybara-webkit
   carrierwave
   coffee-rails
+  daemons
   database_cleaner
   delayed_job_active_record
   devise
@@ -444,5 +446,8 @@ DEPENDENCIES
   web-console
   webmock
 
+RUBY VERSION
+   ruby 2.3.0p0
+
 BUNDLED WITH
-   1.11.2
+   1.12.1
