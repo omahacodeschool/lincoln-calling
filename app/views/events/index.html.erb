@@ -24,15 +24,15 @@
     </div>
 
     <div class="venue_picker">
-      <div class="triangle_box float_left">
+      <div class="triangle_box float_left" id="schedule-prev">
         <div class="triangle_box__triangle-left"></div>
       </div>
       <table><div class="venue_box float_left">
         <% @venues.each_with_index do |venue, index| %>
-          <div class="venue_box__text venue_box__text--<%= venue.id %> <%= "js-schedule-hidden" if index >= 5 %>"><%= venue.name %></div>
+          <div class="venue_box__text venue_box__text--<%= venue.id %> <%= "js-schedule-hidden" if index >= 5 %>" data-id="<%= venue.id %>"><%= venue.name %></div>
         <% end %>
       </div></table>
-      <div class="triangle_box float_left">
+      <div class="triangle_box float_left" id="schedule-next">
         <div class="triangle_box__triangle-right"></div>
       </div>
       <div style="clear: both"></div>
