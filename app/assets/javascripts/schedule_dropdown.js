@@ -19,6 +19,7 @@
   });
 
   thurs.addEventListener("click", function(){
+    console.log("THURSDAY CLICKED");
     current_day.innerHTML = event.target.innerHTML;
     other_days.style.display = "none";
     thursday_shows.style.display = "block";
@@ -27,6 +28,7 @@
   });
 
   fri.addEventListener("click", function(){
+    console.log("FRIDAY CLICKED");
     current_day.innerHTML = event.target.innerHTML;
     other_days.style.display = "none";
     thursday_shows.style.display = "none";
@@ -35,6 +37,7 @@
   });
 
   sat.addEventListener("click", function(){
+    console.log("SATURDAY CLICKED");
     current_day.innerHTML = event.target.innerHTML;
     other_days.style.display = "none";
     thursday_shows.style.display = "none";
