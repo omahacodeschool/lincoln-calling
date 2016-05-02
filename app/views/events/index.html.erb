@@ -28,8 +28,8 @@
         <div class="triangle_box__triangle-left"></div>
       </div>
       <table><div class="venue_box float_left">
-        <% @venues.each do |venue| %>
-          <div class="venue_box__text venue_box__text--<%= venue.id %>"><%= venue.name %></div>
+        <% @venues.each_with_index do |venue, index| %>
+          <div class="venue_box__text venue_box__text--<%= venue.id %> <%= "js-schedule-hidden" if index >= 5 %>"><%= venue.name %></div>
         <% end %>
       </div></table>
       <div class="triangle_box float_left">
@@ -61,8 +61,8 @@
 <!-- ______________________________Thursday_______________________________ -->
 
       <div class="venue_shows_container" id="Thursday_shows" style="display: block">
-      <% @venues.each do |venue| %>
-        <div class="venue_shows venue_shows--hide-<%=venue.id%>">
+      <% @venues.each_with_index do |venue, index| %>
+        <div class="venue_shows venue_shows--hide-<%=venue.id%> <%= "js-schedule-hidden" if index >= 5 %>">
           <% schedule_presenter = SchedulePresenter.new(venue) %>
           <% venues_events = schedule_presenter.shows_at_venue_per_day("Thursday") %>
 
