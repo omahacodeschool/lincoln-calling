@@ -14,7 +14,7 @@ class Notification < ActiveRecord::Base
   def send_sms
     account_sid = ENV["TWILIO_ACCOUNT_ID"]
     auth_token = ENV["TWILIO_AUTH_TOKEN"] 
-    twilio_phone_number = "4027693024"
+    twilio_phone_number = ENV["TWILIO_PHONE_NUMBER"] 
 
     @twilio_client = Twilio::REST::Client.new account_sid, auth_token 
     @twilio_client.account.sms.messages.create(
