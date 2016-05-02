@@ -29,9 +29,8 @@
       </div>
       <table>
         <div class="venue_box float_left">
-          <% @venues.each do |venue| %>
-            <div class="venue_box__text venue_box__text--<%= venue.id %>" data-id="<%= venue.id %>">
-              <%= venue.name %>
+          <% @venues.each_with_index do |venue, index| %>
+            <div class="venue_box__text venue_box__text--<%= venue.id %> <%= "js-schedule-hidden" if index >= 5 %>" data-id="<%= venue.id %>"><%= venue.name %>
             </div>
           <% end %>
         </div>
@@ -64,28 +63,29 @@
 
 <!-- ______________________________Thursday_______________________________ -->
 
-      <div class="venue_shows_container" id="Thursday_shows" style="display: none">
-      <% @venues.each do |venue| %>
-        <div class="venue_shows venue_shows--hide-<%=venue.id%>">
+      <div class="venue_shows_container" id="Thursday_shows" style="display: block">
+      <% @venues.each_with_index do |venue, index| %>
+        <div class="venue_shows venue_shows--hide-<%=venue.id%> <%= "js-schedule-hidden" if index >= 5 %>">
           <% schedule_presenter = SchedulePresenter.new(venue) %>
           <% venues_events = schedule_presenter.shows_at_venue_per_day("Thursday") %>
-          <% if venues_events != nil %>
-            <% venues_events.each do |event| %> 
-              <%if event.minimum_age == nil %>
-                <div class="show show--empty show--empty-<%= event.event_length %>"></div>
-              <% else %>
-                <label class="artists" value="<%= event.artist_id %>"> 
-                <div data-event-id="<%= event.id %>" data-added-to-plan="false"class="show show--<%= event.event_length %> show--<%= event.minimum_age %>-plus">
-                 <%= event.artist.name %>
-                </div>
-                </label>
-              <% end %>
+
+        <% if venues_events != nil %>
+          <% venues_events.each do |event| %> 
+            <%if event.minimum_age == nil %>
+              <div class="show show--empty show--empty-<%= event.event_length %>"></div>
+            <% else %>
+              <label class="artists" value="<%= event.artist_id %>"> 
+              <div data-event-id="<%= event.id %>" data-added-to-plan="false"class="show show--<%= event.event_length %> show--<%= event.minimum_age %>-plus notify">
+               <%= event.artist.name %>
+              </div>
+              </label>
             <% end %>
-          <% else %>
-            <% 9.times do %>
-              <div class="show show--empty show--empty-60"></div>
-            <% end %> 
           <% end %>
+        <% else %>
+          <% 9.times do %>
+            <div class="show show--empty show--empty-60"></div>
+          <% end %> 
+        <% end %>
         </div>
       <% end %>
       </div>
@@ -97,23 +97,24 @@
         <div class="venue_shows venue_shows--hide-<%=venue.id%>">
           <% schedule_presenter = SchedulePresenter.new(venue) %>
           <% venues_events = schedule_presenter.shows_at_venue_per_day("Friday") %>
-          <% if venues_events != nil %>
-            <% venues_events.each do |event| %> 
-              <%if event.minimum_age == nil %>
-                <div class="show show--empty show--empty-<%= event.event_length %>"></div>
-              <% else %>
-                <label class="artists" value="<%= event.artist_id %>"> 
-                <div data-event-id="<%= event.id %>" data-added-to-plan="false"class="show show--<%= event.event_length %> show--<%= event.minimum_age %>-plus">
-                 <%= event.artist.name %>
+
+        <% if venues_events != nil %>
+          <% venues_events.each do |event| %> 
+            <%if event.minimum_age == nil %>
+              <div class="show show--empty show--empty-<%= event.event_length %>"></div>
+            <% else %>
+              <label class="artists" value="<%= event.artist_id %>"> 
+                <div data-event-id="<%= event.id %>" data-added-to-plan="false" class="show show--<%= event.event_length %> show--<%= event.minimum_age %>-plus notify">
+                  <%= event.artist.name %>
                 </div>
-                </label>
-              <% end %>
+              </label>
             <% end %>
-          <% else %>
-            <% 9.times do %>
-              <div class="show show--empty show--empty-60"></div>
-            <% end %> 
           <% end %>
+        <% else %>
+          <% 9.times do %>
+            <div class="show show--empty show--empty-60"></div>
+          <% end %> 
+        <% end %>
         </div>
       <% end %>
       </div>
@@ -121,28 +122,29 @@
 
 <!-- _________________________Saturday____________________________________ -->
 
-      <div class="venue_shows_container" id="Saturday_shows" style="display: block">
+      <div class="venue_shows_container" id="Saturday_shows" style="display: none">
       <% @venues.each do |venue| %>
         <div class="venue_shows venue_shows--hide-<%=venue.id%>">
           <% schedule_presenter = SchedulePresenter.new(venue) %>
           <% venues_events = schedule_presenter.shows_at_venue_per_day("Saturday") %>
-          <% if venues_events != nil %>
-            <% venues_events.each do |event| %> 
-              <%if event.minimum_age == nil %>
-                <div class="show show--empty show--empty-<%= event.event_length %>"></div>
-              <% else %>
-                <label class="artists" value="<%= event.artist_id %>"> 
-                <div data-event-id="<%= event.id %>" data-added-to-plan="false"class="show show--<%= event.event_length %> show--<%= event.minimum_age %>-plus">
-                 <%= event.artist.name %>
+
+        <% if venues_events != nil %>
+          <% venues_events.each do |event| %> 
+            <%if event.minimum_age == nil %>
+              <div class="show show--empty show--empty-<%= event.event_length %>"></div>
+            <% else %>
+              <label class="artists" value="<%= event.artist_id %>"> 
+                <div data-event-id="<%= event.id %>" data-added-to-plan="false" class="show show--<%= event.event_length %> show--<%= event.minimum_age %>-plus notify">
+                  <%= event.artist.name %>
                 </div>
-                </label>
-              <% end %>
+              </label>
             <% end %>
-          <% else %>
-            <% 9.times do %>
-              <div class="show show--empty show--empty-60"></div>
-            <% end %> 
           <% end %>
+        <% else %>
+          <% 9.times do %>
+            <div class="show show--empty show--empty-60"></div>
+          <% end %> 
+        <% end %>
         </div>
       <% end %>
       </div>
@@ -155,11 +157,12 @@
   </div>
 
 <div class="visible plan_my_festival_module">
+
   <div>
     <%= form_tag(:controller => "notifications", :action => "plan_my_festival", :method => "post") do %>
 
       <div class="visible">
-        <% @events.each do |event| %>
+        <% @events.each do |event|%>
           <input class="festival_checkbox" data-event-id="<%= event.id %>" type="checkbox" name="set_events[]" value="<%= event.id %>">
         <% end %>
       </div>

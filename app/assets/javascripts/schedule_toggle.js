@@ -141,6 +141,7 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
   };
 
   function right_click(){
+    console.log("right clicked");
     if (events_hidden_right[0] != undefined){
       var move_one = events_display.shift();
       events_hidden_left.push(move_one);
