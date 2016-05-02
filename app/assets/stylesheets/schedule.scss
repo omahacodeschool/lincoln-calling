@@ -121,6 +121,10 @@ $twentyone-plus-color: #CC4723;
 //--------------------------------------------------------------
 //Venues span
 
+.js-schedule-hidden{
+  display: none;
+}
+
 .venue_shows_container{
   margin-left: $schedule-left-column-width;
   margin-right: $schedule-left-column-width;
@@ -180,6 +184,7 @@ $twentyone-plus-color: #CC4723;
   overflow: hidden;
   width: calc(100% - 120px);
 }
+
 .venue_box__text{
   color: #565651;
   text-align: center;
