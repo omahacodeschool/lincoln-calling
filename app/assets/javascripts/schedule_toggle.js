@@ -12,75 +12,58 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
   var friday_button = document.getElementById("fri");
   var saturday_button = document.getElementById("sat");
 
-  thursday_button.addEventListener("click", function(){
-    console.log("THURSDAY CLICK DETECTED");
-    var all_shows = document.getElementById("Thursday_shows").getElementsByClassName("venue_shows");
-  });
+  function scrollingClick(weekday){
+    all_venues = document.getElementsByClassName("venue_box__text");
+    venues_hidden_right = Array.prototype.slice.call(all_venues);
+    venues_display = [];
+    venues_hidden_left = [];
 
-  friday_button.addEventListener("click", function(){
-    console.log("FRIDAY CLICK DETECTED");
-    var all_shows = document.getElementById("Friday_shows").getElementsByClassName("venue_shows");
-  });
+    events_display = [];
+    events_hidden_left = [];
+    var weekday_id = weekday + "_shows";
+    all_shows = document.getElementById(weekday_id).getElementsByClassName("venue_shows");
+    events_hidden_right = Array.prototype.slice.call(all_shows);
 
-  saturday_button.addEventListener("click", function(){
-    console.log("SATURDAY CLICK DETECTED");
-    var all_shows = document.getElementById("Saturday_shows").getElementsByClassName("venue_shows");
-  });
-
-  if (all_shows == undefined){
-    var all_shows = document.getElementById("Thursday_shows").getElementsByClassName("venue_shows");
-  };
-  var all_venues = document.getElementsByClassName("venue_box__text");
-  var events_hidden_right = Array.prototype.slice.call(all_shows);
-  var venues_hidden_right = Array.prototype.slice.call(all_venues);
-  var venues_display = [];
-  var venues_hidden_left = [];
-  var events_display = [];
-  var events_hidden_left = [];
-
-  if (screen_width > show_five){
-    var i = 1
-    while (i <= 5){ 
-      events_display.push(events_hidden_right[0]);
-      events_hidden_right.shift();
-      venues_display.push(venues_hidden_right[0]);
-      venues_hidden_right.shift();
-      i++;
-    };
-  } else if (screen_width > show_four){
-    var i = 1
-    while (i <= 4){
-      events_display.push(events_hidden_right[0]);
-      events_hidden_right.shift();
-      venues_display.push(venues_hidden_right[0]);
-      venues_hidden_right.shift();
-      i++;
-    };
-  } else if (screen_width > show_three){
-    var i = 1
-    while (i <= 3){
-      events_display.push(events_hidden_right[0]);
-      events_hidden_right.shift();
-      venues_display.push(venues_hidden_right[0]);
-      venues_hidden_right.shift();
-      i++;
-    };
-  } else if (screen_width > show_two){
-    var i = 1
-    while (i <= 2){
-      events_display.push(events_hidden_right[0]);
-      events_hidden_right.shift();
-      venues_display.push(venues_hidden_right[0]);
-      venues_hidden_right.shift();
-      i++;
+    if (screen_width > show_five){
+      var i = 1
+      while (i <= 5){ 
+        events_display.push(events_hidden_right[0]);
+        events_hidden_right.shift();
+        venues_display.push(venues_hidden_right[0]);
+        venues_hidden_right.shift();
+        i++;
+      };
+    } else if (screen_width > show_four){
+      var i = 1
+      while (i <= 4){
+        events_display.push(events_hidden_right[0]);
+        events_hidden_right.shift();
+        venues_display.push(venues_hidden_right[0]);
+        venues_hidden_right.shift();
+        i++;
+      };
+    } else if (screen_width > show_three){
+      var i = 1
+      while (i <= 3){
+        events_display.push(events_hidden_right[0]);
+        events_hidden_right.shift();
+        venues_display.push(venues_hidden_right[0]);
+        venues_hidden_right.shift();
+        i++;
+      };
+    } else if (screen_width > show_two){
+      var i = 1
+      while (i <= 2){
+        events_display.push(events_hidden_right[0]);
+        events_hidden_right.shift();
+        venues_display.push(venues_hidden_right[0]);
+        venues_hidden_right.shift();
+        i++;
+      };
     };
   };
 
-  // ____________________left click_________________________________
-
-  left_tri_box.addEventListener("click", function(){
-    console.log("LEFT CLICK DETECTED");
-
+  function left_click (){
     if (events_hidden_left[0] != undefined){
       var move_one = events_display.pop();
       events_hidden_right.unshift(move_one);
@@ -155,14 +138,9 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
       };
       x++;
     };
+  };
 
-  });
-
-// _____________________right click________________________________
-
-  right_tri_box.addEventListener("click", function(){
-    console.log("RIGHT CLICK DETECTED");
-
+  function right_click(){
     if (events_hidden_right[0] != undefined){
       var move_one = events_display.shift();
       events_hidden_left.push(move_one);
@@ -237,5 +215,22 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
       };
       x++;
     };
-  });
+  };
+
+  window.onload = function(){
+    scrollingClick("Thursday");
+
+    left_tri_box.addEventListener("click", left_click);
+    right_tri_box.addEventListener("click", right_click);
+
+    thursday_button.addEventListener("click", function(){
+      scrollingClick("Thursday")
+    });
+    friday_button.addEventListener("click", function(){
+      scrollingClick("Friday")
+    });
+    saturday_button.addEventListener("click", function(){
+      scrollingClick("Saturday")
+    });
+  };
 };
