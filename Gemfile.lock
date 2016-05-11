@@ -259,6 +259,7 @@ GEM
       activesupport
       capybara
       i18n
+    geocoder (1.3.3)
     gitlab (3.6.1)
       httparty
       terminal-table
@@ -527,6 +528,7 @@ DEPENDENCIES
   fog
   fog-aws
   formulaic
+  geocoder
   gmaps4rails
   high_voltage
   honeybadger
