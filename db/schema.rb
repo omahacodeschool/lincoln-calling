@@ -78,6 +78,13 @@ ActiveRecord::Schema.define(version: 20160414210149) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.string   "phone_number"
+    t.integer  "event_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "plans", force: :cascade do |t|
     t.integer  "phone_number"
     t.integer  "event_id"
