@@ -23,8 +23,8 @@
             </h5>
         </div>
         <div class="hero__tickets">
-            <% @tickets.each do |event|%>
-                <% if event.sold_out != true %>
+            <% @tickets.each do |ticket|%>
+                <% if ticket.sold_out == true %>
                     <div class="tickets__ticket sold-out">      
                         <div class="sold-out__label">
                             sold out
@@ -34,7 +34,7 @@
                             <h2><%= ticket.format_price %></h2>
                         </a>
                     </div>
-                <% else%>
+                <% else %>
                     <div class="tickets__ticket">      
                         <a href="<%= ticket.link %>">
                             <h3><%= ticket.name %></h3>
