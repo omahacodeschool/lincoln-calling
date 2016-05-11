@@ -71,6 +71,5 @@ end
 
 gem 'carrierwave'
 gem 'gmaps4rails'
-gem 'geocoder'
 gem 'rmagick'
 gem 'kaminari'

@@ -43,7 +43,7 @@ venue_list.each do |id, name, address, info, img, latitude, longitude, website, 
 end
 
 feature_list = [
-  ["Test Article 1: A Long Titled Article", 1, "content content content content content content content content content content content content content content content content content content content content content content content content content", "http://farm4.staticflickr.com/3669/10346154844_3220d0685d_z.jpg","2016-05-26 21:55:19"],
+  ["Mayor Beutler will drink three fishbowls if Lincoln Calling sells out", 1, "content content content content content content content content content content content content content content content content content content content content content content content content content", "http://farm4.staticflickr.com/3669/10346154844_3220d0685d_z.jpg","2016-05-26 21:55:19"],
   ["Test Article 2", 1, "content content content content content content content content content content content content content content content content content content content content content content content content content", "http://farm4.staticflickr.com/3669/10346154844_3220d0685d_z.jpg","2016-08-26 21:55:19"],
   ["Test Article 3 A Very Fascinating Article", 1, "content content content content content content content content content content content content content content content content content content content content content content content content content", "http://farm4.staticflickr.com/3669/10346154844_3220d0685d_z.jpg","2016-05-15 21:55:19"]
 ]

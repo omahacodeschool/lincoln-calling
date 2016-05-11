@@ -1,0 +1,21 @@
+.wrapper {
+    @include background-2x(image_url('background-hatch_2x.png'));
+    max-width: 1000px;
+    margin: 0 auto;
+    background-image: image_url('background-hatch.png');
+    background-size: 15px;
+    box-shadow: 0 0 20px $shadow;
+    overflow: hidden;
+}
+
+a {
+    transition-duration: .1s;
+    text-decoration: none;
+}
+
+@media only screen and (min-width: 850px) {
+    .wrapper {
+        margin-top: (50rem / 16);
+        padding: (25rem / 16) (25rem / 16) 0;
+    }
+}

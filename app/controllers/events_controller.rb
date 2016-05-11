@@ -4,5 +4,4 @@ class EventsController  < ApplicationController
     @events = Event.all
     @artists = Artist.all
   end
-
 end

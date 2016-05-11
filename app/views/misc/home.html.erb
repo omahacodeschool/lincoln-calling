@@ -1,79 +1,134 @@
-<div class="bands_and_tickets">
-  <div class="bands">
-    <div class="bands__headliners">
-      <% @headlineartists.each do |artist| %>
-        <% if artist.headline_order < @headlineartists.length %>
-          <%= artist.name%> + 
-        <% else %>
-          <%= artist.name%>
-        <% end %>
-      <% end%>
-    </div>
-    <div class="bands__others">
-      <% @otherartists.each do |artist| %>
-        <% if artist == @otherartists[-1]%>
-          <%= artist.name %>
-        <% else %>
-          <%= artist.name %> + 
-        <% end %>
-      <% end%>
-    </div>
-  </div>
-  <div class="clear tickets">
-    <% @tickets.each do |event|%>
-      <% if event.sold_out != true %>
-        <div class="col-6 col-3-tablet no_padding">      
-          <a class="ticket ticket--even ticket--odd" href="<%= event.link %>">
-            <span class="ticket__title"><%= event.name%></span>
-            <span class="ticket__price"><%= event.format_price%></span>
-          </a>
+<main class="body__main">
+    <section class="main__hero">
+        <div class="hero__headliners">
+            <h2>
+                <% @headlineartists.each do |artist| %>
+                    <% if artist.headline_order < @headlineartists.length %>
+                        <a href="/overlay/artists/<%= artist.id %>"><%= artist.name %></a> +
+                    <% else %>
+                        <a href="/overlay/artists/<%= artist.id %>"><%= artist.name %></a>
+                    <% end %>
+                <% end %>
+            </h2>
         </div>
-      <% else%>
-        <div class="col-6 col-3-tablet no_padding">      
-          <a class="ticket ticket--even ticket--odd ticket--sold_out" href="<%= event.link %>">
-            <span class="ticket__title"><%= event.name%></span>
-            <span class="ticket__price"><%= event.format_price%></span>
-          </a>
+        <div class="hero__supporting">
+            <h5>
+                <% @otherartists.each do |artist| %>
+                    <% if artist == @otherartists[-1] %>
+                        <a href="/overlay/artists/<%= artist.id %>"><%= artist.name %></a>
+                    <% else %>
+                        <a href="/overlay/artists/<%= artist.id %>"><%= artist.name %></a> +
+                    <% end %>
+                <% end %>
+            </h5>
         </div>
-      <% end %>
-    <% end %>
-  </div>
-</div>
-
-<div class="clear margin_right">
-  <div class="col-8-tablet">
-    <div class="clear home_news">
-      <% @articles.each do |image| %>
-        <% if image == @articles[0] %>  
-          <img id ="image_<%=image.id%>" src=<%= image.image %> class="col-6 no_padding home_news__img feature_image">
-        <% else %>
-          <img id ="image_<%=image.id%>" src=<%= image.image %> class="col-6 no_padding home_news__img is_hidden">
-        <% end %>
-      <% end %>
-      <div class="col-6 no_padding"> 
-        <div class="home_news__headlines">
-          <% @articles.each do |headline| %>
-            <%if headline == @articles[0] %>
-              <a href="/news/<%=headline.id%>" class="home_link">
-              <div id ="<%=headline.id%>" class="home_news__headlines home_news__headlines--headline home_news__headlines--selected"><%= headline.title%></div></a>
-            <% else %>
-              <a href="/news/<%=headline.id%>"class="home_link"><div id ="<%=headline.id%>" class="home_news__headlines home_news__headlines--headline headline_for_<%=headline.id%> home_news__headlines--tablet"><%= headline.title %></div></a>  
+        <div class="hero__tickets">
+            <% @tickets.each do |event|%>
+                <% if event.sold_out != true %>
+                    <div class="tickets__ticket sold-out">      
+                        <div class="sold-out__label">
+                            sold out
+                        </div>
+                        <a href="<%= ticket.link %>">
+                            <h3><%= ticket.name %></h3>
+                            <h2><%= ticket.format_price %></h2>
+                        </a>
+                    </div>
+                <% else%>
+                    <div class="tickets__ticket">      
+                        <a href="<%= ticket.link %>">
+                            <h3><%= ticket.name %></h3>
+                            <h2><%= ticket.format_price %></h2>
+                        </a>
+                    </div>
+                <% end %>
             <% end %>
-          <% end %>
         </div>
-      </div>
-      <div class="home_news__more">
-        <a href="/news" class="home_news__more__text">see more news</a>
-      </div>
+    </section>
+    <div class="main__news-sidebar">
+        <section class="news-sidebar__news">
+            <% @articles.each do |image| %>
+                <% if image == @articles[0] %>  
+                    <div class="news__image" style="background-image: url(<%= image.image %>)">
+                    </div>
+                <% else %>
+                    <div class="news__image" style="background-image: url(<%= image.image %>)">
+                    </div>
+                <% end %>
+            <% end %>
+            <div class="news__headlines">
+                <% @articles.each do |headline| %>
+                    <% if headline == @articles[0] %>
+                        <a href="/news/<%= headline.id%>">
+                            <h3 class="active">
+                                <%= headline.title %>
+                            </h3>
+                        </a>
+                    <% else %>
+                        <a href="/news/<%= headline.id%>">
+                            <h3>
+                                <%= headline.title %>
+                            </h3>
+                        </a> 
+                    <% end %>
+                <% end %>
+                <div class="headlines__see-more-news">
+                    <span>see more news</span>
+                </div>
+            </div>
+        </section>
+        <div class="news-sidebar__divider">
+        </div>
+        <section class="news-sidebar__sidebar">
+            <div class="sidebar__email">
+                <span>SIGN UP FOR EMAIL UPDATES</span>
+                <div class="email__image">
+                </div>
+            </div>
+            <div class="sidebar__calendar">
+                <div class="calendar__heading">
+                    <h5>Festival Schedule / Lincoln Calling 2016</h5>
+                </div>
+                <div class="calendar__days">
+                    <div class="days__day active">
+                        <h5>THURSDAY</h5>
+                        <h4>6</h4>
+                    </div>
+                    <div class="days__day">
+                        <h5>FRIDAY</h5>
+                        <h4>7</h4>
+                    </div>
+                    <div class="days__day">
+                        <h5>SATURDAY</h5>
+                        <h4>8</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="calendar__shows">
+                <div class="shows__show">
+                    <p>
+                        Too Slim and the Taildraggers at Bourbon Theatre<br>
+                        <span>5PM</span>
+                    </p>
+                    <p>
+                        Too Slim and the Taildraggers at Bourbon Theatre<br>
+                        <span>5PM</span>
+                    </p>
+                    <p>
+                        Too Slim and the Taildraggers at Bourbon Theatre<br>
+                        <span>5PM</span>
+                    </p>
+                    <p>
+                        Too Slim and the Taildraggers at Bourbon Theatre<br>
+                        <span>5PM</span>
+                    </p>
+                </div>
+            </div>
+            <div class="sidebar__full-schedule">
+                <span>
+                    <a href="/lineup">see full schedule</a>
+                </span>
+            </div>
+        </section>
     </div>
-  </div>
-  <%= render "sidebars/events" %>
-</div>
-
-
-
-
-
-
-
-
+</main>

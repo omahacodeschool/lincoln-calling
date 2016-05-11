@@ -1,0 +1,114 @@
+.body__header {
+    background-color: $primary;
+}
+
+.header__title {
+    padding-top: 3px;
+    img:nth-of-type(1) {
+        display: none;
+    }
+    h1 {
+        position: relative;
+        margin: 0;
+        color: $white;
+        font-size: (40rem / 16);
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
+
+.header__nav {
+    display: none;
+}
+
+.header__menu {
+    margin-bottom: (20rem / 16);
+    padding: .75rem;
+    background-color: $secondary;
+    text-align: center;
+    cursor: pointer;
+    .menu__down {
+        @include background-2x(url('../img/menu-down_2x.png'));
+        display: inline-block;
+        width: (25rem / 16);
+        height: (15rem / 16);
+        background-image: url('../img/menu-down.png');
+        background-size: 100%;
+        vertical-align: middle;
+    }
+    h4 {
+        display: inline-block;
+        margin: 0;
+        padding: 0 .8rem 0 .5rem;
+        font-family: 'Yanone';
+        font-size: (22rem / 16);
+        font-weight: bold;
+        vertical-align: middle;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .header__title {
+        @include flexbox();
+        @include flexbox-align-items(center);
+        position: relative;
+        padding-top: 0;
+        cursor: pointer;
+        img:nth-of-type(1) {
+            display: block;
+            width: 15%;
+            border-right: .15rem solid $white;
+        }
+        img:nth-of-type(2) {
+            width: 85%;
+            border-right: 0;
+        }
+    }
+    .header__nav {
+        @include flexbox();
+        @include flexbox-justify-content(space-between);
+        @include flexbox-align-items(center);
+        margin-bottom: (25rem / 16);
+        padding-right: (47rem / 16);
+        background-color: $secondary;
+        ul {
+            @include flexbox();
+            @include flexbox-justify-content(space-between);
+            @include flexbox-align-items(center);
+            width: 69%;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            li {
+                width: 20%;
+                padding: (12rem / 16) 0;
+                font-family: 'Yanone';
+                font-size: (22rem / 16);
+                font-weight: bold;
+                text-align: center;
+                cursor: pointer;
+                a {
+                    color: $white;
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+            }
+        }
+        .nav__hear-nebraska {
+            @include flexbox();
+            @include flexbox-align-items(center);
+            span {
+                margin-right: (10rem / 16);
+                font-family: 'Oswald';
+                font-weight: lighter;
+            }
+            img {
+                display: block;
+            }
+        }
+    }
+    .header__menu {
+        display: none;
+    }
+}

@@ -29,82 +29,78 @@
 <!-- twitter sharing  -->
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-  <%= render "flashes" -%>
-  <div class="clear">
-    <div class="col-12-tablet">
-      <a href="/" class="home_link">
-        <div class="orange_box">
-          <div class="orange_box__icon icon"></div>
-          <div class="orange_box__text">LINCOLN CALLING</div>
-        </div>
-      </a>
-    </div>
-  </div>
-  <div class="clear">
-    <div class="col-12-tablet">
-      <div class="nav_bar" id="collapsable_nav">
-        <div class="col-4">
-          <div id="triangle_left" class="triangle_down triangle_down--left"></div>
-        </div>
-        <div class="col-4">
-          <div class="nav_bar__text" id="collapsable_nav_link_text">OPEN MENU</div>
-        </div>
-        <div class="col-4">
-          <div id="triangle_right" class="triangle_down"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+<%= render "flashes" -%>
 
-  <div class="clear is_hidden" id="collapsable_nav_contents">
-    <div class="col-12-tablet">
-      <div class="nav_bar_menu">
-        <div class="col-6 nav_bar__menu_left">
-          <a href="https://www.eventbrite.com/" class="nav_bar_menu__link">TICKETS</a>
-          <a href="/artists/list" class="nav_bar_menu__link">ARTISTS</a>
-          <a href="/artists/list/comedians" class="nav_bar_menu__link">COMEDIANS</a>
-          <a href="/events/list" class="nav_bar_menu__link">SCHEDULE</a>
-          <a href="/venues/list" class="nav_bar_menu__link">VENUE MAP</a>
+<div class="wrapper">
+    <header class="body__header">
+        <a href="/">
+            <div class="header__title">
+                <img src="<%= image_url('amp.png') %>" srcset="<%= image_url('amp.png') %> 1x, <%= image_url('amp_2x.png') %> 2x" alt="amp"/>
+                <img src="<%= image_url('lincoln-calling.png') %>" srcset="<%= image_url('lincoln-calling.png') %> 1x, <%= image_url('lincoln-calling_2x.png') %> 2x" alt="Lincoln Calling"/>
+            </div>
+        </a>
+        <nav class="header__nav">
+            <ul class="nav__links">
+                <li class="links__link">
+                    <a href="/tickets">TICKETS</a>
+                </li>
+                <li class="links__link">
+                    <a href="/lineup">LINEUP</a>
+                </li>
+                <li class="links__link">
+                    <a href="/info">INFO</a>
+                </li>
+                <li class="links__link">
+                    <a href="/news">NEWS</a>
+                </li>
+                <li class="links__link">
+                    <a href="/sponsors">SPONSORS</a>
+                </li>
+            </ul>
+            <div class="nav__hear-nebraska">
+                <span>produced by</span>
+                <a href="http://hearnebraska.org" target="_blank">
+                    <img src="<%= image_url('hear-nebraska.png') %>" srcset="<%= image_url('hear-nebraska.png') %> 1x, <%= image_url('hear-nebraska_2x.png') %> 2x" alt="Hear Nebraska"/>
+                </a>
+            </div>
+        </nav>
+        <div class="header__menu">
+            <div class="menu__down">
+            </div>
+            <h4>OPEN MENU</h4>
+            <div class="menu__down">
+            </div>
         </div>
-        <div class="col-6 nav_bar__menu_right">
-          <a href="/info/visitors" class="nav_bar_menu__link">VISITORS GUIDE</a>
-          <a href="/info/faq" class="nav_bar_menu__link">FAQ</a>
-          <a href="/info/about" class="nav_bar_menu__link">ABOUT</a>
-          <a href="/news" class="nav_bar_menu__link">NEWS</a>
-          <a href="/sponsors/list" class="nav_bar_menu__link">SPONSORS</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
+    </header>
   
 <%= yield %>
 
-<div class="clear">
-  <div class="footer">
-
-    <div class="footer_top col-3 col-3-tablet">
-      <div class="footer_top__sponsor_text">SPONSORS:</div>
-    </div>
-    
-    <div class="footer_top col-3 col-3-tablet">
-      <div class="footer_top__sponsor_logo icon"></div>
-    </div>
-    
-    <div class="footer_top col-3 col-3-tablet">
-      <div class="footer_top__sponsor_logo icon"></div>
-    </div>
-    
-    <div class="footer_top col-3 col-3-tablet">
-      <div class="footer_top__sponsor_logo icon"></div>
-    </div>
-
-  <div class="clear">
-
-    <div class="footer_bottom">MADE BY
-      <img class="footer_bottom__site_creator" src="/assets/ocs.png">
-    </div>
-  </div>
+    <footer class="body__footer">
+        <div class="footer__sponsors">
+            <div class="sponsors__label">
+                SPONSORS:
+            </div>
+            <div class="sponsors__sponsors">
+                <div class="sponsors__sponsor">
+                    <img src="<%= image_url('firespring.png') %>" srcset="<%= image_url('firespring.png') %> 1x, <%= image_url('firespring_2x.png') %> 2x" alt="Firespring"/>
+                </div>
+                <div class="sponsors__sponsor">
+                    <img src="<%= image_url('hudl.png') %>" srcset="<%= image_url('hudl.png') %> 1x, <%= image_url('hudl_2x.png') %> 2x" alt="Hudl"/>
+                </div>
+                <div class="sponsors__sponsor">
+                    <img src="<%= image_url('bulu-box.png') %>" srcset="<%= image_url('bulu-box.png') %> 1x, <%= image_url('bulu-box_2x.png') %> 2x" alt="Bulu Box"/>
+                </div>
+            </div>
+        </div>
+        <div class="footer__code-school">
+            <div class="code-school__label">
+                SITE BY:
+            </div>
+            <div class="code-school__logo">
+                <img src="<%= image_url('omaha-code-school.png') %>" srcset="<%= image_url('omaha-code-school.png') %> 1x, <%= image_url('omaha-code-school_2x.png') %> 2x"/>
+            </div>
+        </div>
+    </footer>
 </div>
 
   <%= render "javascript" %>
