@@ -331,7 +331,7 @@ $twentyone-plus-color: #CC4723;
     display: block;
   }
 }
-@media (min-width: $breakpoint-tablet){
+@media (min-width: $smallTabletBreakpoint){
   .venue_shows{
     float: left;
     width: 25%;
@@ -352,7 +352,7 @@ $twentyone-plus-color: #CC4723;
   margin-right: 15px;
   }
 }
-@media (min-width: $breakpoint-desktop){
+@media (min-width: $tabletBreakpoint){
   .day_picker{
     width: 40%;
     float: left;

@@ -10,4 +10,12 @@
 @import "header";
 @import "footer";
 
+@import "title";
+
 @import "homepage";
+@import "artists";
+
+@import "ocs/artist_module.scss";
+@import "ocs/artist_profile.scss";
+
+@import "ocs/schedule.scss";

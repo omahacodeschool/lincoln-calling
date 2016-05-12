@@ -78,6 +78,7 @@
     }
     &.sold-out {
         background-color: $light;
+        cursor: default;
         &:nth-of-type(2) {
             .sold-out__label {
                 -ms-transform: translate(0, -50%) rotate(-8deg);

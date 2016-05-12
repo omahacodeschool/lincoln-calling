@@ -1,37 +1,36 @@
- <div class="page_header">
-  <div class="header_divider_top"></div>
-  <div class="page_header__right">Bands</div>
-  <div class="page_header__left">LINEUP</div>
-  <div class="header_divider_bottom"></div>
+<div class="body__title">
+    <div class="title__parent">
+        <h3>LINEUP</h3>
+    </div>
+    <div class="title__page">
+        <h4>Artists</h4>
+    </div>
 </div> 
 
-<div class="artist_white_background container">
-  <div class="artist_search_box">
-    <%= form_tag(:controller => "artists", :action => "search", :id => "searchartists", :method => "post") do %>
-      <div class="artist_search_box__icon icon">
-        <input type="submit" value="" class="icon" style="font-family: HN-icons; font-size: 25px; background: none; border: 0px; margin-top:-10px;">
-      </div>
-      <div class="artist_search_box__text">
-        <input class="artist_search_box__text" style="border-width:0px; font-size:30px" type="string" name="search_input" placeholder="Search Lineup">
-        <% end %>
-
-        <div class="artist_search_box__genre"></div>
-      </div>
-</div>
-
-
-
-  <% @artists.order(:headline_order).each do |artist| %>
-    <div class="artists" value="<%= artist.id %>">
-      <div class="no_padding col-6 col-4-tablet">
-        <div class="artist_module">
-          <img class="artist_module__image" src="<%= artist.image %>"></img>
-          <div class="artist_module__name"><%= artist.name %></div>
-          <div class="artist_module__origin"><%= artist.origin %></div>
+<main class="body__content">
+    <div class="content__search">
+        <div class="search__box">
+            <%= form_tag(:controller => "artists", :action => "search", :id => "searchartists", :method => "post") do %>
+                <input class="box__query" type="text" name="search_input" placeholder="Search for an artist">
+                <input class="box__submit" type="submit" value="" class="icon">
+            <% end %>
         </div>
-      </div>
-      </div>
-  <% end %>
-</div>
-
- <%= render "sidebars/artists" %>
+    </div>
+    <div class="content__artists">
+        <% @artists.order(:headline_order).each do |artist| %>
+            <div class="artists__artist">
+                <div class="artist__image" style="background-image: url(<%= artist.image %>)">
+                
+                </div>
+                <div class="artist__name">
+                    <div class="name__text">
+                        <h5><%= artist.name %></h5>
+                    </div>
+                </div>
+                <div class="artist__origin">
+                    <%= artist.origin %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</main>

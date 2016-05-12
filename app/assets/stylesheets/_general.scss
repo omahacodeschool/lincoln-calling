@@ -13,6 +13,12 @@ a {
     text-decoration: none;
 }
 
+.body__content {
+    margin-top: (25rem / 16);
+    padding: 1.5625rem 4.375rem;
+    background-color: $white;
+}
+
 @media only screen and (min-width: 850px) {
     .wrapper {
         margin-top: (50rem / 16);

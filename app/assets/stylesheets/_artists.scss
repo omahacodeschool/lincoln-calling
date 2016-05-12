@@ -1,0 +1,70 @@
+.content__search {
+    margin-bottom: (25rem / 16);
+    .search__box {
+        width: 40%;
+        position: relative;
+        border: (1rem / 16) solid $dark;
+    }
+    .box__query {
+        width: 100%;
+        font-family: 'Yanone Kaffeesatz';
+        font-size: (34rem / 16);
+        font-weight: 300;
+        border: 0;
+        outline: 0;
+        color: $dark;
+    }
+    .box__query::placeholder {
+        font-family: 'Yanone Kaffeesatz';
+        font-size: (34rem / 16);
+        font-weight: 300;
+        color: $light;
+    }
+    .box__submit {
+        @include transform-translate(0, -50%);
+        position: absolute;
+        top: 50%;
+        right: 0;
+        font-family: 'HN-icons';
+        font-size: (26rem / 16);
+        color: $dark;
+        &:hover {
+            color: $primary;
+        }
+    }
+}
+
+.content__artists {
+    @include flexbox();
+    @include flexbox-align-items(stretch);
+    .artists__artist {
+        width: 20%;
+        border-right: (4rem / 16) solid $white;
+    }
+    .artist__image {
+        height: (170rem / 16);
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+    .artist__name {
+        position: relative;
+        height: (110rem / 16);
+        background-color: $dark;
+        text-align: center;
+        padding: (30rem / 16) 0;
+        .name__text {
+            @include transform-translate(0, -50%);
+            position: absolute;
+            top: 50%;
+            width: 100%;
+        }
+    }
+    .artist__origin {
+        background-color: $light;
+        color: $dark;
+        text-transform: uppercase;
+        font-family: 'Oswald';
+        padding: (6rem / 16);
+        text-align: center;
+    }
+}
