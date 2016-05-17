@@ -6,6 +6,7 @@ gem 'pg_search'
 gem "administrate", "~> 0.1.4"
 gem 'devise'
 gem "autoprefixer-rails"
+gem 'carrierwave'
 gem "delayed_job_active_record"
 gem "flutie"
 gem "high_voltage"
@@ -24,6 +25,7 @@ gem "sprockets-es6"
 gem "title"
 gem "uglifier"
 gem 'coffee-rails'
+gem 'carrierwave-crop'
 
 group :development do
   gem "quiet_assets"
@@ -69,7 +71,6 @@ group :staging, :production do
   gem "puma"
 end
 
-gem 'carrierwave'
 gem 'gmaps4rails'
 gem 'geocoder'
 gem 'rmagick'

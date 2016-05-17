@@ -45,7 +45,6 @@ if ( document.getElementsByClassName("map__image").length !== 0){
       };
     return markers
   };
-
   //creates google map with a marker for each venue in the variable json_array (passed from the server over the html page)
   handler = Gmaps.build('Google');
   handler.buildMap({ internal: {id: 'sidebar_builder'}}, function(){

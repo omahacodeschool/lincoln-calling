@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get "artists/list" => "artists#index"
   get "artists/list/comedians" => "artists#index_comedians"
   post "artists/search" => "artists#search"
+  get "artists/:artist_id/crop_image" => "artists#crop_image"
   get "events/list" => 'events#index'
   get "genres/:id" => 'genres#view'
   get "info/visitors" => 'visitors#index'
