@@ -121,6 +121,10 @@ $twentyone-plus-color: #CC4723;
 //--------------------------------------------------------------
 //Venues span
 
+.js-schedule-hidden{
+  display: none;
+}
+
 .venue_shows_container{
   margin-left: $schedule-left-column-width;
   margin-right: $schedule-left-column-width;
@@ -145,11 +149,42 @@ $twentyone-plus-color: #CC4723;
 .venue_shows.venue_shows--hide-5{
   display: none;
 }
+.venue_shows.venue_shows--hide-6{
+  display: none;
+}
+.venue_shows.venue_shows--hide-7{
+  display: none;
+}
+.venue_shows.venue_shows--hide-8{
+  display: none;
+}
+.venue_shows.venue_shows--hide-9{
+  display: none;
+}
+.venue_shows.venue_shows--hide-10{
+  display: none;
+}
+.venue_shows.venue_shows--hide-11{
+  display: none;
+}
+.venue_shows.venue_shows--hide-12{
+  display: none;
+}
+.venue_shows.venue_shows--hide-13{
+  display: none;
+}
+.venue_shows.venue_shows--hide-14{
+  display: none;
+}
+.venue_shows.venue_shows--hide-15{
+  display: none;
+}
 .venue_box{
   background-color: white;
   overflow: hidden;
   width: calc(100% - 120px);
 }
+
 .venue_box__text{
   color: #565651;
   text-align: center;
@@ -169,6 +204,36 @@ $twentyone-plus-color: #CC4723;
   display: none;  
 }
 .venue_box__text.venue_box__text--5{
+  display: none;  
+}
+.venue_box__text.venue_box__text--6{
+  display: none;  
+}
+.venue_box__text.venue_box__text--7{
+  display: none;  
+}
+.venue_box__text.venue_box__text--8{
+  display: none;  
+}
+.venue_box__text.venue_box__text--9{
+  display: none;  
+}
+.venue_box__text.venue_box__text--10{
+  display: none;  
+}
+.venue_box__text.venue_box__text--11{
+  display: none;  
+}
+.venue_box__text.venue_box__text--12{
+  display: none;  
+}
+.venue_box__text.venue_box__text--13{
+  display: none;  
+}
+.venue_box__text.venue_box__text--14{
+  display: none;  
+}
+.venue_box__text.venue_box__text--15{
   display: none;  
 }
 .float_left{
@@ -373,7 +438,7 @@ $twentyone-plus-color: #CC4723;
 #Friday_shows{
   display: none;
 }
-#saturday_shows{
+#Saturday_shows{
   display: none;
 }
 

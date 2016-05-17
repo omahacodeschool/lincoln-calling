@@ -26,6 +26,7 @@ gem "title"
 gem "uglifier"
 gem 'coffee-rails'
 gem 'carrierwave-crop'
+gem "twilio-ruby"
 
 group :development do
   gem "quiet_assets"
@@ -75,3 +76,6 @@ gem 'gmaps4rails'
 gem 'geocoder'
 gem 'rmagick'
 gem 'kaminari'
+gem 'daemons'
+gem 'fog'
+gem 'fog-aws'

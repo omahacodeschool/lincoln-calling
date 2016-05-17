@@ -35,4 +35,5 @@ Rails.application.routes.draw do
   get "sidebar/artists" => "sidebars#artists"
   get "sponsors/list" => "sponsors#index"
   get "venues/list" => "venues#index"
+  post "notifications/plan_my_festival" => "notifications#plan_my_festival"
 end
