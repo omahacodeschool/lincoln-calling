@@ -12,4 +12,4 @@
 /tags
 /tmp/*
 /public/uploads
-/.env
+.env
