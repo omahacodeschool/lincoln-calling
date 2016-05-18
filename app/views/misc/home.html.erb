@@ -29,10 +29,8 @@
                         <div class="sold-out__label">
                             sold out
                         </div>
-                        <a href="<%= ticket.link %>">
-                            <h3><%= ticket.name %></h3>
-                            <h2><%= ticket.format_price %></h2>
-                        </a>
+                        <h3><%= ticket.name %></h3>
+                        <h2><%= ticket.format_price %></h2>
                     </div>
                 <% else %>
                     <div class="tickets__ticket">      
@@ -47,44 +45,48 @@
     </section>
     <div class="main__news-sidebar">
         <section class="news-sidebar__news">
-            <% @articles.each do |image| %>
-                <% if image == @articles[0] %>  
-                    <div class="news__image" style="background-image: url(<%= image.image %>)">
-                    </div>
-                <% else %>
-                    <div class="news__image" style="background-image: url(<%= image.image %>)">
-                    </div>
+            <div class="news__images">
+                <% @articles.each_with_index do |image, index| %>
+                    <% if image == @articles[0] %>  
+                        <div class="images__news active" data-index="<%= index %>" style="background-image: url(<%= image.image %>)">
+                        </div>
+                    <% else %>
+                        <div class="images__news" data-index="<%= index %>" style="background-image: url(<%= image.image %>)">
+                        </div>
+                    <% end %>
                 <% end %>
-            <% end %>
+            </div>
             <div class="news__headlines">
-                <% @articles.each do |headline| %>
+                <% @articles.each_with_index do |headline, index| %>
                     <% if headline == @articles[0] %>
-                        <a href="/news/<%= headline.id%>">
-                            <h3 class="active">
+                        <a href="/news/<%= headline.id %>">
+                            <h3 class="headlines__text active" data-index="<%= index %>">
                                 <%= headline.title %>
                             </h3>
                         </a>
                     <% else %>
                         <a href="/news/<%= headline.id%>">
-                            <h3>
+                            <h3 class="headlines__text" data-index="<%= index %>">
                                 <%= headline.title %>
                             </h3>
                         </a> 
                     <% end %>
                 <% end %>
                 <div class="headlines__see-more-news">
-                    <span>see more news</span>
+                    <a href="/news"><span>see more news</span></a>
                 </div>
             </div>
         </section>
         <div class="news-sidebar__divider">
         </div>
         <section class="news-sidebar__sidebar">
-            <div class="sidebar__email">
-                <span>SIGN UP FOR EMAIL UPDATES</span>
-                <div class="email__image">
+            <a href="http://hearnebraska.us1.list-manage1.com/subscribe?u=8a195706cf10047ecb6091c5e&id=e8436333d5" target="_blank">
+                <div class="sidebar__email">
+                    <span>SIGN UP FOR EMAIL UPDATES</span>
+                    <div class="email__image">
+                    </div>
                 </div>
-            </div>
+            </a>
             <div class="sidebar__calendar">
                 <div class="calendar__heading">
                     <h5>Festival Schedule / Lincoln Calling 2016</h5>

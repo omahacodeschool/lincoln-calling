@@ -45,10 +45,16 @@
                     <a href="/tickets">TICKETS</a>
                 </li>
                 <li class="links__link">
-                    LINEUP
+                    <div class="link__text" id="lineup">
+                        LINEUP
+                        <%= image_tag('triangle.svg') %>
+                    </div>
                 </li>
                 <li class="links__link">
-                    INFO
+                    <div class="link__text" id="info">
+                        INFO
+                        <%= image_tag('triangle.svg') %>
+                    </div>
                 </li>
                 <li class="links__link">
                     <a href="/news">NEWS</a>
@@ -56,6 +62,12 @@
                 <li class="links__link">
                     <a href="/sponsors">SPONSORS</a>
                 </li>
+                <div class="links__dropdown links__dropdown--lineup">
+                    LINEUP
+                </div>
+                <div class="links__dropdown links__dropdown--info">
+                    INFO
+                </div>
             </ul>
             <div class="nav__hear-nebraska">
                 <span>produced by</span>
