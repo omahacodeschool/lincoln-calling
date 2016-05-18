@@ -11,5 +11,8 @@ class ArtistsController < ApplicationController
     @artists = Artist.search_by_name(params[:search_input])
     @search = params[:search_input]
   end
+
+  def crop_image
+    @artist = Artist.new
   
 end

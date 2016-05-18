@@ -15,7 +15,7 @@ Rails.application.routes.draw do
         resources :visitors
         root to: "features#index"
     end
-
+    
     devise_for :users
     root to: "misc#home"
     get "lineup/artists" => "artists#index"

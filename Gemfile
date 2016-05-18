@@ -7,7 +7,7 @@ gem 'autoprefixer-rails'
 gem 'carrierwave'
 gem 'coffee-rails'
 gem 'daemons'
-gem 'devise'
+<<<<<<< HEAD
 gem 'delayed_job_active_record'
 gem 'fog'
 gem 'fog-aws'

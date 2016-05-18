@@ -5,6 +5,7 @@ class Artist < ActiveRecord::Base
   has_many(:events)
   #mount_uploader enables Carrierwave 
   mount_uploader :image, ArtistImageUploader
+  crop_uploaded :image
 
   include PgSearch
   pg_search_scope :search_by_name, :against => :name
