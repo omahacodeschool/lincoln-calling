@@ -44,13 +44,13 @@
                 <li class="links__link">
                     <a href="/tickets">TICKETS</a>
                 </li>
-                <li class="links__link">
+                <li class="links__link links--dropdown-tab">
                     <div class="link__text" id="lineup">
                         LINEUP
                         <%= image_tag('triangle.svg') %>
                     </div>
                 </li>
-                <li class="links__link">
+                <li class="links__link links--dropdown-tab">
                     <div class="link__text" id="info">
                         INFO
                         <%= image_tag('triangle.svg') %>
@@ -63,10 +63,33 @@
                     <a href="/sponsors">SPONSORS</a>
                 </li>
                 <div class="links__dropdown links__dropdown--lineup">
-                    LINEUP
+                    <ul class='dropdown__links'>
+                        <li class="links__link">
+                            <a href="/lineup/artists">ARTISTS</a>
+                        </li>
+                        <li class="links__link">
+                            <a href="/lineup/schedule">SCHEDULE</a>
+                        </li>
+                        <li class="links__link">
+                            <a href="/lineup/comedy">COMEDY</a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="links__dropdown links__dropdown--info">
-                    INFO
+                    <ul class="dropdown__links">
+                        <li class="links__link">
+                            <a href="/venues">VENUE MAP</a>
+                        </li>
+                        <li class="links__link">
+                            <a href="/visitors-guide">VISITORS GUIDE</a>
+                        </li>
+                        <li class="links__link">
+                            <a href="/faq">FAQ</a>
+                        </li>
+                        <li class="links__link">
+                            <a href="/about">ABOUT</a>
+                        </li>
+                    </ul>
                 </div>
             </ul>
             <div class="nav__hear-nebraska">

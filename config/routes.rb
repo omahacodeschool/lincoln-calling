@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     devise_for :users
     root to: "misc#home"
     get "lineup/artists" => "artists#index"
-    get "lineup/comedians" => "artists#index_comedians"
+    get "lineup/comedy" => "artists#index_comedians"
     post "lineup/artists/search" => "artists#search"
     get "lineup/schedule" => 'events#index'
     get "lineup/artists/genres/:id" => 'genres#view'
