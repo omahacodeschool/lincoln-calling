@@ -107,23 +107,29 @@
                 </div>
             </div>
             <div class="calendar__shows">
+                <div class="shows__show active">
+                    <% @day1.each do |event| %>
+                        <p>
+                            <%= event[:venue_and_artist] %><br>
+                            <span><%= event[:start_time].upcase %></span>
+                        </p>
+                    <% end %>
+                </div>
                 <div class="shows__show">
-                    <p>
-                        Too Slim and the Taildraggers at Bourbon Theatre<br>
-                        <span>5PM</span>
-                    </p>
-                    <p>
-                        Too Slim and the Taildraggers at Bourbon Theatre<br>
-                        <span>5PM</span>
-                    </p>
-                    <p>
-                        Too Slim and the Taildraggers at Bourbon Theatre<br>
-                        <span>5PM</span>
-                    </p>
-                    <p>
-                        Too Slim and the Taildraggers at Bourbon Theatre<br>
-                        <span>5PM</span>
-                    </p>
+                    <% @day2.each do |event| %>
+                        <p>
+                            <%= event[:venue_and_artist] %><br>
+                            <span><%= event[:start_time].upcase %></span>
+                        </p>
+                    <% end %>
+                </div>
+                <div class="shows__show">
+                    <% @day3.each do |event| %>
+                        <p>
+                            <%= event[:venue_and_artist] %><br>
+                            <span><%= event[:start_time].upcase %></span>
+                        </p>
+                    <% end %>
                 </div>
             </div>
             <div class="sidebar__full-schedule">

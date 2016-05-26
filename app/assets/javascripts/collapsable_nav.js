@@ -12,4 +12,16 @@ $(document).ready(function(){
             dropdown.addClass('active');
         }
     });
+    
+    $('.header__menu').click(function(){
+        if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+            $(this).children('h4').text('OPEN MENU');
+            $('.menu__up').removeClass('menu__up').addClass('menu__down');
+        } else {
+            $(this).addClass('active');
+            $(this).children('h4').text('CLOSE MENU');
+            $('.menu__down').removeClass('menu__down').addClass('menu__up');
+        }
+    });
 });

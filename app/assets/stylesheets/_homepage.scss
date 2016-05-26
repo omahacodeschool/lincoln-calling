@@ -222,9 +222,13 @@
     background-color: $white;
     overflow: scroll;
     .shows__show {
+        display: none;
         max-height: 10rem;
         min-height: 15rem;
         padding: (11rem / 16) (11rem / 16) (15rem / 16);
+        &.active {
+            display: block;
+        }
         p {
             margin: 0 0 (7rem / 16);
             color: $secondary;

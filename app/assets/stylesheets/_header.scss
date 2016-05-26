@@ -29,11 +29,20 @@
     text-align: center;
     cursor: pointer;
     .menu__down {
-        @include background-2x(url('../img/menu-down_2x.png'));
+        @include background-2x(image-url('menu-down_2x.png'));
         display: inline-block;
         width: (25rem / 16);
         height: (15rem / 16);
-        background-image: url('../img/menu-down.png');
+        background-image: image-url('menu-down.png');
+        background-size: 100%;
+        vertical-align: middle;
+    }
+    .menu__up {
+        @include background-2x(image-url('menu-up_2x.png'));
+        display: inline-block;
+        width: (25rem / 16);
+        height: (15rem / 16);
+        background-image: image-url('menu-up.png');
         background-size: 100%;
         vertical-align: middle;
     }
@@ -45,6 +54,33 @@
         font-size: (22rem / 16);
         font-weight: bold;
         vertical-align: middle;
+    }
+    &.active {
+        .menu__links {
+            @include flexbox();
+        }
+    }
+    .menu__links {
+        display: none;
+        margin-top: .75rem;
+        text-align: left;
+        .links__column {
+            width: 50%;
+        }
+        a {
+            display: block;
+            color: $white;
+            text-decoration: none;
+            margin-bottom: .5rem;
+            padding: 0 .8rem 0 .5rem;
+            font-family: 'Yanone';
+            font-size: (22rem / 16);
+            font-weight: bold;
+            vertical-align: middle;
+        }
+        a:hover {
+            color: $primary;
+        }
     }
 }
 

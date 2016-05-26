@@ -18,15 +18,15 @@ Rails.application.routes.draw do
     
     devise_for :users
     root to: "misc#home"
-    get "lineup/artists" => "artists#index"
-    get "lineup/comedy" => "artists#index_comedians"
-    post "lineup/artists/search" => "artists#search"
-    get "lineup/schedule" => 'events#index'
-    get "lineup/artists/genres/:id" => 'genres#view'
-    get "info/visitors" => 'visitors#index'
-    get "info/visitors/:id" => 'visitors#show', as: :visitors_article
-    get "info/faq" => 'info#faq'
-    get "info/about" => 'info#about'
+    get "/artists" => "artists#index"
+    get "/comedy" => "artists#index_comedians"
+    post "/artists/search" => "artists#search"
+    get "/schedule" => 'events#index'
+    get "/artists/genres/:id" => 'genres#view'
+    get "/visitors" => 'visitors#index'
+    get "/visitors/:id" => 'visitors#show', as: :visitors_article
+    get "/faq" => 'info#faq'
+    get "/about" => 'info#about'
     get "news" => 'news#index'
     get "news/:id" => "news#show", as: :news_article
     get "sidebar/events" => 'sidebars#events'
