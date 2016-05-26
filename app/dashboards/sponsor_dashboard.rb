@@ -8,7 +8,6 @@ class SponsorDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    id: Field::Number,
     name: Field::String,
     website: Field::String,
     premier: Field::Boolean,
@@ -16,7 +15,7 @@ class SponsorDashboard < Administrate::BaseDashboard
     sponsor_order: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    logo: CarrierwaveField,
+    logo: CarrierwaveField
   }
 
   # COLLECTION_ATTRIBUTES
@@ -25,7 +24,6 @@ class SponsorDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :id,
     :name,
     :website,
     :premier,
@@ -35,7 +33,6 @@ class SponsorDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :id,
     :name,
     :website,
     :premier,
@@ -43,7 +40,7 @@ class SponsorDashboard < Administrate::BaseDashboard
     :sponsor_order,
     :created_at,
     :updated_at,
-    :logo,
+    :logo
   ]
 
   # FORM_ATTRIBUTES
@@ -55,7 +52,7 @@ class SponsorDashboard < Administrate::BaseDashboard
     :premier,
     :description,
     :sponsor_order,
-    :logo,
+    :logo
   ]
 
   # Overwrite this method to customize how sponsors are displayed

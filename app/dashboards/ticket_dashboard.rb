@@ -8,14 +8,13 @@ class TicketDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    id: Field::Number,
     name: Field::String,
     link: Field::String,
     price_in_cents: Field::Number,
     eventbrite_id: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    sold_out: Field::Boolean,
+    sold_out: Field::Boolean
   }
 
   # COLLECTION_ATTRIBUTES
@@ -24,23 +23,21 @@ class TicketDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :id,
     :name,
     :link,
-    :price_in_cents,
+    :price_in_cents
   ]
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :id,
     :name,
     :link,
     :price_in_cents,
     :eventbrite_id,
     :created_at,
     :updated_at,
-    :sold_out,
+    :sold_out
   ]
 
   # FORM_ATTRIBUTES
@@ -51,7 +48,7 @@ class TicketDashboard < Administrate::BaseDashboard
     :link,
     :price_in_cents,
     :eventbrite_id,
-    :sold_out,
+    :sold_out
   ]
 
   # Overwrite this method to customize how tickets are displayed

@@ -8,7 +8,6 @@ class FeatureDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    id: Field::Number,
     title: Field::String,
     user: Field::BelongsTo,
     article_content: Field::Text,
@@ -16,7 +15,7 @@ class FeatureDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     publish_date_time: Field::DateTime,
-    type: Field::String,
+    type: Field::String
   }
 
   # COLLECTION_ATTRIBUTES
@@ -25,17 +24,15 @@ class FeatureDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :id,
     :title,
     :user,
     :article_content,
-    :image, 
+    :image
   ]
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :id,
     :title,
     :user,
     :article_content,
@@ -43,7 +40,7 @@ class FeatureDashboard < Administrate::BaseDashboard
     :created_at,
     :updated_at,
     :publish_date_time,
-    :type,
+    :type
   ]
 
   # FORM_ATTRIBUTES
@@ -55,7 +52,7 @@ class FeatureDashboard < Administrate::BaseDashboard
     :article_content,
     :image,
     :publish_date_time,
-    :type,
+    :type
   ]
 
   # Overwrite this method to customize how features are displayed
