@@ -15,7 +15,7 @@ class AboutDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     publish_date_time: Field::DateTime,
-    type: Field::String,
+    type: Field::String
   }
 
   # COLLECTION_ATTRIBUTES
@@ -26,7 +26,7 @@ class AboutDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :title,
     :user,
-    :article_content,
+    :article_content
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -39,7 +39,7 @@ class AboutDashboard < Administrate::BaseDashboard
     :created_at,
     :updated_at,
     :publish_date_time,
-    :type,
+    :type
   ]
 
   # FORM_ATTRIBUTES
@@ -51,7 +51,7 @@ class AboutDashboard < Administrate::BaseDashboard
     :article_content,
     :image,
     :publish_date_time,
-    :type,
+    :type
   ]
 
   # Overwrite this method to customize how abouts are displayed

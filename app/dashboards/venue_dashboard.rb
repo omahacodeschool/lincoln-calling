@@ -9,7 +9,6 @@ class VenueDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     events: Field::HasMany,
-    id: Field::Number,
     name: Field::String,
     address: Field::String,
     website: Field::String,
@@ -19,7 +18,7 @@ class VenueDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     latitude: Field::Number.with_options(decimals: 2),
-    longitude: Field::Number.with_options(decimals: 2),
+    longitude: Field::Number.with_options(decimals: 2)
 
   }
 
@@ -30,7 +29,6 @@ class VenueDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :events,
-    :id,
     :name,
     :address,
     :img,
@@ -41,7 +39,6 @@ class VenueDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :events,
-    :id,
     :name,
     :address,
     :website,
@@ -51,7 +48,7 @@ class VenueDashboard < Administrate::BaseDashboard
     :latitude,
     :longitude,
     :created_at,
-    :updated_at,
+    :updated_at
   ]
 
   # FORM_ATTRIBUTES
@@ -64,7 +61,7 @@ class VenueDashboard < Administrate::BaseDashboard
     :website,
     :info,
     :img,
-    :map_icon,
+    :map_icon
   ]
 
   # Overwrite this method to customize how venues are displayed

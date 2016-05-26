@@ -8,11 +8,10 @@ class PlanDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    id: Field::Number,
     phone_number: Field::Number,
     event_id: Field::Number,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }
 
   # COLLECTION_ATTRIBUTES
@@ -21,20 +20,18 @@ class PlanDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :id,
     :phone_number,
     :event_id,
-    :created_at,
+    :created_at
   ]
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :id,
     :phone_number,
     :event_id,
     :created_at,
-    :updated_at,
+    :updated_at
   ]
 
   # FORM_ATTRIBUTES
@@ -42,7 +39,7 @@ class PlanDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :phone_number,
-    :event_id,
+    :event_id
   ]
 
   # Overwrite this method to customize how plans are displayed
