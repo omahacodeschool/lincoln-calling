@@ -12,7 +12,7 @@ Rails.application.routes.draw do
         resources :tickets
         resources :users
         resources :venues
-        resources :visitors
+        resources :visitor_guides
         root to: "features#index"
     end
     
@@ -23,8 +23,8 @@ Rails.application.routes.draw do
     post "/artists/search" => "artists#search"
     get "/schedule" => 'events#index'
     get "/artists/genres/:id" => 'genres#view'
-    get "/visitors" => 'visitors#index'
-    get "/visitors/:id" => 'visitors#show', as: :visitors_article
+    get "/visitors" => 'visitor_guides#index'
+    get "/visitors/:id" => 'visitor_guides#show', as: :visitors_article
     get "/faq" => 'info#faq'
     get "/about" => 'info#about'
     get "news" => 'news#index'
