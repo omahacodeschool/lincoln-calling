@@ -1,5 +1,5 @@
 module Admin
-  class VisitorsController < Admin::ApplicationController
+  class VisitorGuidesController < Admin::ApplicationController
     # To customize the behavior of this controller,
     # simply overwrite any of the RESTful actions. For example:
     #
