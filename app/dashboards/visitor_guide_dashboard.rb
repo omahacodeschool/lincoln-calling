@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class VisitorDashboard < Administrate::BaseDashboard
+class VisitorGuideDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -14,8 +14,7 @@ class VisitorDashboard < Administrate::BaseDashboard
     image: CarrierwaveField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    publish_date_time: Field::DateTime,
-    type: Field::String
+    publish_date_time: Field::DateTime
   }
 
   # COLLECTION_ATTRIBUTES
@@ -39,8 +38,7 @@ class VisitorDashboard < Administrate::BaseDashboard
     :image,
     :created_at,
     :updated_at,
-    :publish_date_time,
-    :type
+    :publish_date_time
   ]
 
   # FORM_ATTRIBUTES
@@ -51,14 +49,13 @@ class VisitorDashboard < Administrate::BaseDashboard
     :user,
     :article_content,
     :image,
-    :publish_date_time,
-    :type
+    :publish_date_time
   ]
 
   # Overwrite this method to customize how visitors are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(visitor)
+  def display_resource(visitor_guide)
     "Visitor Article: #{visitor.title}"
   end
 

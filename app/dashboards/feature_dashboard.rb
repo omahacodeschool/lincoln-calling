@@ -14,8 +14,7 @@ class FeatureDashboard < Administrate::BaseDashboard
     image: CarrierwaveField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    publish_date_time: Field::DateTime,
-    type: Field::String
+    publish_date_time: Field::DateTime
   }
 
   # COLLECTION_ATTRIBUTES
@@ -39,8 +38,7 @@ class FeatureDashboard < Administrate::BaseDashboard
     :image,
     :created_at,
     :updated_at,
-    :publish_date_time,
-    :type
+    :publish_date_time
   ]
 
   # FORM_ATTRIBUTES
@@ -48,11 +46,10 @@ class FeatureDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :title,
-    :user,
+    # :user,
     :article_content,
     :image,
-    :publish_date_time,
-    :type
+    :publish_date_time
   ]
 
   # Overwrite this method to customize how features are displayed

@@ -17,8 +17,7 @@ class ComedianDashboard < Administrate::BaseDashboard
     image: CarrierwaveField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    headline_order: Field::Number,
-    type: Field::String
+    headline_order: Field::Number
   }
 
   # COLLECTION_ATTRIBUTES
@@ -45,8 +44,7 @@ class ComedianDashboard < Administrate::BaseDashboard
     :image,
     :created_at,
     :updated_at,
-    :headline_order,
-    :type
+    :headline_order
   ]
 
   # FORM_ATTRIBUTES
@@ -60,8 +58,7 @@ class ComedianDashboard < Administrate::BaseDashboard
     :website,
     :bio,
     :image,
-    :headline_order,
-    :type
+    :headline_order
   ]
 
   # Overwrite this method to customize how comedians are displayed

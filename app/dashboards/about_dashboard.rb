@@ -58,6 +58,6 @@ class AboutDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   # def display_resource(about)
-  #   "About ##{about.id}"
+  #   "About"
   # end
 end

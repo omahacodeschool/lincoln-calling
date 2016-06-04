@@ -60,13 +60,13 @@ faq_list.each do |title, user_id, article_content, publish_date_time|
   Faq.create(title: title, user_id: user_id, article_content: article_content, publish_date_time: publish_date_time)
 end
 
-visitor_list = [
+visitor_guide_list = [
   ["Test Article 1: A Long Titled Article", 1, "content content content content content content content content content content content content content content content content content content content content content content content content content", "http://farm4.staticflickr.com/3687/12160205823_fafd2cb706_z.jpg","2016-05-26 21:55:19"],
   ["Test Article 2", 1, "content content content content content content content content content content content content content content content content content content content content content content content content content", "http://farm4.staticflickr.com/3687/12160205823_fafd2cb706_z.jpg","2016-08-26 21:55:19"],
   ["Test Article 3 A Very Fascinating Article", 1, "content content content content content content content content content content content content content content content content content content content content content content content content content", "http://farm4.staticflickr.com/3687/12160205823_fafd2cb706_z.jpg","2016-05-15 21:55:19"]
 ]
-visitor_list.each do |title, user_id, article_content, image, publish_date_time|
-  Visitor.create(title: title, user_id: user_id, article_content: article_content, remote_image_url: image, publish_date_time: publish_date_time)
+visitor_guide_list.each do |title, user_id, article_content, image, publish_date_time|
+  VisitorGuide.create(title: title, user_id: user_id, article_content: article_content, remote_image_url: image, publish_date_time: publish_date_time)
 end
 
 About.create(title: "About", user_id: 1, article_content: "content content content content content content content content content content content content content content content content content content content content content content content content content",publish_date_time: "2016-05-26 21:55:19")
