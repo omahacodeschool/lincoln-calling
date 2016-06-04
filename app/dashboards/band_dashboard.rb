@@ -9,7 +9,6 @@ class BandDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     events: Field::HasMany,
-    id: Field::Number,
     name: Field::String,
     genres: Field::HasMany,
     origin: Field::String,
@@ -18,7 +17,12 @@ class BandDashboard < Administrate::BaseDashboard
     image: CarrierwaveField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+<<<<<<< HEAD
+    headline_order: Field::Number,
+    type: Field::String
+=======
     headline_order: Field::Number
+>>>>>>> master
   }
 
   # COLLECTION_ATTRIBUTES
@@ -28,17 +32,15 @@ class BandDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :events,
-    :id,
     :name,
     :genres,
-    :image,
+    :image
   ]
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :events,
-    :id,
     :name,
     :genres,
     :origin,
@@ -47,7 +49,12 @@ class BandDashboard < Administrate::BaseDashboard
     :image,
     :created_at,
     :updated_at,
+<<<<<<< HEAD
+    :headline_order,
+    :type
+=======
     :headline_order
+>>>>>>> master
   ]
 
   # FORM_ATTRIBUTES

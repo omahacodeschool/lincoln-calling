@@ -8,7 +8,6 @@ class VisitorGuideDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    id: Field::Number,
     title: Field::String,
     user: Field::BelongsTo,
     article_content: Field::Text,
@@ -24,17 +23,15 @@ class VisitorGuideDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :id,
     :title,
     :user,
     :article_content,
-    :image 
+    :image
   ]
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :id,
     :title,
     :user,
     :article_content,
