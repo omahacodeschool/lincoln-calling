@@ -1,20 +1,24 @@
-<div class="page_header">
-  <div class="header_divider_top"></div>
-  <div class="page_header__left page_header__left--full">NEWS</div>
-  <div class="header_divider_bottom"></div>
-</div>
+<%= render "titles/default",
+    :category => "NEWS",
+    :page => nil
+%>
 
-
-<div class="clear white_background">
-  <div class="col-8-tablet no_padding">
-<%= paginate @articles, :theme => 'lincoln_calling_pagination' %>
-  <% @articles.each do |article| %>
-    <div class="news col-4-tablet">
-      <a href="/news/<%=article.id %>"><img class="news__image" src=" <%= article.image %>"></a>
-      <div class="news__title"><%= truncate(article.title, length: 70) %></div>
+<div class="main__content">
+    <div class="content__content content--articles">
+        <%= paginate @articles, :theme => 'lincoln_calling_pagination' %> 
+        <% @articles.each do |article| %>
+            <div class="articles__article">
+                <a href="/news/<%= article.id %>">
+                    <div class="article__image" style="background-image: url(<%= article.image %>)">
+                    </div>
+                    <div class="article__title">
+                        <h5><%= truncate(article.title, length: 62) %></h5>
+                    </div>
+                </a>
+            </div>
+        <% end %>
     </div>
-    <% end %>
-  </div>
-
- <%= render "sidebars/events" %>
- </div>
+    <div class="content__divider">
+    </div>
+    <%= render "sidebars/events" %>
+</div>

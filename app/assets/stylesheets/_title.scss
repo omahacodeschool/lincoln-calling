@@ -1,23 +1,30 @@
 .body__title {
     @include flexbox();
     @include flexbox-align-items(center);
+    position: relative;
+    margin-bottom: (25rem / 16);
     padding: (8rem / 16) (15rem / 16);
     background-color: $light;
-    h3 {
+    z-index: 0;
+    .title__parent {
+        p {
+            position: relative;
+        }
+    }
+    strong {
         padding-right: (15rem / 16);
-        font-family: 'Yanone Kaffeesatz';
-        font-size: (26rem / 16);
-        border-right: (2rem / 16) solid $white;
     }
-    h4 {
-        padding-left: (15rem / 16);
-        font-family: 'Yanone Kaffeesatz';
-        font-size: (26rem / 16);
-        font-weight: 300;
+    span {
+        width: (2rem / 16);
+        background-color: white;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
     }
-    h3,
-    h4 {
+    p {
         margin: 0;
+        padding-left: (15rem / 16);
         color: $secondary;
     }
 }

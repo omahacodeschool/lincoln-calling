@@ -43,8 +43,8 @@
             <% end %>
         </div>
     </section>
-    <div class="main__news-sidebar">
-        <section class="news-sidebar__news">
+    <div class="main__content">
+        <section class="content__content content--news">
             <div class="news__images">
                 <% @articles.each_with_index do |image, index| %>
                     <% if image == @articles[0] %>  
@@ -77,66 +77,8 @@
                 </div>
             </div>
         </section>
-        <div class="news-sidebar__divider">
+        <div class="content__divider">
         </div>
-        <section class="news-sidebar__sidebar">
-            <a href="http://hearnebraska.us1.list-manage1.com/subscribe?u=8a195706cf10047ecb6091c5e&id=e8436333d5" target="_blank">
-                <div class="sidebar__email">
-                    <span>SIGN UP FOR EMAIL UPDATES</span>
-                    <div class="email__image">
-                    </div>
-                </div>
-            </a>
-            <div class="sidebar__calendar">
-                <div class="calendar__heading">
-                    <h5>Festival Schedule / Lincoln Calling 2016</h5>
-                </div>
-                <div class="calendar__days">
-                    <div class="days__day active">
-                        <h5>THURSDAY</h5>
-                        <h4>6</h4>
-                    </div>
-                    <div class="days__day">
-                        <h5>FRIDAY</h5>
-                        <h4>7</h4>
-                    </div>
-                    <div class="days__day">
-                        <h5>SATURDAY</h5>
-                        <h4>8</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="calendar__shows">
-                <div class="shows__show active">
-                    <% @day1.each do |event| %>
-                        <p>
-                            <%= event[:venue_and_artist] %><br>
-                            <span><%= event[:start_time].upcase %></span>
-                        </p>
-                    <% end %>
-                </div>
-                <div class="shows__show">
-                    <% @day2.each do |event| %>
-                        <p>
-                            <%= event[:venue_and_artist] %><br>
-                            <span><%= event[:start_time].upcase %></span>
-                        </p>
-                    <% end %>
-                </div>
-                <div class="shows__show">
-                    <% @day3.each do |event| %>
-                        <p>
-                            <%= event[:venue_and_artist] %><br>
-                            <span><%= event[:start_time].upcase %></span>
-                        </p>
-                    <% end %>
-                </div>
-            </div>
-            <div class="sidebar__full-schedule">
-                <span>
-                    <a href="/lineup">see full schedule</a>
-                </span>
-            </div>
-        </section>
+        <%= render "sidebars/events" %>
     </div>
 </main>

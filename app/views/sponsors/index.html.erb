@@ -1,35 +1,13 @@
- <div class="page_header">
-  <div class="header_divider_top"></div>
-  <div class="page_header__left page_header__left--full">SPONSORS</div>
-  <div class="header_divider_bottom"></div>
-</div>
+<%= render "titles/default",
+    :category => "SPONSORS",
+    :page => nil
+%>
 
-<!-- Note: this white background doesn't fit Micheal's comp. If you notice between columns the background shows through. I'm leaving it here because the margins applied to it are creating a gutter -->
-<div class="clear white_background">
-
-  <div class="container col-8-tablet">
-    <% @premier_sponsors.each do |sponsor| %>
-    <div>
-      <a href="<%= sponsor.website %>" class="primary_sponsor">
-        <img src="<%= sponsor.logo %>" class="primary_sponsor__logo">
-        <span class="primary_sponsor__name"><%= sponsor.name %></span>
-        <span class="primary_sponsor__description"><%= sponsor. description %></span>
-      </a>
+<div class="main__content">
+    <div class="content__content content--sponsors">
+        
     </div>
-    <% end %>
-  </div>
-  <%= render "sidebars/events" %>
-
-  <% @sponsors.each do |sponsor| %>
-  <div class="no_padding col-4-tablet">
-    <div class="artist_module">
-      <a href="<%= sponsor.website %>" class="primary_sponsor">
-        <img class="artist_module__image" src="<%= sponsor.logo %>"></img>
-        <div class="artist_module__name"><%= sponsor.name %></div>
-      </a>
+    <div class="content__divider">
     </div>
-  </div>
-  <% end %>
+    <%= render "sidebars/events" %>
 </div>
-
-

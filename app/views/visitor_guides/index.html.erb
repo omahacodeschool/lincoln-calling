@@ -1,23 +1,24 @@
-<div class="page_header">
-  <div class="header_divider_top"></div>
-  <div class="page_header__left page_header__left--full">VISITOR</div>
-  <div class="header_divider_bottom"></div>
-</div>
+<%= render "titles/default",
+    :category => "INFO",
+    :page => "Visitors"
+%>
 
-
-<div class="clear">
-  <div class="col-8-tablet no_padding">
+<div class="main__content">
+    <div class="content__articles">
         <%= paginate @articles, :window => 2, :theme => 'lincoln_calling_pagination' %> 
-    <% @articles.each do |article| %>
-      <a href="/info/visitors/<%= article.id %>">
-        <div class="visitor_guide col-4-tablet">
-          <img class="visitor_guide__image" src="<%= article.image %>"></img>
-      </a>
-          <div class="visitor_guide__title"><%= truncate(article.title, length: 70) %></div>
-        </div>
-    <% end %>
-  </div>
-  
- <%= render "sidebars/events" %>
-
+        <% @articles.each do |article| %>
+            <% link_to article do %>
+                <div class="articles__article">
+                    <div class="article__image" style="background-image: url(<%= article.image %>)">
+                    </div>
+                    <div class="article__title">
+                        <%= truncate(article.title, length: 70) %>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+    <div class="content__divider">
+    </div>
+    <%= render "sidebars/events" %>
 </div>

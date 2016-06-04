@@ -1,12 +1,13 @@
-<div class="white_background">
-  <div class="clear">
-    <div class="col-8-tablet faq">
-      <% @faq.each do |faq| %>
-        <div class="faq__question"><%=faq.title%></div>
-        <div class="faq__answer"><%=faq.article_content%></div>
-      <% end %>
-    </div>
-       <%= render "sidebars/events" %>
-  </div>
-</div>
+<%= render "titles/default",
+    :category => "INFO",
+    :page => "FAQ"
+%>
 
+<div class="main__content">
+    <div class="content__content content--faq">
+        
+    </div>
+    <div class="content__divider">
+    </div>
+    <%= render "sidebars/events" %>
+</div>  

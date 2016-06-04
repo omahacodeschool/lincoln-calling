@@ -1,17 +1,13 @@
-<div class="page_header">
-  <div class="header_divider_top"></div>
-  <div class="page_header__left page_header__left--full">ABOUT</div>
-  <div class="header_divider_bottom"></div>
+<%= render "titles/default",
+    :category => "INFO",
+    :page => "About"
+%>
+
+<div class="main__content">
+    <div class="content__content content--about">
+        
+    </div>
+    <div class="content__divider">
+    </div>
+    <%= render "sidebars/events" %>
 </div>  
-<div class="clear">
-  <div class="about col-8-tablet">
-    <% @about.each do |about| %>
-      <img class="about__image" src="<%=about.image%>">
-      <div class="about__content"><%=about.article_content%></div>
-    <% end %>
-  </div>
-  <%= render "sidebars/events" %>
-</div>
-
-
-  

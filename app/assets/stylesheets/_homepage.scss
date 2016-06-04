@@ -1,21 +1,18 @@
 .main__hero {
-    @include background-2x(image_url('soundwaves_2x.png'));
+    @include background-2x(image_url('hero-background_2x.png'));
     margin-bottom: (20rem / 16);
     padding: (32rem / 16) (18rem / 16);
     background-color: $secondary;
-    background-image: image_url('soundwaves.png');
+    background-image: image_url('hero-background.png');
     background-repeat: repeat-x;
-    background-position: 0 (42rem / 16);
-    background-size: 70px;
+    background-position: 50% 0%;
+    background-size: cover;
 }
 
 .hero__headliners {
     text-align: center;
     h2 {
-        margin: 0;
         padding: 0 (32rem / 16);
-        font-family: 'Yanone';
-        font-size: (52rem / 16);
         font-weight: bold;
         a {
             color: $white;
@@ -51,16 +48,6 @@
         background-color: $dark;
         cursor: pointer;
     }
-    h3 {
-        margin: 0;
-        font-family: 'Yanone';
-        font-size: (35rem / 16);
-        font-weight: bold;
-    }
-    h2 {
-        margin: 0;
-        font-size: (58rem / 16);
-    }
     .sold-out__label {
         position: absolute;
         top: 50%;
@@ -72,7 +59,6 @@
         -webkit-transform: translate(0, -50%) rotate(10deg);
         transform: translate(0, -50%) rotate(10deg);
         background-color: $dark;
-        font-family: 'Yanone';
         font-size: (34rem / 16);
         font-weight: bold;
     }
@@ -92,7 +78,7 @@
     }
 }
 
-.news-sidebar__news {
+.content--news {
     @include flexbox();
     .news__images,
     .news__headlines {
@@ -119,8 +105,6 @@
         background-color: $white;
         h3 {
             color: $dark;
-            font-family: 'Yanone';
-            font-size: (22rem / 16);
             font-weight: bold;
             text-transform: uppercase;
             cursor: pointer;
@@ -131,7 +115,6 @@
     }
     .headlines__see-more-news {
         display: block;
-        font-family: 'Yanone';
         font-size: (18rem / 16);
         text-align: right;
         text-decoration: underline;
@@ -147,135 +130,10 @@
     }
 }
 
-.news-sidebar__sidebar {
-    position: relative;
-}
-
-.sidebar__email {
-    @include flexbox();
-    @include flexbox-justify-content(space-between);
-    width: 95%;
-    margin: (20rem / 16) auto;
-    border: .15rem solid $light;
-    background-color: $white;
-    color: $dark;
-    font-family: 'Yanone';
-    font-size: (22rem / 16);
-    font-weight: bold;
-    span {
-        padding: (11rem / 16);
-    }
-    .email__image {
-        @include background-2x(image_url('computer_2x.png'));
-        position: relative;
-        width: 22%;
-        max-width: 51px;
-        background-image: image_url('computer.png');
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-        background-size: contain;
-    }
-}
-
-.calendar__heading {
-    padding: (11rem / 16);
-    background-color: $secondary;
-    h5 {
-        margin: 0;
-        font-family: 'Yanone';
-        font-weight: lighter;
-    }
-}
-
-.calendar__days {
-    @include flexbox();
-    @include flexbox-justify-content(space-between);
-    padding: (11rem / 16);
-    background-color: $light;
-    text-align: center;
-    h4,
-    h5 {
-        margin: 0;
-        font-family: 'Yanone';
-    }
-    h4 {
-        font-size: (27rem / 16);
-        font-weight: bold;
-    }
-    h5 {
-        font-size: (18rem / 16);
-    }
-    .days__day {
-        width: 30%;
-        padding: (7rem / 16);
-        background-color: $secondary;
-        cursor: pointer;
-        &.active {
-            background-color: $primary;
-            cursor: default;
-        }
-    }
-}
-
-.calendar__shows {
-    position: relative;
-    background-color: $white;
-    overflow: scroll;
-    .shows__show {
-        display: none;
-        max-height: 10rem;
-        min-height: 15rem;
-        padding: (11rem / 16) (11rem / 16) (15rem / 16);
-        &.active {
-            display: block;
-        }
-        p {
-            margin: 0 0 (7rem / 16);
-            color: $secondary;
-            font-family: 'Yanone';
-            font-size: (18rem / 16);
-            span {
-                font-weight: lighter;
-                font-size: (14rem / 16);
-            }
-            &:nth-last-of-type(1) {
-                margin-bottom: (48rem / 16);
-            }
-            &:hover {
-                color: $primary;
-                cursor: pointer;
-            }
-        }
-    }
-}
-
-.sidebar__full-schedule {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    padding: (5rem / 16) (17rem / 16);
-    background-color: $light;
-    text-align: right;
-    span {
-        a {
-            color: $dark;
-            font-family: 'Yanone';
-            text-decoration: underline;
-            &:hover {
-                color: $primary;
-            }
-        }
-    }
-}
-
 @media only screen and (min-width: 800px) {
     .main__hero {
-        @include background-2x(image_url('big-soundwaves_2x.png'));
         margin-bottom: (25rem / 16);
         padding: (18rem / 16);
-        background-image: image_url('big-soundwaves.png');
-        background-size: 84px;
     }
     .hero__supporting {
         display: block;
@@ -284,8 +142,6 @@
         text-align: center;
         h5 {
             margin: 0;
-            font-family: 'Yanone';
-            font-size: (34rem / 16);
             font-weight: bold;
             line-height: (44rem / 16);
             a {
@@ -296,33 +152,6 @@
                     color: $primary;
                 }
             }
-        }
-    }
-    .news-sidebar__news {
-        width: 66%;
-    }
-    .main__news-sidebar {
-        @include flexbox();
-        @include flexbox-justify-content(space-between);
-        position: relative;
-    }
-    .news-sidebar__divider {
-        position: absolute;
-        top: 0;
-        left: 67.5%;
-        width: .1rem;
-        height: 100%;
-        background-color: $light;
-    }
-    .news-sidebar__sidebar {
-        width: 31%;
-    }
-    .sidebar__email {
-        width: 100%;
-        margin-top: 0;
-        margin-bottom: (16rem / 16);
-        &:hover {
-            cursor: pointer;
         }
     }
 }

@@ -7,7 +7,6 @@
     }
     .box__query {
         width: 100%;
-        font-family: 'Yanone Kaffeesatz';
         font-size: (34rem / 16);
         font-weight: 300;
         border: 0;
@@ -15,7 +14,6 @@
         color: $dark;
     }
     .box__query::placeholder {
-        font-family: 'Yanone Kaffeesatz';
         font-size: (34rem / 16);
         font-weight: 300;
         color: $light;
@@ -63,7 +61,6 @@
         background-color: $light;
         color: $dark;
         text-transform: uppercase;
-        font-family: 'Oswald';
         padding: (6rem / 16);
         text-align: center;
     }

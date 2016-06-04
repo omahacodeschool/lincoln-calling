@@ -1,8 +1,8 @@
 // ---- ---- ---- ---- VARIABLES ---- ---- ---- ----
 
 // Site Colors
-$primary: #ff8110;
-$secondary: #565351;
+$primary: #fc426c;
+$secondary: #272e95;
 $light: #ddd;
 $mid: #c9c9c9;
 $dark: #8f8f8f;
@@ -41,40 +41,40 @@ $gutter: 1em;
 $warningColor: #f00;
 
 // Typography
-$baseFont: 'Open Sans', sans-serif;
+$baseFont: 'GT Walsheim Regular', sans-serif;
 $baseFontColor: $white;
-$baseFontSize: 1rem;
+$baseFontSize: .9rem;
 $baseFontWeight: 300;
 $baseLineHeight: 1.35;
 
 // Heading Typography
-$headingFont: 'Montserrat';
+$headingFont: 'GT Walsheim Bold', sans-serif;
 $headingFontColor: $baseFontColor;
-$headingLineHeight: 1.1;
+$headingLineHeight: 1.5;
 $headingTextShadow: none;
 
 $h1Color: $headingFontColor;
-$h1Size: 1.875em;
+$h1Size: 3rem;
 $h1FontWeight: 300;
 
 $h2Color: $headingFontColor;
-$h2Size: 1.5em;
+$h2Size: 2.5rem;
 $h2FontWeight: 300;
 
 $h3Color: $headingFontColor;
-$h3Size: 1.375em;
+$h3Size: 1.5rem;
 $h3FontWeight: 300;
 
 $h4Color: $headingFontColor;
-$h4Size: 1.25em;
+$h4Size: 1.1rem;
 $h4FontWeight: 300;
 
 $h5Color: $headingFontColor;
-$h5Size: 1.125em;
+$h5Size: 1rem;
 $h5FontWeight: 300;
 
 $h6Color: $headingFontColor;
-$h6Size: 1em;
+$h6Size: .8rem;
 $h6FontWeight: 300;
 
 $codeFont: monospace;

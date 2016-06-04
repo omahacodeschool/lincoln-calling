@@ -1,0 +1,127 @@
+.content__sidebar {
+    position: relative;
+}
+
+.sidebar__email {
+    @include flexbox();
+    @include flexbox-justify-content(space-between);
+    width: 95%;
+    margin: (20rem / 16) auto;
+    border: .15rem solid $light;
+    background-color: $white;
+    color: $dark;
+    font-weight: bold;
+    span {
+        padding: (11rem / 16);
+    }
+    .email__image {
+        @include background-2x(image_url('computer_2x.png'));
+        position: relative;
+        width: 22%;
+        max-width: 51px;
+        background-image: image_url('computer.png');
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: contain;
+    }
+}
+
+.sidebar__full-schedule {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: (5rem / 16) (17rem / 16);
+    background-color: $light;
+    text-align: right;
+    span {
+        a {
+            color: $dark;
+            text-decoration: underline;
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+}
+
+.calendar__heading {
+    padding: (11rem / 16);
+    background-color: $secondary;
+    h5 {
+        margin: 0;
+        font-weight: lighter;
+    }
+}
+
+.calendar__days {
+    @include flexbox();
+    @include flexbox-justify-content(space-between);
+    padding: (11rem / 16);
+    background-color: $light;
+    text-align: center;
+    h4,
+    h5 {
+        margin: 0;
+    }
+    h4 {
+        font-weight: bold;
+    }
+    .days__day {
+        width: 30%;
+        padding: (7rem / 16);
+        background-color: $secondary;
+        cursor: pointer;
+        p,
+        h3 {
+            line-height: 1;
+        }
+        &.active {
+            background-color: $primary;
+            cursor: default;
+        }
+    }
+}
+
+.calendar__shows {
+    position: relative;
+    background-color: $white;
+    overflow: scroll;
+    .shows__show {
+        display: none;
+        max-height: 10rem;
+        min-height: 15rem;
+        padding: (11rem / 16) (11rem / 16) (15rem / 16);
+        &.active {
+            display: block;
+        }
+        p {
+            margin: 0 0 (7rem / 16);
+            color: $secondary;
+            span {
+                font-weight: lighter;
+            }
+            &:nth-last-of-type(1) {
+                margin-bottom: (48rem / 16);
+            }
+            &:hover {
+                color: $primary;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .content__sidebar {
+        width: 31%;
+    }
+    .sidebar__email {
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: (16rem / 16);
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

@@ -3,7 +3,8 @@
     max-width: 1000px;
     margin: 0 auto;
     background-image: image_url('background-hatch.png');
-    background-size: 15px;
+    background-size: 9px;
+    background-color: $white;
     box-shadow: 0 0 20px $shadow;
     overflow: hidden;
 }
@@ -11,12 +12,6 @@
 a {
     transition-duration: .1s;
     text-decoration: none;
-}
-
-.body__content {
-    margin-top: (25rem / 16);
-    padding: 1.5625rem 4.375rem;
-    background-color: $white;
 }
 
 @media only screen and (min-width: 850px) {

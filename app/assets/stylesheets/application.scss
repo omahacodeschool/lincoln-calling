@@ -6,14 +6,19 @@
 @import "base/fonts";
 
 @import "general";
+@import "text";
 
 @import "header";
 @import "footer";
+
+@import "content";
+@import "sidebar";
 
 @import "title";
 
 @import "homepage";
 @import "artists";
+@import "articles";
 
 @import "ocs/artist_module.scss";
 @import "ocs/artist_profile.scss";
