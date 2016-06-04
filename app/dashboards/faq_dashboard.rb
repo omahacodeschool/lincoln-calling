@@ -15,8 +15,7 @@ class FaqDashboard < Administrate::BaseDashboard
     image: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    publish_date_time: Field::DateTime,
-    type: Field::String,
+    publish_date_time: Field::DateTime
   }
 
   # COLLECTION_ATTRIBUTES
@@ -41,8 +40,7 @@ class FaqDashboard < Administrate::BaseDashboard
     :image,
     :created_at,
     :updated_at,
-    :publish_date_time,
-    :type,
+    :publish_date_time
   ]
 
   # FORM_ATTRIBUTES
@@ -53,8 +51,7 @@ class FaqDashboard < Administrate::BaseDashboard
     :user,
     :article_content,
     :image,
-    :publish_date_time,
-    :type,
+    :publish_date_time
   ]
 
   # Overwrite this method to customize how faqs are displayed
