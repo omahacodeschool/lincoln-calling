@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class VisitorDashboard < Administrate::BaseDashboard
+class VisitorGuideDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -58,7 +58,7 @@ class VisitorDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how visitors are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(visitor)
+  def display_resource(visitor_guide)
     "Visitor Article: #{visitor.title}"
   end
 
