@@ -24,9 +24,7 @@ class FeatureDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :title,
-    :user,
-    :article_content,
-    :image
+    :user
   ]
 
   # SHOW_PAGE_ATTRIBUTES

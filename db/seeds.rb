@@ -6,7 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-user = User.create :id => 1, :first_name => 'John', :last_name => 'Testuser', :email => 'testuser@testuser.com', blurb: 'blurb blurb blurb blurb blurb', remote_profile_pic_url: "http://bloximages.chicago2.vip.townnews.com/journalstar.com/content/tncms/assets/v3/editorial/e/85/e8588925-93ad-5923-ad37-7b1fbc25d5e4/5022d8cf9445e.preview-620.jpg",:password => 'topsecret', :password_confirmation => 'topsecret', :admin => 'true'
+user = User.create(
+    :first_name => 'John', :last_name => 'Testuser', :email => 'testuser@testuser.com', blurb: 'blurb blurb blurb blurb blurb', remote_profile_pic_url: "http://bloximages.chicago2.vip.townnews.com/journalstar.com/content/tncms/assets/v3/editorial/e/85/e8588925-93ad-5923-ad37-7b1fbc25d5e4/5022d8cf9445e.preview-620.jpg",:password => 'topsecret', :password_confirmation => 'topsecret', :admin => 'true'
+)
 
 band_list = [
   [ 1,"Future Islands", "Maryland", "google.com", "Lorem ipsum dolor sit amet, putent propriae adversarium mel an, congue legere suscipit his at. Nec oblique prompta ex. Utinam eirmod convenire mea te, sed sint urbanitas interesset ea. Cum dolor aliquip aliquando ad, in dicta cetero insolens pri. Ex pro vidit option definitionem.Lorem ipsum dolor sit amet, putent propriae adversarium mel an, congue legere suscipit his at. Nec oblique prompta ex. Utinam eirmod convenire mea te, sed sint urbanitas interesset ea. Cum dolor aliquip aliquando ad, in dicta cetero insolens pri. Ex pro vidit option definitionem.Lorem ipsum dolor sit amet, putent propriae adversarium mel an, congue legere suscipit his at. Nec oblique prompta ex. Utinam eirmod convenire mea te, sed sint urbanitas interesset ea. Cum dolor aliquip aliquando ad, in dicta cetero insolens pri. Ex pro vidit option definitionem.", "http://c4.staticflickr.com/8/7674/17562456899_0d3dcd79f2_h.jpg", 1, "Band" ],

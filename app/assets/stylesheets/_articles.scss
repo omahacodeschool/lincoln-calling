@@ -1,4 +1,4 @@
-.content__articles {
+.content--articles {
     @include flexbox();
     @include flexbox-flex-wrap(wrap);
     @include flexbox-justify-content(space-between);
@@ -14,14 +14,15 @@
         border-right: 10px solid $primary;
         height: 180px;
         background-color: $light;
-        transition-duration: .2s;
+        background-size: cover;
+        transition-duration: .1s;
     }
     .article__title {
         padding: 13px 11px;
         h5 {
             margin: 0;
             color: $primary;
-            transition-duration: .2s;
+            transition-duration: .1s;
         }
     }
     a {

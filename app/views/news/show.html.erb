@@ -1,50 +1,60 @@
+<%= render "titles/default",
+    :category => "NEWS",
+    :page => @article.title
+%>
 
-<head>
-  <meta property="og:url"           content="<%= news_article_url(:id => @article.id) %>"/>
-  <meta property="og:type"          content="article" />
-  <meta property="og:title"         content="<%= @article.title %>" />
-  <meta property="og:description"   content="<%= truncate(@article.article_content, length: 120) %>" />
-</head>
-
-
-<div class="page_header">
-  <div class="header_divider_top"></div>
-  <div class="page_header__right"><%= truncate(@article.title, length: 100) %></div>
-  <div class="page_header__left">NEWS</div>
-  <div class="header_divider_bottom"></div>
-</div> 
-<div class="clear white_background">
-  <div class="news_single_container container col-8-tablet">
-
-    <img class="news_single__image" src="<%= @article.image %>">
-
-    <div class="news_single__icon"></div>
-    
-    <div class="news_single__title"><%= @article.title %></div>
-
-    <div class="news_single__byline">by <%= @article.user_access.user_full_name %> | <%= @article.monthdayyear %></div>
-    
-    <div class="news_single__content">
-      <%= @article.article_content %>
+<div class="main__content">
+    <div class="content__content content--article">
+        <div class="article__header-image" style="background-image: url(<%= @article.image %>)">
+        </div>
+        <div class="article--container">
+            <header class="article__main-info">
+                <div class="main-info__icon">
+                    
+                </div>
+                <div class="main-info__headline-byline">
+                    <div class="headline-byline__headline">
+                        <h1><%= @article.title %></h1>
+                    </div>
+                    <div class="headline-byline__byline">
+                        <p><em>by <%= @article.user_access.user_full_name %> | <%= @article.monthdayyear %></em></p>
+                    </div>
+                </div>
+            </header>
+            <main class="article__story">
+                <%= raw @markdown.render(@article.article_content) %>
+            </main>
+            <div class="article__tagline">
+                <div class="tagline__image" style="background-image: url(<%= @article.user_access.profile_pic %>)">
+                </div>
+                <div class="tagline__tagline">
+                    <em><%= @article.user_access.blurb %></em>
+                </div>
+            </div>
+        </div>
+        <div class="article__share">
+            <div class="share__text">
+                <h4>SHARE</h4>
+                <span></span>
+            </div>
+            <div class="share__buttons">
+                <div class="buttons__button buttons--twitter">
+                    <a href="https://twitter.com/intent/tweet?url=http://www.lincolncalling.com/news/<%= @article.slug %>&text=<%= truncate(@article.title, length: 95) %>&via=lincolncalling_" target="_blank">
+                        <img src="<%= image_url('twitter.png') %>" srcset="<%= image_url('twitter.png') %> 1x, <%= image_url('twitter_2x.png') %> 2x" alt="Share on Twitter">
+                    </a>
+                </div>
+                <div class="buttons__button buttons--facebook">
+                    <a href="https://facebook.com/sharer.php?u=http://www.lincolncalling.com/news/<%= @article.slug %>" target="_blank">
+                        <img src="<%= image_url('facebook.png') %>" srcset="<%= image_url('facebook.png') %> 1x, <%= image_url('facebook_2x.png') %> 2x" alt="Share on Facebook">
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="writer clear">
-      <img class="writer__image" src="<%= @article.user_access.profile_pic %>">
-      <div class="writer__info"><%= @article.user_access.blurb %></div>
+    <div class="content__divider">
     </div>
-
-    <div class="social_footer__top"></div>
-    <div class="social_footer__right icon">
-      <div class="social_footer__icon icon">
-        <div class="fb-share-button" data-href="<%= news_article_url(:id => @article.id) %>" data-layout="button" data-mobile-iframe="false"></div>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="LincolnCalling,HearNebraska">Tweet</a>
-      </div>
-    </div>
-    <div class="social_footer__left">SHARE</div>
-    <div class="social_footer__bottom"></div>
-  </div>
-
-  <%= render "sidebars/events" %>
+    <section class="content__sidebar">
+        <%= render "sidebars/email" %>
+        <%= render "sidebars/events" %>
+    </section>
 </div>
-
-

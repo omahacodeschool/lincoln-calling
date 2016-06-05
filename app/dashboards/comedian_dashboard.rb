@@ -28,8 +28,7 @@ class ComedianDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :events,
     :name,
-    :genres,
-    :image
+    :genres
   ]
 
   # SHOW_PAGE_ATTRIBUTES

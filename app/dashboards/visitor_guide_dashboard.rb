@@ -56,7 +56,7 @@ class VisitorGuideDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(visitor_guide)
-    "Visitor Article: #{visitor.title}"
+    "Visitor Article: #{visitor_guide.title}"
   end
 
 end

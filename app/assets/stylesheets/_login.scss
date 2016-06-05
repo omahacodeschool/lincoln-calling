@@ -1,0 +1,53 @@
+.devise-sessions-new,
+.devise-passwords-new {
+    form {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        background-color: $white;
+        a {
+            display: block;
+            text-decoration: underline;
+            margin-top: 1rem;
+            color: $dark;
+            text-transform: uppercase;
+        }
+    }
+    label {
+        color: $dark;
+        display: block;
+        margin: 0.75rem 0;
+    }
+    input {
+        color: $black;
+        padding: .75rem;
+        width: 50%;
+    }
+    input[type="checkbox"] {
+        display: inline-block;
+        width: 15px;
+    }
+    input[type="submit"] {
+        width: 20rem;
+        border: 0;
+        background-color: $secondary;
+        transition-duration: .1s;
+        color: $white;
+        text-transform: uppercase;
+        &:hover {
+            background-color: $primary;
+        }
+    }
+    .remember-me {
+        display: inline-block;
+    }
+    input:focus {
+        outline: 0;
+        border: 1px solid $primary;
+    }
+}
+
+.devise-passwords-new {
+    input[type="submit"] {
+        margin-top: 1rem;
+    }
+}

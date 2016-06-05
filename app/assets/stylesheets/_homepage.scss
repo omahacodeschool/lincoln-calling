@@ -40,12 +40,13 @@
     position: relative;
     width: calc(50% - .5rem);
     margin-bottom: (16rem / 16);
-    padding: (13rem / 16) (16rem / 16);
+    padding: (10rem / 16);
     background-color: $primary;
+    border: 2px solid $primary;
     text-align: center;
-    transition-duration: .25s;
+    transition-duration: .1s;
     &:hover {
-        background-color: $dark;
+        border: 2px solid $white;
         cursor: pointer;
     }
     .sold-out__label {
@@ -65,6 +66,7 @@
     &.sold-out {
         background-color: $light;
         cursor: default;
+        border: 0;
         &:nth-of-type(2) {
             .sold-out__label {
                 -ms-transform: translate(0, -50%) rotate(-8deg);
@@ -75,6 +77,9 @@
         &:hover {
             cursor: default;
         }
+    }
+    h3 {
+        text-transform: uppercase;
     }
 }
 
@@ -101,9 +106,10 @@
         }
     }
     .news__headlines {
+        position: relative;
         padding: (16rem / 16);
         background-color: $white;
-        h3 {
+        h4 {
             color: $dark;
             font-weight: bold;
             text-transform: uppercase;
@@ -114,12 +120,16 @@
         }
     }
     .headlines__see-more-news {
+        position: absolute;
+        right: 1rem;
+        bottom: 0.3125rem;
         display: block;
         font-size: (18rem / 16);
         text-align: right;
         text-decoration: underline;
         a {
             color: $dark;
+            font-size: .9rem;
             &:hover {
                 color: $primary;
             }

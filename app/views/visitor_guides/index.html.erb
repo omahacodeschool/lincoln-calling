@@ -4,21 +4,24 @@
 %>
 
 <div class="main__content">
-    <div class="content__articles">
+    <div class="content__content content--articles">
         <%= paginate @articles, :window => 2, :theme => 'lincoln_calling_pagination' %> 
         <% @articles.each do |article| %>
-            <% link_to article do %>
-                <div class="articles__article">
+            <div class="articles__article">
+                <a href="/visitors/<%= article.slug %>">
                     <div class="article__image" style="background-image: url(<%= article.image %>)">
                     </div>
                     <div class="article__title">
-                        <%= truncate(article.title, length: 70) %>
+                        <h5><%= truncate(article.title, length: 62) %></h5>
                     </div>
-                </div>
-            <% end %>
+                </a>
+            </div>
         <% end %>
     </div>
     <div class="content__divider">
     </div>
-    <%= render "sidebars/events" %>
+    <section class="content__sidebar">
+        <%= render "sidebars/email" %>
+        <%= render "sidebars/events" %>
+    </section>
 </div>

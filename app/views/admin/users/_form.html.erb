@@ -14,7 +14,7 @@ and renders all form fields for a resource's editable attributes.
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Page/Form
 %>
 
-<%= form_for([namespace, page.resource], html: { class: "form" }) do |f| %>
+<%= form_for([namespace, page.resource], html: { class: "administrate__form" }) do |f| %>
   <% if page.resource.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -40,3 +40,21 @@ and renders all form fields for a resource's editable attributes.
     <%= f.submit %>
   </div>
 <% end %>
+<style>
+.administrate__form {
+    padding: 1rem;
+}
+.field-unit--carrierwave-field label {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 14.70196%;
+    text-align: right;
+}
+input[type="file"] {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 40.29137%;
+}
+</style>

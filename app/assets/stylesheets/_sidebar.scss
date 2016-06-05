@@ -7,26 +7,34 @@
     @include flexbox-justify-content(space-between);
     width: 95%;
     margin: (20rem / 16) auto;
-    border: .15rem solid $light;
+    border: .15rem solid $primary;
     background-color: $white;
-    color: $dark;
+    color: $primary;
     font-weight: bold;
+    transition-duration: .1s;
     span {
         padding: (11rem / 16);
+        line-height: 1;
+        margin-top: 5px;
+        font-size: .8rem;
     }
     .email__image {
-        @include background-2x(image_url('computer_2x.png'));
         position: relative;
         width: 22%;
         max-width: 51px;
-        background-image: image_url('computer.png');
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-        background-size: contain;
+        font-family: 'HN-icons';
+        font-size: 2.8rem;
+        line-height: 1;
+        font-weight: lighter;
+    }
+    &:hover {
+        border: .15rem solid $primary;
+        background-color: $primary;
+        color: $white;
     }
 }
 
-.sidebar__full-schedule {
+.shows__full-schedule {
     position: absolute;
     left: 0;
     bottom: 0;

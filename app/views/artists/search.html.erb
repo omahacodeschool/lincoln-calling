@@ -1,11 +1,9 @@
-<div class="body__title">
-    <div class="title__parent">
-        <h3>LINEUP</h3>
-    </div>
-    <div class="title__page">
-        <h4>Search: <%= @search %></h4>
-    </div>
-</div> 
+<% page = "Search: " + @search %>
+
+<%= render "titles/default",
+    :category => "LINEUP",
+    :page => page
+%>
 
 <main class="body__content">
     <div class="content__search">

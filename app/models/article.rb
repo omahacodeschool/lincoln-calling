@@ -17,4 +17,6 @@ class Article < ActiveRecord::Base
   belongs_to(:user)
   paginates_per 6
   validates :title, :article_content, :publish_date_time, presence: true
+  extend FriendlyId
+  friendly_id :title, use: :slugged
 end

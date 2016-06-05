@@ -8,7 +8,7 @@
         <%= paginate @articles, :theme => 'lincoln_calling_pagination' %> 
         <% @articles.each do |article| %>
             <div class="articles__article">
-                <a href="/news/<%= article.id %>">
+                <a href="/news/<%= article.slug %>">
                     <div class="article__image" style="background-image: url(<%= article.image %>)">
                     </div>
                     <div class="article__title">
@@ -20,5 +20,8 @@
     </div>
     <div class="content__divider">
     </div>
-    <%= render "sidebars/events" %>
+    <section class="content__sidebar">
+        <%= render "sidebars/email" %>
+        <%= render "sidebars/events" %>
+    </section>
 </div>

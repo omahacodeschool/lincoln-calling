@@ -30,9 +30,9 @@ module Admin
     end
 
     # Define a custom finder by overriding the `find_resource` method:
-    # def find_resource(param)
-    #   Feature.find_by!(slug: param)
-    # end
+    def find_resource(param)
+      Feature.friendly.find(param)
+    end
 
     # See https://administrate-docs.herokuapp.com/customizing_controller_actions
     # for more information

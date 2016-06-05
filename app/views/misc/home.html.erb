@@ -59,18 +59,13 @@
             <div class="news__headlines">
                 <% @articles.each_with_index do |headline, index| %>
                     <% if headline == @articles[0] %>
-                        <a href="/news/<%= headline.id %>">
-                            <h3 class="headlines__text active" data-index="<%= index %>">
-                                <%= headline.title %>
-                            </h3>
-                        </a>
-                    <% else %>
-                        <a href="/news/<%= headline.id%>">
-                            <h3 class="headlines__text" data-index="<%= index %>">
-                                <%= headline.title %>
-                            </h3>
-                        </a> 
+                        <% active = "active" %>
                     <% end %>
+                    <a href="/news/<%= headline.id %>">
+                        <h4 class="headlines__text <%= active %>" data-index="<%= index %>">
+                            <%= headline.title %>
+                        </h4>
+                    </a>
                 <% end %>
                 <div class="headlines__see-more-news">
                     <a href="/news"><span>see more news</span></a>
@@ -79,6 +74,9 @@
         </section>
         <div class="content__divider">
         </div>
-        <%= render "sidebars/events" %>
+        <section class="content__sidebar">
+            <%= render "sidebars/email" %>
+            <%= render "sidebars/events" %>
+        </section>
     </div>
 </main>

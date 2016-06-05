@@ -1,0 +1,100 @@
+.content--article {
+    background-color: $white;
+    .article__header-image {
+        height: 0;
+        padding-bottom: 50%;
+        background-size: cover;
+    }
+}
+
+.article--container {
+    padding: 13px;
+}
+
+.article__main-info {
+    @include flexbox();
+    .main-info__icon {
+        background-color: $light;
+        width: 45px;
+        height: 45px;
+        margin-right: 15px;
+        font-family: 'HN-icons';
+        font-size: 2.5rem;
+        line-height: 1.15;
+        padding-left: 3px;
+        color: $dark;
+    }
+    .main-info__headline-byline {
+        width: calc(100% - 80px);
+    }
+    h1 {
+        margin: 0;
+        color: $primary;
+    }
+    p {
+        margin: .5rem 0;
+        color: $dark;
+    }
+}
+
+.article__story {
+    padding-top: .8rem;
+    color: $dark;
+    h3 {
+        color: $secondary;
+        text-transform: uppercase;
+    }
+}
+
+.article__tagline {
+    @include flexbox();
+    @include flexbox-align-items(center);
+    .tagline__image {
+        width: 45px;
+        height: 45px;
+        margin-right: 15px;
+        background-size: cover;
+    }
+    .tagline__tagline {
+        color: $dark;
+    }
+}
+
+.article__share {
+    @include flexbox();
+    @include flexbox-justify-content(flex-end);
+    @include flexbox-align-items(center);
+    position: relative;
+    background-color: $light;
+    padding: (8rem / 16) (15rem / 16);
+    .share__buttons {
+        @include flexbox();
+        @include flexbox-align-items(center);
+        padding-left: (15rem / 16);
+    }
+    .buttons__button {
+        transition-duration: .1s;
+        &:hover {
+            opacity: .8;
+        }
+    }
+    .buttons__button:nth-of-type(1) {
+        margin-right: .25rem;
+    }
+    .share__text {
+        position: relative;
+        padding-right: (15rem / 16);
+        h4 {
+            margin: 0;
+            color: $dark;
+        }
+    }
+    span {
+        width: (2rem / 16);
+        background-color: white;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}

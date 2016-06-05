@@ -17,7 +17,7 @@ to do the heavy lifting.
 
 <% content_for(:title) { "New #{page.resource_name.titleize}" } %>
 
-<header class="header">
+<header class="header header--class">
   <h1 class="header__heading"><%= content_for(:title) %></h1>
   <div class="header__actions">
     <%= link_to 'Back', :back, class: "button" %>

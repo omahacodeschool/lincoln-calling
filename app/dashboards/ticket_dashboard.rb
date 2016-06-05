@@ -14,7 +14,8 @@ class TicketDashboard < Administrate::BaseDashboard
     eventbrite_id: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    sold_out: Field::Boolean
+    sold_out: Field::Boolean,
+    order: Field::Number
   }
 
   # COLLECTION_ATTRIBUTES
@@ -25,7 +26,8 @@ class TicketDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :name,
     :link,
-    :price_in_cents
+    :price_in_cents,
+    :order
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -37,7 +39,8 @@ class TicketDashboard < Administrate::BaseDashboard
     :eventbrite_id,
     :created_at,
     :updated_at,
-    :sold_out
+    :sold_out,
+    :order
   ]
 
   # FORM_ATTRIBUTES
@@ -48,6 +51,7 @@ class TicketDashboard < Administrate::BaseDashboard
     :link,
     :price_in_cents,
     :eventbrite_id,
+    :order,
     :sold_out
   ]
 

@@ -28,8 +28,7 @@ class UserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :email,
     :first_name,
-    :last_name,
-    :profile_pic
+    :last_name
   ]
 
   # SHOW_PAGE_ATTRIBUTES
