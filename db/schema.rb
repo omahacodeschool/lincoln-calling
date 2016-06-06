@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160429044407) do
+ActiveRecord::Schema.define(version: 20160606145718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "articles", force: :cascade do |t|
-    t.string   "title"
-    t.integer  "user_id"
-    t.text     "article_content"
+    t.string   "title",             null: false
+    t.integer  "user_id",           null: false
+    t.text     "article_content",   null: false
     t.string   "image"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
@@ -28,16 +28,16 @@ ActiveRecord::Schema.define(version: 20160429044407) do
   end
 
   create_table "artists", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",           null: false
     t.string   "genre"
-    t.string   "origin"
+    t.string   "origin",         null: false
     t.string   "website"
-    t.text     "bio"
-    t.string   "image"
+    t.text     "bio",            null: false
+    t.string   "image",          null: false
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "headline_order"
-    t.string   "type"
+    t.string   "type",           null: false
   end
 
   create_table "artists_genres", id: false, force: :cascade do |t|
@@ -67,9 +67,9 @@ ActiveRecord::Schema.define(version: 20160429044407) do
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
   create_table "events", force: :cascade do |t|
-    t.integer  "artist_id"
-    t.integer  "venue_id"
-    t.string   "minimum_age"
+    t.integer  "artist_id",       null: false
+    t.integer  "venue_id",        null: false
+    t.string   "minimum_age",     null: false
     t.datetime "start_date_time"
     t.datetime "end_date_time"
     t.datetime "created_at",      null: false
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 20160429044407) do
   end
 
   create_table "genres", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",       null: false
     t.string   "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -98,14 +98,14 @@ ActiveRecord::Schema.define(version: 20160429044407) do
   end
 
   create_table "sponsors", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",          null: false
     t.string   "website"
-    t.boolean  "premier"
-    t.text     "description"
+    t.boolean  "premier",       null: false
+    t.text     "description",   null: false
     t.integer  "sponsor_order"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.string   "logo"
+    t.string   "logo",          null: false
   end
 
   create_table "tickets", force: :cascade do |t|
@@ -142,15 +142,15 @@ ActiveRecord::Schema.define(version: 20160429044407) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "venues", force: :cascade do |t|
-    t.string   "name"
-    t.string   "address"
-    t.text     "info"
-    t.string   "img"
+    t.string   "name",       null: false
+    t.string   "address",    null: false
+    t.text     "info",       null: false
+    t.string   "img",        null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "website"
+    t.string   "website",    null: false
     t.string   "map_icon"
   end
 
