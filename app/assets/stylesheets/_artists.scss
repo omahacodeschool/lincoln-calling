@@ -7,14 +7,14 @@
     }
     .box__query {
         width: 100%;
-        font-size: 1.85rem;
+        font-size: 1.55rem;
         font-weight: 300;
         border: 0;
         outline: 0;
         color: $dark;
     }
     .box__query::placeholder {
-        font-size: 1.85rem;
+        font-size: 1.55rem;
         font-weight: 300;
         color: $light;
     }
@@ -26,8 +26,10 @@
         font-family: 'HN-icons';
         font-size: (26rem / 16);
         color: $dark;
+        border: 0;
         &:hover {
             color: $primary;
+            border: 0;
         }
     }
 }
