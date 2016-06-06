@@ -1,32 +1,32 @@
 @font-face {
     font-family: 'GT Walsheim Regular';
-    src: url('gt-walsheim-regular-webfont.eot');
-    src: url('gt-walsheim-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('gt-walsheim-regular-webfont.woff') format('woff'),
-         url('gt-walsheim-regular-webfont.ttf') format('truetype'),
-         url('gt-walsheim-regular-webfont.svg#GTWalsheim-Regular') format('svg');
+    src: font-url('/assets/gt-walsheim-regular-webfont.eot');
+    src: font-url('/assets/gt-walsheim-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('/assets/gt-walsheim-regular-webfont.woff') format('woff'),
+         font-url('/assets/gt-walsheim-regular-webfont.ttf') format('truetype'),
+         font-url('/assets/gt-walsheim-regular-webfont.svg#GTWalsheim-Regular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'GT Walsheim Regular';
-    src: url('gt-walsheim-regular-oblique-webfont.eot');
-    src: url('gt-walsheim-regular-oblique-webfont.eot?#iefix') format('embedded-opentype'),
-         url('gt-walsheim-regular-oblique-webfont.woff') format('woff'),
-         url('gt-walsheim-regular-oblique-webfont.ttf') format('truetype'),
-         url('gt-walsheim-regular-oblique-webfont.svg#GTWalsheim-Regular') format('svg');
+    src: font-url('/assets/gt-walsheim-regular-oblique-webfont.eot');
+    src: font-url('/assets/gt-walsheim-regular-oblique-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('/assets/gt-walsheim-regular-oblique-webfont.woff') format('woff'),
+         font-url('/assets/gt-walsheim-regular-oblique-webfont.ttf') format('truetype'),
+         font-url('/assets/gt-walsheim-regular-oblique-webfont.svg#GTWalsheim-Regular') format('svg');
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'GT Walsheim Bold';
-    src: url('gt-walsheim-bold-webfont.eot');
-    src: url('gt-walsheim-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('gt-walsheim-bold-webfont.woff') format('woff'),
-         url('gt-walsheim-bold-webfont.ttf') format('truetype'),
-         url('gt-walsheim-bold-webfont.svg#GTWalsheim-Bold') format('svg');
+    src: font-url('/assets/gt-walsheim-bold-webfont.eot');
+    src: font-url('/assets/gt-walsheim-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('/assets/gt-walsheim-bold-webfont.woff') format('woff'),
+         font-url('/assets/gt-walsheim-bold-webfont.ttf') format('truetype'),
+         font-url('/assets/gt-walsheim-bold-webfont.svg#GTWalsheim-Bold') format('svg');
     font-weight: normal;
     font-style: normal;
 }
