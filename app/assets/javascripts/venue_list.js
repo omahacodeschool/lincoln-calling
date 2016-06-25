@@ -1,5 +1,5 @@
 
-if ( document.getElementsByClassName("map__image").length !== 0){
+if ( document.getElementsByClassName("venues__map").length !== 0){
   //Used Google Maps for Rails (https://github.com/apneadiving/Google-Maps-for-Rails) Gemfile for built-in maps API 
 
   // Variables will store data retrieved from XHR requests. 
@@ -47,7 +47,7 @@ if ( document.getElementsByClassName("map__image").length !== 0){
   };
   //creates google map with a marker for each venue in the variable json_array (passed from the server over the html page)
   handler = Gmaps.build('Google');
-  handler.buildMap({ internal: {id: 'sidebar_builder'}}, function(){
+  handler.buildMap({ internal: {id: 'venuesMap'}}, function(){
 
     // var markers = create_markers(json_array);
     var markers = handler.addMarkers(json_array);

@@ -1,48 +1,33 @@
-<script src="http://maps.google.com/maps/api/js?v=3.18&sensor=false&key=AIzaSyDedjhLCsuFyA9Rj-qWWyfroQXtldmE4L4&libraries=geometry&language=&hl=&region="></script> 
-<script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
-<script src='http://google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.9/src/infobox_packed.js' type='text/javascript'></script> 
-<script>json_array = <%=raw @hash.to_json %></script>
-
 <%= render "titles/default",
     :category => "INFO",
     :page => "Venues"
 %>
 
-<div class="clear">
-    <!-- Show Map -->
-    <div class="venue_list no_padding">
-        <div class="col-8-tablet no_padding">
-            <div id="sidebar_builder"class= "map__image" style='width: 100%; height: 400px;'></div>
-        </div>
-    </div>
-
-    <!-- Venue Profile Sidebar -->
-    <div class="col-4-tablet no_padding">
-        <div class="venue_profile">
-            <div class="extra_gutter">
-                <% @venues.each do |venue| %>
-                <div class="venue_info venueInfo <%=venue.id%>" value="venue<%=venue.id %>">
-                    <div class="venue_info__name venueInfo <%= venue.id %>"><%= venue.name%></div>
-                    <div class="venue_info__link venueInfo <%= venue.id %>"><%= venue.website%></div>
-                    <div class="venue_info__address venueInfo <%= venue.id %>"><%= venue.address%></div>
+<div class="main__content">
+    <div class="content__content content--venues">
+        <% @venues.each do |venue| %>
+            <div class="venues__venue">
+                <div class="venue__name">
+                    <h3><%= venue.name %></h3>
                 </div>
-                <img class="venue_profile__image venueInfo <%= venue.id %>" src="<%= venue.img.url %>"></img>
-                <div class="venue_bio venueInfo <%= venue.id %>"><%=venue.info%></div>
-                <%end %>
+                <div class="venue__address">
+                    <p><strong><%= venue.address %></strong></p>
+                </div>
+                <% if venue.img.url %>
+                <div class="venue__image">
+                     <img src="<%= venue.img.url %>" alt="<%= venue.name %>"/>
+                </div>
+                <% end %>
+                <div class="venue__info">
+                    <p><%= venue.info %></p>
+                </div>
             </div>
-        </div>
+        <% end %>
     </div>
-</div>
-<div class="clear"></div>
-
-<!-- List of Venues -->
-<div class="col-8-tablet no_padding">
-    <!-- The text that follows is how the HTML will likely have to look to allow for adding the selected effect to venue locations when selected.  Or rather, the "venues__text--selected" class modifier needs to be added to make that happen via JavaScript. -->
-    <div class="venue_list">
-        <div id='sidebar_container'></div> 
+    <div class="content__divider">
     </div>
+    <section class="content__sidebar">
+        <%= render "sidebars/email" %>
+        <%= render "sidebars/events" %>
+    </section>
 </div>
-<section class="content__sidebar">
-    <%= render "sidebars/events" %>
-</section>
-<div class="clear"></div>

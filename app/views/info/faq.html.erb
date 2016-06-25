@@ -5,7 +5,26 @@
 
 <div class="main__content">
     <div class="content__content content--faq">
-        
+        <% @faq.each do |group| %>
+            <% group.each_with_index do |category, index| %>
+                <% if index == 0 %>
+                    <header class="content__header">
+                        <h3><%= category %></h3>
+                    </header>
+                <% else %>
+                    <% category.each do |faq| %>
+                    <div class="faq--container">
+                        <div class="faq__question">
+                            <p><strong><%= faq.question %></strong></p>
+                        </div>
+                        <div class="faq__answer">
+                            <%= raw faq.answer %>
+                        </div>
+                    </div>
+                    <% end %>
+                <% end %>
+            <% end %>
+        <% end %>
     </div>
     <div class="content__divider">
     </div>
@@ -13,4 +32,4 @@
         <%= render "sidebars/email" %>
         <%= render "sidebars/events" %>
     </section>
-</div>  
+</div>

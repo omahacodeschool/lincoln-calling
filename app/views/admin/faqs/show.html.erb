@@ -16,10 +16,10 @@ as well as a link to its edit page.
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Page/Show
 %>
 
-<% content_for(:title) { page.page_title } %>
+<% content_for(:question) { page.page_title } %>
 
 <header class="header">
-  <h1 class="header__heading"><%= content_for(:title) %></h1>
+  <h1 class="header__heading"><%= content_for(:question) %></h1>
   <div class="header__actions">
     <%= link_to(
       "Edit",

@@ -1,4 +1,8 @@
 FactoryGirl.define do
+  factory :faq do
+    question "MyString"
+    answer "MyText"
+  end
 
   factory :notification do
     phone_number "MyString"

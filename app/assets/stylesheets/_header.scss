@@ -7,6 +7,11 @@
     padding-top: 3px;
     img:nth-of-type(1) {
         display: none;
+        max-width: none;
+    }
+    img:nth-of-type(2) {
+        max-width: none;
+        width: 100%;
     }
     h1 {
         position: relative;
@@ -104,8 +109,7 @@
         cursor: pointer;
         img:nth-of-type(1) {
             display: block;
-            width: 14.6%;
-            border-right: .15rem solid $white;
+            width: 14.5%;
         }
         img:nth-of-type(2) {
             width: 85%;
