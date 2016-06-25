@@ -1,20 +1,32 @@
-// used in artist views: index, index_comedians, search
-
-// functionality for artist profile/searching pages/profiles
-  
-// checks the value of the selected comedian class. sets that to selectedArist variable.
-//finds the div with an ID identical to selectedArtist. Adds overlay class to div. Also makes it visible by removing visible class.
-$('.artists').on('click', function(){
-    console.log(this);
-    var selectedArtist = $(this).attr('value');
-    $('#' + selectedArtist ).removeClass('visible');
-    $('#' + selectedArtist ).addClass('overlay');
-    var imageSize = $( '#artistPicture' + selectedArtist ).height();
-    console.log(imageSize);
-    $('.artist_profile__scroll_bar').height(imageSize);
-});
-// removes the artist profile overlay popup window and sets the information to a hidden state.
-$('.close_button').on( "click", function(){
-    $('.artistInfo').removeClass( "overlay");
-    $('.artistInfo').addClass( "visible");
+$(document).ready(function(){
+    $('.artists__artist').click(function(){
+        var id = $(this).data('id');
+        $.post('/artists/' + id)
+        .done(function(data){
+            $('#artistName').text(data["name"]);
+            $('#artistCity').text(data["origin"]);
+            $('#artistWebsite').text(data["website"]);
+            $('.info__bio').text(data["bio"]);
+            $('.overlay__image').css('background-image', 'url(' + data["image"]["url"] + ')');
+        });
+        $('body').css('overflow', 'hidden');
+        $('.body__overlay').addClass('overlay--show');
+    });
+    $('.hero__headliners a').click(function(){
+        var id = $(this).data('id');
+        $.post('/artists/' + id)
+        .done(function(data){
+            $('#artistName').text(data["name"]);
+            $('#artistCity').text(data["origin"]);
+            $('#artistWebsite').text(data["website"]);
+            $('.info__bio').text(data["bio"]);
+            $('.overlay__image').css('background-image', 'url(' + data["image"]["url"] + ')');
+        });
+        $('body').css('overflow', 'hidden');
+        $('.body__overlay').addClass('overlay--show');
+    });
+    $('.overlay__close').click(function(){
+        $('body').css('overflow', 'auto');
+        $('.body__overlay').removeClass('overlay--show');
+    });
 });

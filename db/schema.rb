@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160625175337) do
+ActiveRecord::Schema.define(version: 20160625214555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -151,10 +151,12 @@ ActiveRecord::Schema.define(version: 20160625175337) do
     t.string   "link"
     t.integer  "price_in_cents"
     t.integer  "eventbrite_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.boolean  "sold_out"
     t.integer  "order"
+    t.datetime "publication_date"
+    t.string   "category"
   end
 
   create_table "users", force: :cascade do |t|

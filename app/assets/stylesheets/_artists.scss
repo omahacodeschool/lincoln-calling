@@ -40,6 +40,7 @@
     .artists__artist {
         width: 20%;
         border-right: (4rem / 16) solid $white;
+        cursor: pointer;
     }
     .artist__image {
         height: (170rem / 16);

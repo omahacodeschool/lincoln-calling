@@ -3,6 +3,7 @@ class ArtistsController < ApplicationController
         @artists = Band.all
         @genres = Genre.all
     end
+    
     def index_comedians
         @artists = Comedian.all
     end
@@ -14,5 +15,10 @@ class ArtistsController < ApplicationController
 
     def crop_image
         @artist = Artist.new
+    end
+    
+    def show
+        @artist = Artist.find(params[:id])
+        render json: @artist.to_json
     end
 end

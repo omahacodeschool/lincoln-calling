@@ -15,7 +15,9 @@ class TicketDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     sold_out: Field::Boolean,
-    order: Field::Number
+    order: Field::Number,
+    publication_date: Field::DateTime,
+    category: Field::String
   }
 
   # COLLECTION_ATTRIBUTES
@@ -52,7 +54,9 @@ class TicketDashboard < Administrate::BaseDashboard
     :price_in_cents,
     :eventbrite_id,
     :order,
-    :sold_out
+    :sold_out,
+    :publication_date,
+    :category
   ]
 
   # Overwrite this method to customize how tickets are displayed

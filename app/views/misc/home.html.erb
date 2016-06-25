@@ -4,9 +4,9 @@
             <h2>
                 <% @headlineartists.each do |artist| %>
                     <% if artist.headline_order < @headlineartists.length %>
-                        <a href="/overlay/artists/<%= artist.id %>"><%= artist.name %></a> +
+                        <a href="/overlay/artists/<%= artist.id %>" data-id="<%= artist.id %>"><%= artist.name %></a> +
                     <% else %>
-                        <a href="/overlay/artists/<%= artist.id %>"><%= artist.name %></a>
+                        <a href="/overlay/artists/<%= artist.id %>" data-id="<%= artist.id %>"><%= artist.name %></a>
                     <% end %>
                 <% end %>
             </h2>
@@ -15,31 +15,50 @@
             <h3>
                 <% @otherartists.each do |artist| %>
                     <% if artist == @otherartists[-1] %>
-                        <a href="/overlay/artists/<%= artist.id %>"><%= artist.name %></a>
+                        <a href="/overlay/artists/<%= artist.id %>" data-id="<%= artist.id %>"><%= artist.name %></a>
                     <% else %>
-                        <a href="/overlay/artists/<%= artist.id %>"><%= artist.name %></a> +
+                        <a href="/overlay/artists/<%= artist.id %>" data-id="<%= artist.id %>"><%= artist.name %></a> +
                     <% end %>
                 <% end %>
             </h3>
         </div>
         <div class="hero__tickets">
-            <% @tickets.each do |ticket|%>
-                <% if ticket.sold_out == true %>
-                    <div class="tickets__ticket sold-out">      
-                        <div class="sold-out__label">
-                            sold out
+            <% @tickets.each do |group|%>
+                <div class="tickets--container">
+                <% group.each_with_index do |category, index| %>
+                    <% if index == 0 %>
+                        <header class="tickets__header">
+                            <p><%= category %></p>
+                        </header>
+                        <div class="tickets__button">
+                            GET TICKETS
                         </div>
-                        <h3><%= ticket.name %></h3>
-                        <h2><%= ticket.format_price %></h2>
-                    </div>
-                <% else %>
-                    <div class="tickets__ticket">      
-                        <a href="<%= ticket.link %>">
-                            <h3><%= ticket.name %></h3>
-                            <h2><%= ticket.format_price %></h2>
-                        </a>
-                    </div>
+                    <% else %>
+                        <div class="ticket--container">
+                        <% category.each do |ticket| %>
+                            <% if ticket.sold_out == true %>
+                                <div class="tickets__ticket sold-out">
+                                    <h2><%= ticket.format_price %></h2>
+                                    <h3><%= ticket.name %></h3>
+                                </div>
+                            <% elsif ticket.publication_date >= DateTime.now %>
+                                <div class="tickets__ticket not-yet-available">   
+                                    <h2><%= ticket.format_price %></h2>
+                                    <h3><%= ticket.name %></h3>
+                                </div>
+                            <% else %>
+                                <div class="tickets__ticket">      
+                                    <a href="<%= ticket.link %>" target="_blank">
+                                        <h2><%= ticket.format_price %></h2>
+                                        <h3><%= ticket.name %></h3>
+                                    </a>
+                                </div>
+                            <% end %>
+                        <% end %>
+                        </div>
+                    <% end %>
                 <% end %>
+                </div>
             <% end %>
         </div>
     </section>
@@ -80,3 +99,5 @@
         </section>
     </div>
 </main>
+
+<%= render "overlay/artist" %>

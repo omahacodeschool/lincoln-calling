@@ -4,17 +4,17 @@
 %>
 
 <main class="body__content">
-    <div class="content__search">
+    <!-- <div class="content__search">
         <div class="search__box">
             <%= form_tag(:controller => "artists", :action => "search", :id => "searchartists", :method => "post") do %>
                 <input class="box__query" type="text" name="search_input" placeholder="Search for an artist">
                 <input class="box__submit" type="submit" value="" class="icon">
             <% end %>
         </div>
-    </div>
+    </div> -->
     <div class="content__artists">
         <% @artists.order(:headline_order).each do |artist| %>
-            <div class="artists__artist">
+            <div class="artists__artist" data-id="<%= artist.id %>">
                 <div class="artist__image" style="background-image: url(<%= artist.image %>)">
                 
                 </div>
@@ -30,3 +30,5 @@
         <% end %>
     </div>
 </main>
+
+<%= render "overlay/artist" %>

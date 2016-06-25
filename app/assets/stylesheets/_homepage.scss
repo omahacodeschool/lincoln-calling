@@ -38,51 +38,88 @@
     margin: (38rem / 16) auto 0;
 }
 
+.tickets__header {
+    background-color: $black;
+    text-align: center;
+    padding: 5px;
+    p {
+        color: $white;
+        font-weight: 900;
+        margin: 0;
+    }
+}
+
+.tickets--container {
+    width: calc(50% - .5rem);
+    background-color: $midLight;
+    margin-bottom: .75rem;
+}
+
+.ticket--container {
+    padding: (10rem / 16);
+}
+
 .tickets__ticket {
     position: relative;
-    width: calc(50% - .5rem);
-    margin-bottom: (16rem / 16);
-    padding: (10rem / 16);
-    background-color: $primary;
-    border: 2px solid $primary;
+    padding: (4rem / 16) (10rem / 16) (6rem / 16) (10rem / 16);
     text-align: center;
     transition-duration: .1s;
+    border-bottom: 2px solid #777777;
     &:hover {
-        border: 2px solid $white;
         cursor: pointer;
     }
-    .sold-out__label {
-        position: absolute;
-        top: 50%;
-        right: 0;
-        left: 0;
-        width: 90%;
-        margin: 0 auto;
-        -ms-transform: translate(0, -50%) rotate(10deg);
-        -webkit-transform: translate(0, -50%) rotate(10deg);
-        transform: translate(0, -50%) rotate(10deg);
-        background-color: $dark;
-        font-size: (34rem / 16);
-        font-weight: bold;
-    }
-    &.sold-out {
-        background-color: $light;
-        cursor: default;
-        border: 0;
-        &:nth-of-type(2) {
-            .sold-out__label {
-                -ms-transform: translate(0, -50%) rotate(-8deg);
-                -webkit-transform: translate(0, -50%) rotate(-8deg);
-                transform: translate(0, -50%) rotate(-8deg);
-            }
+    &:hover {
+        h2,
+        h3 {
+            color: $primary;
         }
         &:hover {
             cursor: default;
         }
     }
-    h3 {
-        text-transform: uppercase;
+    &.sold-out {
+        h2,
+        h3 {
+            color: $white;
+            text-decoration: line-through;
+        }
     }
+    &.not-yet-available {
+        h2,
+        h3 {
+            color: #777777;
+        }
+        &:hover {
+            cursor: default;
+            h2,
+            h3 {
+                color: #777777;
+            }
+        }
+    }
+    h2 {
+        font-size: (26rem / 16);
+        margin: 0;
+        transition-duration: .2s;
+    }
+    h3 {
+        font-family: 'GT Walsheim Regular';
+        font-size: (18rem / 16);
+        margin: 5px 0 0 0;
+        transition-duration: .2s;
+    }
+    &:nth-last-of-type(1) {
+        border-bottom: 0;
+    }
+}
+
+.tickets__button {
+    width: 90%;
+    margin: 10px auto 0 auto;
+    padding: (8rem / 16);
+    border-radius: 6px;
+    background-color: $midDark;
+    text-align: center;
 }
 
 .content--news {
@@ -173,8 +210,8 @@
     .hero__tickets {
         max-width: none;
     }
-    .tickets__ticket {
-        width: calc(25% - 2.5rem);
+    .tickets--container {
+        width: calc(25% - .75rem);
         margin-bottom: 0;
     }
 }

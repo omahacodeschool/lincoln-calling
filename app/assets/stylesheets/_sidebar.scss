@@ -80,6 +80,9 @@
         padding: (7rem / 16);
         background-color: $secondary;
         cursor: pointer;
+        p {
+            font-size: (12rem / 16);
+        }
         p,
         h3 {
             line-height: 1;
