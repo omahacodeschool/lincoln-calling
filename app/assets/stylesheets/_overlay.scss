@@ -63,7 +63,8 @@
         width: calc(100% - 425px);
         height: 295px;
         background-size: cover;
-        background-position: 50% 50%;
+        background-position: 50% 10%;
         position: fixed;
+        pointer-events: none;
     }
 }
