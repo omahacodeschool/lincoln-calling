@@ -36,6 +36,7 @@
 
 .content__artists {
     @include flexbox();
+    @include flexbox-flex-wrap(wrap);
     @include flexbox-align-items(stretch);
     .artists__artist {
         width: 20%;
