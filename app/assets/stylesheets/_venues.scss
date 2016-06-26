@@ -1,6 +1,9 @@
 .content--venues {
     padding: 13px;
     background-color: $white;
+    .venues__venue {
+        width: 100%;
+    }
     .venues__map {
         width: 100%;
         height: 400px;

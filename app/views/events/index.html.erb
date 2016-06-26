@@ -3,182 +3,85 @@
     :page => "Schedule"
 %>
 
-  <div class="white_panel">
-    <div class="schedule_header">
-      <div class="day_picker" id="day_picker_box">
-        <div class="day_picker__triangle_down"></div>
-        <div class="day_picker__text" id="current_day">Thursday Oct. 6</div>
-      </div>
-
-      <div id="other_days">
-        <div class="other_days__triangle_up"></div>
-        <div class="other_days__text" id="thurs">Thursday Oct. 6</div>
-        <div class="other_days__text" id="fri">Friday Oct. 7</div>
-        <div class="other_days__text" id="sat">Saturday Oct. 8</div>
-      </div>
-
-      <div class="plan_festival_button plan_festival_button--hide">
-        PLAN YOUR FESTIVAL
-      </div>
-      <div style="clear: both"></div>
-    </div>
-
-    <div class="venue_picker">
-      <div class="triangle_box float_left" id="schedule-prev">
-        <div class="triangle_box__triangle-left" id="left_tri_box"></div>
-      </div>
-      <table>
-        <div class="venue_box float_left">
-          <% @venues.each_with_index do |venue, index| %>
-            <div class="venue_box__text venue_box__text--<%= venue.id %>" data-id="<%= venue.id %>"><%= venue.name %>
+<div class="body--schedule">
+    <header class="schedule__header">
+        <div class="header__days-plan">
+            <div class="days-plan__days">
+                <% @days.each_with_index do |day, index| %>
+                    <% if params[:day] %>
+                        <% if /.+?(?=,)/.match(day)[0].downcase == params[:day] %>
+                            <div class="days__day active">
+                        <% else %>
+                            <div class="days__day">
+                        <% end %>
+                            <%= day %>
+                    <% else %>
+                        <% if index == 0 %>
+                            <div class="days__day active">
+                        <% else %>
+                            <div class="days__day">
+                        <% end %>
+                            <%= day %>
+                    <% end %>
+                    
+                    </div>
+                <% end %>
+                <div class="days__arrow">
+                    <img src="<%= image_url('down-arrow.png') %>" srcset="<%= image_url('down-arrow.png') %> 1x, <%= image_url('down-arrow_2x.png') %> 2x" alt="down arrow"/>
+                </div>
+                <div class="days__select">
+                    <% @days.each_with_index do |day, index| %>
+                        <div class="select__day">
+                            <%= day %>
+                            <a href="/schedule/<%= /.+?(?=,)/.match(day)[0].downcase %>"></a>
+                        </div>
+                    <% end %>
+                </div>
             </div>
-          <% end %>
-        </div>
-      </table>
-      <div class="triangle_box float_left" id="schedule-next">
-        <div class="triangle_box__triangle-right"></div>
-      </div>
-      <div style="clear: both"></div>
-    </div>
-
-    <div class="ages">
-      <div class="all_ages">All Ages</div>
-      <div class="eighteen_plus">18 and older</div>
-      <div class="twentyone_plus">21 and older</div>
-      <div style="clear: both"></div>
-    </div>
-
-    <div class="schedule_lineup">
-      <ul class="schedule_times">
-        <li class="schedule_times__item">5 p.m.</li>
-        <li class="schedule_times__item">6 p.m.</li>
-        <li class="schedule_times__item">7 p.m.</li>
-        <li class="schedule_times__item">8 p.m.</li>
-        <li class="schedule_times__item">9 p.m.</li>
-        <li class="schedule_times__item">10 p.m.</li>
-        <li class="schedule_times__item">11 p.m.</li>
-        <li class="schedule_times__item">12 a.m.</li>
-        <li class="schedule_times__item">1 a.m.</li>
-      </ul>
-
-<!-- ______________________________Thursday_______________________________ -->
-
-      <div class="venue_shows_container" id="Thursday_shows" style="display: block">
-      <% @venues.each_with_index do |venue, index| %>
-        <div class="venue_shows venue_shows--hide-<%=venue.id%>">
-          <% schedule_presenter = SchedulePresenter.new(venue) %>
-          <% venues_events = schedule_presenter.shows_at_venue_per_day("Thursday") %>
-
-        <% if venues_events != nil %>
-          <% venues_events.each do |event| %> 
-            <%if event.minimum_age == nil %>
-              <div class="show show--empty show--empty-<%= event.event_length %>"></div>
-            <% else %>
-              <label class="artists" value="<%= event.artist_id %>"> 
-              <div data-event-id="<%= event.id %>" data-added-to-plan="false"class="show show--<%= event.event_length %> show--<%= event.minimum_age %>-plus notify">
-               <%= event.artist.name %>
-              </div>
-              </label>
-            <% end %>
-          <% end %>
-        <% else %>
-          <% 9.times do %>
-            <div class="show show--empty show--empty-60"></div>
-          <% end %> 
-        <% end %>
-        </div>
-      <% end %>
-      </div>
-
-<!-- ____________________________Friday___________________________________ -->
-
-      <div class="venue_shows_container" id="Friday_shows" style="display: none">
-      <% @venues.each do |venue| %>
-        <div class="venue_shows venue_shows--hide-<%=venue.id%>">
-          <% schedule_presenter = SchedulePresenter.new(venue) %>
-          <% venues_events = schedule_presenter.shows_at_venue_per_day("Friday") %>
-
-        <% if venues_events != nil %>
-          <% venues_events.each do |event| %> 
-            <%if event.minimum_age == nil %>
-              <div class="show show--empty show--empty-<%= event.event_length %>"></div>
-            <% else %>
-              <label class="artists" value="<%= event.artist_id %>"> 
-                <div data-event-id="<%= event.id %>" data-added-to-plan="false" class="show show--<%= event.event_length %> show--<%= event.minimum_age %>-plus notify">
-                  <%= event.artist.name %>
+            <!-- <div class="days-plan__plan">
+                <div class="plan__text">
+                    PLAN YOUR FESTIVAL
                 </div>
-              </label>
-            <% end %>
-          <% end %>
-        <% else %>
-          <% 9.times do %>
-            <div class="show show--empty show--empty-60"></div>
-          <% end %> 
-        <% end %>
+            </div> -->
         </div>
-      <% end %>
-      </div>
-
-
-<!-- _________________________Saturday____________________________________ -->
-
-      <div class="venue_shows_container" id="Saturday_shows" style="display: none">
-      <% @venues.each do |venue| %>
-        <div class="venue_shows venue_shows--hide-<%=venue.id%>">
-          <% schedule_presenter = SchedulePresenter.new(venue) %>
-          <% venues_events = schedule_presenter.shows_at_venue_per_day("Saturday") %>
-
-        <% if venues_events != nil %>
-          <% venues_events.each do |event| %> 
-            <%if event.minimum_age == nil %>
-              <div class="show show--empty show--empty-<%= event.event_length %>"></div>
-            <% else %>
-              <label class="artists" value="<%= event.artist_id %>"> 
-                <div data-event-id="<%= event.id %>" data-added-to-plan="false" class="show show--<%= event.event_length %> show--<%= event.minimum_age %>-plus notify">
-                  <%= event.artist.name %>
+    </header>
+    <nav class="schedule__schedule-nav">
+        <div class="schedule-nav__left hide">
+            <img src="<%= image_url('left-arrow.png') %>" srcset="<%= image_url('left-arrow.png') %> 1x, <%= image_url('left-arrow_2x.png') %> 2x" alt="previous"/>
+        </div>
+        <div class="schedule-nav__venues">
+            <% @venues.each do |venue| %>
+            <div class="venues__venue">
+                <div class="venue__text">
+                    <%= venue.name %>
                 </div>
-              </label>
+            </div>
             <% end %>
-          <% end %>
-        <% else %>
-          <% 9.times do %>
-            <div class="show show--empty show--empty-60"></div>
-          <% end %> 
-        <% end %>
         </div>
-      <% end %>
-      </div>
-
-
-<!-- ______________________________________________________________________ -->
-
-      <div style="clear: both"></div>
-    </div>
-  </div>
-
-<div class="visible plan_my_festival_module">
-
-  <div>
-    <%= form_tag(:controller => "notifications", :action => "plan_my_festival", :method => "post") do %>
-
-      <div class="visible">
-        <% @events.each do |event|%>
-          <input class="festival_checkbox" data-event-id="<%= event.id %>" type="checkbox" name="set_events[]" value="<%= event.id %>">
-        <% end %>
-      </div>
-
-      <div id="shows_selected">
-        0 shows selected
-      </div>
-
-      <div class="plan_my_festival_text_box icon">
-       <input name="phone_number" type="tel" />
-      </div>
-
-      <div class="artist_search_box__text">
-        <input class="artist_search_box__text" style="border-width:0px; font-size:30px" type="submit" name="submit" placeholder="save your festivals">
-      </div>
-    <% end %>
-
-  </div>
+        <div class="schedule-nav__right">
+            <img src="<%= image_url('right-arrow.png') %>" srcset="<%= image_url('right-arrow.png') %> 1x, <%= image_url('right-arrow_2x.png') %> 2x" alt="next"/>
+        </div>
+    </nav>
+    <main class="schedule__concerts">
+        <div class="concerts__hours">
+            <% hours = (((@last_event - @first_event) / 60) / 60).ceil %>
+            <% if @first_event.strftime("%M") == "00" %>
+                <% hours_array = [] %>
+                <% hours.times do |i| %>
+                    <div class="hours__hour">
+                        <div class="hour__text">
+                            <%= (@first_event + i.hours).strftime("%-l %P") %>
+                        </div>
+                        <div class="hour__line">
+                        </div>
+                    </div>
+                <% end %>
+            <% else %>
+                
+            <% end %>
+        </div>
+        <%= raw @schedule_string %>
+    </main>
 </div>
+
+<%= render "overlay/artist" %>

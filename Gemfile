@@ -36,6 +36,7 @@ gem 'time_difference', '~> 0.4.2'
 gem 'title'
 gem 'twilio-ruby'
 gem 'uglifier'
+gem 'unicorn'
 
 group :development do
   gem 'quiet_assets'

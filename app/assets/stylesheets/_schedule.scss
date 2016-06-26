@@ -1,0 +1,229 @@
+.body--schedule {
+    background-color: $white;
+    padding: 1.5625rem 0;
+}
+
+.schedule__header {
+    margin-bottom: 1.5625rem;
+    padding: 0 70px;
+}
+
+.header__days-plan {
+    @include flexbox();
+    @include flexbox-justify-content(space-between);
+}
+
+.days-plan__days {
+    position: relative;
+    width: 100%;
+    border: 1px solid $midDark;
+    .days__day {
+        color: $midDark;
+        font-size: (24rem / 16);
+        padding: 5px 10px;
+        cursor: pointer;
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+    .days__arrow {
+        @include transform-translate(0, -50%);
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        cursor: pointer;
+    }
+}
+
+.concerts__hours {
+    @include transform-translate(-70px, 0);
+    position: absolute;
+    left: 0;
+    width: calc(100% + 70px);
+    height: 100%;
+}
+
+.days__select {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: calc(100% + 2px);
+    border: 1px solid $midDark;
+    z-index: 100;
+    display: none;
+    &.select--show {
+        display: block;
+    }
+    .select__day {
+        position: relative;
+        color: $midDark;
+        font-size: 1.5rem;
+        padding: 5px 10px;
+        cursor: pointer;
+        background-color: $white;
+        a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 200;
+        }
+    }
+}
+
+.days-plan__plan {
+    width: 20%;
+    position: relative;
+    background-color: $midDark;
+    padding: 5px 10px;
+    cursor: pointer;
+    .plan__text {
+        @include transform-translate(-50%, -50%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: .8rem;
+        line-height: 0;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.schedule__schedule-nav,
+.schedule-nav__venues {
+    @include flexbox();
+    @include flexbox-justify-content(space-between);
+}
+
+.schedule-nav__venues {
+    width: calc(100% - 140px);
+    .venues__venue {
+        display: none;
+        width: 100%;
+        position: relative;
+        border-top: 1px solid $mid;
+        border-right: 1px solid $mid;
+        border-bottom: 1px solid $mid;
+        border-left: 0;
+        background-color: white;
+        .venue__text {
+            @include transform-translate(-50%, -50%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            text-align: center;
+            padding: 0 5px;
+            color: $dark;
+        }
+        &.show {
+            display: block;
+        }
+        &:nth-of-type(1) {
+            border-left: 1px solid $mid;
+        }
+    }
+}
+
+.schedule-nav__left,
+.schedule-nav__right {
+    background-color: $mid;
+    width: 70px;
+    height: 63px;
+    cursor: pointer;
+    &.hide {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.hours__hour {
+    @include flexbox();
+    @include flexbox-justify-content(space-between);
+    height: 120px;
+    text-align: right;
+    .hour__text {
+        width: 70px;
+        color: $dark;
+        font-size: 1.2rem;
+        padding-right: 10px;
+    }
+    .hour__line {
+        width: calc(100% - 70px);
+        border-top: 1px solid $mid;
+    }
+    &:nth-of-type(1) {
+        .hour__line {
+            border-top: 0;
+        }
+    }
+}
+
+.concerts__venue {
+    width: 100%;
+}
+
+.schedule__concerts {
+    @include flexbox();
+    @include flexbox-justify-content(space-between);
+    position: relative;
+    width: calc(100% - 140px);
+    margin: 1.5625rem auto 0;
+    border-top: 1px solid $mid;
+    .concerts__venue {
+        display: none;
+        border-right: 1px solid $mid;
+        border-bottom: 1px solid $mid;
+        .venue__concert {
+            position: relative;
+            cursor: pointer;
+        }
+        .concert__artist {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $dark;
+            border-left: 5px solid #dd8063;
+            text-align: center;
+            .artist__name {
+                @include transform-translate(-50%, -50%);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 90%;
+                font-size: 1rem;
+                color: $white;
+            }
+        }
+        &.venue--show {
+            display: block;
+        }
+        &.first--venue {
+            border-left: 1px solid $mid;
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .venues__venue,
+    .concerts__venue {
+        width: (100% / 3);
+    }
+    .days-plan__days {
+        width: ((100% / 3) * 2);
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .venues__venue,
+    .concerts__venue {
+        width: 20%;
+    }
+    .days-plan__days {
+        width: 40%;
+    }
+}
