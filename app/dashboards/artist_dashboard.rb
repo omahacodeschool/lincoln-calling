@@ -17,8 +17,8 @@ class ArtistDashboard < Administrate::BaseDashboard
     image: CarrierwaveField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    headline_order: Field::Number,
-    type: Field::String
+    headliner: Field::Boolean,
+    headline_order: Field::Number
   }
 
   # COLLECTION_ATTRIBUTES
@@ -46,7 +46,7 @@ class ArtistDashboard < Administrate::BaseDashboard
     :created_at,
     :updated_at,
     :headline_order,
-    :type
+    :headliner
   ]
 
   # FORM_ATTRIBUTES
@@ -61,7 +61,7 @@ class ArtistDashboard < Administrate::BaseDashboard
     :bio,
     :image,
     :headline_order,
-    :type
+    :headliner
   ]
 
   # Overwrite this method to customize how artists are displayed

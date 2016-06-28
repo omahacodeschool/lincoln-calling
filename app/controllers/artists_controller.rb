@@ -1,6 +1,7 @@
 class ArtistsController < ApplicationController
     def index
-        @artists = Band.all
+        @headliners = Band.where(headliner: true)
+        @supporting_acts = Band.where(headliner: false)
         @genres = Genre.all
     end
     

@@ -55,7 +55,6 @@ $(document).ready(function(){
         $('.days__select').removeClass('select--show');
         event.preventDefault();
         var dayText = $(this).parent().data('date');
-        console.log(dayText);
         $('.days__day.active').text(dayText);
         $.get($(this).attr('href'), function(data) {
             $('.schedule__concerts').replaceWith($(data).find('.schedule__concerts'));

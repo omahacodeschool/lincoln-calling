@@ -13,7 +13,22 @@
         </div>
     </div> -->
     <div class="content__artists">
-        <% @artists.order(:headline_order).each do |artist| %>
+        <% @headliners.order(:headline_order).each do |artist| %>
+            <div class="artists__artist" data-id="<%= artist.id %>">
+                <div class="artist__image" style="background-image: url(<%= artist.image %>)">
+                
+                </div>
+                <div class="artist__name">
+                    <div class="name__text">
+                        <h5><%= artist.name %></h5>
+                    </div>
+                </div>
+                <div class="artist__origin">
+                    <%= artist.origin %>
+                </div>
+            </div>
+        <% end %>
+        <% @supporting_acts.order(:headline_order).each do |artist| %>
             <div class="artists__artist" data-id="<%= artist.id %>">
                 <div class="artist__image" style="background-image: url(<%= artist.image %>)">
                 
