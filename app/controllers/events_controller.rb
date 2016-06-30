@@ -19,7 +19,7 @@ class EventsController  < ApplicationController
             events = venue.venue_events_by_day(@current_day)
             concerts_string = ""
             if events != []
-                @schedule_string = @schedule_string + "<div class=\"concerts__venue\">"
+                @schedule_string = @schedule_string + "<div class=\"concerts__venue\" style=\"height: " + empty_venue_height.to_s + "px\">"
                 events.each_with_index do |event, index|
                     if index == 0
                         margin_top = ((event.start_date_time - @first_event) / 60) * 2
@@ -49,7 +49,6 @@ class EventsController  < ApplicationController
                     end
                 end
             else
-                binding.pry
                 @schedule_string = @schedule_string + "<div class=\"concerts__venue\" style=\"height: " + empty_venue_height.to_s + "px\">"
             end
             @schedule_string = @schedule_string + concerts_string + "</div>"
