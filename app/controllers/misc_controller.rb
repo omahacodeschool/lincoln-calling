@@ -5,8 +5,15 @@ class MiscController < ApplicationController
         @headliners = Band.where(headliner: true)
         @supporting_acts = Band.where(headliner: false)
         @events = Event.all
-        @day1 = VenuePresenter.new(@events.byday("Thursday")).events_with_venue_and_artist_info
-        @day2 = VenuePresenter.new(@events.byday("Friday")).events_with_venue_and_artist_info
-        @day3 = VenuePresenter.new(@events.byday("Saturday")).events_with_venue_and_artist_info
+        
+        weekdays = []
+        @days = []
+        
+        @events.each do |event|
+            if weekdays.include?(event.start_date_time.wday) == false
+                @days.push(event.start_date_time)
+                weekdays.push(event.start_date_time.wday)
+            end
+        end
     end
 end

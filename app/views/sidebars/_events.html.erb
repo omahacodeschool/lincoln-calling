@@ -3,43 +3,32 @@
         <p>Festival Schedule / Lincoln Calling 2016</p>
     </div>
     <div class="calendar__days">
-        <div class="days__day active">
-            <p>THURSDAY</p>
-            <h3>6</h3>
+        <% @days.each_with_index do |day, index| %>
+        <% if index == 0 %>
+        <div class="days__day active" style="width: <%= 100 / @days.count.to_f %>%">
+        <% else %>
+        <div class="days__day" style="width: <%= 100 / @days.count.to_f %>%">
+        <% end %>
+            <p><%= day.strftime("%^a") %></p>
+            <h3><%= day.strftime("%-d") %></h3>
         </div>
-        <div class="days__day">
-            <p>FRIDAY</p>
-            <h3>7</h3>
-        </div>
-        <div class="days__day">
-            <p>SATURDAY</p>
-            <h3>8</h3>
-        </div>
-    </div>
-</div>
-<div class="calendar__shows">
-    <div class="shows__show active">
-        <% @day1.each do |event| %>
-            <p>
-                <%= event[:venue_and_artist] %><br>
-                <span><%= event[:start_time].upcase %></span>
-            </p>
         <% end %>
     </div>
-    <div class="shows__show">
-        <% @day2.each do |event| %>
-            <p>
-                <%= event[:venue_and_artist] %><br>
-                <span><%= event[:start_time].upcase %></span>
-            </p>
+    <div class="calendar__shows">
+        <% @days.each_with_index do |day, index| %>
+        <% if index == 0 %>
+        <div class="shows__show active">
+        <% else %>
+        <div class="shows__show">
         <% end %>
-    </div>
-    <div class="shows__show">
-        <% @day3.each do |event| %>
-            <p>
-                <%= event[:venue_and_artist] %><br>
-                <span><%= event[:start_time].upcase %></span>
-            </p>
+            <% events = VenuePresenter.new(@events.byday(day)).events_with_venue_and_artist_info %>
+            <% events.each do |event| %>
+                <p>
+                    <%= event[:venue_and_artist] %><br>
+                    <span><%= event[:start_time].upcase %></span>
+                </p>
+            <% end %>
+        </div>
         <% end %>
     </div>
     <div class="shows__full-schedule">
