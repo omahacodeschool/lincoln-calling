@@ -12,6 +12,19 @@ $(document).ready(function(){
             $('.body__overlay').addClass('overlay--show');
         });
     });
+    $('.shows__show p').click(function(){
+        var id = $(this).data('id');
+        $.post('/artists/' + id)
+        .done(function(data){
+            $('#artistName').text(data["name"]);
+            $('#artistCity').text(data["origin"]);
+            $('#artistWebsite').html('<a target="_blank" href="http://' + data["website"] + '">' + data["website"] + '</a>');
+            $('.info__bio').text(data["bio"]);
+            $('.overlay__image').css('background-image', 'url(' + data["image"]["url"] + ')');
+            $('body').css('overflow', 'hidden');
+            $('.body__overlay').addClass('overlay--show');
+        });
+    });
     $('.venue__concert').click(function(){
         var id = $(this).data('id');
         $.post('/artists/' + id)

@@ -23,7 +23,7 @@
         <% end %>
             <% events = VenuePresenter.new(@events.byday(day)).events_with_venue_and_artist_info %>
             <% events.each do |event| %>
-                <p>
+                <p data-id="<%= event[:artist_id] %>">
                     <%= event[:venue_and_artist] %><br>
                     <span><%= event[:start_time].upcase %></span>
                 </p>
