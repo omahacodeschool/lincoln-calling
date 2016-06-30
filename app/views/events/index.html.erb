@@ -62,7 +62,7 @@
             <img src="<%= image_url('right-arrow.png') %>" srcset="<%= image_url('right-arrow.png') %> 1x, <%= image_url('right-arrow_2x.png') %> 2x" alt="next"/>
         </div>
     </nav>
-    <main class="schedule__concerts">
+    <main class="schedule__concerts" style="height: <%= @schedule_height %>px">
         <div class="concerts__hours">
             <% hours = (((@last_event - @first_event) / 60) / 60).ceil + 1 %>
             <% if @first_event.strftime("%M") == "00" %>

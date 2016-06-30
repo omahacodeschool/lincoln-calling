@@ -1,9 +1,9 @@
 class EventsController  < ApplicationController
     def index
         if params[:day]
-            @current_day = params[:day].titleize
+            @current_day = Event.where("extract(dow from start_date_time) = ?", DateTime.parse(params[:day]).wday).order(:start_date_time).first.start_date_time
         else
-            @current_day = Event.all.order(:start_date_time).first.start_date_time.strftime("%A")
+            @current_day = Event.all.order(:start_date_time).first.start_date_time
         end
         
         all_day_events = Event.byday(@current_day)
@@ -14,6 +14,8 @@ class EventsController  < ApplicationController
         empty_venue_height = ((@last_event - @first_event) / 60) * 2
         @venues = Venue.order(:name)
         @schedule_string = ""
+        
+        @schedule_height = empty_venue_height
         
         @venues.each_with_index do |venue, index|
             events = venue.venue_events_by_day(@current_day)
