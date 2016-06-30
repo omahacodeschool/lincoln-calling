@@ -27,10 +27,13 @@ class Event < ActiveRecord::Base
     end
     #class method to find all events happening on a particular day
     #used in events index and events sidebar
-    def self.byday(weekday)
+    def self.byday(current_day)
         events = []
+        current_date_time = DateTime.parse(current_day)
         Event.all.order(:start_date_time).each do |event|
-            if event.weekday == weekday
+            start_of_day = current_date_time.beginning_of_day + 6.hours
+            end_of_day = current_date_time.end_of_day + 6.hours
+            if event.start_date_time >= start_of_day && event.start_date_time < end_of_day
                 events << event
             end
         end

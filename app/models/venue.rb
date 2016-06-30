@@ -12,10 +12,13 @@ class Venue < ActiveRecord::Base
     #class method to find all events happening on a particular day for a specific venue
     #used in events index and events sidebar
     def venue_events_by_day(day)
+        current_date_time = DateTime.parse(day)
         events = []
         venue_events = Event.where({venue_id: self.id}).order(:start_date_time)
         venue_events.each do |event|
-            if event.weekday == day
+            start_of_day = current_date_time.beginning_of_day + 6.hours
+            end_of_day = current_date_time.end_of_day + 6.hours
+            if event.start_date_time >= start_of_day && event.start_date_time < end_of_day
                 events << event
             end
         end

@@ -6,17 +6,19 @@ class EventsController  < ApplicationController
             @current_day = Event.all.order(:start_date_time).first.start_date_time.strftime("%A")
         end
         
-        @first_event = Event.where("extract(dow from start_date_time) = ?", DateTime.parse(@current_day).wday).order(:start_date_time).first.start_date_time
-        @last_event = Event.where("extract(dow from start_date_time) = ?", DateTime.parse(@current_day).wday).order(:start_date_time).last.end_date_time
+        all_day_events = Event.byday(@current_day)
+        
+        @first_event = all_day_events[0].start_date_time
+        @last_event = all_day_events[all_day_events.length - 1].end_date_time.end_of_hour
+        
         empty_venue_height = ((@last_event - @first_event) / 60) * 2
         @venues = Venue.order(:name)
         @schedule_string = ""
         
         @venues.each_with_index do |venue, index|
-            events_by_day = venue.events.group_by(&:weekday)
-            events = events_by_day[@current_day]
+            events = venue.venue_events_by_day(@current_day)
             concerts_string = ""
-            if events != nil
+            if events != []
                 @schedule_string = @schedule_string + "<div class=\"concerts__venue\">"
                 events.each_with_index do |event, index|
                     if index == 0
@@ -47,6 +49,7 @@ class EventsController  < ApplicationController
                     end
                 end
             else
+                binding.pry
                 @schedule_string = @schedule_string + "<div class=\"concerts__venue\" style=\"height: " + empty_venue_height.to_s + "px\">"
             end
             @schedule_string = @schedule_string + concerts_string + "</div>"
