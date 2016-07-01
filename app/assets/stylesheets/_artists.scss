@@ -39,7 +39,7 @@
     @include flexbox-flex-wrap(wrap);
     @include flexbox-align-items(stretch);
     .artists__artist {
-        width: 20%;
+        width: 50%;
         border-right: (4rem / 16) solid $white;
         cursor: pointer;
         margin-bottom: (4rem / 16);
@@ -68,5 +68,21 @@
         text-transform: uppercase;
         padding: (6rem / 16);
         text-align: center;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .content__artists {
+        .artists__artist {
+            width: 33.33%;
+        }
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .content__artists {
+        .artists__artist {
+            width: 20%;
+        }
     }
 }

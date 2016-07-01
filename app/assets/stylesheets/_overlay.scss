@@ -52,6 +52,7 @@
         width: 350px;
         margin-left: calc(100% - 350px);
         padding-right: 25px;
+        padding-left: 25px;
     }
     .info__divider {
         width: 100%;
@@ -63,7 +64,7 @@
         padding-bottom: 25px;
     }
     .overlay__image {
-        width: calc(100% - 450px);
+        width: calc(100% - 430px);
         max-width: 550px;
         height: 295px;
         background-size: cover;
