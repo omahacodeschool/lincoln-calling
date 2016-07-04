@@ -13,7 +13,7 @@ class Event < ActiveRecord::Base
     #returns the abbreviated month and day number
     #example: Oct. 6 
     def monthday
-        self.start_date_time.strftime("%A, %b. %e")
+        (self.start_date_time - 6.hours).strftime("%A, %b. %e")
     end
     #returns event's start time
     #example: 1:30pm OR 12:45am etc

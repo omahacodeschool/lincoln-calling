@@ -3,7 +3,16 @@ class EventsController  < ApplicationController
         if params[:day]
             @current_day = Event.where("extract(dow from start_date_time) = ?", DateTime.parse(params[:day]).wday).order(:start_date_time).first.start_date_time
         else
-            @current_day = Event.all.order(:start_date_time).first.start_date_time
+            first_event = Event.all.order(:start_date_time).first.start_date_time
+            last_event = Event.all.order(:start_date_time).last.start_date_time - 6.hours
+            
+            if DateTime.now <= first_event
+                @current_day = first_event
+            elsif DateTime.now > first_event && DateTime.now <= last_event
+                @current_day = Event.where("extract(dow from start_date_time) = ?", DateTime.now.wday).order(:start_date_time).first.start_date_time
+            else
+                @current_day = last_event
+            end
         end
         
         all_day_events = Event.byday(@current_day)

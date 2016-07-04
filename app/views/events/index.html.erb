@@ -16,7 +16,7 @@
                         <% end %>
                             <%= day %>
                     <% else %>
-                        <% if index == 0 %>
+                        <% if @first_event.strftime("%A, %b. %e") == day %>
                             <div class="days__day active">
                         <% else %>
                             <div class="days__day">
