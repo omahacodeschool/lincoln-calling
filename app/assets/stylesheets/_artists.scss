@@ -3,10 +3,11 @@
     .search__box {
         width: 100%;
         position: relative;
-        border: (1rem / 16) solid $dark;
+        border: .1rem solid $dark;
     }
     .box__query {
         width: 100%;
+        padding: .375rem;
         font-size: 1.55rem;
         font-weight: 300;
         border: 0;
@@ -88,7 +89,7 @@
     }
     .content__search {
         .search__box {
-            width: 40%;
+            width: calc(40% - .4rem);
         }
     }
 }

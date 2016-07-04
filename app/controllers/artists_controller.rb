@@ -10,8 +10,30 @@ class ArtistsController < ApplicationController
     end
 
     def search
-        @artists = Artist.search_by_name(params[:search_input])
+        results = PgSearch.multisearch(params[:search_input])
+        
+        @headliners = []
+        @supporting_acts = []
+        
+        results.each do |result|
+            if result.searchable_type == "Artist"
+                band = Band.find(result.searchable_id)
+                if band != nil
+                    if band.headliner == true
+                        @headliners.push(band)
+                    else
+                        @supporting_acts.push(band)
+                    end
+                end
+            end
+        end
+        
+        @headliners = Band.where(id: @headliners.map(&:id))
+        @supporting_acts = Band.where(id: @supporting_acts.map(&:id))
+        
         @search = params[:search_input]
+        
+        render :template => "artists/index"
     end
 
     def crop_image

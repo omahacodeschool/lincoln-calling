@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     devise_for :users
     root to: "misc#home"
     get "/artists" => "artists#index"
+    post "/artists/search" => "artists#search"
     post "/artists/:id" => "artists#show"
     post "/artists/:id/prev" => "artists#prev"
     post "/artists/:id/next" => "artists#next"
