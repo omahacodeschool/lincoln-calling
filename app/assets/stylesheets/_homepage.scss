@@ -27,7 +27,23 @@
 }
 
 .hero__supporting {
-    display: none;
+    padding: 0 (100rem / 16);
+    text-align: center;
+    h3 {
+        cursor: default;
+        margin: 0;
+        font-size: 1rem;
+        font-weight: bold;
+        line-height: (44rem / 16);
+        a {
+            color: $white;
+            text-decoration: none;
+            transition-duration: .1s;
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
 }
 
 .hero__tickets {
@@ -183,26 +199,6 @@
     .main__hero {
         margin-bottom: (25rem / 16);
         padding: (18rem / 16);
-    }
-    .hero__supporting {
-        display: block;
-        margin-top: (18rem / 16);
-        padding: 0 (100rem / 16);
-        text-align: center;
-        h3 {
-            cursor: default;
-            margin: 0;
-            font-weight: bold;
-            line-height: (44rem / 16);
-            a {
-                color: $white;
-                text-decoration: none;
-                transition-duration: .1s;
-                &:hover {
-                    color: $primary;
-                }
-            }
-        }
     }
 }
 
