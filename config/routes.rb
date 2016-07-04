@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     root to: "misc#home"
     get "/artists" => "artists#index"
     post "/artists/:id" => "artists#show"
+    post "/artists/:id/prev" => "artists#prev"
+    post "/artists/:id/next" => "artists#next"
     get "/comedy" => "artists#index_comedians"
     post "/artists/search" => "artists#search"
     get "/schedule" => 'events#index'

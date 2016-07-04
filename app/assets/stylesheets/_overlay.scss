@@ -40,7 +40,29 @@
         margin: 0 auto;
         pointer-events: none;
     }
-    .close__icon {
+    .overlay__prev {
+        position: fixed;
+        right: 0;
+        bottom: 55px;
+        left: 0;
+        max-width: 1000px;
+        height: 50px;
+        margin: 0 auto;
+        pointer-events: none;
+    }
+    .overlay__next {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        max-width: 1000px;
+        height: 50px;
+        margin: 0 auto;
+        pointer-events: none;
+    }
+    .close__icon,
+    .prev__icon,
+    .next__icon {
         margin-left: auto;
         width: 50px;
         height: 50px;
@@ -71,5 +93,11 @@
         background-position: 50% 10%;
         position: fixed;
         pointer-events: none;
+    }
+    .concerts__concert {
+        margin-bottom: .5rem;
+    }
+    .concerts__concert:nth-last-of-type(1) {
+        margin-bottom: 0;
     }
 }
