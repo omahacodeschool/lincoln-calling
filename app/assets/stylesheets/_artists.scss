@@ -1,7 +1,7 @@
 .content__search {
     margin-bottom: (25rem / 16);
     .search__box {
-        width: 40%;
+        width: 100%;
         position: relative;
         border: (1rem / 16) solid $dark;
     }
@@ -84,6 +84,11 @@
     .content__artists {
         .artists__artist {
             width: 20%;
+        }
+    }
+    .content__search {
+        .search__box {
+            width: 40%;
         }
     }
 }
