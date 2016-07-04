@@ -10,7 +10,8 @@ class FaqDashboard < Administrate::BaseDashboard
     ATTRIBUTE_TYPES = {
         category: Field::String,
         question: Field::String,
-        answer: Field::Text
+        answer: Field::Text,
+        order: Field::Number
     }
 
     # COLLECTION_ATTRIBUTES
@@ -36,7 +37,8 @@ class FaqDashboard < Administrate::BaseDashboard
     FORM_ATTRIBUTES = [
         :category,
         :question,
-        :answer
+        :answer,
+        :order
     ]
 
     # Overwrite this method to customize how faqs are displayed

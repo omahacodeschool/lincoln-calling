@@ -12,7 +12,8 @@
                         <h3><%= category %></h3>
                     </header>
                 <% else %>
-                    <% category.each do |faq| %>
+                    <% category = Faq.where(id: category.map(&:id)) %>
+                    <% category.order(:order).each do |faq| %>
                     <div class="faq--container">
                         <div class="faq__question">
                             <p><strong><%= faq.question %></strong></p>

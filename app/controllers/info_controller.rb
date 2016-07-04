@@ -1,6 +1,6 @@
 class InfoController < ApplicationController
     def faq
-        @faq = Faq.all.group_by(&:category)
+        @faq = Faq.all.order(:order).group_by(&:category)
         @events = Event.all
         weekdays = []
         @days = []
