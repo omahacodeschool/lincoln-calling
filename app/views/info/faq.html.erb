@@ -19,7 +19,7 @@
                             <p><strong><%= faq.question %></strong></p>
                         </div>
                         <div class="faq__answer">
-                            <%= raw faq.answer %>
+                            <%= raw @markdown.render(faq.answer) %>
                         </div>
                     </div>
                     <% end %>

@@ -11,6 +11,9 @@ class InfoController < ApplicationController
                 weekdays.push(event.start_date_time.wday)
             end
         end
+        
+        @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
+        
         render "faq"
     end
     def about
