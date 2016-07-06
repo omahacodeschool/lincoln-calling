@@ -56,7 +56,7 @@
             <% end %>
         </div>
     </section>
-    <!-- <div class="main__content">
+    <div class="main__content">
         <section class="content__content content--news">
             <div class="news__images">
                 <% @articles.each_with_index do |image, index| %>
@@ -89,9 +89,10 @@
         </div>
         <section class="content__sidebar">
             <%= render "sidebars/email" %>
-            <%= render "sidebars/events" %>
+            <!-- <%= render "sidebars/events" %> -->
+            <a href="/" class="sidebar__image"><img src="<%= image_url('sidebar.png') %>" alt="Oct. 6-8"/></a>
         </section>
-    </div> -->
+    </div>
 </main>
 
 <%= render "overlay/artist" %>

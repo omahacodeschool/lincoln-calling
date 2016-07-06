@@ -32,8 +32,8 @@ Rails.application.routes.draw do
     # get "/visitors/:id" => 'visitor_guides#show', as: :visitors_article
     get "/faq" => 'info#faq'
     get "/about" => 'info#about'
-    # get "news" => 'news#index'
-    # get "news/:id" => "news#show", as: :news_article
+    get "news" => 'news#index'
+    get "news/:id" => "news#show", as: :news_article
     # get "sidebar/events" => 'sidebars#events'
     # get "sidebar/artists" => "sidebars#artists"
     get "sponsors" => "sponsors#index"
