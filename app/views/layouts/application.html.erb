@@ -30,25 +30,25 @@
                     <li class="links__link">
                         <a href="/">TICKETS</a>
                     </li>
-                    <li class="links__link links--dropdown-tab">
+                    <!-- <li class="links__link links--dropdown-tab">
                         <div class="link__text" id="lineup">
                             LINEUP
                             <%= image_tag('triangle.svg') %>
                         </div>
-                    </li>
+                    </li> -->
                     <li class="links__link links--dropdown-tab">
                         <div class="link__text" id="info">
                             INFO
                             <%= image_tag('triangle.svg') %>
                         </div>
                     </li>
-                    <li class="links__link">
+                    <!-- <li class="links__link">
                         <a href="/news">NEWS</a>
-                    </li>
+                    </li> -->
                     <li class="links__link">
                         <a href="/sponsors">SPONSORS</a>
                     </li>
-                    <div class="links__dropdown links__dropdown--lineup">
+                    <!-- <div class="links__dropdown links__dropdown--lineup">
                         <ul class='dropdown__links'>
                             <li class="links__link">
                                 <a href="/artists">ARTISTS</a>
@@ -60,7 +60,7 @@
                                 <a href="/comedy">COMEDY</a>
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
                     <div class="links__dropdown links__dropdown--info">
                         <ul class="dropdown__links">
                             <li class="links__link">
@@ -91,15 +91,16 @@
                 <div class="menu__links">
                     <div class="links__column">
                         <a href="/">TICKETS</a>
-                        <a href="/artists">ARTISTS</a>
+                        <!-- <a href="/artists">ARTISTS</a>
                         <a href="/schedule">SCHEDULE</a>
-                        <a href="/comedy">COMEDY</a>
+                        <a href="/comedy">COMEDY</a> -->
                         <a href="/venues">VENUES</a>
+                        <a href="/faq">FAQ</a>
                     </div>
                     <div class="links__column">
-                        <a href="/faq">FAQ</a>
+                        <!-- <a href="/faq">FAQ</a> -->
                         <a href="/about">ABOUT</a>
-                        <a href="/news">NEWS</a>
+                        <!-- <a href="/news">NEWS</a> -->
                         <a href="/sponsors">SPONSORS</a>
                     </div>
                 </div>
@@ -110,7 +111,15 @@
 
         <footer class="body__footer">
             <div class="footer__sponsors">
-                
+                <div class="sponsors__sponsors">
+                    <% Sponsor.all.each do |sponsor| %>
+                        <a href="<%= sponsor.website %>" target="_blank">
+                            <div class="sponsors__sponsor">
+                                <img src="<%= sponsor.logo %>" alt="<%= sponsor.name %>">
+                            </div>
+                        </a>
+                    <% end %>
+                </div>
             </div>
             <div class="footer__code-school">
                 <div class="code-school__label">

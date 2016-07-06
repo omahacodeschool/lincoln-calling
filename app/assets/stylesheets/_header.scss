@@ -136,7 +136,7 @@
         }
         ul {
             @include flexbox();
-            @include flexbox-justify-content(space-between);
+            @include flexbox-justify-content(flex-start);
             @include flexbox-align-items(center);
             width: 69%;
             margin: 0;
