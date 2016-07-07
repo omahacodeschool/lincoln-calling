@@ -2,7 +2,21 @@
 <html lang="en">
 <head>
     <!-- METADATA -->
-    <title><%= title %></title>
+    <% if @article %>
+        <title><%= @article.title %> | Lincoln Calling</title>
+    <% elsif params[:controller] == "news" %>
+        <title>News | Lincoln Calling</title>
+    <% elsif @sponsors %>
+        <title>Sponsors | Lincoln Calling</title>
+    <% elsif @venues %>
+        <title>Venues | Lincoln Calling</title>
+    <% elsif @faq %>
+        <title>FAQ | Lincoln Calling</title>
+    <% elsif params[:controller] == "info" %>
+        <title>About | Lincoln Calling</title>
+    <% else %>
+        <title>Lincoln Calling</title>
+    <% end %>
     <meta charset="utf-8" />
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -13,13 +27,21 @@
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="<%= title %>"/>
     <meta property="og:description" content="Lincoln Calling is an annual, non-profit music festival focusing on emerging artists and occurring across multiple venues in downtown Lincoln, Neb."/>
+    <% if @article %>
+    <meta property="og:image" content="<%= @article.image %>"/>
+    <% else %>
     <meta property="og:image" content="<%= image_url('amp_2x.png') %>"/>
+    <% end %>
     <meta property='og:site_name' content="<%= title %>"/>
     <meta name="twitter:card" content="summary">
     <meta name="twitter:creator" content="@lincolncalling_">
     <meta name="twitter:title" content="<%= title %>">
     <meta name="twitter:description" content="Lincoln Calling is an annual, non-profit music festival focusing on emerging artists and occurring across multiple venues in downtown Lincoln, Neb.">
+    <% if @article %>
+    <meta name="twitter:image" content="<%= @article.image %>">
+    <% else %>
     <meta name="twitter:image" content="<%= image_url('amp_2x.png') %>">
+    <% end %>
     
     <%#
     Configure default and controller-, and view-specific titles in
