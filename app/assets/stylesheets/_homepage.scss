@@ -68,12 +68,12 @@
 }
 
 .ticket--container {
-    padding: (10rem / 16);
+    padding: 0 0.625rem;
 }
 
 .tickets__ticket {
     position: relative;
-    padding: (4rem / 16) (10rem / 16) (6rem / 16) (10rem / 16);
+    padding: 0.75rem 0.625rem 0.75rem 0.625rem;
     text-align: center;
     transition-duration: .1s;
     border-bottom: 2px solid #777777;
