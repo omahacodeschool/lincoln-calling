@@ -25,6 +25,9 @@
         cursor: default;
         position: relative;
         z-index: 0;
+        a {
+            color: $primary;
+        }
         p {
             color: $dark;
         }
