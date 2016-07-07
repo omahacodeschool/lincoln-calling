@@ -6,26 +6,26 @@
 
 .footer__sponsors {
     .sponsors__sponsors {
+        .sponsors__label {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
         .sponsors__sponsor {
             margin: 0 auto 2rem auto;
-            width: 50%;
+            width: 70%;
             img {
                 width: 100%;
             }
-        }
-        .sponsors__sponsor.premier {
-            width: 70%;
         }
     }
 }
 
 .footer__code-school {
-    @include flexbox-justify-content(flex-start);
+    @include flexbox-justify-content(center);
     @include flexbox();
     @include flexbox-align-items(center);
     .code-school__label {
         margin-right: (8rem / 16);
-        width: 9rem;
         text-align: right;
     }
 }
@@ -38,7 +38,7 @@
 @media only screen and (min-width: 500px) {
     .body__footer {
         @include flexbox();
-        @include flexbox-justify-content(space-between);
+        @include flexbox-justify-content(center);
         @include flexbox-align-items(center);
         padding: 1rem 1.75rem;
     }
@@ -49,13 +49,14 @@
         .sponsors__sponsors {
             @include flexbox();
             @include flexbox-align-items(center);
-            .sponsors__sponsor {
-                width: 25%;
-                margin: 0;
+            .sponsors__label {
+                margin-right: 15px;
+                margin-bottom: 0;
+                text-align: right;
             }
-            .sponsors__sponsor.premier {
-                width: 30%;
-                margin-right: 2rem;
+            .sponsors__sponsor {
+                width: 35%;
+                margin: 0;
             }
         }
     }
@@ -70,9 +71,6 @@
         .sponsors__sponsors {
             @include flexbox();
             @include flexbox-align-items(center);
-            .sponsors__sponsor {
-                width: 20%;
-            }
         }
     }
 }
