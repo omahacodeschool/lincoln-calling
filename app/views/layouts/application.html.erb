@@ -113,13 +113,16 @@
         <footer class="body__footer">
             <div class="footer__sponsors">
                 <div class="sponsors__sponsors">
-                    <% Sponsor.all.each do |sponsor| %>
-                        <a href="<%= sponsor.website %>" target="_blank">
-                            <div class="sponsors__sponsor">
-                                <img src="<%= sponsor.logo %>" alt="<%= sponsor.name %>">
-                            </div>
-                        </a>
-                    <% end %>
+                    <a href="http://allocommunications.com" target="_blank">
+                        <div class="sponsors__sponsor">
+                            <img src="<%= image_url('allo-logo.png') %>" srcset="<%= image_url('allo-logo.png') %> 1x, <%= image_url('allo-logo_2x.png') %> 2x" alt="Allo Communications">
+                        </div>
+                    </a>
+                    <a href="http://allocommunications.com" target="_blank">
+                        <div class="sponsors__sponsor">
+                            <img src="<%= image_url('allo-logo.png') %>" srcset="<%= image_url('allo-logo.png') %> 1x, <%= image_url('allo-logo_2x.png') %> 2x" alt="Allo Communications">
+                        </div>
+                    </a>
                 </div>
             </div>
             <div class="footer__code-school">
