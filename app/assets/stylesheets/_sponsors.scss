@@ -1,0 +1,17 @@
+.content--sponsors {
+    background-color: $white;
+    padding: 13px;
+    .sponsors__sponsors {
+        @include flexbox();
+        @include flexbox-flex-wrap(wrap);
+        @include flexbox-justify-content(space-between);
+        @include flexbox-align-items(center);
+    }
+    .sponsors__sponsor {
+        width: 47.5%;
+        margin-bottom: 2rem;
+        &.premier {
+            width: 100%;
+        }
+    }
+}
