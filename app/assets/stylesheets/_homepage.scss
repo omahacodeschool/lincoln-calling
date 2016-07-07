@@ -47,9 +47,6 @@
 }
 
 .hero__tickets {
-    @include flexbox();
-    @include flexbox-justify-content(space-between);
-    @include flexbox-flex-wrap(wrap);
     max-width: 550px;
     margin: (38rem / 16) auto 0;
 }
@@ -210,6 +207,11 @@
     }
     .tickets--container:nth-last-of-type(1) {
         margin-right: 0;
+    }
+    .hero__tickets {
+        @include flexbox();
+        @include flexbox-justify-content(center);
+        @include flexbox-flex-wrap(wrap);
     }
 }
 
