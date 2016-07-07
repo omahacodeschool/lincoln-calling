@@ -66,7 +66,6 @@
 }
 
 .tickets--container {
-    width: calc(50% - .5rem);
     background-color: $midLight;
     margin-bottom: .75rem;
 }
@@ -205,6 +204,13 @@
         margin-bottom: (25rem / 16);
         padding: (18rem / 16);
     }
+    .tickets--container {
+        width: calc(45% - .75rem);
+        margin-right: .75rem;
+    }
+    .tickets--container:nth-last-of-type(1) {
+        margin-right: 0;
+    }
 }
 
 @media only screen and (min-width: 950px) {
@@ -212,7 +218,6 @@
         max-width: none;
     }
     .tickets--container {
-        width: calc(25% - .75rem);
         margin-bottom: 0;
     }
 }
