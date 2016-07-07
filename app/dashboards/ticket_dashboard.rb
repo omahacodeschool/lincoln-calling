@@ -17,7 +17,8 @@ class TicketDashboard < Administrate::BaseDashboard
     sold_out: Field::Boolean,
     order: Field::Number,
     publication_date: Field::DateTime,
-    category: Field::String
+    category: Field::String,
+    description: Field::String
   }
 
   # COLLECTION_ATTRIBUTES
@@ -56,7 +57,8 @@ class TicketDashboard < Administrate::BaseDashboard
     :order,
     :sold_out,
     :publication_date,
-    :category
+    :category,
+    :description
   ]
 
   # Overwrite this method to customize how tickets are displayed

@@ -34,17 +34,26 @@
                                 <div class="tickets__ticket sold-out">
                                     <h2><%= ticket.format_price %></h2>
                                     <h3><%= ticket.name %></h3>
+                                    <% if ticket.description %>
+                                        <p><%= ticket.description %>
+                                    <% end %>
                                 </div>
                             <% elsif ticket.publication_date >= DateTime.now %>
                                 <div class="tickets__ticket not-yet-available">   
                                     <h2><%= ticket.format_price %></h2>
                                     <h3><%= ticket.name %></h3>
+                                    <% if ticket.description %>
+                                        <p><%= ticket.description %>
+                                    <% end %>
                                 </div>
                             <% else %>
                                 <div class="tickets__ticket">      
                                     <a href="<%= ticket.link %>" target="_blank">
                                         <h2><%= ticket.format_price %></h2>
                                         <h3><%= ticket.name %></h3>
+                                        <% if ticket.description %>
+                                            <p><%= ticket.description %>
+                                        <% end %>
                                     </a>
                                 </div>
                             <% end %>
