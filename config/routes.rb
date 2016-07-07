@@ -39,5 +39,4 @@ Rails.application.routes.draw do
     get "sponsors" => "sponsors#index"
     get "venues" => "venues#index"
     # post "notifications/plan_my_festival" => "notifications#plan_my_festival"
-    get '*unmatched_route', to: 'application#render_404'
 end
