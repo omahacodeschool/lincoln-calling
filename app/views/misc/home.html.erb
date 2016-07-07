@@ -88,7 +88,7 @@
                     <% if headline == @articles[0] %>
                         <% active = "active" %>
                     <% end %>
-                    <a href="/news/<%= headline.id %>">
+                    <a href="/news/<%= headline.slug %>">
                         <h4 class="headlines__text <%= active %>" data-index="<%= index %>">
                             <%= headline.title %>
                         </h4>
