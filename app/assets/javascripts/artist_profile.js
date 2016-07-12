@@ -24,11 +24,11 @@ function showArtist(id) {
 var overlayArtist = 0;
 
 $(document).ready(function(){
-    $('.artists__artist').click(showArtist);
-    $('.shows__show p').click(showArtist);
-    $('.venue__concert').click(showArtist);
-    $('.hero__headliners a').click(showArtist);
-    $('.hero__supporting a').click(showArtist);
+    // $('.artists__artist').click(showArtist);
+    // $('.shows__show p').click(showArtist);
+    // $('.venue__concert').click(showArtist);
+    // $('.hero__headliners a').click(showArtist);
+    // $('.hero__supporting a').click(showArtist);
     $('.overlay__close').click(function(){
         $('body').css('overflow', 'auto');
         $('.body__overlay').removeClass('overlay--show');
