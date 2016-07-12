@@ -2,7 +2,7 @@ function showArtist(id) {
     if ($(this).data('id')) {
         var id = $(this).data('id');
     }
-    $.post('/artists/' + id)
+    $.post('/artists-youcantgetherebychanceunlessyourechance/' + id)
     .done(function(data){
         var artist = $.parseJSON(data["artist"]);
         var concerts = $.parseJSON(data["concerts"]);
@@ -34,13 +34,13 @@ $(document).ready(function(){
         $('.body__overlay').removeClass('overlay--show');
     });
     $('.overlay__prev').click(function(){
-        $.post('/artists/' + overlayArtist + '/prev')
+        $.post('/artists-youcantgetherebychanceunlessyourechance/' + overlayArtist + '/prev')
         .done(function(data){
             showArtist(data["id"]);
         });
     });
     $('.overlay__next').click(function(){
-        $.post('/artists/' + overlayArtist + '/next')
+        $.post('/artists-youcantgetherebychanceunlessyourechance/' + overlayArtist + '/next')
         .done(function(data){
             showArtist(data["id"]);
         });

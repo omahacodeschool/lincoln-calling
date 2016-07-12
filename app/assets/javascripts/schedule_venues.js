@@ -72,7 +72,7 @@ $(document).ready(function(){
             $('.concerts__venue').eq(venuesStart).addClass('first--venue');
             $('.venue__concert').click(function(){
                 var id = $(this).data('id');
-                $.post('/artists/' + id)
+                $.post('/artists-youcantgetherebychanceunlessyourechance/' + id)
                 .done(function(data){
                     $('#artistName').text(data["name"]);
                     $('#artistCity').text(data["origin"]);
