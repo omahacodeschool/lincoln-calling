@@ -9,9 +9,9 @@
             <h2>
                 <% @headliners.order(:headline_order).each do |artist| %>
                     <% if artist.headline_order < @headliners.length %>
-                        <a href="/overlay/artists/<%= artist.id %>" data-id="<%= artist.id %>"><%= artist.name %></a> +
+                        <a href="/artists"><%= artist.name %></a> +
                     <% else %>
-                        <a href="/overlay/artists/<%= artist.id %>" data-id="<%= artist.id %>"><%= artist.name %></a>
+                        <a href="/artists"><%= artist.name %></a>
                     <% end %>
                 <% end %>
             </h2>
