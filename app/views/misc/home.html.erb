@@ -1,13 +1,13 @@
 <main class="body__main">
     <section class="main__hero">
-        <div class="tickets__link">
+        <!-- <div class="tickets__link">
             <h2>
                 <a href="http://lincolncalling2016.eventbrite.com/?aff=LCWebsite">GET YOUR TICKETS</a>
             </h2>
-        </div>
+        </div> -->
         <div class="hero__headliners">
             <h2>
-                <% @headliners.each do |artist| %>
+                <% @headliners.order(:headline_order).each do |artist| %>
                     <% if artist.headline_order < @headliners.length %>
                         <a href="/overlay/artists/<%= artist.id %>" data-id="<%= artist.id %>"><%= artist.name %></a> +
                     <% else %>
