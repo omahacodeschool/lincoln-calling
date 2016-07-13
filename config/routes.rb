@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     post "/artists-youcantgetherebychanceunlessyourechance/:id" => "artists#show"
     post "/artists-youcantgetherebychanceunlessyourechance/:id/prev" => "artists#prev"
     post "/artists-youcantgetherebychanceunlessyourechance/:id/next" => "artists#next"
-    # get "/comedy" => "artists#index_comedians"
+    get "/comedy-pleaseshowyouridt" => "artists#index_comedians"
     # post "/artists/search" => "artists#search"
     # get "/schedule" => 'events#index'
     # get "/schedule/:day" => 'events#index'
