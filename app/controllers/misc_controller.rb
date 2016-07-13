@@ -3,7 +3,6 @@ class MiscController < ApplicationController
         @tickets = Ticket.all.order(:created_at).group_by(&:category)
         @articles = Feature.all.order("id DESC").limit(4)
         @headliners = Band.where(headliner: true)
-        @supporting_acts = Band.where(headliner: false)
         @events = Event.all
         
         weekdays = []

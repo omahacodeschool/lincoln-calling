@@ -2,7 +2,7 @@ function showArtist(id) {
     if ($(this).data('id')) {
         var id = $(this).data('id');
     }
-    $.post('/artists-youcantgetherebychanceunlessyourechance/' + id)
+    $.post('/artists/' + id)
     .done(function(data){
         var artist = $.parseJSON(data["artist"]);
         var concerts = $.parseJSON(data["concerts"]);

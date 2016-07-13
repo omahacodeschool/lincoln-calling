@@ -4,6 +4,10 @@
     <!-- METADATA -->
     <% if @article %>
         <title><%= @article.title %> | Lincoln Calling</title>
+    <% elsif @supporting_acts %>
+        <title>Artists | Lincoln Calling</title>
+    <% elsif @artists %>
+        <title>Comedy | Lincoln Calling</title>
     <% elsif params[:controller] == "news" %>
         <title>News | Lincoln Calling</title>
     <% elsif @sponsors %>
@@ -88,19 +92,19 @@
                     <li class="links__link">
                         <a href="/sponsors">SPONSORS</a>
                     </li>
-                    <!-- <div class="links__dropdown links__dropdown--lineup">
+                    <div class="links__dropdown links__dropdown--lineup">
                         <ul class='dropdown__links'>
                             <li class="links__link">
                                 <a href="/artists">ARTISTS</a>
                             </li>
-                            <li class="links__link">
+                            <!-- <li class="links__link">
                                 <a href="/schedule">SCHEDULE</a>
-                            </li>
+                            </li> -->
                             <li class="links__link">
                                 <a href="/comedy">COMEDY</a>
                             </li>
                         </ul>
-                    </div> -->
+                    </div>
                     <div class="links__dropdown links__dropdown--info">
                         <ul class="dropdown__links">
                             <li class="links__link">
@@ -131,14 +135,14 @@
                 <div class="menu__links">
                     <div class="links__column">
                         <a href="http://lincolncalling2016.eventbrite.com/?aff=LCWebsite">TICKETS</a>
-                        <!-- <a href="/artists">ARTISTS</a>
-                        <a href="/schedule">SCHEDULE</a>
-                        <a href="/comedy">COMEDY</a> -->
+                        <a href="/artists">ARTISTS</a>
+                        <!-- <a href="/schedule">SCHEDULE</a> -->
                         <a href="/venues">VENUES</a>
                         <a href="/faq">FAQ</a>
                     </div>
                     <div class="links__column">
                         <!-- <a href="/faq">FAQ</a> -->
+                        <a href="/comedy">COMEDY</a>
                         <a href="/about">ABOUT</a>
                         <a href="/news">NEWS</a>
                         <a href="/sponsors">SPONSORS</a>

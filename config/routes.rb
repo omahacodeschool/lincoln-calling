@@ -18,12 +18,12 @@ Rails.application.routes.draw do
     
     devise_for :users
     root to: "misc#home"
-    get "/artists-youcantgetherebychanceunlessyourechance" => "artists#index"
-    post "/artists-youcantgetherebychanceunlessyourechance/search" => "artists#search"
-    post "/artists-youcantgetherebychanceunlessyourechance/:id" => "artists#show"
-    post "/artists-youcantgetherebychanceunlessyourechance/:id/prev" => "artists#prev"
-    post "/artists-youcantgetherebychanceunlessyourechance/:id/next" => "artists#next"
-    get "/comedy-pleaseshowyouridt" => "artists#index_comedians"
+    get "/artists" => "artists#index"
+    post "/artists/search" => "artists#search"
+    post "/artists/:id" => "artists#show"
+    post "/artists/:id/prev" => "artists#prev"
+    post "/artists/:id/next" => "artists#next"
+    get "/comedy" => "artists#index_comedians"
     # post "/artists/search" => "artists#search"
     # get "/schedule" => 'events#index'
     # get "/schedule/:day" => 'events#index'
