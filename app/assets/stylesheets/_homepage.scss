@@ -18,6 +18,7 @@
         font-weight: bold;
         font-size: 2rem;
         cursor: default;
+        display: none;
         a {
             color: $white;
             text-decoration: none;
@@ -214,6 +215,12 @@
         @include flexbox();
         @include flexbox-justify-content(center);
         @include flexbox-flex-wrap(wrap);
+    }
+    .hero__headliners,
+    .tickets__link {
+        h2 {
+            display: block;
+        }
     }
     .hero__supporting {
         h3 {
