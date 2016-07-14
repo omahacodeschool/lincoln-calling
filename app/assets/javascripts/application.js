@@ -15,12 +15,3 @@
 //= require underscore
 //= require gmaps/google
 //= require_tree .
-    
-$(document).ready(function(){
-    $('.hero__headliners a').click(function(event){
-        event.preventDefault();
-    });
-    $('.hero__supporting a').click(function(event){
-        event.preventDefault();
-    });
-});
