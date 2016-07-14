@@ -34,13 +34,13 @@ $(document).ready(function(){
         $('.body__overlay').removeClass('overlay--show');
     });
     $('.overlay__prev').click(function(){
-        $.post('/artists-youcantgetherebychanceunlessyourechance/' + overlayArtist + '/prev')
+        $.post('/artists/' + overlayArtist + '/prev')
         .done(function(data){
             showArtist(data["id"]);
         });
     });
     $('.overlay__next').click(function(){
-        $.post('/artists-youcantgetherebychanceunlessyourechance/' + overlayArtist + '/next')
+        $.post('/artists/' + overlayArtist + '/next')
         .done(function(data){
             showArtist(data["id"]);
         });

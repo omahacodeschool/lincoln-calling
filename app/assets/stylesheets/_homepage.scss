@@ -16,6 +16,7 @@
         margin: .95rem 0 0;
         padding: 0 (32rem / 16);
         font-weight: bold;
+        font-size: 2rem;
         cursor: default;
         a {
             color: $white;
@@ -28,14 +29,14 @@
 }
 
 .hero__supporting {
-    padding: 0 (100rem / 16);
+    padding: 0 20px;
     text-align: center;
     h3 {
         cursor: default;
-        margin: 0;
+        margin: 2rem 0 0;
         font-size: 1rem;
         font-weight: bold;
-        line-height: (44rem / 16);
+        line-height: (22rem / 16);
         a {
             color: $white;
             text-decoration: none;
