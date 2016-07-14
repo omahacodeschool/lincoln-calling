@@ -35,9 +35,9 @@
     h3 {
         cursor: default;
         margin: 1rem 0 0;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         font-weight: bold;
-        line-height: (22rem / 16);
+        line-height: (27rem / 16);
         a {
             color: $white;
             text-decoration: none;
@@ -225,6 +225,7 @@
     .hero__supporting {
         h3 {
             margin: 2rem 0 0;
+            font-size: 1.5rem;
         }
     }
 }
