@@ -8,9 +8,9 @@ function showArtist(id) {
         var concerts = $.parseJSON(data["concerts"]);
         $('#artistName').text(artist["name"]);
         $('#artistCity').text(artist["origin"]);
-        $('#artistWebsite').html('<a target="_blank" href="http://' + artist["website"] + '">' + artist["website"] + '</a>');
-        console.log(data["artist"]);
-        $('.info__bio').text(data["artist"]["bio"]);
+        $('#artistWebsite').html('<a target="_blank" href="' + artist["website"] + '">' + artist["website"] + '</a>');
+        console.log(data["artist"]["bio"]);
+        $('#artistBio').text(data["artist"]["bio"]);
         $('.overlay__image').css('background-image', 'url(' + artist["image"]["url"] + ')');
         $('body').css('overflow', 'hidden');
         $('.body__overlay').addClass('overlay--show');
