@@ -9,8 +9,7 @@ function showArtist(id) {
         $('#artistName').text(artist["name"]);
         $('#artistCity').text(artist["origin"]);
         $('#artistWebsite').html('<a target="_blank" href="' + artist["website"] + '">' + artist["website"] + '</a>');
-        console.log(data["artist"]);
-        $('#artistBio').text(data["artist"]["bio"]);
+        $('#artistBio').text(artist["bio"]);
         $('.overlay__image').css('background-image', 'url(' + artist["image"]["url"] + ')');
         $('body').css('overflow', 'hidden');
         $('.body__overlay').addClass('overlay--show');
