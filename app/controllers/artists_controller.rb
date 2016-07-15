@@ -47,6 +47,10 @@ class ArtistsController < ApplicationController
         @events.each do |event|
             @concerts.push({ venue: Venue.find(event.venue_id).name, start_time: event.start_date_time.strftime("%A, %b. %-d @ %-l:%M %P") })
         end
+        
+        @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
+        @artist.bio = @markdown.render(@artist.bio)
+        
         render json: { artist: @artist.to_json, concerts: @concerts.to_json }
     end
     
@@ -57,6 +61,7 @@ class ArtistsController < ApplicationController
         if @prev_artist == nil
             @prev_artist = Band.order("headline_order DESC").first
         end
+        
         render json: { id: @prev_artist.id }
     end
     
@@ -67,6 +72,7 @@ class ArtistsController < ApplicationController
         if @next_artist == nil
             @next_artist = Band.order("headline_order ASC").first
         end
+        
         render json: { id: @next_artist.id }
     end
 end
