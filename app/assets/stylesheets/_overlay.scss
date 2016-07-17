@@ -70,12 +70,6 @@
         background-color: $mid;
         pointer-events: auto;
     }
-    .overlay__info {
-        width: 350px;
-        margin-left: calc(100% - 350px);
-        padding-right: 25px;
-        padding-left: 25px;
-    }
     .info__divider {
         width: 100%;
         height: 2px;
@@ -99,5 +93,21 @@
     }
     .concerts__concert:nth-last-of-type(1) {
         margin-bottom: 0;
+    }
+}
+
+.overlay__info {
+    width: 100%;
+    margin-left: -25px;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+@media only screen and (min-width: 400px) {
+    .overlay__info {
+        width: 350px;
+        margin-left: calc(100% - 350px);
+        padding-right: 25px;
+        padding-left: 25px;
     }
 }
