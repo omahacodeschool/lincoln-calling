@@ -15,7 +15,7 @@ Rails.application.routes.draw do
         resources :visitor_guides
         root to: "features#index"
     end
-    
+
     devise_for :users
     root to: "misc#home"
     get "/artists" => "artists#index"
@@ -32,6 +32,7 @@ Rails.application.routes.draw do
     # get "/visitors/:id" => 'visitor_guides#show', as: :visitors_article
     get "/faq" => 'info#faq'
     get "/about" => 'info#about'
+    get '/hotels' => 'info#hotels'
     get "news" => 'news#index'
     get "news/:id" => "news#show", as: :news_article
     # get "sidebar/events" => 'sidebars#events'

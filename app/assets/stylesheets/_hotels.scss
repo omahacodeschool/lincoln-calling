@@ -1,0 +1,56 @@
+.content--hotels {
+    h5 {
+        background-color: #272e95;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        font-family: "GT Walsheim Bold", sans-serif;
+        text-transform: uppercase;
+        width: calc(100% + 26px);
+        margin-left: -13px;
+    }
+    p {
+        a {
+            display: block;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.hotel--logo {
+    img {
+        display: block;
+        border-top: 1px solid $light;
+        border-left: 1px solid $light;
+        border-right: 1px solid $light;
+        max-width: 300px;
+    }
+}
+
+.hotel--button,
+.hotel--button:hover,
+.hotel--button:visited {
+    background-color: $primary;
+    padding: 1rem;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $white;
+    max-width: 300px;
+    font-size: 1rem;
+}
+
+@media only screen and (min-width: 600px) {
+    .content--hotels {
+        p {
+            a {
+                display: inline;
+                float: right;
+                width: 50%;
+                margin-bottom: 0;
+            }
+        }
+    }
+}

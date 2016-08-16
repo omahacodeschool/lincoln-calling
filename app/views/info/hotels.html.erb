@@ -1,0 +1,54 @@
+<%= render "titles/default",
+    :category => "INFO",
+    :page => "Hotels"
+%>
+
+<div class="main__content">
+    <div class="content__content content--hotels">
+        <div class="about--text">
+            <h3>HOTELS</h3>
+            <p>
+                Enjoy Lincoln Calling proper by taking advantage of special festival rates at some of the best hotels in downtown Lincoln!
+            </p>
+            <a href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Lincoln%20Calling%20Festival%20Rate-20%25%20Rate%20Discount%5Elpr%60lnkfs%60&app=resvlink&stop_mobi=yes" target="_blank">
+                <h5>The Lincoln Marriott Cornhusker Hotel</h5>
+            </a>
+            <p>
+                Located in downtown Lincoln, this upscale hotel is a 6-minute walk from Nebraska State Capitol, and an 8-minute walk from the University of Nebraska-Lincoln. 
+            </p>
+            <p>
+                Classy contemporary rooms offer marble bathrooms and come with free WiFi, flat-screen TVs with premium channels, and desks with ergonomic chairs, as well as minifridges and coffeemakers. Some rooms have access to a lounge with free continental breakfast and evening appetizers. Suites have separate living areas with sofabeds.
+            </p>
+            <p>
+                Amenities include a pub/American grill and a Starbucks, plus an indoor heated pool, fitness/business centers, 27 event rooms, and a free airport shuttle.
+            </p>
+            <a class="hotel--logo" href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Lincoln%20Calling%20Festival%20Rate-20%25%20Rate%20Discount%5Elpr%60lnkfs%60&app=resvlink&stop_mobi=yes" target="_blank">
+            <img src="<%= image_url('cornhusker.png') %>"/>
+            </a>
+            <a href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Lincoln%20Calling%20Festival%20Rate-20%25%20Rate%20Discount%5Elpr%60lnkfs%60&app=resvlink&stop_mobi=yes" target="_blank" class="hotel--button">Book a room</a>
+            <a href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Lincoln%20Calling%5Elnkcy%60LCNLCNA%7CLCNLCNB%60132.00%60USD%60false%604%6010/6/16%6010/8/16%6009/15/2016&app=resvlink&stop_mobi=yes">
+                <h5>Courtyard by Marriott Lincoln Downtown/Haymarket</h5>
+            </a>
+            <p>
+                Set in the Historic Haymarket, this modern hotel is a 7-minute drive from the University of Nebraska and a 4.8-mile drive from Lincoln Airport.
+            </p>
+            <p>
+                Contemporary rooms offer free WiFi and flat-screen TVs, plus desks, minifridges and coffeemakers. Some rooms offer pull-out sofas, as do suites, which also feature separate living areas and microwaves.
+            </p>
+            <p>
+                Social spaces include a living room-style lobby, a courtyard with a fire pit, a BBQ/picnic area and an American restaurant. There's also a business center and 2 meeting rooms. Other amenities include an indoor pool, an exercise room and a free airport shuttle.
+            </p>
+            <a class="hotel--logo" href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Lincoln%20Calling%5Elnkcy%60LCNLCNA%7CLCNLCNB%60132.00%60USD%60false%604%6010/6/16%6010/8/16%6009/15/2016&app=resvlink&stop_mobi=yes">
+            <img src="<%= image_url('courtyard.jpg') %>"/>
+            </a>
+            <a href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Lincoln%20Calling%5Elnkcy%60LCNLCNA%7CLCNLCNB%60132.00%60USD%60false%604%6010/6/16%6010/8/16%6009/15/2016&app=resvlink&stop_mobi=yes" target="_blank" class="hotel--button">Book a room</a>
+        </div>
+    </div>
+    <div class="content__divider">
+    </div>
+    <section class="content__sidebar">
+        <%= render "sidebars/email" %>
+        <a href="/" class="sidebar__image"><img src="<%= image_url('sidebar.png') %>" alt="Oct. 6-8"/></a>
+        <!-- <%= render "sidebars/events" %> -->
+    </section>
+</div>

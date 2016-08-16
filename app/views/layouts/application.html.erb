@@ -25,7 +25,7 @@
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="Lincoln Calling is an annual, non-profit music festival focusing on emerging artists and occurring across multiple venues in downtown Lincoln, Neb." />
-    
+
     <!-- SOCIAL METADATA -->
     <meta property="og:locale" content="en_US"/>
     <meta property="og:type" content="article"/>
@@ -46,18 +46,18 @@
     <% else %>
     <meta name="twitter:image" content="<%= image_url('amp_2x.png') %>">
     <% end %>
-    
+
     <script>document.write("<scr"+"ipt src='http://mpp.vindicosuite.com/mpp/?y=2&t=j&tp=1&clid=22748&pixid=99106026&rnd=<timestamp_here>&u="+escape(parent.document.location)+"&r="+escape(parent.document.referrer)+"'></scri"+"pt>");</script><NOSCRIPT><IMG SRC="http://mpp.vindicosuite.com/mpp/?y=2&t=i&tp=1&clid=22748&pixid=99106026&rnd=<timestamp_here>" width=0 height=0 border=0></NOSCRIPT>
-    
+
     <%#
     Configure default and controller-, and view-specific titles in
     config/locales/en.yml. For more see:
     https://github.com/calebthompson/title#usage
     %>
-    
+
     <%= stylesheet_link_tag :application, media: "all" %>
     <%= csrf_meta_tags %>
-    
+
     <link rel='shortcut icon' type='image/png' href='<%= image_url('favicon.png') %>'>
 </head>
 <body class="<%= body_class %>">
@@ -99,9 +99,6 @@
                             <li class="links__link">
                                 <a href="/artists">ARTISTS</a>
                             </li>
-                            <!-- <li class="links__link">
-                                <a href="/schedule">SCHEDULE</a>
-                            </li> -->
                             <li class="links__link">
                                 <a href="/comedy">COMEDY</a>
                             </li>
@@ -118,6 +115,9 @@
                             <li class="links__link">
                                 <a href="/about">ABOUT</a>
                             </li>
+                            <!-- <li class="links__link">
+                                <a href="/hotels">HOTELS</a>
+                            </li> -->
                         </ul>
                     </div>
                 </ul>
@@ -138,12 +138,11 @@
                     <div class="links__column">
                         <a href="http://lincolncalling2016.eventbrite.com/?aff=LCWebsite">TICKETS</a>
                         <a href="/artists">ARTISTS</a>
-                        <!-- <a href="/schedule">SCHEDULE</a> -->
                         <a href="/venues">VENUES</a>
                         <a href="/faq">FAQ</a>
+                        <!-- <a href="/hotels">HOTELS</a> -->
                     </div>
                     <div class="links__column">
-                        <!-- <a href="/faq">FAQ</a> -->
                         <a href="/comedy">COMEDY</a>
                         <a href="/about">ABOUT</a>
                         <a href="/news">NEWS</a>
@@ -152,7 +151,7 @@
                 </div>
             </div>
         </header>
-  
+
         <%= yield %>
 
         <footer class="body__footer">
