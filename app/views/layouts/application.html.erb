@@ -16,8 +16,10 @@
         <title>Venues | Lincoln Calling</title>
     <% elsif @faq %>
         <title>FAQ | Lincoln Calling</title>
-    <% elsif params[:controller] == "info" %>
+    <% elsif @about %>
         <title>About | Lincoln Calling</title>
+    <% elsif params[:controller] == "info" %>
+        <title>Hotels | Lincoln Calling</title>
     <% else %>
         <title>Lincoln Calling</title>
     <% end %>
