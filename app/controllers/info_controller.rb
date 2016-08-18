@@ -12,6 +12,8 @@ class InfoController < ApplicationController
             end
         end
 
+        @days = @days.sort
+
         @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
 
         render "faq"
@@ -28,6 +30,9 @@ class InfoController < ApplicationController
                 weekdays.push(event.start_date_time.wday)
             end
         end
+
+        @days = @days.sort
+
         render "about"
     end
     def hotels
@@ -41,7 +46,9 @@ class InfoController < ApplicationController
                 weekdays.push(event.start_date_time.wday)
             end
         end
-        
+
+        @days = @days.sort
+
         render "hotels"
     end
 end

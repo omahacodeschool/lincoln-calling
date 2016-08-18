@@ -13,5 +13,7 @@ class SponsorsController  < ApplicationController
                 weekdays.push(event.start_date_time.wday)
             end
         end
+
+        @days = @days.sort
     end
 end

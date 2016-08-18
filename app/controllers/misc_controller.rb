@@ -4,15 +4,17 @@ class MiscController < ApplicationController
         @articles = Feature.all.order("id DESC").limit(4)
         @headliners = Band.where(headliner: true)
         @events = Event.all
-        
+
         weekdays = []
         @days = []
-        
+
         @events.each do |event|
             if weekdays.include?(event.start_date_time.wday) == false
                 @days.push(event.start_date_time)
                 weekdays.push(event.start_date_time.wday)
             end
         end
+
+        @days = @days.sort
     end
 end
