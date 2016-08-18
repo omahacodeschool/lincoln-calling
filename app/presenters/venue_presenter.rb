@@ -16,7 +16,7 @@ class VenuePresenter
         start_time = event.starttime
         end_time = event.endtime
         venue_id = event.venue_id
-        venue_and_artist = "#{event.artist.name} at #{event.venue.name}"
+        venue_and_artist = "#{event.artist.name}"
         final_info << {artist_id: artist_id, venue_and_artist: venue_and_artist, start_time: start_time, end_time: end_time, venue_id: venue_id}
       end
     end

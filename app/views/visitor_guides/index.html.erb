@@ -5,7 +5,7 @@
 
 <div class="main__content">
     <div class="content__content content--articles">
-        <%= paginate @articles, :window => 2, :theme => 'lincoln_calling_pagination' %> 
+        <%= paginate @articles, :window => 2, :theme => 'lincoln_calling_pagination' %>
         <% @articles.each do |article| %>
             <div class="articles__article">
                 <a href="/visitors/<%= article.slug %>">
@@ -22,6 +22,6 @@
     </div>
     <section class="content__sidebar">
         <%= render "sidebars/email" %>
-        <!-- <%= render "sidebars/events" %> -->
+        <%= render "sidebars/events" %>
     </section>
 </div>

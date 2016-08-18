@@ -5,7 +5,7 @@
 
 <div class="main__content">
     <div class="content__content content--articles">
-        <%= paginate @articles, :theme => 'lincoln_calling_pagination' %> 
+        <%= paginate @articles, :theme => 'lincoln_calling_pagination' %>
         <% @articles.each do |article| %>
             <div class="articles__article">
                 <a href="/news/<%= article.slug %>">
@@ -22,7 +22,6 @@
     </div>
     <section class="content__sidebar">
         <%= render "sidebars/email" %>
-        <a href="/" class="sidebar__image"><img src="<%= image_url('sidebar.png') %>" alt="Oct. 6-8"/></a>
-        <!-- <%= render "sidebars/events" %> -->
+        <%= render "sidebars/events" %>
     </section>
 </div>

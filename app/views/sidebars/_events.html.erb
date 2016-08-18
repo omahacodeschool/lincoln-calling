@@ -25,15 +25,15 @@
             <% events.each do |event| %>
                 <p data-id="<%= event[:artist_id] %>">
                     <%= event[:venue_and_artist] %><br>
-                    <span><%= event[:start_time].upcase %></span>
+                    <!-- <span><%= event[:start_time].upcase %></span> -->
                 </p>
             <% end %>
         </div>
         <% end %>
     </div>
-    <div class="shows__full-schedule">
+    <!-- <div class="shows__full-schedule">
         <span>
             <a href="/schedule">see full schedule</a>
         </span>
-    </div>
+    </div> -->
 </div>
