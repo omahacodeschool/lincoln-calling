@@ -15,5 +15,6 @@ class SponsorsController  < ApplicationController
         end
 
         @days = @days.sort
+        @days.pop
     end
 end

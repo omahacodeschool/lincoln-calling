@@ -16,7 +16,8 @@ class VenuesController < ApplicationController
         end
 
         @days = @days.sort
-        
+        @days.pop
+
         @venues = Venue.all.order(:name)
     end
 end

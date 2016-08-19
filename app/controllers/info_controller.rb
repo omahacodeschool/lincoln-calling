@@ -13,6 +13,7 @@ class InfoController < ApplicationController
         end
 
         @days = @days.sort
+        @days.pop
 
         @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
 
@@ -32,6 +33,7 @@ class InfoController < ApplicationController
         end
 
         @days = @days.sort
+        @days.pop
 
         render "about"
     end
@@ -48,6 +50,7 @@ class InfoController < ApplicationController
         end
 
         @days = @days.sort
+        @days.pop
 
         render "hotels"
     end

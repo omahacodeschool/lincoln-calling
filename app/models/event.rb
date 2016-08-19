@@ -11,7 +11,7 @@ class Event < ActiveRecord::Base
         self.start_date_time.strftime("%A")
     end
     #returns the abbreviated month and day number
-    #example: Oct. 6 
+    #example: Oct. 6
     def monthday
         (self.start_date_time - 6.hours).strftime("%A, %b. %e")
     end
@@ -29,7 +29,7 @@ class Event < ActiveRecord::Base
     #used in events index and events sidebar
     def self.byday(current_date_time)
         events = []
-        Event.all.order(:start_date_time).each do |event|
+        Event.all.includes(:venue).order("venues.name asc").each do |event|
             start_of_day = current_date_time.beginning_of_day + 6.hours
             end_of_day = current_date_time.end_of_day + 6.hours
             if event.start_date_time >= start_of_day && event.start_date_time < end_of_day

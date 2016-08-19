@@ -13,6 +13,7 @@ class NewsController < ApplicationController
         end
 
         @days = @days.sort
+        @days.pop
     end
 
     def show
@@ -29,6 +30,7 @@ class NewsController < ApplicationController
         end
 
         @days = @days.sort
+        @days.pop
 
         @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
     end
