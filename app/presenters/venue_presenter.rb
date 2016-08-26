@@ -11,6 +11,7 @@ class VenuePresenter
     else
       @event_array.each do | event |
         id = event.id
+        puts id
         artist = event.artist.name
         artist_id = event.artist.id
         start_time = event.starttime
