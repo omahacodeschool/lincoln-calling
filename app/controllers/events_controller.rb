@@ -24,7 +24,11 @@ class EventsController  < ApplicationController
         @venues = Venue.order(:name)
         @schedule_string = ""
 
-        @schedule_height = empty_venue_height
+        if @first_event.strftime("%M") == "00"
+            @schedule_height = empty_venue_height
+        else
+            @schedule_height = empty_venue_height + 120
+        end
 
         @venues.each_with_index do |venue, index|
             events = venue.venue_events_by_day(@current_day)

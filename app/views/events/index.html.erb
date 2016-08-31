@@ -74,7 +74,11 @@
                 <div class="hour__text">
                     <%= (@first_event + i.hours).strftime("%-l %P") %>
                 </div>
+                <% if @first_event.strftime("%M") == "00" %>
                 <div class="hour__line">
+                <% else %>
+                <div class="hour__line" style="border-top: 1px solid #c9c9c9;">
+                <% end %>
                 </div>
             </div>
         <% end %>
