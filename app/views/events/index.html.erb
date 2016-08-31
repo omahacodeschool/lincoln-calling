@@ -77,7 +77,26 @@
                     </div>
                 <% end %>
             <% else %>
-
+                <% hours_array = [] %>
+                <% hours.times do |i| %>
+                    <% if i == 1 %>
+                    <div class="hours__hour" margin-top="<%= (@first_event.strftime("%M").to_f / 60) * 120 %>px">
+                        <div class="hour__text">
+                            <%= (@first_event + i.hours).strftime("%-l %P") %>
+                        </div>
+                        <div class="hour__line">
+                        </div>
+                    </div>
+                    <% else %>
+                    <div class="hours__hour">
+                        <div class="hour__text">
+                            <%= (@first_event + i.hours).strftime("%-l %P") %>
+                        </div>
+                        <div class="hour__line">
+                        </div>
+                    </div>
+                    <% end %>
+                <% end %>
             <% end %>
         </div>
         <%= raw @schedule_string %>
