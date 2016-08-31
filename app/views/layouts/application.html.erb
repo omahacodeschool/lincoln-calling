@@ -6,6 +6,8 @@
         <title><%= @article.title %> | Lincoln Calling</title>
     <% elsif @supporting_acts %>
         <title>Artists | Lincoln Calling</title>
+    <% elsif params[:controller] == "events" %>
+        <title>Schedule | Lincoln Calling</title>
     <% elsif @artists %>
         <title>Comedy | Lincoln Calling</title>
     <% elsif params[:controller] == "news" %>

@@ -65,7 +65,7 @@ class EventsController  < ApplicationController
             @schedule_string = @schedule_string + concerts_string + "</div>"
         end
         @days = []
-        @events = Event.all.group_by(&:monthday)
+        @events = Event.all.order(:start_date_time).group_by(&:monthday)
         @events.each do |day|
             @days.push(day[0])
         end

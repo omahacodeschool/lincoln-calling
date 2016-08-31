@@ -74,13 +74,20 @@ $(document).ready(function(){
                 var id = $(this).data('id');
                 $.post('/artists/' + id)
                 .done(function(data){
-                    $('#artistName').text(data["name"]);
-                    $('#artistCity').text(data["origin"]);
-                    $('#artistWebsite').text(data["website"]);
-                    $('.info__bio').text(data["bio"]);
-                    $('.overlay__image').css('background-image', 'url(' + data["image"]["url"] + ')');
+                    var artist = $.parseJSON(data["artist"]);
+                    var concerts = $.parseJSON(data["concerts"]);
+                    $('#artistName').text(artist["name"]);
+                    $('#artistCity').text(artist["origin"]);
+                    $('#artistWebsite').html('<a target="_blank" href="' + artist["website"] + '">' + artist["website"] + '</a>');
+                    $('#artistBio').html(artist["bio"]);
+                    $('.overlay__image').css('background-image', 'url(' + artist["image"]["url"] + ')');
                     $('body').css('overflow', 'hidden');
                     $('.body__overlay').addClass('overlay--show');
+                    overlayArtist = artist["id"];
+                    // $('#artistConcerts').html('');
+                    // for (var i = 0, l = concerts.length; i < l; i++) {
+                    //     $('#artistConcerts').append('<div class="concerts__concert"><div class="concert__date">' + concerts[i]["start_time"] + '</div><div class="concert__venue">' + concerts[i]["venue"] + '</div></div>')
+                    // }
                 });
             });
         });
