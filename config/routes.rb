@@ -24,8 +24,8 @@ Rails.application.routes.draw do
     post "/artists/:id/prev" => "artists#prev"
     post "/artists/:id/next" => "artists#next"
     get "/comedy" => "artists#index_comedians"
-    get "/schedule" => 'events#index'
-    get "/schedule/:day" => 'events#index'
+    # get "/schedule" => 'events#index'
+    # get "/schedule/:day" => 'events#index'
     # get "/artists/genres/:id" => 'genres#view'
     # get "/visitors" => 'visitor_guides#index'
     # get "/visitors/:id" => 'visitor_guides#show', as: :visitors_article
