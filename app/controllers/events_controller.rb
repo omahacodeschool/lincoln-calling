@@ -18,7 +18,6 @@ class EventsController  < ApplicationController
         all_day_events = Event.byday(@current_day)
 
         @first_event = all_day_events[0].start_date_time
-        puts @first_event
         @last_event = all_day_events[all_day_events.length - 1].end_date_time.end_of_hour
 
         empty_venue_height = ((@last_event - @first_event) / 60) * 2
