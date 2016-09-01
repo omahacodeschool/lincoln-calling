@@ -6,6 +6,9 @@
 .schedule__header {
     margin-bottom: 1.5625rem;
     padding: 0 70px;
+    &.fixed {
+        margin-bottom: 113px;
+    }
 }
 
 .header__days-plan {
@@ -197,6 +200,17 @@
     width: 100%;
 }
 
+.schedule__schedule-nav.fixed {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    margin: 0 auto;
+    max-width: 950px;
+    right: 0;
+    z-index: 1000;
+}
+
 .schedule__concerts {
     @include flexbox();
     @include flexbox-justify-content(space-between);
@@ -209,6 +223,7 @@
         border-right: 1px solid $mid;
         border-bottom: 1px solid $mid;
         .venue__concert {
+            border-top: 1px solid white;
             position: relative;
             cursor: pointer;
         }

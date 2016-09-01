@@ -88,3 +88,119 @@
 </div>
 
 <%= render "overlay/artist" %>
+
+<script>
+
+Element.prototype.listen = function(event, callback) {
+    if(this.attachEvent) {
+        this.attachEvent("on" + event, function() {callback.call(this);});
+    } else if(this.addEventListener) {
+        this.addEventListener(event, callback, false);
+    }
+};
+
+Element.prototype.addClass = function(className) {
+    if(this.hasClass(className) == false) {
+        this.className += ' ' + className;
+    }
+
+}
+
+Element.prototype.removeClass = function(className) {
+    if(this.hasClass(className)) {
+        var rx = new RegExp('(\\s|^)' + className + '(\\s|$)', 'g');
+        this.className = this.className.replace(rx, ' ');
+    }
+}
+
+Element.prototype.hasClass = function(className) {
+    var rx = new RegExp('(\\s|^)' + className + '(\\s|$)');
+
+    if(this.className.match(rx)) {
+        return true;
+    }
+
+    return false;
+}
+
+Element.prototype.toggleClass = function(className) {
+    if(this.hasClass(className)) {
+        this.removeClass(className);
+    } else {
+        this.addClass(className);
+    }
+}
+
+function getById(id) {
+    return document.getElementById(id);
+}
+
+function getByClass(klass) {
+    return document.getElementsByClassName(klass);
+}
+
+function getOneClass(klass) {
+    return document.getElementsByClassName(klass)[0];
+}
+
+window.onload = setupDom;
+window.onresize = resizeDom;
+window.onscroll = doOnScroll;
+
+function setupDom() {
+    var elements = document.querySelectorAll('.schedule__schedule-nav'),
+        element = {};
+
+    for (var i = 0, len = elements.length; i < len; i++) {
+        element = {
+            element: elements[i],
+            top: getDistanceFromTop(elements[i])
+        }
+        animations.elements.push(element);
+    }
+
+    setTimeout(function() { doOnScroll(); }, 1000);
+}
+
+function resizeDom() {
+    animations.elements.forEach(function(element, index, array) {
+        element.top = getDistanceFromTop(element.element);
+    });
+}
+
+function doOnScroll() {
+    animations.testScroll();
+}
+
+var animations = {
+    iconOffset: 0,
+    elements: [],
+    testScroll: function () {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+        this.elements.forEach(function(element, index, array) {
+            if (element.top < scrollTop) {
+                if (element.element.hasClass('fixed') == false) {
+                    element.element.addClass('fixed');
+                    $('.schedule__header').addClass('fixed');
+                }
+            } else {
+                element.element.removeClass('fixed');
+                $('.schedule__header').removeClass('fixed');
+            }
+        });
+    }
+};
+
+function getDistanceFromTop(element) {
+    var yPos = 0;
+
+    while(element) {
+        yPos += (element.offsetTop);
+        element = element.offsetParent;
+    }
+
+    return yPos;
+}
+
+</script>
