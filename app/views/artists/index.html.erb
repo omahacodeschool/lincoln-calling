@@ -16,7 +16,7 @@
         <% @headliners.order(:headline_order).each do |artist| %>
             <div class="artists__artist" data-id="<%= artist.id %>">
                 <div class="artist__image" style="background-image: url(<%= artist.image %>)">
-                
+
                 </div>
                 <div class="artist__name">
                     <div class="name__text">
@@ -29,9 +29,10 @@
             </div>
         <% end %>
         <% @supporting_acts.order(:headline_order).each do |artist| %>
+            <% unless artist.hide %>
             <div class="artists__artist" data-id="<%= artist.id %>">
                 <div class="artist__image" style="background-image: url(<%= artist.image %>)">
-                
+
                 </div>
                 <div class="artist__name">
                     <div class="name__text">
@@ -42,6 +43,7 @@
                     <%= artist.origin %>
                 </div>
             </div>
+            <% end %>
         <% end %>
     </div>
 </main>

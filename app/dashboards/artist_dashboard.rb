@@ -18,7 +18,8 @@ class ArtistDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     headliner: Field::Boolean,
-    headline_order: Field::Number
+    headline_order: Field::Number,
+    hide: Field::Boolean
   }
 
   # COLLECTION_ATTRIBUTES
@@ -61,7 +62,8 @@ class ArtistDashboard < Administrate::BaseDashboard
     :bio,
     :image,
     :headline_order,
-    :headliner
+    :headliner,
+    :hide
   ]
 
   # Overwrite this method to customize how artists are displayed
