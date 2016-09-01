@@ -38,25 +38,25 @@ class EventsController  < ApplicationController
                 events.each_with_index do |event, index|
                     if index == 0
                         margin_top = ((event.start_date_time - @first_event) / 60) * 2
+                        minutes = ((event.end_date_time - event.start_date_time) / 60) * 2
                         next_event = events[index + 1]
                         if next_event != nil
-                            margin_bottom = ((next_event.start_date_time - event.end_date_time) / 60) * 2
+                            margin_bottom = (((next_event.start_date_time - event.start_date_time) + minutes) / 60) * 2
                         else
                             margin_bottom = 0
                         end
-                        minutes = ((event.end_date_time - event.start_date_time) / 60) * 2
                         concerts_string = concerts_string +
                         "<div class=\"venue__concert\" data-id=\"" + event.artist.id.to_s + "\" style=\"height: " + minutes.to_s + "px; margin-top: " + margin_top.to_s + "px; margin-bottom: " + margin_bottom.to_s + "px\">" +
                             "<div class=\"concert__artist\"><div class=\"artist__name\">" + event.artist.name + "</div></div>" +
                         "</div>"
                     else
+                        minutes = ((Event.first.end_date_time - Event.first.start_date_time) / 60) * 2
                         next_event = events[index + 1]
                         if next_event != nil
-                            margin_bottom = ((next_event.start_date_time - event.end_date_time) / 60) * 2
+                            margin_bottom = (((next_event.start_date_time - event.start_date_time) + minutes) / 60) * 2
                         else
                             margin_bottom = 0
                         end
-                        minutes = ((Event.first.end_date_time - Event.first.start_date_time) / 60) * 2
                         concerts_string = concerts_string +
                         "<div class=\"venue__concert\" data-id=\"" + event.artist.id.to_s + "\" style=\"height: " + minutes.to_s + "px; margin-bottom: " + margin_bottom.to_s + "px\">" +
                             "<div class=\"concert__artist\"><div class=\"artist__name\">" + event.artist.name + "</div></div>" +
