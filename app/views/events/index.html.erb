@@ -38,11 +38,24 @@
                     <% end %>
                 </div>
             </div>
-            <!-- <div class="days-plan__plan">
+            <div class="days-plan__plan">
                 <div class="plan__text">
-                    PLAN YOUR FESTIVAL
+                    PRINT THIS DAY
                 </div>
-            </div> -->
+                <% if @current_day.strftime("%^A") == "THURSDAY" %>
+                <a target="blank" href="<%= image_url('thursday-lincoln-calling.png') %>">
+
+                </a>
+                <% elsif @current_day.strftime("%^A") == "FRIDAY" %>
+                <a target="blank" href="<%= image_url('friday-lincoln-calling.png') %>">
+
+                </a>
+                <% elsif @current_day.strftime("%^A") == "SATURDAY" %>
+                <a target="blank" href="<%= image_url('saturday-lincoln-calling.png') %>">
+
+                </a>
+                <% end %>
+            </div>
         </div>
     </header>
     <nav class="schedule__schedule-nav">
