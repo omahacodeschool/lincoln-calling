@@ -200,7 +200,7 @@ var animations = {
             if (element.top < scrollTop) {
                 if (element.element.hasClass('fixed') == false) {
                     element.element.addClass('fixed');
-                    getOneClass('schedule__header').style.height = (25 + getOneClass('.schedule-nav__venues').offsetHeight) + 'px';
+                    getOneClass('schedule__header').style.height = (25 + getOneClass('schedule-nav__venues').offsetHeight) + 'px';
                 }
             } else {
                 element.element.removeClass('fixed');
@@ -219,7 +219,7 @@ function getDistanceFromTop(element) {
         element = element.offsetParent;
     }
     getOneClass('schedule__schedule-nav').addClass('fixed');
-    getOneClass('schedule__header').style.height = (25 + getOneClass('.schedule-nav__venues').offsetHeight) + 'px';
+    getOneClass('schedule__header').addClass('fixed');
 
     return yPos;
 }
