@@ -77,11 +77,11 @@
                 </div>
                 <% else %>
                 <div class="hour__text">
-                    <%= (@first_event + i.hours + 1).strftime("%-l %P") %>
+                    <%= (@first_event + (i + 1).hours).strftime("%-l %P") %>
                 </div>
                 <% end %>
                 <% if @first_event.strftime("%M") == "00" %>
-                <% unless hours - 1 == i %>
+                <% unless (hours - 1 == i) || (i == 0) %>
                 <div class="hour__line" style="border-top: 1px solid #c9c9c9;">
                 <% end %>
                 <% else %>
@@ -89,7 +89,7 @@
                 <div class="hour__line" style="border-top: 1px solid #c9c9c9;">
                 <% end %>
                 <% end %>
-                <% unless hours - 1 == i %>
+                <% unless (hours - 1 == i) || (i == 0 && @first_event.strftime("%M") == "00") %>
                 </div>
                 <% end %>
             </div>
