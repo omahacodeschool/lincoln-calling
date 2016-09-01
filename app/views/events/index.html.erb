@@ -75,11 +75,17 @@
                     <%= (@first_event + i.hours).strftime("%-l %P") %>
                 </div>
                 <% if @first_event.strftime("%M") == "00" %>
-                <div class="hour__line">
-                <% else %>
+                <% unless (hours - 1 == i) || (i == 0) %>
                 <div class="hour__line" style="border-top: 1px solid #c9c9c9;">
                 <% end %>
+                <% else %>
+                <% unless (hours - 1 == i) || (i == 0) %>
+                <div class="hour__line" style="border-top: 1px solid #c9c9c9;">
+                <% end %>
+                <% end %>
+                <% unless (hours - 1 == i) || (i == 0) %>
                 </div>
+                <% end %>
             </div>
         <% end %>
         </div>
@@ -166,6 +172,7 @@ function resizeDom() {
     animations.elements.forEach(function(element, index, array) {
         element.top = getDistanceFromTop(element.element);
     });
+    animations.testScroll();
 }
 
 function doOnScroll() {
@@ -182,11 +189,11 @@ var animations = {
             if (element.top < scrollTop) {
                 if (element.element.hasClass('fixed') == false) {
                     element.element.addClass('fixed');
-                    $('.schedule__header').addClass('fixed');
+                    getOneClass('schedule__header').addClass('fixed');
                 }
             } else {
                 element.element.removeClass('fixed');
-                $('.schedule__header').removeClass('fixed');
+                getOneClass('schedule__header').removeClass('fixed');
             }
         });
     }
@@ -194,11 +201,14 @@ var animations = {
 
 function getDistanceFromTop(element) {
     var yPos = 0;
-
+    getOneClass('schedule__schedule-nav').removeClass('fixed');
+    getOneClass('schedule__header').removeClass('fixed');
     while(element) {
         yPos += (element.offsetTop);
         element = element.offsetParent;
     }
+    getOneClass('schedule__schedule-nav').addClass('fixed');
+    getOneClass('schedule__header').addClass('fixed');
 
     return yPos;
 }

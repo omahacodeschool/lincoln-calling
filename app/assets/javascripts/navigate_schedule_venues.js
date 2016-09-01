@@ -34,7 +34,7 @@ if(document.getElementById("day_picker_box") != null || document.getElementById(
 
     var $shows_to_hide = $(".venue_shows--hide-" + $last_visible.data("id"))
     var $shows_to_reveal = $(".venue_shows--hide-" + $first_hidden.data("id"))
-    
+
     if ($first_hidden.length > 0){
       $last_visible.hide();
       $first_hidden.show();

@@ -1,8 +1,8 @@
 
 if ( document.getElementsByClassName("venues__map").length !== 0){
-  //Used Google Maps for Rails (https://github.com/apneadiving/Google-Maps-for-Rails) Gemfile for built-in maps API 
+  //Used Google Maps for Rails (https://github.com/apneadiving/Google-Maps-for-Rails) Gemfile for built-in maps API
 
-  // Variables will store data retrieved from XHR requests. 
+  // Variables will store data retrieved from XHR requests.
   //Defined here so that tehy can be utilized throughout any interaction on the page.
   var venueID;
   var dayDisplay = "day1"
@@ -79,7 +79,6 @@ if ( document.getElementsByClassName("venues__map").length !== 0){
     $('.day_link').on('click', function(){
       if (venueID != undefined){
         dayDisplay = $(this).attr("value");
-        console.log(dayDisplay)
         $('.shows').hide();
         $('.' + venueID ).filter('.' + dayDisplay ).show();
       };
