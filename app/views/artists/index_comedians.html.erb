@@ -6,9 +6,10 @@
 <main class="body__content">
     <div class="content__artists">
         <% @artists.order(:headline_order).each do |artist| %>
+            <% unless artist.hide %>
             <div class="artists__artist">
                 <div class="artist__image" style="background-image: url(<%= artist.image %>)">
-                
+
                 </div>
                 <div class="artist__name">
                     <div class="name__text">
@@ -19,6 +20,7 @@
                     <%= artist.origin %>
                 </div>
             </div>
+            <% end %>
         <% end %>
     </div>
 </main>
