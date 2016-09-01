@@ -200,11 +200,11 @@ var animations = {
             if (element.top < scrollTop) {
                 if (element.element.hasClass('fixed') == false) {
                     element.element.addClass('fixed');
-                    getOneClass('schedule__header').addClass('fixed');
+                    getOneClass('schedule__header').style.height = (25 + getOneClass('.schedule-nav__venues').offsetHeight) + 'px';
                 }
             } else {
                 element.element.removeClass('fixed');
-                getOneClass('schedule__header').removeClass('fixed');
+                getOneClass('schedule__header').style.height = '25px';
             }
         });
     }
@@ -213,13 +213,13 @@ var animations = {
 function getDistanceFromTop(element) {
     var yPos = 0;
     getOneClass('schedule__schedule-nav').removeClass('fixed');
-    getOneClass('schedule__header').removeClass('fixed');
+    getOneClass('schedule__header').style.height = '25px';
     while(element) {
         yPos += (element.offsetTop);
         element = element.offsetParent;
     }
     getOneClass('schedule__schedule-nav').addClass('fixed');
-    getOneClass('schedule__header').addClass('fixed');
+    getOneClass('schedule__header').style.height = (25 + getOneClass('.schedule-nav__venues').offsetHeight) + 'px';
 
     return yPos;
 }
