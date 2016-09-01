@@ -53,7 +53,8 @@
             <% @venues.each do |venue| %>
             <div class="venues__venue">
                 <div class="venue__text">
-                    <%= venue.name %>
+                    <%= venue.name %><br />
+                    <em><%= venue.ages%></em>
                 </div>
             </div>
             <% end %>

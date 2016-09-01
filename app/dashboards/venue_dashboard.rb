@@ -12,6 +12,7 @@ class VenueDashboard < Administrate::BaseDashboard
     name: Field::String,
     address: Field::String,
     website: Field::String,
+    ages: Field::String,
     info: Field::Text,
     img: CarrierwaveField,
     map_icon: CarrierwaveField,
@@ -48,7 +49,8 @@ class VenueDashboard < Administrate::BaseDashboard
     :address,
     :website,
     :info,
-    :img
+    :img,
+    :ages
   ]
 
   # Overwrite this method to customize how venues are displayed
