@@ -163,25 +163,37 @@
         <%= yield %>
 
         <footer class="body__footer">
-            <div class="footer__sponsors">
-                <div class="sponsors__sponsors">
-                    <div class="sponsors__label">
-                        PRESENTED BY:
+            <div class="footer--container">
+                <div class="footer__sponsors">
+                    <div class="sponsors__sponsors">
+                        <div class="sponsors__label">
+                            PRESENTED BY:
+                        </div>
+                        <div class="sponsors__sponsor premier">
+                            <a href="http://allocommunications.com" target="_blank">
+                                <img src="<%= image_url('allo-logo.png') %>" srcset="<%= image_url('allo-logo.png') %> 1x, <%= image_url('allo-logo_2x.png') %> 2x" alt="Allo Communications">
+                            </a>
+                        </div>
                     </div>
-                    <div class="sponsors__sponsor premier">
-                        <a href="http://allocommunications.com" target="_blank">
-                            <img src="<%= image_url('allo-logo.png') %>" srcset="<%= image_url('allo-logo.png') %> 1x, <%= image_url('allo-logo_2x.png') %> 2x" alt="Allo Communications">
+                </div>
+                <div class="footer__code-school">
+                    <div class="code-school__label">
+                        SITE BY:
+                    </div>
+                    <div class="code-school__logo">
+                        <a href="http://www.omahacodeschool.com" target="_blank">
+                            <img src="<%= image_url('omaha-code-school_2x.png') %>"/>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="footer__code-school">
-                <div class="code-school__label">
-                    SITE BY:
+            <div class="footer__lnkdna">
+                <div class="lnkdna__text">
+                    Lincoln Calling is part of LNK DNA, a weeklong event also including Startup Week, Make Lincoln, YP Week and more.
                 </div>
-                <div class="code-school__logo">
-                    <a href="http://www.omahacodeschool.com" target="_blank">
-                        <img src="<%= image_url('omaha-code-school.png') %>" srcset="<%= image_url('omaha-code-school.png') %> 1x, <%= image_url('omaha-code-school_2x.png') %> 2x"/>
+                <div class="lnkdna__logo">
+                    <a href="http://lnkdna.com/" target="_blank">
+                        <img src="<%= image_url('lnkdna.png') %>" srcset="<%= image_url('lnkdna.png') %> 1x, <%= image_url('lnkdna_2x.png') %> 2x" alt="LNK DNA"/>
                     </a>
                 </div>
             </div>

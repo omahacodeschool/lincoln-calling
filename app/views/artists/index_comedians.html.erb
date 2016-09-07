@@ -7,7 +7,7 @@
     <div class="content__artists">
         <% @artists.order(:headline_order).each do |artist| %>
             <% unless artist.hide %>
-            <div class="artists__artist">
+            <div class="artists__artist" data-id="<%= artist.id %>">
                 <div class="artist__image" style="background-image: url(<%= artist.image %>)">
 
                 </div>

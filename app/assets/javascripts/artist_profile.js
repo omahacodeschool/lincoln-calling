@@ -14,10 +14,10 @@ function showArtist(id) {
         $('body').css('overflow', 'hidden');
         $('.body__overlay').addClass('overlay--show');
         overlayArtist = artist["id"];
-        // $('#artistConcerts').html('');
-        // for (var i = 0, l = concerts.length; i < l; i++) {
-        //     $('#artistConcerts').append('<div class="concerts__concert"><div class="concert__date">' + concerts[i]["start_time"] + '</div><div class="concert__venue">' + concerts[i]["venue"] + '</div></div>')
-        // }
+        $('#artistConcerts').html('');
+        for (var i = 0, l = concerts.length; i < l; i++) {
+            $('#artistConcerts').append('<div class="concerts__concert"><div class="concert__date">' + concerts[i]["start_time"] + '</div><div class="concert__venue">' + concerts[i]["venue"] + '</div></div>')
+        }
     });
 }
 
