@@ -143,6 +143,7 @@
             padding: 0 5px;
             color: $dark;
             cursor: default;
+            font-family: 'GT Walsheim Regular';
         }
         &.show {
             @include flexbox();
