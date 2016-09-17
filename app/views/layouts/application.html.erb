@@ -20,6 +20,8 @@
         <title>FAQ | Lincoln Calling</title>
     <% elsif @about %>
         <title>About | Lincoln Calling</title>
+    <% elsif @volunteers %>
+        <title>Volunteers | Lincoln Calling</title>
     <% elsif params[:controller] == "info" %>
         <title>Hotels | Lincoln Calling</title>
     <% else %>
@@ -125,6 +127,9 @@
                             <li class="links__link">
                                 <a href="/hotels">HOTELS</a>
                             </li>
+                            <li class="links__link">
+                                <a href="/volunteers">VOLUNTEERS</a>
+                            </li>
                         </ul>
                     </div>
                 </ul>
@@ -145,14 +150,15 @@
                     <div class="links__column">
                         <a href="http://lincolncalling2016.eventbrite.com/?aff=LCWebsite">TICKETS</a>
                         <a href="/artists">ARTISTS</a>
+                        <a href="/comedy">COMEDY</a>
+                        <a href="/schedule">SCHEDULE</a>
                         <a href="/venues">VENUES</a>
-                        <a href="/faq">FAQ</a>
-                        <a href="/hotels">HOTELS</a>
                     </div>
                     <div class="links__column">
-                        <a href="/schedule">SCHEDULE</a>
-                        <a href="/comedy">COMEDY</a>
+                        <a href="/faq">FAQ</a>
                         <a href="/about">ABOUT</a>
+                        <a href="/hotels">HOTELS</a>
+                        <a href="/volunteers">VOLUNTEERS</a>
                         <a href="/news">NEWS</a>
                         <a href="/sponsors">SPONSORS</a>
                     </div>

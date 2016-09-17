@@ -16,8 +16,6 @@ class InfoController < ApplicationController
         @days.pop
 
         @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
-
-        render "faq"
     end
     def about
         @about = About.all
@@ -34,8 +32,6 @@ class InfoController < ApplicationController
 
         @days = @days.sort
         @days.pop
-
-        render "about"
     end
     def hotels
         @events = Event.all
@@ -51,7 +47,22 @@ class InfoController < ApplicationController
 
         @days = @days.sort
         @days.pop
+    end
+    def volunteers
+        @events = Event.all
+        weekdays = []
+        @days = []
 
-        render "hotels"
+        @events.each do |event|
+            if weekdays.include?(event.start_date_time.wday) == false
+                @days.push(event.start_date_time)
+                weekdays.push(event.start_date_time.wday)
+            end
+        end
+
+        @days = @days.sort
+        @days.pop
+
+        @volunteers = true
     end
 end

@@ -1,0 +1,30 @@
+<%= render "titles/default",
+    :category => "INFO",
+    :page => "Volunteers"
+%>
+
+<div class="main__content">
+    <div class="content__content content--volunteers">
+        <div class="about--text">
+            <h3>WHY VOLUNTEER?</h3>
+            <p>
+                In exchange for becoming a Lincoln Calling Music Festival Volunteer​, you’ll receive a​ general admission 3-­day pass, a t-­shirt, a fun time, and an opportunity to help grow an awesome nonprofit music festival!​ Plus, when you’re not working, you get to experience the festival!
+            </p>
+            <p>
+                Please read the volunteer requirements, information and terms & conditions completely before submitting an application. Individual volunteer jobs will be assigned​ based on Lincoln Calling Music Festival needs.​
+            </p>
+            <p>
+                <%= link_to asset_url('LincolnCalling2016VolunteerDocument.pdf') do %>
+                    See more info on volunteering for Lincoln Calling Music Festival.
+                <% end %>
+            </p>
+            <a href="https://hearnebraska.volunteerlocal.com/volunteer/?id=16736" target="_blank" class="hotel--button">Apply to be a volunteer</a>
+        </div>
+    </div>
+    <div class="content__divider">
+    </div>
+    <section class="content__sidebar">
+        <%= render "sidebars/email" %>
+        <%= render "sidebars/events" %>
+    </section>
+</div>
