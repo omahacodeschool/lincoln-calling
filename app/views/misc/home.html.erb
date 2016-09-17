@@ -8,7 +8,7 @@
         <div class="hero__headliners">
             <h2>
                 <% @headliners.order(:headline_order).each do |artist| %>
-                    <% if artist.headline_order < @headliners.length %>
+                    <% if artist.headline_order <= @headliners.length %>
                         <a href="/artists"><%= artist.name %></a> +
                     <% else %>
                         <a href="/artists"><%= artist.name %></a>
