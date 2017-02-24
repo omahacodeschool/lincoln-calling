@@ -1,68 +1,7 @@
 <main class="body__main">
     <section class="main__hero">
-        <div class="hero__headliners">
-            <h2>
-                <% @headliners.order(:headline_order).each do |artist| %>
-                    <% if artist.headline_order < @headliners.length %>
-                        <a href="/artists"><%= artist.name %></a> +
-                    <% else %>
-                        <a href="/artists"><%= artist.name %></a>
-                    <% end %>
-                <% end %>
-            </h2>
-        </div>
-        <div class="hero__supporting">
-            <h3>
-                <a href="/artists">SEE THE FULL LINEUP</a>
-            </h3>
-        </div>
-        <div class="hero__tickets">
-            <% @tickets.each do |group|%>
-                <div class="tickets--container">
-                <% group.each_with_index do |category, index| %>
-                    <% if index == 0 %>
-                        <header class="tickets__header">
-                            <p><%= category %></p>
-                        </header>
-                        <!-- <div class="tickets__button">
-                            GET TICKETS
-                        </div> -->
-                    <% else %>
-                        <div class="ticket--container">
-                        <% category.each do |ticket| %>
-                            <% if ticket.sold_out == true %>
-                                <div class="tickets__ticket sold-out">
-                                    <h2><%= ticket.format_price %></h2>
-                                    <h3><%= ticket.name %></h3>
-                                    <% if ticket.description %>
-                                        <p><%= ticket.description %>
-                                    <% end %>
-                                </div>
-                            <% elsif ticket.publication_date >= DateTime.now %>
-                                <div class="tickets__ticket not-yet-available">
-                                    <h2><%= ticket.format_price %></h2>
-                                    <h3><%= ticket.name %></h3>
-                                    <% if ticket.description %>
-                                        <p><%= ticket.description %>
-                                    <% end %>
-                                </div>
-                            <% else %>
-                                <div class="tickets__ticket">
-                                    <a href="<%= ticket.link %>" target="_blank">
-                                        <h2><%= ticket.format_price %></h2>
-                                        <h3><%= ticket.name %></h3>
-                                        <% if ticket.description %>
-                                            <p><%= ticket.description %>
-                                        <% end %>
-                                    </a>
-                                </div>
-                            <% end %>
-                        <% end %>
-                        </div>
-                    <% end %>
-                <% end %>
-                </div>
-            <% end %>
+        <div class="hero__video">
+            <iframe width="1280" height="720" src="https://www.youtube.com/embed/NR85IQQ-Hyk" frameborder="0" allowfullscreen></iframe>
         </div>
     </section>
     <div class="main__content">
@@ -98,7 +37,6 @@
         </div>
         <section class="content__sidebar">
             <%= render "sidebars/email" %>
-            <%= render "sidebars/events" %>
         </section>
     </div>
 </main>

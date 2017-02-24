@@ -1,12 +1,24 @@
 .main__hero {
     @include background-2x(image_url('hero-background_2x.png'));
+
+    position: relative;
+    height: 0;
+    padding-top: 55%;
     margin-bottom: (20rem / 16);
-    padding: (32rem / 16) (18rem / 16);
+    // padding: (32rem / 16) (18rem / 16);
     background-color: $secondary;
     background-image: image_url('hero-background.png');
     background-repeat: repeat-x;
     background-position: 50% 0%;
     background-size: cover;
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .hero__headliners,
@@ -215,7 +227,7 @@
 @media only screen and (min-width: 800px) {
     .main__hero {
         margin-bottom: (25rem / 16);
-        padding: (18rem / 16);
+        // padding: (18rem / 16);
     }
     .tickets--container {
         width: calc(33% - .75rem);

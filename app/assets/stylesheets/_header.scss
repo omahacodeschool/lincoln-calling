@@ -5,11 +5,8 @@
 
 .header__title {
     padding-top: 3px;
-    img:nth-of-type(1) {
-        display: none;
-        max-width: none;
-    }
-    img:nth-of-type(2) {
+    margin-bottom: 1.5625rem;
+    img {
         max-width: none;
         width: 100%;
     }
@@ -115,14 +112,6 @@
         position: relative;
         padding-top: 0;
         cursor: pointer;
-        img:nth-of-type(1) {
-            display: block;
-            width: 14.4%;
-        }
-        img:nth-of-type(2) {
-            width: 85%;
-            border-right: 0;
-        }
     }
     .header__nav {
         @include flexbox();
